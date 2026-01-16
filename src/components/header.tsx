@@ -13,7 +13,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { IconChevronDown, IconMenu2 } from "@tabler/icons-react";
+import { IconArrowBadgeRight, IconChevronDown, IconMenu2 } from "@tabler/icons-react";
 
 const Header = () => {
   const [openMobileServices, setOpenMobileServices] = useState(false);
@@ -40,7 +40,7 @@ const Header = () => {
                 href="/services/crm-strategy-implementation"
                 className="block px-4 py-2 rounded hover:bg-gray-100"
               >
-                CRM Strategy & Implementation
+                CRM Strategy & Implementation 
               </Link>
               <Link
                 href="/services/managed-services"
@@ -59,17 +59,23 @@ const Header = () => {
 
           <Link href="/casestudy">Case Studies</Link>
         </nav>
+        <div className="mr-2">
+          Contact Us<br/> 
+                 +987123432
+        </div>
 
         <div className="hidden md:block">
+          <Link href="/contact">
           <Button className="rounded-full px-7 py-6 text-base">
             Let’s Talk
           </Button>
+          </Link>
         </div>
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <button>
-                <IconMenu2 />
+                <IconMenu2 className="text-black"/>
               </button>
             </SheetTrigger>
 
@@ -93,9 +99,9 @@ const Header = () => {
                 <div className="border-b border-white/10 pb-4">
                   <button
                     onClick={() => setOpenMobileServices(!openMobileServices)}
-                    className="flex w-full items-center justify-between"
+                    className="flex w-full items-center justify-between "
                   >
-                    <span>Services</span>
+                    SERVICES
                     <IconChevronDown
                       className={`transition-transform ${
                         openMobileServices ? "rotate-180" : ""
@@ -105,13 +111,16 @@ const Header = () => {
 
                   {openMobileServices && (
                     <div className="mt-4 flex flex-col gap-4 pl-4 text-white/80">
-                      <Link href="/services/crm-strategy-implementation">
+                      <Link className="flex gap-2 items-center" href="/services/crm-strategy-implementation">
+                      <IconArrowBadgeRight/>
                         CRM Strategy & Implementation
                       </Link>
-                      <Link href="/services/managed-services">
+                      <Link className="flex gap-2 items-center" href="/services/managed-services">
+                       <IconArrowBadgeRight/>
                         Managed Services
                       </Link>
-                      <Link href="/services/value-added-services">
+                      <Link className="flex gap-2 items-center" href="/services/value-added-services">
+                       <IconArrowBadgeRight/>
                         Value Added Services
                       </Link>
                     </div>
@@ -124,10 +133,11 @@ const Header = () => {
                 >
                   Case Studies
                 </Link>
-
+              <Link href="/contact">
                 <Button className="mt-6 rounded-full py-6 text-base">
                   Let’s Talk
                 </Button>
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>
