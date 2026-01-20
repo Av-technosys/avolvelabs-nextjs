@@ -27,7 +27,6 @@ export default function HomeCarousel() {
     AutoScroll({ 
       speed: 1, 
       stopOnInteraction: false,
-      stopOnMouseEnter: true 
     })
   )
 

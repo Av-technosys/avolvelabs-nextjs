@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
 
   
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-3 text-xs text-center font-playfair">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-3 text-xs text-center font-poppins">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/services/crm-strategy-implementation">

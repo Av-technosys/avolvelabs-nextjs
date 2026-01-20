@@ -211,7 +211,7 @@ const Page = () => {
                     <Button
                       disabled={loading}
                       type="submit"
-                      className="md:col-span-2 font-playfair bg-[#1D546D] hover:bg-white text-white hover:text-[#1D546D] border-2 border-[#1D546D] h-14 text-lg rounded-xl flex gap-2 transition-all"
+                      className="md:col-span-2 font-playfair bg-[#0176d3] hover:bg-white text-white hover:text-[#1D546D] border-2 border-[#1D546D] h-14 text-lg rounded-xl flex gap-2 transition-all"
                     >
                       {loading ? (
                         <IconLoader2 className="animate-spin" />
@@ -290,7 +290,7 @@ const Page = () => {
 const InfoCard = ({ icon, title, value, note }: InfoCardProps) => (
   <Card className="rounded-2xl text-center border-none shadow-sm hover:shadow-md transition-shadow">
     <CardContent className="p-8">
-      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#1D546D] text-white">
+      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#0176d3] text-white">
         {icon}
       </div>
       <h3 className="text-lg font-semibold text-gray-900 font-playfair">

@@ -5,7 +5,7 @@ import AutoScroll from "embla-carousel-auto-scroll";
 
 const BrandCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1, stopOnMouseEnter: true, })
+    AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1 })
   ]);
 
   const logos = [
