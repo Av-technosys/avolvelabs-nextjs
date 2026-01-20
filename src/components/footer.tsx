@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="max-w-7xl mx-auto bg-black text-white">
 
       <div className="flex min-h-[30vh] md:h-[40vh] items-center justify-center px-4">
-        <h1 className="text-[18vw] md:text-[7vw] font-extrabold tracking-tight leading-none">
+        <h1 className="text-[18vw] md:text-[7vw] font-extrabold tracking-tight leading-none font-sans">
           avolvelabs
         </h1>
       </div>
@@ -23,15 +23,15 @@ const Footer = () => {
  
           <div className="flex justify-center md:justify-start gap-6">
             <Link href="#" aria-label="LinkedIn">
-              <IconBrandLinkedin className="h-8 w-8 hover:opacity-70 transition" />
+              <IconBrandLinkedin className="h-8 w-8 hover:opacity-70 transition"/>
             </Link>
             <Link href="#" aria-label="Instagram">
-              <IconBrandInstagram className="h-8 w-8 hover:opacity-70 transition" />
+              <IconBrandInstagram className="h-8 w-8 hover:opacity-70 transition"/>
             </Link>
           </div>
 
   
-          <div className="flex flex-wrap justify-center gap-x-4 gap-y-3 text-xs text-center">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-3 text-xs text-center font-playfair">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/services/crm-strategy-implementation">
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
 
   
-          <div className="text-center md:text-right text-sm text-white">
+          <div className="text-center md:text-right text-sm text-white font-poppins">
             <p>Proudly created in India.</p>
             <p>All Right Reserved, All Wrong Reversed.</p>
           </div>

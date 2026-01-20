@@ -116,20 +116,20 @@ const Page = () => {
             <div className="grid gap-12 lg:grid-cols-2">
               <Card className="rounded-3xl border-none shadow-xl bg-white">
                 <CardContent className="p-10 md:p-16">
-                  <p className="text-sm font-bold text-blue-600 uppercase tracking-wider">
+                  <p className="text-sm font-bold text-blue-600 uppercase tracking-wider font-playfair">
                     Get in Touch
                   </p>
-                  <h2 className="mt-4 text-4xl font-serif font-bold text-[#111827]">
+                  <h2 className="mt-4 text-4xl font-bold text-[#111827] font-playfair">
                     Request a Call Back
                   </h2>
-                  <p className="mt-4 text-gray-500 text-lg">
+                  <p className="mt-4 text-gray-500 text-lg font-poppins">
                     Fill out the form below and our team will reach out to you
                     shortly.
                   </p>
 
                   {status.msg && (
                     <div
-                      className={`mt-6 p-4 rounded-xl text-sm font-medium ${
+                      className={`mt-6 p-4 rounded-xl text-sm font-medium font-poppins ${
                         status.type === "success"
                           ? "bg-green-50 text-green-700 border border-green-200"
                           : "bg-red-50 text-red-700 border border-red-200"
@@ -144,18 +144,18 @@ const Page = () => {
                     className="mt-10 grid gap-6 md:grid-cols-2"
                   >
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold">
+                      <label className="text-sm font-semibold font-playfair">
                         Full Name *
                       </label>
                       <Input
                         name="name"
                         required
                         placeholder="Enter your name"
-                        className="bg-gray-50 border-gray-100 h-12"
+                        className="bg-gray-50 border-gray-100 h-12 font-poppins"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold">
+                      <label className="text-sm font-semibold font-playfair">
                         Email Address *
                       </label>
                       <Input
@@ -163,53 +163,55 @@ const Page = () => {
                         type="email"
                         required
                         placeholder="Enter your email"
-                        className="bg-gray-50 border-gray-100 h-12"
+                        className="bg-gray-50 border-gray-100 h-12 font-poppins"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold">
+                      <label className="text-sm font-semibold font-playfair">
                         Phone Number
                       </label>
                       <Input
                         name="phone"
                         placeholder="Enter your phone number"
-                        className="bg-gray-50 border-gray-100 h-12"
+                        className="bg-gray-50 border-gray-100 h-12 font-poppins"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold">
+                      <label className="text-sm font-semibold font-playfair">
                         Company Name
                       </label>
                       <Input
                         name="company"
                         placeholder="Enter your company name"
-                        className="bg-gray-50 border-gray-100 h-12"
+                        className="bg-gray-50 border-gray-100 h-12 font-poppins"
                       />
                     </div>
                     <div className="md:col-span-2 space-y-2">
-                      <label className="text-sm font-semibold">
+                      <label className="text-sm font-semibold font-playfair">
                         Subject (Enquiry For) *
                       </label>
                       <Input
                         name="subject"
                         required
                         placeholder="How can we help?"
-                        className="bg-gray-50 border-gray-100 h-12"
+                        className="bg-gray-50 border-gray-100 h-12 font-poppins"
                       />
                     </div>
                     <div className="md:col-span-2 space-y-2">
-                      <label className="text-sm font-semibold">Message *</label>
+                      <label className="text-sm font-semibold font-playfair">
+                        Message *
+                      </label>
                       <Textarea
                         name="message"
                         required
                         placeholder="Tell us more about your requirements..."
-                        className="bg-gray-50 border-gray-100 min-h-120px"
+                        className="bg-gray-50 border-gray-100 min-h-120px font-poppins"
                       />
                     </div>
                     <Button
                       disabled={loading}
                       type="submit"
-                      className="md:col-span-2 bg-[#0F172A] hover:bg-black text-white h-14 text-lg rounded-xl flex gap-2 transition-all"
+                      className="md:col-span-2 font-playfair bg-[#1D546D] hover:bg-white text-white hover:text-[#1D546D] border-2 border-[#1D546D] h-14 text-lg rounded-xl flex gap-2 transition-all"
                     >
                       {loading ? (
                         <IconLoader2 className="animate-spin" />
@@ -223,33 +225,33 @@ const Page = () => {
               </Card>
 
               <div className="flex flex-col justify-center">
-                <p className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-4">
+                <p className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-4 font-playfair">
                   VISIT US
                 </p>
-                <h2 className="text-5xl font-serif font-bold text-[#111827] mb-6">
+                <h2 className="text-5xl font-bold text-[#111827] mb-6 font-playfair">
                   Our Location
                 </h2>
-                <p className="text-gray-500 text-lg mb-10 leading-relaxed">
+                <p className="text-gray-500 text-lg mb-10 leading-relaxed font-poppins">
                   {" "}
                   We&apos;re located in Jaipur, India - the heart of
                   India&apos;s salt industry.
                 </p>
 
-                <div className="bg-[#0F172A] text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
-                  <h3 className="text-xl font-serif font-bold mb-8">
+                <div className="bg-[#1D546D] text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                  <h3 className="text-xl font-playfair font-bold mb-8">
                     Corporate Headquarters
                   </h3>
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
                       <IconMapPin
-                        className="text-blue-500 mt-1 shrink-0"
+                        className="text-white mt-1 shrink-0"
                         size={24}
                       />
                       <div>
-                        <p className="font-semibold text-lg leading-tight">
+                        <p className="font-semibold font-playfair text-lg leading-tight">
                           Limited Company
                         </p>
-                        <p className="text-gray-400">
+                        <p className="text-gray-400 font-poppins ">
                           Corporate Office
                           <br />
                           Rajasthan, India
@@ -257,14 +259,14 @@ const Page = () => {
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
-                      <IconPhone className="text-blue-500 shrink-0" size={22} />
-                      <p className="text-gray-300 font-medium">
+                      <IconPhone className="text-white shrink-0" size={22} />
+                      <p className="font-medium font-playfair">
                         +91-XXXXXXXXXX
                       </p>
                     </div>
                     <div className="flex items-center gap-4">
-                      <IconMail className="text-blue-500 shrink-0" size={22} />
-                      <p className="text-gray-300 font-medium">
+                      <IconMail className="text-white shrink-0" size={22} />
+                      <p className="font-medium font-playfair">
                         info@avolvelabs.com
                       </p>
                     </div>
@@ -288,12 +290,14 @@ const Page = () => {
 const InfoCard = ({ icon, title, value, note }: InfoCardProps) => (
   <Card className="rounded-2xl text-center border-none shadow-sm hover:shadow-md transition-shadow">
     <CardContent className="p-8">
-      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-[#1D546D] text-white">
         {icon}
       </div>
-      <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-      <p className="mt-2 font-medium text-blue-600">{value}</p>
-      <p className="mt-1 text-sm text-gray-500">{note}</p>
+      <h3 className="text-lg font-semibold text-gray-900 font-playfair">
+        {title}
+      </h3>
+      <p className="mt-2 font-medium text-blue-600 font-playfair">{value}</p>
+      <p className="mt-1 text-sm text-gray-500 font-poppins">{note}</p>
     </CardContent>
   </Card>
 );
