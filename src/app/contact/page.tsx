@@ -237,7 +237,7 @@ const Page = () => {
                   India&apos;s salt industry.
                 </p>
 
-                <div className="bg-[#1D546D] text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div className="bg-[linear-gradient(to_right,#061C5B,#0B2FA0)] text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
                   <h3 className="text-xl font-playfair font-bold mb-8">
                     Corporate Headquarters
                   </h3>

@@ -53,10 +53,9 @@ const FAQ = () => {
           group relative flex w-full items-center justify-between
           pr-14 py-6
           text-left text-lg md:text-xl
-          font-bold text-[#032d60]
+        text-[#032d60]
           hover:text-[#0176d3]
           hover:no-underline
-
           [&>svg]:hidden
         "
       >

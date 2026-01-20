@@ -1,8 +1,6 @@
 "use client"
 import * as React from "react"
 import AutoScroll from "embla-carousel-auto-scroll"
-import { Play, Pause} from "lucide-react"
-
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +9,7 @@ import {
 } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "./ui/button"
-import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react"
+import { IconArrowNarrowLeft, IconArrowNarrowRight, IconPlayerPauseFilled, IconPlayerPlayFilled } from "@tabler/icons-react"
 
 const carouselData = [
   { id: 1, name: "Tracy Matis", role: "VP, Strategy & Transformation, PepsiCo", companyLogo: "https://upload.wikimedia.org/wikipedia/commons/a/a6/PepsiCo_logo.svg", image: "https://media.istockphoto.com/id/1310814041/photo/portrait-of-a-businesswoman-standing-in-a-a-modern-office.jpg?s=612x612&w=0&k=20&c=rLDYEGaGfbFq6mJPLc2FHjc6KBKyJETu38y4a3x11cM=" },
@@ -93,7 +91,7 @@ export default function HomeCarousel() {
             onClick={toggleAutoScroll}
             className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-white bg-transparen hover:bg-white/20 "
           >
-            {isPlaying ? <Pause className="h-5 w-5 fill-white hover:text-black" /> : <Play className="h-5 w-5 fill-white" />}
+            {isPlaying ? <IconPlayerPauseFilled className="h-5 w-5 fill-white hover:text-black" /> : <IconPlayerPlayFilled className="h-5 w-5 fill-white" />}
           </Button>
 
           <Button
