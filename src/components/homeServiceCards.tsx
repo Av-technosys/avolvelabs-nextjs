@@ -5,6 +5,7 @@ import {
   IconShieldCheck,
   IconShoppingBagHeart,
 } from "@tabler/icons-react";
+import { Button } from "./ui/button";
 
 const services = [
   {
@@ -54,21 +55,21 @@ const services = [
 
 const HomeServiceCards = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-[linear-gradient(to_bottom,#FFFFFF,#AEDEFC)]">
       <section className="text-center md:px-8 px-8 py-10">
         <h1 className="font-playfair text-[32px] font-bold text-[#032d60] leading-tight">
           Launch faster with 16+ Agentforce solutions, built{" "}
           <br className="hidden md:block" /> for your industry.
         </h1>
 
-        <p className="font-poppins text-base md:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 leading-relaxed">
+        <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 leading-relaxed">
           Designed with industry expertise, these out-of-the-box solutions align
           with your workflows, data, and customer needs, so you can modernize
           faster, go to market sooner, and deliver value from day one.
         </p>
       </section>
 
-      <section className="max-w-4xl mx-auto px-8 md:px-0">
+      <section className="max-w-4xl mx-auto px-8 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
           {services.map((service, index) => (
             <Card
@@ -113,9 +114,22 @@ const HomeServiceCards = () => {
                 </div>
               </CardContent>
             </Card>
+           
           ))}
         </div>
+        <div className="flex justify-center mt-10">
+         <Button className="font-poppins px-10 py-7 text-md bg-white text-blue-300 hover:bg-blue-400 hover:text-white">See all Industries</Button>
+         </div>
       </section>
+      
+         <div className="">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className ="">
+  <path
+   d="M0 120 L0 120 C360 0 1080 0 1440 120 L1440 120 Z"
+    fill="white"
+  />
+</svg>
+        </div>
     </div>
   );
 };

@@ -42,7 +42,7 @@ const HomeVideo = () => {
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link href="/">
-                  <Button className="bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full sm:w-auto">
+                  <Button className="font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full sm:w-auto">
                     Start for free
                   </Button>
                 </Link>
@@ -50,7 +50,7 @@ const HomeVideo = () => {
                 <Link href="/">
                   <Button
                     variant="outline"
-                    className="border-[#0176d3] px-8 py-6 text-base text-[#0176d3] w-full sm:w-auto"
+                    className="font-poppins border-[#0176d3] px-8 py-6 text-base text-[#0176d3] w-full sm:w-auto"
                   >
                     Start demo
                   </Button>
@@ -133,7 +133,7 @@ const HomeVideo = () => {
         for the Agentic Enterprise.
       </h1>
 
-      <p className="font-poppins text-base md:text-[18px] lg:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 md:mt-8 px-2 leading-relaxed">
+      <p className="font-poppins text-md md:text-[18px] lg:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 md:mt-8 px-2 leading-relaxed">
         Our deeply unified platform brings together apps, data, agents, and metadata to drive customer and employee success. With trust and governance built in, Salesforce ensures your AI and business scale securely, reliably, and with confidence.
       </p>
 

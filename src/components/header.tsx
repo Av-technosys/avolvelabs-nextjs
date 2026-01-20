@@ -26,19 +26,14 @@ const Header = () => {
   return (
     <header className="border-b bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
-        
-        {/* Logo */}
         <Link
           href="/"
           className="font-sans text-2xl font-bold text-blue-700 md:text-3xl"
         >
           avolvelabs
         </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden items-center gap-6 md:flex justify-end">
-          
-          <nav className="flex items-center gap-6 lg:gap-8 font-playfair font-medium text-gray-700">
+        <div className="hidden w-full items-center md:flex">
+          <nav className="mx-auto flex  items-center gap-4 lg:gap-8 lg:text-md md:text-md font-playfair font-medium text-gray-700">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
 
@@ -72,22 +67,20 @@ const Header = () => {
 
             <Link href="/casestudy">Case Studies</Link>
           </nav>
+          <div className="flex items-center gap-6">
+            <div className="flex flex-col items-center text-xs font-medium text-gray-700 md:flex-row md:gap-2 md:text-base font-playfair">
+              <span>Contact</span>
+              <span>+9351567881</span>
+            </div>
 
-          {/* Contact */}
-          <div className="flex flex-col items-center text-xs font-medium text-gray-700 md:flex-row md:gap-2 md:text-base font-playfair">
-            <span>Contact</span>
-            <span>+9351567881</span>
+            <Link href="/contact">
+              <Button className="rounded-full border-2 border-sky-500 bg-sky-500 px-5 py-5 text-base font-playfair hover:bg-white hover:text-sky-500">
+                Let’s Talk
+              </Button>
+            </Link>
           </div>
-
-          {/* Button */}
-          <Link href="/contact">
-            <Button className="rounded-full border-2 border-sky-500 bg-sky-500 px-7 py-6 text-base font-playfair hover:bg-white hover:text-sky-500">
-              Let’s Talk
-            </Button>
-          </Link>
         </div>
 
-        {/* Mobile Menu */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
@@ -104,7 +97,7 @@ const Header = () => {
                 <span className="text-xl font-bold">avolvelabs</span>
               </SheetHeader>
 
-              <nav className="flex flex-col gap-6 px-6 text-sm uppercase tracking-wide">
+              <nav className="flex flex-col gap-6 px-6 text-sm uppercase tracking-wide font-poppins">
                 <Link href="/" className="border-b border-white/10 pb-4">
                   Home
                 </Link>
@@ -127,7 +120,7 @@ const Header = () => {
                   </button>
 
                   {openMobileServices && (
-                    <div className="mt-4 flex flex-col gap-4 pl-4 text-white/80">
+                    <div className="mt-4 flex flex-col gap-4 pl-4 text-white/80 font-poppins">
                       <Link href="/services/crm-strategy-implementation" className="flex items-center gap-2">
                         <IconArrowBadgeRight />
                         CRM Strategy & Implementation
@@ -144,12 +137,12 @@ const Header = () => {
                   )}
                 </div>
 
-                <Link href="/casestudy" className="border-b border-white/10 pb-4">
+                <Link href="/casestudy" className="border-b border-white/10 pb-4 font-poppins">
                   Case Studies
                 </Link>
 
                 <Link href="/contact">
-                  <Button className="mt-6 w-full rounded-full py-6 text-base">
+                  <Button className="mt-6 w-full rounded-full bg-white py-6 text-base font-poppins text-black">
                     Let’s Talk
                   </Button>
                 </Link>
