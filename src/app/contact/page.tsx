@@ -274,9 +274,14 @@ const Page = () => {
                 </div>
 
                 <div className="mt-8 border-2 border-dashed border-gray-200 rounded-3xl h-64 bg-gray-100 flex flex-col items-center justify-center text-gray-400">
-                  <IconMapPin size={48} className="mb-2 opacity-30" />
-                  <p className="font-bold">Interactive Map</p>
-                  <p className="text-sm">Rajasthan, India</p>
+                 <iframe className="rounded-3xl"
+    src="https://www.google.com/maps?q=26.9060079,75.7486966&z=18&output=embed"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+  ></iframe>
                 </div>
               </div>
             </div>
