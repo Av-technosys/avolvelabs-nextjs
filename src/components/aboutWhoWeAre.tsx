@@ -60,7 +60,7 @@ const AboutWhoWeAre = () => {
 
         <div className="font-poppins text-gray-800 text-md md:text-[18px] leading-relaxed space-y-6 max-w-6xl mx-auto">
           <p>
-            NeosAlpha is an IT consulting and digital services company delivering
+            Avolvelabs is an IT consulting and digital services company delivering
             transformative technology solutions across industries. Founded in
             the UK in 2017 with the mission to bridge the gap between strategy and
             execution, we are a team of problem solvers, technologists, and
