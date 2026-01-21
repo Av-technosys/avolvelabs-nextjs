@@ -43,7 +43,7 @@ const Header = () => {
                 <IconChevronDown className="h-4 w-4" />
               </PopoverTrigger>
 
-              <PopoverContent className="w-64 p-2 font-playfair">
+              <PopoverContent className="w-64 p-2 font-poppins">
                 <Link
                   href="/services/crm-strategy-implementation"
                   className="block rounded px-4 py-2 hover:bg-gray-100"

@@ -2,10 +2,11 @@
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import Image from "next/image";
 
 const BrandCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1 })
+    AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1 }),
   ]);
 
   const logos = [
@@ -27,18 +28,20 @@ const BrandCarousel = () => {
         <span className="h-px bg-slate-200 flex-1"></span>
       </div>
 
-  
-      <div className="px-10 relative">
+      <div className="px-20 relative">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex touch-pan-y">
             {[...logos, ...logos, ...logos].map((src, index) => (
-              <div 
-                key={index} 
-                className="flex-[0_0_auto] min-w-0 px-12 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+              <div
+                key={index}
+                className="flex-[0_0_auto] min-w-0 px-12 grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100"
               >
-                <img 
-                  src={src} 
-                  alt="brand" 
+                <Image
+                  width={800}
+                  height={600}
+                  unoptimized
+                  src={src}
+                  alt="brand"
                   className="h-10 w-auto object-contain"
                   loading="lazy"
                 />
