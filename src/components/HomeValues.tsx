@@ -2,6 +2,7 @@
 import React from "react";
 import { IconArrowRight } from "@tabler/icons-react";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 const HomeValues = () => {
   return (
@@ -13,11 +14,11 @@ const HomeValues = () => {
           </h2>
           <p className="text-md md:text-[18px] font-poppins text-[#032d60] leading-relaxed mb-10 opacity-90">
             Grounded in trust, customer success, innovation, equality, and
-            sustainability, we’re committed to doing well in business and doing
-            good in the world — investing 1% of our equity, technology, and time
-            to create lasting change. We’re also a founder and champion of
-            Pledge 1%, a global movement to ensure giving back is part of
-            companies of all sizes.
+            sustainability, we&apos;re committed to doing well in business and
+            doing good in the world — investing 1% of our equity, technology,
+            and time to create lasting change. We&apos;re also a founder and
+            champion of Pledge 1%, a global movement to ensure giving back is
+            part of companies of all sizes.
           </p>
           <div className="flex flex-row gap-1 ">
             <Button className="bg-[#0176d3] font-poppins hover:bg-[#014486] text-white font-bold h-auto px-4 md:px-8 py-3 rounded-xl shadow-sm transition-all active:scale-95 whitespace-nowrap text-sm md:text-base">
@@ -39,7 +40,10 @@ const HomeValues = () => {
         </div>
         <div className="w-full lg:w-1/2 relative">
           <div className="relative rounded-[32px] overflow-hidden shadow-2xl w-full h-0 pb-[75%] bg-[linear-gradient(to_right,#061C5B,#0B2FA0)]">
-            <img
+            <Image
+              width={800}
+              height={600}
+              unoptimized
               src="/business-platform-change.jpg"
               alt="Core Values"
               className="w-full h-full object-cover mix-blend-overlay opacity-80"
