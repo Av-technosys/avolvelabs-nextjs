@@ -6,7 +6,7 @@ const commitmentData = [
   {
     id: "clients",
     title: "Commitment to Clients",
-    content: "At NeosAlpha, we deliver tailored technology solutions focused on real business impact. Through agile collaboration and transparent communication, we adapt to evolving needs and act as true partners in our clients' growth journey."
+    content: "At Avolvelabs, we deliver tailored technology solutions focused on real business impact. Through agile collaboration and transparent communication, we adapt to evolving needs and act as true partners in our clients' growth journey."
   },
   {
     id: "excellence",
@@ -32,7 +32,7 @@ const AboutCommitment = () => {
             Our Commitment
           </h2>
           <p className="font-poppins text-gray-600 max-w-3xl mx-auto text-md md:text-[18px]">
-            At NeosAlpha, our values are the foundation of our culture, guiding how we 
+            At Avolvelabs, our values are the foundation of our culture, guiding how we 
             operate, innovate, and grow alongside our clients and partners.
           </p>
         </div>

@@ -48,7 +48,7 @@ const AboutCoreValues = () => {
             Core Values
           </h2>
           <p className="font-poppins text-gray-500 max-w-3xl mx-auto text-md md:text-[18px]">
-            At NeosAlpha, our values are the foundation of our culture, guiding
+            At Avolvelabs, our values are the foundation of our culture, guiding
             how we operate, innovate, and grow alongside our clients and
             partners.
           </p>

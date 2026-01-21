@@ -5,7 +5,7 @@ const AboutMission = () => {
   const data = [
     {
       title: "Our Mission",
-      description: "Our mission is \"empowering enterprises through transformative technology and exceptional people to achieve sustainable success.\" At NeosAlpha, we strive to make a meaningful difference in our clients' operations and growth. By aligning cutting-edge technologies with deep domain expertise,",
+      description: "Our mission is \"empowering enterprises through transformative technology and exceptional people to achieve sustainable success.\" At Avolvelabs, we strive to make a meaningful difference in our clients' operations and growth. By aligning cutting-edge technologies with deep domain expertise,",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
     },
     {

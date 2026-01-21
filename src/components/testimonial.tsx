@@ -17,7 +17,7 @@ const testimonials = [
     companyLogo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vodafone_Logo.svg/1000px-Vodafone_Logo.svg.png",
     content:
-      "We are thrilled to share our positive experience with NeosAlpha. Initially engaging them for their Boomi integration capabilities, we have witnessed substantial improvements in our business performance and operational efficiency.",
+      "We are thrilled to share our positive experience with Avolvelabs. Initially engaging them for their Boomi integration capabilities, we have witnessed substantial improvements in our business performance and operational efficiency.",
     initials: "VF",
     color: "bg-red-100 text-red-600",
   },
@@ -27,7 +27,7 @@ const testimonials = [
     companyLogo:
       "https://www.oka.com/on/demandware.static/Sites-oka_gb-Site/-/default/dw06617e47/images/logo.svg",
     content:
-      "We are thrilled to share our positive experience with NeosAlpha. Initially engaging them for their Boomi integration capabilities, we have witnessed substantial improvements in our business performance and operational efficiency.",
+      "We are thrilled to share our positive experience with Avolvelabs. Initially engaging them for their Boomi integration capabilities, we have witnessed substantial improvements in our business performance and operational efficiency.",
     initials: "NO",
     color: "bg-gray-100 text-gray-900",
   },
