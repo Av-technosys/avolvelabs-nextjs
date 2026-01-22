@@ -54,7 +54,7 @@ const AboutWhoWeAre = () => {
   return (
     <section className="bg-blue-100 mx-auto max-w-7xl py-10 px-8">
       <div className="text-center ">
-        <h2 className="font-playfair text-3xl md:text-[38px] font-bold mb-8">
+        <h2 className="font-playfair text-3xl md:text-[38px] text-[#032d60] font-bold mb-8">
           Who We Are
         </h2>
 

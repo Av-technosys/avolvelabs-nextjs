@@ -32,14 +32,14 @@ const partners = [
 ]
 
 
-const CrmTeams = () => {
+const ValueTeams = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="relative max-w-7xl mx-auto overflow-hidden bg-linear-to-b from-white to-[#fdf2f4]">
-      <div className="container px-4 text-center mb-16">
+    <section className="relative w-full overflow-hidden bg-linear-to-b from-white to-[#EDFFF0]">
+      <div className="container mx-auto px-4 text-center mb-16">
         <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold max-w-3xl mx-auto leading-[1.2]">
-          Service teams in every industry scale with CRM Service.
+          Service teams in every industry scale with Value Added Service.
         </h2>
       </div>
 
@@ -83,4 +83,4 @@ const CrmTeams = () => {
   )
 }
 
-export default CrmTeams
+export default ValueTeams;

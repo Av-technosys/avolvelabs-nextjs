@@ -3,6 +3,7 @@ import CrmApproach from '@/components/crmApproach'
 import CrmBook from '@/components/crmBook'
 import CrmBusinessValueDemo from '@/components/crmBusinessValueDemo'
 import CrmHero from '@/components/crmHero'
+import CrmNew from '@/components/crmNew'
 import CrmTeams from '@/components/crmTeams'
 import CrmTech from '@/components/crmTech'
 import CrmWhat from '@/components/crmWhat'
@@ -19,10 +20,11 @@ const page = () => {
       <CrmBook/>
       <CrmApproach/>
       <CrmTech/>
+      <CrmNew/>
       <CrmAgentSuite/>
       <CrmWhyPartner/> 
       <CrmBusinessValueDemo/> 
-      <FAQ/>
+      <FAQ/>  
     </div>
   )
 }
