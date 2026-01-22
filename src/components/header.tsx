@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -33,7 +32,7 @@ const Header = () => {
           avolvelabs
         </Link>
         <div className="hidden w-full items-center md:flex">
-          <nav className="mx-auto flex  items-center gap-4 lg:gap-8 lg:text-md md:text-md font-poppins font-medium text-gray-700">
+          <nav className="mx-auto flex  items-center gap-4 lg:gap-12 lg:text-md md:text-md font-poppins font-medium text-gray-700">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
 
@@ -68,11 +67,6 @@ const Header = () => {
             <Link href="/casestudy">Case Studies</Link>
           </nav>
           <div className="flex items-center gap-6">
-            <div className="flex flex-col items-center text-xs font-medium text-gray-700 md:flex-row md:gap-2 md:text-base font-poppins">
-              <span>Contact</span>
-              <span>+9351567881</span>
-            </div>
-
             <Link href="/contact">
               <Button className="rounded-full border-2 border-[#0176d3] bg-[#0176d3] px-5 py-5 text-base font-playfair hover:bg-white hover:text-[#0176d3]">
                 Let’s Talk

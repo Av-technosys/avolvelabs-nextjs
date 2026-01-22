@@ -5,8 +5,6 @@ import {
   IconShieldCheck,
   IconShoppingBagHeart,
 } from "@tabler/icons-react";
-import { Button } from "./ui/button";
-
 const services = [
   {
     title: "Financial Services",
@@ -50,7 +48,6 @@ const services = [
     linkText: "Explore Retail",
     icon: <IconShoppingBagHeart className="w-8 h-8 text-[#7f22fe]" />,
   },
-
 ];
 
 const HomeServiceCards = () => {
@@ -114,22 +111,18 @@ const HomeServiceCards = () => {
                 </div>
               </CardContent>
             </Card>
-           
           ))}
         </div>
-        <div className="flex justify-center mt-10">
-         <Button className="font-poppins px-10 py-7 text-md bg-white text-blue-300 hover:bg-blue-400 hover:text-white">See all Industries</Button>
-         </div>
       </section>
-      
-         <div className="">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className ="">
-  <path
-   d="M0 120 L0 120 C360 0 1080 0 1440 120 L1440 120 Z"
-    fill="white"
-  />
-</svg>
-        </div>
+
+      <div className="">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="">
+          <path
+            d="M0 120 L0 120 C360 0 1080 0 1440 120 L1440 120 Z"
+            fill="white"
+          />
+        </svg>
+      </div>
     </div>
   );
 };

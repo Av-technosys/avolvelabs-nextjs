@@ -90,7 +90,7 @@ const Testimonial = () => {
               size="icon"
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className="rounded-full h-12 w-12 border-gray-300 hover:bg-white shadow-sm disabled:opacity-30"
+              className="rounded-full h-12 w-12 border-2 border-blue-900 hover:bg-white shadow-sm disabled:opacity-30"
             >
               <IconChevronLeft size={24} stroke={1.5} />
             </Button>
@@ -102,7 +102,7 @@ const Testimonial = () => {
                 currentIndex >=
                 (isMobile ? testimonials.length - 1 : testimonials.length - 2)
               }
-              className="rounded-full h-12 w-12 border-gray-300 hover:bg-white shadow-sm disabled:opacity-30"
+              className="rounded-full h-12 w-12 border-2 border-blue-900 hover:bg-white shadow-sm disabled:opacity-30"
             >
               <IconChevronRight size={24} stroke={1.5} />
             </Button>

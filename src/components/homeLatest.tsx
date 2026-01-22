@@ -80,7 +80,7 @@ const HomeLatest = () => {
           Get started today.
         </h1>
 
-        <p className="font-playfair mt-10 max-w-3xl mx-auto text-[32px] md:text-[32px] lg:text-[32px] font-bold text-[#032d60] leading-tight">
+        <p className="font-poppins mt-10 max-w-3xl mx-auto text-[32px] md:text-[32px] lg:text-[32px]  text-[#032d60] leading-tight">
           There nothing to install. No credit card required. Free for 30 days.
         </p>
 

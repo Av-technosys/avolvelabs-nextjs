@@ -28,14 +28,14 @@ const agents = [
   },
 ]
 
-const CrmAgentSuite = () => {
+const ManageAgentSuite = () => {
   return (
-    <section className="relative py-10 px-8">
+    <section className="relative py-10 px-8 max-w-7xl mx-auto ">
 
-      <div className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 md:h-[500] md:w-[500]  rounded-full bg-purple-300/40 blur-3xl" />
+      <div className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 md:h-[500] md:w-[500]  rounded-full bg-[#FEEAC9] blur-3xl" />
 
 
-      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-[500] w-[500] rounded-full bg-blue-300/40 blur-3xl" />
+      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-[500] w-[500] rounded-full bg-[#3291B6]/40 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl">
 
@@ -56,7 +56,7 @@ const CrmAgentSuite = () => {
             return (
               <Card
                 key={i}
-                className={`rounded-2xl border transition-colors duration-300 hover:border-blue-400 `}
+                className={`rounded-2xl transition-colors duration-300 border-2 hover:border-[#3291B6]`}
               >
                 <CardContent className="md:p-5 p-3">
                   <Icon
@@ -69,7 +69,7 @@ const CrmAgentSuite = () => {
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-relaxed font-poppins text-gray-600">
+                  <p className="mt-4 text-sm font-poppins leading-relaxed text-gray-600">
                     {item.desc}
                   </p>
                 </CardContent>
@@ -83,4 +83,4 @@ const CrmAgentSuite = () => {
   )
 }
 
-export default CrmAgentSuite
+export default ManageAgentSuite
