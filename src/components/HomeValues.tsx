@@ -9,10 +9,10 @@ const HomeValues = () => {
     <section className="max-w-7xl mx-auto py-10 px-8">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className=" lg:w-1/2 flex flex-col items-start">
-          <h2 className="text-[32px] md:text-[32px] font-bold text-[#032d60] font-playfair leading-[1.1] mb-8 tracking-tight">
+          <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-[1.1] mb-8 tracking-tight">
             We believe that business is the greatest platform for change.
           </h2>
-          <p className="text-md md:text-[18px] font-poppins text-[#032d60] leading-relaxed mb-10 opacity-90">
+          <p className="font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed mb-10 opacity-90">
             Grounded in trust, customer success, innovation, equality, and
             sustainability, we&apos;re committed to doing well in business and
             doing good in the world — investing 1% of our equity, technology,

@@ -1,5 +1,6 @@
 import CrmTech from '@/components/crmTech'
 import FAQ from '@/components/faq'
+import HomeLatest from '@/components/homeLatest'
 import ManageAgentSuite from '@/components/manageAgentSuite'
 import ManageApproach from '@/components/manageApproach'
 import ManageBook from '@/components/manageBook'
@@ -20,7 +21,7 @@ const page = () => {
       <ManageApproach/>
       <CrmTech 
        bgClass="bg-[#FEEAC9]"
-         titleColor=""
+         titleColor="text-[#032d60]"
          borderColor="border-black/40"
          title={`Powered by the\nManage Tech Stack`}
           description="Our managed services leverage a robust Manage Services and AI technology stack to deliver scalable, secure, and future-ready solutions."
@@ -29,6 +30,7 @@ const page = () => {
          <ManageAgentSuite/>
          <ManageWhyPartner/>
         <ManagesBusinessValueDemo/>
+        <HomeLatest/>
       <FAQ
            textColor="#0f172a"
            hoverColor="#3291B6"

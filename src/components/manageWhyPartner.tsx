@@ -28,14 +28,14 @@ const ManageWhyPartner = () => {
   return (
     <section className="bg-[#FEEAC9] py-10 px-8 mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold font-playfair text-[#032d60]">
+          <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold">
             Why Partner with Avolvelabs for{" "}
             <span className="bg-linear-to-r from-[#4aa3ff] to-[#a855f7] bg-clip-text text-transparent">
               Agentic AI
             </span>
           </h2>
 
-          <p className="mt-4 font-poppins text-black/70 max-w-3xl mx-auto">
+            <p className="mt-4 text-black/70 max-w-3xl mx-auto font-poppins text-md md:text-[18px]">
             From strategy to deployment – your end-to-end partner for scalable,
             production-ready agentic AI solutions
           </p>

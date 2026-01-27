@@ -10,7 +10,7 @@ const ValueBook = () => {
         <div 
           className="py-8 px-4 text-center flex flex-col items-center justify-center bg-[linear-gradient(to_right,#EDFFF0,#3291B6)]"        >
 
-          <h2 className="font-playfair text-black text-xl md:text-[25px] font-bold mb-6 leading-tight max-w-4xl">
+          <h2 className="font-playfair text-[#032d60] text-xl md:text-[25px] font-bold mb-6 leading-tight max-w-4xl">
             Not Sure Where to Begin with Value Added Services? We&apos;ll Help You Start Smart.
           </h2>
           <p className="font-poppins text-base md:text-[15px] max-w-3xl mb-10 leading-relaxed font-light">

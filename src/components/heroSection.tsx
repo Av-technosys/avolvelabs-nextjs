@@ -38,9 +38,9 @@ const HeroSection = ({
   if (isCentered) {
     return (
       <section className="text-center md:px-8 px-8 py-10 bg-white">
-        <h1 className="font-playfair text-[32px] font-bold text-[#032d60] leading-tight">
+        <h1 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
           {title}
-        </h1>
+        </h1> 
         <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 md:mt-8 px-2 leading-relaxed">
           {description}
         </p>
@@ -64,7 +64,7 @@ const HeroSection = ({
               {title}
             </h1>
 
-            <p className="mt-6 text-md md:text-[18px] text-gray-700 font-poppins leading-relaxed">
+            <p className="mt-6 font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed">
               {description}
             </p>
 

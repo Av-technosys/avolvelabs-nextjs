@@ -10,7 +10,7 @@ const  ManagesBusinessValueDemo = () => {
           Wondering How AI Can Deliver Business Value?
         </h2>
 
-        <p className="mt-4 text-base md:text-lg text-white/80 font-poppins">
+        <p className="mt-4 font-poppins text-md md:text-[18px] text-white/80">
           We&apos;ll showcase real-world Agentic AI use cases and help you plan for
           quick wins using your existing tools, data, and infrastructure.
         </p>

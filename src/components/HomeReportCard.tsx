@@ -8,7 +8,7 @@ const HomeReportCard = () => {
     <section className="py-10 bg-white px-8">
       <div className="max-w-7xl mx-auto">
         {/* Title: No Alerts */}
-        <h2 className="text-center text-[25px] md:text-[32px] font-bold font-playfair text-[#032d60] mb-14 tracking-tight leading-tight">
+        <h2 className="text-center text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold mb-14 tracking-tight leading-tight">
           See why analysts agree Salesforce should be your{" "}
           <br className="hidden lg:block" /> Agentic AI partner.
         </h2>

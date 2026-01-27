@@ -40,10 +40,10 @@ const ManageAgentSuite = () => {
       <div className="relative mx-auto max-w-7xl">
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-[40px] font-playfair font-bold text-[#032d60]">
+          <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold">
             Avolvelabs Intelligent Agent Suite
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto font-poppins text-gray-600">
+         <p className="mt-4 max-w-3xl mx-auto font-poppins text-md md:text-[18px] text-gray-700">
             Our AI agents are designed to automate repetitive tasks, make
             informed decisions, and enable teams to work more efficiently and
             effectively.

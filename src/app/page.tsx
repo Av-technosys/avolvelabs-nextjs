@@ -1,8 +1,8 @@
 import BrandCarousel from "@/components/brandCarousel";
-import FAQ from "@/components/faq";
 import FraudAlert from "@/components/fraudAlert";
 import HomeCarousel from "@/components/homeCarousel";
 import HomeCircle from "@/components/homeCircle";
+import HomeCrmSales from "@/components/homeCrmSales";
 import HomeHero from "@/components/homeHero";
 import HomeLatest from "@/components/homeLatest";
 import HomeReportCard from "@/components/HomeReportCard";
@@ -15,17 +15,18 @@ export default function Home() {
   return (
     <>
       <FraudAlert />
-     <HomeHero/>
-     <HomeCarousel/>
-     <HomeVideo/>
-     <HomeCircle/>
-     <HomeServiceCards/>
-     <BrandCarousel/>
-     <HomeReportCard/>
-    <HomeValues/>
-     <HomeLatest/>
-     <Testimonial/>
-     <FAQ/>
+      <HomeHero />
+      <HomeCarousel />
+      <HomeVideo />
+      <HomeCircle />
+      <HomeServiceCards />
+      <BrandCarousel />
+      <HomeReportCard />
+      <HomeValues />
+      <HomeCrmSales />
+      <HomeLatest />
+      <Testimonial />
+      {/* <FAQ /> */}
     </>
   );
 }

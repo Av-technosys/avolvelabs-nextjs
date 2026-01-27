@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer className="max-w-7xl mx-auto bg-black text-white">
         <div className="relative w-full">
-          <div className="bg-black h-[80] text-white text-center relative z-0" />
+          <div className="bg-black h-[80] md:h-[100] text-white text-center relative z-0" />
           <div className="absolute top-0 left-0 w-full h-[80] bg-white rounded-b-full z-10" />
         </div>
         <div className="flex min-h-[30vh] md:h-[40vh] items-center justify-center px-4">

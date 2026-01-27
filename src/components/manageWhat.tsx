@@ -9,7 +9,7 @@ const ManageWhat = () => {
         className="relative overflow-hidden"
       >
         <section className="text-center px-8 pb-10">
-          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] leading-tight max-w-4xl mx-auto">
+          <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight max-w-4xl mx-auto">
             What is Manage Service?
           </h2>
           <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-4xl mx-auto mt-8 leading-relaxed">

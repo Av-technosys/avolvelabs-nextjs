@@ -7,26 +7,30 @@ import Image from "next/image";
 const LATEST_DATA = [
   {
     id: 1,
-    title: "Catch all the Dreamforce 2025 highlights.",
-    linkText: "Stream it now",
+    title: "Unifying Healthcare with a 360° Patient View ",
+    linkText: "Know More",
     image:
-      "https://img.freepik.com/premium-photo/scenic-view-sea-against-sky_1048944-27687166.jpg?semt=ais_hybrid&w=740&q=80",
+      "/images/Healthcare-CRM-1.jpg",
   },
   {
     id: 2,
     title:
-      "Salesforce India Continues to Record Strong Growth, Bets Big on Agentic...",
+      "Modernizing Music Rights Management at Scale ",
     linkText: "Know more",
     image:
-      "https://img.freepik.com/free-photo/woman-beach-with-her-baby-enjoying-sunset_52683-144131.jpg?size=626&ext=jpg",
-  },
+"/images/music.jpg"  },
   {
     id: 3,
-    title: "Get the most out of Salesforce with partners, apps, and agents.",
-    linkText: "Discover AppExchange",
+    title: "Enabling a Seamless Pivot to Subscription-Based Revenue",
+    linkText: "Know more",
     image:
-      "https://ik.imagekit.io/ikmedia/blog/ghost/content/images/2019/12/image-optimization.jpg",
-  },
+"/images/pivot.jpg"  },
+  {
+    id: 4,
+    title: "Transforming Broadband with Zero Touch Digital Onboarding",
+    linkText: "Know more",
+    image:
+"/images/dashboard.jpg"  },
 ];
 
 const HomeLatest = () => {
@@ -34,11 +38,11 @@ const HomeLatest = () => {
     <>
       <section className="max-w-7xl mx-auto py-10 px-8">
         <div className="">
-          <h2 className="text-center text-[32px] font-bold font-playfair text-[#032d60] mb-12">
-            Get the latest from Salesforce.
+          <h2 className="text-center text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold mb-12">
+            Case Studies 
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {LATEST_DATA.map((item) => (
               <div
                 key={item.id}
@@ -53,6 +57,7 @@ const HomeLatest = () => {
                     alt="news"
                     className="w-full h-full object-cover"
                     loading="lazy"
+                   
                   />
                 </div>
 
@@ -62,12 +67,12 @@ const HomeLatest = () => {
                   </h3>
 
                   <div className="mt-auto pt-4">
-                    <a
-                      href="#"
+                    <Link
+                      href="/casestudy"
                       className="text-[#0176d3] font-poppins font-semibold text-[16px] underline hover:text-[#014486]"
                     >
                       {item.linkText}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -76,11 +81,11 @@ const HomeLatest = () => {
         </div>
       </section>
       <section className="text-center md:px-8 px-8 py-10">
-        <h1 className="font-playfair text-[32px] md:text-[32px] lg:text-[32px] font-bold text-[#032d60] leading-tight">
+        <h1 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
           Get started today.
         </h1>
 
-        <p className="font-poppins mt-10 max-w-3xl mx-auto text-[32px] md:text-[32px] lg:text-[32px]  text-[#032d60] leading-tight">
+        <p className="font-poppins mt-10 max-w-3xl mx-auto text-[20px] md:text-[32px] lg:text-[32px]  text-[#032d60] leading-tight">
           There nothing to install. No credit card required. Free for 30 days.
         </p>
 

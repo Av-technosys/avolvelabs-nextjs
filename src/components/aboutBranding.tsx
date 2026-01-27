@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import Image from 'next/image'
 
+
 const brands = [
   { name: "Boomi", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Dell_Boomi_logo.svg/2560px-Dell_Boomi_logo.svg.png" },
   { name: "Oracle NetSuite", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Oracle_NetSuite_logo.svg/2560px-Oracle_NetSuite_logo.svg.png" },
@@ -13,7 +14,23 @@ const brands = [
 
 const AboutBranding = () => {
   return (
-    <section className="mx-auto max-w-7xl bg-[linear-gradient(to_right,#061C5B,#0B2FA0)] px-8 py-10">
+    <>
+    <section className="w-full">
+        <div className="relative w-full h-[300] md:h-[550] overflow-hidden">
+          <Image
+            src="/images/about.jpeg" // Aap apni actual image URL yahan daal sakte hain
+            alt="Commitment visual"
+            fill
+            className="object-cover"
+            priority
+            unoptimized
+          />
+          {/* Optional: Overlay agar image ke upar text thoda contrast chahiye */}
+          <div className="absolute inset-0 bg-black/10" />
+        </div>
+      </section>
+      
+    <section className="md:hidden hidden mx-auto max-w-7xl bg-[linear-gradient(to_right,#061C5B,#0B2FA0)] px-8 py-10">
       <div className="">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           
@@ -21,7 +38,7 @@ const AboutBranding = () => {
             <h2 className="font-playfair text-3xl md:text-5xl font-bold leading-tight">
               Platform Expertise That <br /> Accelerates Results
             </h2>
-            <p className="font-poppins text-base md:text-lg opacity-90 max-w-lg leading-relaxed">
+            <p className="font-poppins text-md md:text-[18px] opacity-90 max-w-lg leading-relaxed">
               We&apos;re certified partners with leading iPaaS, ERP, and automation 
               platforms — delivering seamless, scalable solutions across 
               ecosystems.
@@ -58,6 +75,9 @@ const AboutBranding = () => {
         </div>
       </div>
     </section>
+    
+
+    </>
   )
 }
 

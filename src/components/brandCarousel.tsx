@@ -20,7 +20,7 @@ const BrandCarousel = () => {
     <section className="max-w-7xl mx-auto py-10 px-8 bg-white">
       <div className="flex items-center justify-center mb-16 gap-6">
         <span className="h-px bg-slate-200 flex-1" />
-        <h2 className="font-playfair text-[25px] md:text-[32px] font-bold text-[#032d60] whitespace-nowrap tracking-tight">
+        <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold whitespace-nowrap tracking-tight">
           Trusted By Global Leaders
         </h2>
         <span className="h-px bg-slate-200 flex-1" />

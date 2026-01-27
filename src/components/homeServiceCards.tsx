@@ -54,7 +54,7 @@ const HomeServiceCards = () => {
   return (
     <div className="bg-[linear-gradient(to_bottom,#FFFFFF,#AEDEFC)]">
       <section className="text-center md:px-8 px-8 py-10">
-        <h1 className="font-playfair text-[32px] font-bold text-[#032d60] leading-tight">
+        <h1 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
           Launch faster with 16+ Agentforce solutions, built{" "}
           <br className="hidden md:block" /> for your industry.
         </h1>

@@ -12,33 +12,33 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    name: "Victor Fernandez",
-    role: "NaaP Manager, Vodafone",
-    companyLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vodafone_Logo.svg/1000px-Vodafone_Logo.svg.png",
+    name: "Priya Nair",
+    role: "",
+    // companyLogo:
+    //   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vodafone_Logo.svg/1000px-Vodafone_Logo.svg.png",
     content:
-      "We are thrilled to share our positive experience with Avolvelabs. Initially engaging them for their Boomi integration capabilities, we have witnessed substantial improvements in our business performance and operational efficiency.",
-    initials: "VF",
-    color: "bg-red-100 text-red-600",
+      "The Zoho solution provided by Avolve Labs transformed the way we manage our sales processes. The team is skilled, proactive, and always available for support. Truly a trusted partner!",
+    initials: "PN",
+    color: "bg-gray-100 text-[#032d60]",
   },
   {
-    name: "Nick Owen",
-    role: "CTO, OKA",
-    companyLogo:
-      "https://www.oka.com/on/demandware.static/Sites-oka_gb-Site/-/default/dw06617e47/images/logo.svg",
+    name: "Rakesh Gupta",
+    role: "",
+    // companyLogo:
+    //   "https://www.oka.com/on/demandware.static/Sites-oka_gb-Site/-/default/dw06617e47/images/logo.svg",
     content:
-      "We are thrilled to share our positive experience with Avolvelabs. Initially engaging them for their Boomi integration capabilities, we have witnessed substantial improvements in our business performance and operational efficiency.",
-    initials: "NO",
+      "Avolve Labs’ Salesforce experts understood our business needs perfectly. Their team implemented a seamless CRM solution that improved our workflow efficiency significantly. Highly reliable and professional!",
+    initials: "RG",
     color: "bg-gray-100 text-gray-900",
   },
   {
-    name: "Sarah Jenkins",
-    role: "Director, TechCorp",
-    companyLogo: "https://via.placeholder.com/100x30?text=TechCorp",
+    name: "Anil Sharma",
+    role: "",
+    // companyLogo: "https://via.placeholder.com/100x30?text=TechCorp",
     content:
       "Their team provided exceptional support during our migration process. The expertise they brought to the table was exactly what we needed to scale our infrastructure.",
-    initials: "SJ",
-    color: "bg-blue-100 text-blue-600",
+    initials: "AS",
+    color: "bg-gray-100 text-gray-900",
   },
 ];
 
@@ -77,7 +77,7 @@ const Testimonial = () => {
             <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-4">
               What Our Clients Say
             </h2>
-            <p className="font-poppins text-gray-500 max-w-2xl text-md md:text-[18px]">
+            <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-2xl">
               We don&apos;t just aim to impress—we consistently deliver. But
               don&apos;t just take our word for it. Hear what our clients have
               to say.
@@ -125,7 +125,7 @@ const Testimonial = () => {
                   <div className="flex justify-between items-start mb-8">
                     <div className="flex items-center gap-4">
                       <div
-                        className={`h-12 w-12 md:h-14 md:w-14 rounded-full flex items-center justify-center font-bold text-lg ${item.color}`}
+                        className={`h-12 w-12 md:h-14 md:w-14 rounded-full flex items-center  justify-center font-bold text-lg ${item.color}`}
                       >
                         {item.initials}
                       </div>
@@ -138,14 +138,14 @@ const Testimonial = () => {
                         </p>
                       </div>
                     </div>
-                    <Image
+                    {/* <Image
                       width={800}
                       height={600}
                       unoptimized
                       src={item.companyLogo}
                       alt="Company"
                       className="h-5 md:h-8 object-contain"
-                    />
+                    /> */}
                   </div>
                   <div className="flex gap-4">
                     <IconQuote
@@ -163,11 +163,11 @@ const Testimonial = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-16">
+        {/* <div className="flex justify-center mt-16">
           <Button className="rounded-full font-poppins px-10 py-6 text-base font-medium bg-[#0176d3] hover:bg-[#014486] transition-all shadow-md">
             View All
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
