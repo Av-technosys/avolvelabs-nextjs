@@ -23,19 +23,13 @@ const AboutAgent = () => {
 </div>
 
           <div className="flex flex-col space-y-6 mt-10">
-            <h2 className="font-playfair text-3xl font-bold leading-tight text-[#032d60] md:text-3xl lg:text-4xl">
-              Meet Agentforce. What AI <br className="hidden md:block" />
-              was meant to be.
+            <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
+              Our Story & <br className="hidden md:block" />
+             Philosophy.
             </h2>
 
-            <p className="font-poppins leading-relaxed text-gray-700 text-sm md:text-lg">
-              Businesses succeed when they create meaningful connections.
-              Agentforce fuels connection, multiplying your workforce with
-              autonomous agents that can serve customers round the clock and
-              help your employees work better and faster. With specialised,
-              customisable AI agents working together with humans across sales,
-              service, marketing, commerce and IT, it&apos;s easy to deliver
-              amazing experiences that customers love.
+            <p className="font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed">
+             We founded AvolveLabs to solve the three biggest failures in the CRM industry: misalignment, low adoption, and unrealized value. We believe that technology should follow strategy, not the other way around. Our approach moves beyond standard implementation to deliver End-to-End Revenue Architecture. Whether you are in Manufacturing, Retail, Education, or Professional Services , we engineer systems that map directly to how your teams sell, serve, and scale.
             </p>
 
             <div className="pt-4">

@@ -9,6 +9,7 @@ import CrmTech from '@/components/crmTech'
 import CrmWhat from '@/components/crmWhat'
 import CrmWhyPartner from '@/components/crmWhyPartner'
 import FAQ from '@/components/faq'
+import HomeLatest from '@/components/homeLatest'
 import React from 'react'
 
 const page = () => {
@@ -24,6 +25,7 @@ const page = () => {
       <CrmAgentSuite/>
       <CrmWhyPartner/> 
       <CrmBusinessValueDemo/> 
+      <HomeLatest/>
       <FAQ/>  
     </div>
   )

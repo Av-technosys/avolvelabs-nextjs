@@ -23,22 +23,22 @@ const values = [
 const ValueNew = () => {
   return (
     <section className="bg-[#f9fbff] py-10 px-8">
-      <div className="mx-auto max-w-7xl grid gap-20 lg:grid-cols-2 items-start">
+      <div className="mx-auto max-w-7xl grid md:gap-20 gap-10 lg:grid-cols-2 items-start">
         
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="md:space-y-10 space-y-4 "
+          className="md:space-y-10 space-y-4"
         >
-          <h2 className="text-3xl md:text-[40px] font-playfair font-bold text-[#032d60] ">
+          <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold">
             Business Value,
             <br /> You Can Actually Measure
           </h2>
 
           <p className=" text-md md:text-[18px]  text-gray-700 max-w-xl font-poppins">
-            We don’t sell features. We design systems that reduce friction,
+            We don&apos;t sell features. friction,
             improve decision-making, and scale cleanly as your business grows.
           </p>
 

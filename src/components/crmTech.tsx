@@ -27,13 +27,13 @@ const CrmTech = ({
         {/* Left */}
        <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
 
-          <h2 className={`text-4xl font-bold font-playfair ${titleColor}`}>
+          <h2 className={`text-4xl text-[#032d60] font-bold font-playfair ${titleColor}`}>
             {title.split("\n").map((line, i) => (
               <span key={i} className="block">{line}</span>
             ))}
           </h2>
 
-          <p className="mt-6 text-lg text-gray-700 max-w-md font-poppins">
+          <p className="mt-6 font-poppins text-md md:text-[18px] text-gray-700 max-w-md">
             {description}
           </p>
         </div>

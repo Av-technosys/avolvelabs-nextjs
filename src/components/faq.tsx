@@ -66,7 +66,7 @@ const FAQ = ({
         } as React.CSSProperties
       }
     >
-      <h2 className="text-[32px] mb-6 font-bold text-center font-playfair text-(--faq-text)]">
+      <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] mb-6 font-bold text-center text-(--faq-text)]">
         Frequently Asked Questions
       </h2>
 

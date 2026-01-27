@@ -33,10 +33,10 @@ const ValueApproach = () => {
     <section className="bg-black py-10 px-8">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-6">
-          <h2 className="text-3xl md:text-[40px] font-playfair font-bold text-white">
+          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-white">
             Our Approach to Value Added Services Adoption
           </h2>
-          <p className="mt-4 text-gray-400 font-poppins max-w-3xl mx-auto">
+          <p className="mt-4 font-poppins text-md md:text-[18px] text-gray-400 max-w-3xl mx-auto">
             We guide you through every stage, from discovery and assessment to
             design and roadmap creation, to ensure successful Agentic AI adoption.
           </p>

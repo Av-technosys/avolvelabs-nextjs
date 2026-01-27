@@ -21,6 +21,7 @@ import {
 
 const Header = () => {
   const [openMobileServices, setOpenMobileServices] = useState(false);
+  const [openSheet, setOpenSheet] = useState(false); // ✅ added
 
   return (
     <header className="border-b bg-white">
@@ -29,8 +30,13 @@ const Header = () => {
           href="/"
           className="font-sans text-2xl font-bold text-blue-700 md:text-3xl"
         >
-          avolvelabs
+          <img
+            src="/avolvelabslogo.png"
+            alt="Avolve Labs Logo"
+            className="h-7 md:h-10  object-contain"
+          />
         </Link>
+
         <div className="hidden w-full items-center md:flex">
           <nav className="mx-auto flex  items-center gap-4 lg:gap-12 lg:text-md md:text-md font-poppins font-medium text-gray-700">
             <Link href="/">Home</Link>
@@ -66,9 +72,10 @@ const Header = () => {
 
             <Link href="/casestudy">Case Studies</Link>
           </nav>
+
           <div className="flex items-center gap-6">
             <Link href="/contact">
-              <Button className="rounded-full border-2 border-[#0176d3] bg-[#0176d3] px-5 py-5 text-base font-playfair hover:bg-white hover:text-[#0176d3]">
+              <Button className="rounded-full border-2 border-[#003E9C] bg-[#003E9C] px-5 py-5 text-base font-playfair hover:bg-white hover:text-[#003E9C]">
                 Let’s Talk
               </Button>
             </Link>
@@ -76,9 +83,9 @@ const Header = () => {
         </div>
 
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={openSheet} onOpenChange={setOpenSheet}>
             <SheetTrigger asChild>
-              <button>
+              <button className="flex" onClick={() => setOpenSheet(true)}>
                 <IconMenu2 className="text-black" />
               </button>
             </SheetTrigger>
@@ -92,11 +99,19 @@ const Header = () => {
               </SheetHeader>
 
               <nav className="flex flex-col gap-6 px-6 text-sm uppercase tracking-wide font-poppins">
-                <Link href="/" className="border-b border-white/10 pb-4">
+                <Link
+                  href="/"
+                  className="border-b border-white/10 pb-4"
+                  onClick={() => setOpenSheet(false)}
+                >
                   Home
                 </Link>
 
-                <Link href="/about" className="border-b border-white/10 pb-4">
+                <Link
+                  href="/about"
+                  className="border-b border-white/10 pb-4"
+                  onClick={() => setOpenSheet(false)}
+                >
                   About
                 </Link>
 
@@ -115,15 +130,38 @@ const Header = () => {
 
                   {openMobileServices && (
                     <div className="mt-4 flex flex-col gap-4 pl-4 text-white/80 font-poppins">
-                      <Link href="/services/crm-strategy-implementation" className="flex items-center gap-2">
+                      <Link
+                        href="/services/crm-strategy-implementation"
+                        className="flex items-center gap-2"
+                        onClick={() => {
+                          setOpenSheet(false);
+                          setOpenMobileServices(false);
+                        }}
+                      >
                         <IconArrowBadgeRight />
                         CRM Strategy & Implementation
                       </Link>
-                      <Link href="/services/managed-services" className="flex items-center gap-2">
+
+                      <Link
+                        href="/services/managed-services"
+                        className="flex items-center gap-2"
+                        onClick={() => {
+                          setOpenSheet(false);
+                          setOpenMobileServices(false);
+                        }}
+                      >
                         <IconArrowBadgeRight />
                         Managed Services
                       </Link>
-                      <Link href="/services/value-added-services" className="flex items-center gap-2">
+
+                      <Link
+                        href="/services/value-added-services"
+                        className="flex items-center gap-2"
+                        onClick={() => {
+                          setOpenSheet(false);
+                          setOpenMobileServices(false);
+                        }}
+                      >
                         <IconArrowBadgeRight />
                         Value Added Services
                       </Link>
@@ -131,13 +169,17 @@ const Header = () => {
                   )}
                 </div>
 
-                <Link href="/casestudy" className="border-b border-white/10 pb-4 font-poppins">
+                <Link
+                  href="/casestudy"
+                  className="border-b border-white/10 pb-4 font-poppins"
+                  onClick={() => setOpenSheet(false)}
+                >
                   Case Studies
                 </Link>
 
-                <Link href="/contact">
-                  <Button className="mt-6 w-full rounded-full bg-white py-6 text-base font-poppins text-black">
-                    Let’s Talk
+                <Link href="/contact" onClick={() => setOpenSheet(false)}>
+                  <Button className="mt-6 w-full rounded-full bg-white hover:bg-white py-6 text-base font-poppins text-black">
+                    Let&apos;s Talk
                   </Button>
                 </Link>
               </nav>

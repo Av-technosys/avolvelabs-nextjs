@@ -5,12 +5,12 @@ const AboutMission = () => {
   const data = [
     {
       title: "Our Mission",
-      description: "Our mission is \"empowering enterprises through transformative technology and exceptional people to achieve sustainable success.\" At Avolvelabs, we strive to make a meaningful difference in our clients' operations and growth. By aligning cutting-edge technologies with deep domain expertise,",
+      description: "Deploy highly skilled CRM experts to implement, customize, and optimize Salesforce & Zoho solutions.Deliver tailored solutions that align with each client’s unique business objectives.Ensure measurable business impact, helping clients scale efficiently and strategically.Continuously innovate and improve, staying ahead of industry trends.",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Our Vision",
-      description: "Our vision is to be the trusted global partner for AI-powered digital transformation, recognized for innovative solutions and customer success. We envision a future where effortless, connected technologies drive growth and create value for businesses worldwide.",
+      description: "Empower businesses with intelligent Salesforce & Zoho solutions that drive measurable growth.Be the most trusted partner for organizations seeking seamless CRM integration and optimization.Lead through innovation, setting benchmarks in CRM services and business transformation.Foster long-term partnerships by delivering consistent value and results.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
     }
   ];
@@ -23,7 +23,7 @@ const AboutMission = () => {
           <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-4">
             Our Mission & Vision
           </h2>
-          <p className="font-poppins text-md md:text-[18px] text-gray-600">
+          <p className="font-poppins text-md md:text-[18px] text-gray-700">
             We take pride in our work, and the industry has taken notice.
           </p>
         </div>

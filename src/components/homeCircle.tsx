@@ -9,7 +9,7 @@ const HomeCircle = () => {
           width={800}
           height={600}
           unoptimized
-          src="/demoimagecircle.webp"
+          src="/images/circle.png"
           alt="Salesforce Circle"
           className="drop-shadow-xl max-sm:h-[300]"
         />

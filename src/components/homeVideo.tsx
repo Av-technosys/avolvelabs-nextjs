@@ -4,7 +4,6 @@ import HeroSection from "./heroSection"
 const HomeVideo = () => {
   return (
     <>
-      {/* SECTION 1: Standard Layout */}
       <HeroSection
         title={<>Grow fast with our <span className="text-[#0176d3]">free CRM.</span></>}
         description={<>See value from day one with <span className="text-[#0176d3] underline">our free, all-in-one CRM...</span> Stop juggling spreadsheets...</>}

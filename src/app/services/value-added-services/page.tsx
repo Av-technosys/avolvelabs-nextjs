@@ -1,5 +1,6 @@
 import CrmTech from '@/components/crmTech'
 import FAQ from '@/components/faq'
+import HomeLatest from '@/components/homeLatest'
 import ValueAgentSuite from '@/components/valueAgentSuite'
 import ValueApproach from '@/components/valueApproach'
 import ValueBook from '@/components/valueBook'
@@ -21,7 +22,7 @@ const page = () => {
        <ValueApproach/>
          <CrmTech 
        bgClass="bg-[#EDFFF0]"
-         titleColor=""
+         titleColor="text-[#032d60]"
          borderColor="border-black/40"
          title={`Powered by the\nManage Tech Stack`}
           description="Our managed services leverage a robust Manage Services and AI technology stack to deliver scalable, secure, and future-ready solutions."
@@ -31,6 +32,7 @@ const page = () => {
        <ValueWhyPartner/>
        <ValueNew/>
        <ValueBusinessValueDemo/>
+       <HomeLatest/>
       <FAQ
         textColor="#0f172a"
            hoverColor="#3291B6"

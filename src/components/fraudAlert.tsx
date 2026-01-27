@@ -18,7 +18,7 @@ const FraudAlert = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-      <div className="relative max-w-5xl overflow-hidden rounded-2xl bg-white shadow-2xl animate-in fade-in zoom-in duration-300">
+      <div className="relative max-w-4xl overflow-hidden rounded-2xl bg-white shadow-2xl animate-in fade-in zoom-in duration-300">
         <button
           onClick={() => setIsVisible(false)}
           className="absolute right-4 top-4 rounded-full p-1 text-gray-400 hover:bg-gray-100 hover:text-black transition-colors"
@@ -35,21 +35,21 @@ const FraudAlert = () => {
             Important Notice for All Users
           </h3>
 
-          <div className="mt-6 space-y-4 text-gray-600 leading-relaxed font-poppins">
+          <div className="mt-6 space-y-3 text-sm text-gray-600 leading-relaxed font-poppins">
             <p>
-              Investments will only be made through our official portals and verified channels through official email ID.
+             If you receive any calls from suspicious numbers regarding any job openings, investment opportunities, or business inquiries/clients, please report them immediately.
             </p>
-
             <p>
-              If you come across any false or suspicious contact, kindly report it to the official authorities:
+           All official communication related to employee hiring, business engagements, or investments will only be made through our official portals and verified channels
+through official email ID.
             </p>
 
             <div className="space-y-1 font-semibold text-blue-600">
-              <a href="mailto:legal@avtech.com" className="block hover:underline">
+              {/* <a href="mailto:legal@avtech.com" className="block hover:underline">
                 legal@avtech.com
-              </a>
+              </a> */}
               <a href="mailto:baba@avtechnosys.com" className="block hover:underline">
-                baba@avtechnosys.com
+                Contact@avtechnosys.com
               </a>
             </div>
 

@@ -12,18 +12,14 @@ const AboutHero = () => {
         }}
       >
         <section className="text-center md:px-8 px-6 pt-16 pb-20 md:pt-10 md:pb-64">
-          <h1 className="font-playfair text-3xl md:text-6xl font-bold text-[#032d60] leading-tight">
-            We’re Salesforce,
+          <h1 className="font-playfair text-2xl md:text-5xl font-bold text-[#032d60] leading-tight">
+           We Design the Foundation for Predictable
             <br />
-            <span className="text-sky-600"> #1 AI CRM.</span>
+            <span className="text-sky-600"> Scalable Revenue.</span>
           </h1>
           <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-3xl mx-auto mt-6 md:mt-10 px-2 md:px-4 leading-relaxed">
-            Since we opened our doors in 1999, we&apos;ve had a singular focus —
-            helping our customers improve their customer relationships.
-            We&apos;ve been leaders in AI for over 10 years, fuelling
-            productivity for our customers so they can deliver exceptional
-            experiences to their own. It&apos;s no surprise, then, that over
-            150,000 companies worldwide now trust Salesforce to drive growth.
+          Most CRM projects fail quietly due to low adoption and misalignment. We exist to change that. AvolveLabs is an outcome led, AI first consultancy building platforms people actually want to use.
+
           </p>
         </section>
       </div>
@@ -41,14 +37,13 @@ const AboutHero = () => {
           </div>
           <div className="text-center md:px-8 px-8 py-10 md:py-5">
             <h2 className="font-playfair text-3xl md:text-5xl font-bold text-[#032d60] leading-tight">
-              We&apos;re innovating our way into{" "}
+          Smarter Systems Designed for <br/> Growth and Adoption
               <br className="hidden md:block" />
               <span className="text-[#032d60]">customers&apos; hearts.</span>
             </h2>
-            <p className="font-poppins text-sm md:text-lg text-gray-600 max-w-2xl mx-auto mt-5 md:mt-8 leading-relaxed">
-              Our commitment to innovation helps us build stronger connections
-              and deliver intelligence that transforms how businesses engage
-              with people.
+            <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-2xl mx-auto mt-5 md:mt-8 leading-relaxed">
+          AvolveLabs solves the real challenges behind failed CRM projects: poor alignment, low adoption, and unrealized value. We build strategy led, revenue focused systems that match how your business actually operates, helping teams scale with clarity, efficiency, and impact.
+
             </p>
           </div>
         </div>

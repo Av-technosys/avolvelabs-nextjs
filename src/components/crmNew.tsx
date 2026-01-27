@@ -36,22 +36,22 @@ const CrmNew = () => {
             viewport={{ once: true }}
             className="lg:col-span-5 space-y-8"
           >
-            <h2 className="text-3xl md:text-[40px] font-playfair font-bold text-[#032d60] leading-tight">
+            <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
               Architecture CRM
               <br /> Thinks in Systems
             </h2>
 
-            <p className="text-lg text-md md:text-[18px] text-gray-700 font-poppins">
+            <p className="font-poppins text-md md:text-[18px] text-gray-700">
               This isn&apos;t a stack of features. It&apos;s a deliberately engineered
               system where data, automation, and teams move in sync.
             </p>
 
             <Card className="border-[#0176d3] bg-white shadow-lg md:block hidden">
               <CardContent className="p-6">
-                <p className="text-sm uppercase tracking-wider text-[#0176d3] font-semibold">
+                <p className="text-sm font-poppins uppercase tracking-wider text-[#0176d3] font-semibold">
                   Core Principle
                 </p>
-                <p className="mt-3 text-xl font-semibold text-[#032d60]">
+                <p className="mt-3 text-xl font-poppins text-[#032d60]">
                   Design for scale before you need it.
                 </p>
               </CardContent>
@@ -85,10 +85,10 @@ const CrmNew = () => {
               >
                 <Card className="h-full bg-white/80 backdrop-blur border border-gray-200 hover:border-[#0176d3] transition">
                   <CardContent className="md:p-6 p-4 ">
-                    <h3 className="text-xl font-bold text-[#032d60]">
+                    <h3 className="text-xl font-playfair font-bold text-[#032d60]">
                       {c.title}
                     </h3>
-                    <p className="mt-3 text-gray-600 leading-relaxed">
+                    <p className="mt-3 font-poppins text-gray-600 ">
                       {c.desc}
                     </p>
                   </CardContent>

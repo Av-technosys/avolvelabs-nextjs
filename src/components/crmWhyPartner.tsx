@@ -30,14 +30,14 @@ const CrmWhyPartner = () => {
       <div className="mx-auto max-w-7xl">
 
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white">
+          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-white">
             Why Partner with Avolvelabs for{" "}
             <span className="bg-linear-to-r from-[#4aa3ff] to-[#a855f7] bg-clip-text text-transparent">
               Agentic AI
             </span>
           </h2>
 
-          <p className="mt-4 text-blue-100 max-w-3xl mx-auto">
+          <p className="mt-4 text-blue-100 max-w-3xl mx-auto font-poppins text-md md:text-[18px]">
             From strategy to deployment – your end-to-end partner for scalable,
             production-ready agentic AI solutions
           </p>
@@ -51,8 +51,9 @@ const CrmWhyPartner = () => {
                 bg-transparent
                 border border-white/20
                 rounded-2xl
-                transition-colors duration-300
+              
                 hover:border-[#4aa3ff]
+                transition-transform duration-300 ease-in-out hover:-translate-y-2 cursor-default
               "
             >
               <CardContent className="p-6">
