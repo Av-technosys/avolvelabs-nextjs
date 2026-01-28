@@ -19,6 +19,7 @@ import {
   IconMenu2,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import { ChevronRight, ChevronRightCircle } from "lucide-react";
 
 const Header = () => {
   const [openMobileServices, setOpenMobileServices] = useState(false);
@@ -95,10 +96,17 @@ const Header = () => {
 
             <SheetContent
               side="left"
-              className="w-[85%] bg-neutral-900 px-0 text-white"
+              className="w-[85%]  bg-white  px-0 text-[#003E9C]"
             >
-              <SheetHeader className="px-6 pb-8 pt-6">
-                <span className="text-xl font-bold">avolvelabs</span>
+              <SheetHeader className="px-6 pb-8 pt-6 flex items-start">
+                <Image
+                  src="/avolvelabslogo.png"
+                  alt="Avolve Labs Logo"
+                  width={50}
+                  height={10}
+                  className="h-7 w-auto object-contain"
+                  priority
+                />
               </SheetHeader>
 
               <nav className="flex flex-col gap-6 px-6 text-sm uppercase tracking-wide font-poppins">
@@ -132,7 +140,7 @@ const Header = () => {
                   </button>
 
                   {openMobileServices && (
-                    <div className="mt-4 flex flex-col gap-4 pl-4 text-white/80 font-poppins">
+                    <div className="mt-4 flex flex-col gap-4 pl-4 text-[#003E9C] font-poppins">
                       <Link
                         href="/services/crm-strategy-implementation"
                         className="flex items-center gap-2"
@@ -141,7 +149,7 @@ const Header = () => {
                           setOpenMobileServices(false);
                         }}
                       >
-                        <IconArrowBadgeRight />
+                        <ChevronRight />
                         CRM Strategy & Implementation
                       </Link>
 
@@ -153,7 +161,7 @@ const Header = () => {
                           setOpenMobileServices(false);
                         }}
                       >
-                        <IconArrowBadgeRight />
+                       <ChevronRight />
                         Managed Services
                       </Link>
 
@@ -165,7 +173,7 @@ const Header = () => {
                           setOpenMobileServices(false);
                         }}
                       >
-                        <IconArrowBadgeRight />
+                       <ChevronRight />
                         Value Added Services
                       </Link>
                     </div>
@@ -181,7 +189,7 @@ const Header = () => {
                 </Link>
 
                 <Link href="/contact" onClick={() => setOpenSheet(false)}>
-                  <Button className="mt-6 w-full rounded-full bg-white hover:bg-white py-6 text-base font-poppins text-black">
+                  <Button className="mt-6 w-full rounded-full bg-[#003E9c]  hover:bg-white py-6 font-poppins text-white">
                     Let&apos;s Talk
                   </Button>
                 </Link>

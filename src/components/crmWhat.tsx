@@ -10,14 +10,11 @@ const CrmWhat = () => {
       >
         <section className="text-center px-8 pb-10">
           <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight max-w-4xl mx-auto">
-            What is Crm Implementations Service?
+        Turn Your CRM Into a Revenue Engine, Not Just a Database.
           </h2>
           <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-4xl mx-auto mt-8 leading-relaxed">
-            Crm Service is the complete platform that empowers your service teams to
-            deliver seamless support across every channel — from the contact centre, to the field, to
-            HR, and now IT Service. With humans and AI agents working together on one unified,
-            metadata-based platform, you can transform every customer interaction into a
-            personalised experience while driving efficiency.
+          We move beyond standard implementations to design specific revenue architectures, human centric workflows, and autonomous AI agents.
+From Chaos to Clarity: Most CRM projects fail because they start with technology, not business goals. We start with Revenue Architecture. Whether you are using Salesforce, Zoho or HubSpot. we ensure your CRM maps directly to how your teams sell, serve, and scale.
           </p>
         <div className="flex flex-row items-center justify-center gap-1 md:gap-3 mt-10 px-2">
             <Button 

@@ -1,32 +1,48 @@
-import React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChevronRight } from "lucide-react";
 
 const steps = [
   {
     step: "1",
-    title: "Human-Augmented AI\nUse Case Discovery",
-    desc:
-      "We collaborate with business and IT stakeholders to identify high-impact opportunities where human intelligence and autonomous agents can co-exist. We focus on use cases that are feasible today, while laying the foundation for full autonomy tomorrow.",
+    title: "Alignment & Business Logic",
+    points: [
+      "End to end revenue architecture aligning sales, marketing, and service.",
+      "Funnel, lifecycle, and data model design capturing the right data at the right time.",
+      "GTM process alignment embedded directly inside your CRM.",
+      "Actionable metrics and dashboards that drive real decisions.",
+    ],
   },
   {
     step: "2",
-    title: "AI Readiness\nAssessment",
-    desc:
-      "We assess your organization’s readiness across data maturity, system interoperability, integration landscape, and security posture. This ensures that the AI agents we design can operate effectively within your environment.",
+    title: "User Experience & Adoption",
+    points: [
+      "Intuitive CRM platform design tailored to your business.",
+      "Role based UX and workflows optimized for each function.",
+      "Data, automation, and integration architecture to remove silos.",
+      "Clean, scalable implementations that are easy to maintain.",
+    ],
   },
   {
     step: "3",
-    title: "AI Design & Tooling\nStrategy",
-    desc:
-      "We define the appropriate architecture, toolkits, and platforms (e.g., Boomi AgentStudio, Google ADK, LLMs, RAG pipelines) to build scalable, secure, and purpose-fit agents tailored to your needs.",
+    title: "Future-Proofing & Efficiency",
+    points: [
+      "Agentic AI strategies aligned to revenue operations.",
+      "Autonomous agents managing CRM workflows across teams.",
+      "AI orchestration across systems and data sources.",
+      "Governance and trust frameworks for safe AI adoption.",
+    ],
   },
   {
     step: "4",
     title: "Roadmap\nCreation",
-    desc:
-      "We develop a phased execution plan, starting with quick-win pilots and expanding to multi-agent ecosystems. The roadmap includes timelines, ownership, guardrails, and metrics to ensure scalable adoption and continuous improvement.",
+    points: [
+      "Design phased rollout with quick-win pilots",
+      "Expand towards multi-agent ecosystems",
+      "Define timelines, ownership, and success metrics",
+    ],
   },
-]
+];
 
 const CrmApproach = () => {
   return (
@@ -34,11 +50,12 @@ const CrmApproach = () => {
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-6">
           <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-white">
-            Our Approach to Agentic AI Adoption
+            Core Capabilities
           </h2>
           <p className="mt-4 font-poppins text-md md:text-[18px] text-gray-400 max-w-3xl mx-auto">
             We guide you through every stage, from discovery and assessment to
-            design and roadmap creation, to ensure successful Agentic AI adoption.
+            design and roadmap creation, to ensure successful Agentic AI
+            adoption.
           </p>
         </div>
         <div className="relative mb-10 hidden md:block px-20">
@@ -67,7 +84,6 @@ const CrmApproach = () => {
                 hover:scale-[1.02]
               "
             >
-
               <div
                 className="
                   absolute inset-0 opacity-0 group-hover:opacity-100
@@ -89,16 +105,23 @@ const CrmApproach = () => {
                 <h3 className="text-xl font-playfair font-semibold text-[#4aa3ff] whitespace-pre-line">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-md font-poppins text-gray-300 leading-relaxed">
-                  {item.desc}
-                </p>
+                <ul className="mt-4 space-y-3">
+                  {item.points.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <ChevronRight className="text-white" />
+                      <span className="text-md font-poppins text-gray-300 leading-relaxed">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default CrmApproach;

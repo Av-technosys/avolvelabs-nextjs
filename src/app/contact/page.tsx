@@ -130,7 +130,7 @@ const Page = () => {
           className="object-cover brightness-75"
         />
         <div className="absolute inset-0   transition-colors duration-500 flex items-center justify-center p-4">
-          <h2 className="text-white text-xl md:text-3xl  font-extrabold uppercase tracking-tighter text-center italic">
+          <h2 className="text-white text-xl md:text-3xl  font-extrabold uppercase tracking-tighter text-center font-poppins">
            Frisco, Texas, U.S.A
           </h2>
         </div>
