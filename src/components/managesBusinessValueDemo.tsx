@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 const  ManagesBusinessValueDemo = () => {
   return (
-    <section className="bg-[#3291B6] py-10 px-8 mx-auto max-w-7xl">
+    <section className="bg-[#3291B6] py-10 px-8 w-full">
       <div className="mx-auto max-w-4xl text-center">
 
         <h2 className="text-[32px] md:text-[32px] lg:text-[32px] font-playfair font-bold text-white/80">

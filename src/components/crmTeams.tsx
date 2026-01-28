@@ -7,27 +7,31 @@ import Image from 'next/image'
 const partners = [
   {
     name: "Secret Escapes",
-    logo: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/company-logo-design-template-e089327a5c476ce5c70c74f7359c5898_screen.jpg?ts=1672291305",
+    logo:  "/logoimages/analytics.svg",
   },
   {
     name: "OpenTable",
-    logo: "https://www.shutterstock.com/image-illustration/infinity-logo-design-two-interconnected-600nw-2576179009.jpg",
+    logo:    "/logoimages/backstage.svg",
   },
   {
     name: "Wiley",
-    logo: "https://img.freepik.com/free-vector/business-logo-template-minimal-branding-design-vector_53876-136229.jpg?semt=ais_hybrid&w=740&q=80",
+    logo:  "/logoimages/billing.svg",
   },
   {
     name: "Fisher & Paykel",
-    logo: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/company-logo-design-template-e089327a5c476ce5c70c74f7359c5898_screen.jpg?ts=1672291305",
+    logo:  "/logoimages/bookings.svg",
   },
   {
     name: "Simplyhealth",
-    logo: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/company-logo-design-template-e089327a5c476ce5c70c74f7359c5898_screen.jpg?ts=1672291305",
+    logo:   "/logoimages/contracts.svg",
   },
   {
     name: "The Auto Club Group (AAA)",
-    logo: "https://www.shutterstock.com/image-illustration/infinity-logo-design-two-interconnected-600nw-2576179009.jpg",
+    logo:  "/logoimages/creator.svg",
+  },
+  {
+    name: "The Auto Club Group (AAA)",
+    logo:   "/logoimages/marketingplus.svg",
   },
 ]
 
@@ -36,7 +40,7 @@ const CrmTeams = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="relative max-w-7xl mx-auto overflow-hidden bg-linear-to-b from-white to-[#fdf2f4]">
+    <section className="relative w-full overflow-hidden bg-linear-to-b from-white to-[#fdf2f4]">
       <div className="container px-4 text-center mb-16">
         <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold max-w-3xl mx-auto leading-[1.2]">
           Service teams in every industry scale with CRM Service.

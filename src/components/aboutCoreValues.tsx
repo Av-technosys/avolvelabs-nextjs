@@ -47,8 +47,8 @@ const AboutCoreValues = () => {
           <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-4">
             Our Methodology
           </h2>
-          <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-3xl mx-auto">
-           We do not just implement software. We follow a structured, outcome driven methodology designed to maximize adoption, accelerate ROI, and deliver long-term business value. Every engagement is built around real business goals, not generic feature deployments.
+          <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-4xl mx-auto">
+           We do not just implement software. We follow a structured, outcome driven methodology designed to maximize adoption, accelerate ROI, and deliver long term business value. Every engagement is built around real business goals, not generic feature deployments.
 
           </p>
         </div>

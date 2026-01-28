@@ -7,62 +7,65 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "./ui/button";
-import {
-  IconArrowNarrowLeft,
-  IconArrowNarrowRight,
-  IconPlayerPauseFilled,
-  IconPlayerPlayFilled,
-} from "@tabler/icons-react";
+import { Card, CardContent } from "@/components/ui/card";;
 import Image from "next/image";
 
 const carouselData = [
   {
     id: 1,
-    name: "Tracy Matis",
+    name: "Connecting Healthcare with a 360° Patient Perspective",
     role: "VP, Strategy & Transformation, PepsiCo",
     companyLogo:
       "https://upload.wikimedia.org/wikipedia/commons/a/a6/PepsiCo_logo.svg",
     image:
-      "https://media.istockphoto.com/id/1310814041/photo/portrait-of-a-businesswoman-standing-in-a-a-modern-office.jpg?s=612x612&w=0&k=20&c=rLDYEGaGfbFq6mJPLc2FHjc6KBKyJETu38y4a3x11cM=",
+      "/images/healthcare.jpeg",
   },
   {
     id: 2,
-    name: "Stephanie Paetow",
+    name: "Modernizing Music Rights Management at Enterprise Scale",
     role: "Business Owner of Salesforce ONE.CRM",
     companyLogo:
       "https://upload.wikimedia.org/wikipedia/commons/6/6d/Volkswagen_logo_2019.svg",
     image:
-      "https://media.istockphoto.com/id/1310814041/photo/portrait-of-a-businesswoman-standing-in-a-a-modern-office.jpg?s=612x612&w=0&k=20&c=rLDYEGaGfbFq6mJPLc2FHjc6KBKyJETu38y4a3x11cM=",
+     "/images/music.jpg",
   },
   {
     id: 3,
-    name: "Stephanie Paetow",
+    name: "Enabling the Shift Toward Subscription-Based Revenue",
     role: "Business Owner of Salesforce ONE.CRM",
     companyLogo:
       "https://upload.wikimedia.org/wikipedia/commons/6/6d/Volkswagen_logo_2019.svg",
     image:
-      "https://media.istockphoto.com/id/1310814041/photo/portrait-of-a-businesswoman-standing-in-a-a-modern-office.jpg?s=612x612&w=0&k=20&c=rLDYEGaGfbFq6mJPLc2FHjc6KBKyJETu38y4a3x11cM=",
+      "/images/pivot.jpg",
   },
   {
     id: 4,
-    name: "Stephanie Paetow",
+    name: "Transforming Broadband with Seamless Digital Onboarding",
     role: "Business Owner of Salesforce ONE.CRM",
     companyLogo:
       "https://upload.wikimedia.org/wikipedia/commons/6/6d/Volkswagen_logo_2019.svg",
     image:
-      "https://media.istockphoto.com/id/1310814041/photo/portrait-of-a-businesswoman-standing-in-a-a-modern-office.jpg?s=612x612&w=0&k=20&c=rLDYEGaGfbFq6mJPLc2FHjc6KBKyJETu38y4a3x11cM=",
+      "/images/dashboard.jpg",
   },
   {
     id: 5,
-    name: "Stephanie Paetow",
+    name: "From Scattered Systems to a Centralized Growth Engine",
     role: "Business Owner of Salesforce ONE.CRM",
     companyLogo:
       "https://upload.wikimedia.org/wikipedia/commons/6/6d/Volkswagen_logo_2019.svg",
     image:
-      "https://media.istockphoto.com/id/1310814041/photo/portrait-of-a-businesswoman-standing-in-a-a-modern-office.jpg?s=612x612&w=0&k=20&c=rLDYEGaGfbFq6mJPLc2FHjc6KBKyJETu38y4a3x11cM=",
+      "/images/case4.jpeg",
   },
+  {
+    id: 6,
+    name: "Transforming Operations for a Sustainable Competitive Edge",
+    role: "Business Owner of Salesforce ONE.CRM",
+    companyLogo:
+      "https://upload.wikimedia.org/wikipedia/commons/6/6d/Volkswagen_logo_2019.svg",
+    image:
+      "/images/case6.jpeg",
+  },
+  
 ];
 
 export default function HomeCarousel() {
@@ -77,29 +80,29 @@ export default function HomeCarousel() {
     }),
   );
 
-  const toggleAutoScroll = React.useCallback(() => {
-    const autoScroll = plugin.current;
-    if (!autoScroll) return;
+  // const toggleAutoScroll = React.useCallback(() => {
+  //   const autoScroll = plugin.current;
+  //   if (!autoScroll) return;
 
-    if (isPlaying) {
-      autoScroll.stop();
-    } else {
-      autoScroll.play();
-    }
+  //   if (isPlaying) {
+  //     autoScroll.stop();
+  //   } else {
+  //     autoScroll.play();
+  //   }
 
-    setIsPlaying((prev) => !prev);
-  }, [isPlaying]);
+  //   setIsPlaying((prev) => !prev);
+  // }, [isPlaying]);
 
-  const handleNext = () => {
-    if (api) api.scrollNext();
-  };
+  // const handleNext = () => {
+  //   if (api) api.scrollNext();
+  // };
 
-  const handlePrev = () => {
-    if (api) api.scrollPrev();
-  };
+  // const handlePrev = () => {
+  //   if (api) api.scrollPrev();
+  // };
 
   return (
-    <div className="max-w-7xl mx-auto bg-[linear-gradient(to_right,#061C5B,#0B2FA0)] overflow-hidden">
+    <div className="w-full   bg-[linear-gradient(to_right,#061C5B,#0B2FA0)] overflow-hidden">
       <Carousel
         setApi={setApi}
         plugins={[plugin.current]}
@@ -126,21 +129,21 @@ export default function HomeCarousel() {
                     />
                   </div>
                   <div className="pt-1  flex items-start gap-4">
-                    <Image
+                    {/* <Image
                       width={800}
                       height={600}
                       unoptimized
                       src={item.companyLogo}
                       alt="Logo"
                       className="w-10 h-10 "
-                    />
+                    /> */}
                     <div>
-                      <h3 className="font-bold text-[#032d60] font-playfair text-lg">
+                      <h3 className="font-bold text-[#032d60] font-poppins ml-3 text-lg">
                         {item.name}
                       </h3>
-                      <p className="text-sm text-gray-600 leading-tight font-poppins">
+                      {/* <p className="text-sm text-gray-600 leading-tight font-poppins">
                         {item.role}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </CardContent>
@@ -149,7 +152,7 @@ export default function HomeCarousel() {
           ))}
         </CarouselContent>
 
-        <div className="flex items-center justify-end gap-3 mt-10 pr-4">
+        {/* <div className="flex items-center justify-end gap-3 mt-10 pr-4">
           <Button
             onClick={handlePrev}
             className="flex h-12 w-12 items-center justify-center rounded-full border-2 bg-transparent  border-white hover:text-black text-white hover:bg-white/30"
@@ -174,7 +177,7 @@ export default function HomeCarousel() {
           >
             <IconArrowNarrowRight className="h-6 w-6" />
           </Button>
-        </div>
+        </div> */}
         {/* Imp Logic */}
         <div className="">
           <svg viewBox="110 0 1140 120" preserveAspectRatio="none" className="">

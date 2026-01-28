@@ -4,10 +4,12 @@ import { IconBrandLinkedin, IconBrandInstagram } from "@tabler/icons-react";
 const Footer = () => {
   return (
     <>
-      <footer className="max-w-7xl mx-auto bg-black text-white">
+      <footer className="w-full bg-[linear-gradient(to_bottom,#0B2FA0,#061C5B)] 
+text-white">
         <div className="relative w-full">
-          <div className="bg-black h-[80] md:h-[100] text-white text-center relative z-0" />
-          <div className="absolute top-0 left-0 w-full h-[80] bg-white rounded-b-full z-10" />
+          <div className="bg-[linear-gradient(to_bottom,#0B2FA0,)]
+ h-[80] md:h-[100] text-white text-center relative z-0" />
+          <div className="absolute top-0 left-0 w-full h-[80] bg-white rounded-b-full shadow-md shadow-white z-10" />
         </div>
         <div className="flex min-h-[30vh] md:h-[40vh] items-center justify-center px-4">
           <h1 className="text-[18vw] md:text-[7vw] font-extrabold tracking-tight leading-none font-sans">
@@ -15,11 +17,11 @@ const Footer = () => {
           </h1>
         </div>
 
-        <div className="mx-auto max-w-6xl border-t border-white/50" />
+        <div className="mx-auto max-w-11/12 border-t border-white/50" />
 
         <div className=" px-10 py-10">
-          <div className=" max-w-6xl mx-auto flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="flex justify-center md:justify-start gap-6">
+          <div className=" w-full flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div className="flex justify-center md:justify-start gap-2">
               <Link href="#" aria-label="LinkedIn">
                 <IconBrandLinkedin className="h-8 w-8 hover:opacity-70 transition" />
               </Link>

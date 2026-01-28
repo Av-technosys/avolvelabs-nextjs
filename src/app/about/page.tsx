@@ -6,6 +6,7 @@ import AboutHero from "@/components/aboutHero";
 import AboutMission from "@/components/aboutMission";
 import AboutWhoWeAre from "@/components/aboutWhoWeAre";
 import BrandCarousel from "@/components/brandCarousel";
+import HomeLatest from "@/components/homeLatest";
 import Testimonial from "@/components/testimonial";
 import React from "react";
 
@@ -18,9 +19,10 @@ const page = () => {
       <AboutMission />
       <AboutCoreValues />
       <AboutCommitment />
-      <BrandCarousel />
       <AboutBranding />
       <Testimonial />
+      <BrandCarousel />
+      <HomeLatest/>
     </div>
   );
 };

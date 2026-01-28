@@ -10,15 +10,10 @@ const HomeValues = () => {
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className=" lg:w-1/2 flex flex-col items-start">
           <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-[1.1] mb-8 tracking-tight">
-            We believe that business is the greatest platform for change.
+         CRM Strategy & Optimization Services
           </h2>
           <p className="font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed mb-10 opacity-90">
-            Grounded in trust, customer success, innovation, equality, and
-            sustainability, we&apos;re committed to doing well in business and
-            doing good in the world — investing 1% of our equity, technology,
-            and time to create lasting change. We&apos;re also a founder and
-            champion of Pledge 1%, a global movement to ensure giving back is
-            part of companies of all sizes.
+           From technical health checks to user adoption and ROI measurement, we help organizations unlock the full value of their CRM investments.
           </p>
           <div className="flex flex-row gap-1 ">
             <Button className="bg-[#0176d3] font-poppins hover:bg-[#014486] text-white font-bold h-auto px-4 md:px-8 py-3 rounded-xl shadow-sm transition-all active:scale-95 whitespace-nowrap text-sm md:text-base">
