@@ -6,7 +6,7 @@ const cards = [
     title: "Unifying Healthcare with a 360° Patient View",
     description:
       "To bridge the gap between disconnected touchpoints and scattered medical records, a leading U.S.non profit healthcare system partnered with us to centralize their data landscape. By implementing Salesforce Data Cloud and the Einstein 1 Platform, we consolidated information from electronic records, call centers, and in person visits into a single, real time 360° patient profile. This transformation broke down information silos, establishing a centralized hub that empowers physicians with holistic insights to deliver proactive, personalized care while securing a scalable foundation for future innovation.",
-    image: "/images/Healthcare-CRM-1.jpg",
+    image: "/images/healthcare.jpeg",
   },
   {
     title: "Modernizing Music Rights Management at Scale",
@@ -27,13 +27,27 @@ const cards = [
 
     image: "/images/dashboard.jpg",
   },
+  {
+    title: "From Scattered Systems to a Centralized Growth Engine ",
+    description:
+      "Goyal Salt partnered with us to streamline their operations by implementing a centralized system on Zoho. We integrated WhatsApp automation to enable faster customer communication and automated lead responses, reducing manual effort and improving conversion speed. All leads from multiple platforms were centralized into Zoho CRM, giving the sales team a single source of truth and better visibility into customer interactions. We also built a production management workflow to track orders, inventory, and fulfillment in real time. This transformation improved team efficiency, reduced response time, enhanced lead tracking, and created a more organized, scalable system to support Goyal Salt’s growing business.",
+
+    image: "/images/case4.jpeg",
+  },
+  {
+    title: "Transforming Operations into a Competitive Edge ",
+    description:
+      "Morzze, an ambitious manufacturing brand, faced growing complexity as sales, marketing, inventory, finance, and field operations operated in silos. Morzze reimagined its growth engine through a unified Zoho powered business ecosystem. Disconnected workflows were transformed into a seamless, automated revenue pipeline where every lead, follow up, order, and stock movement became fully traceable. Marketing and WhatsApp automation accelerated customer engagement, while real time dashboards empowered leadership with instant, data backed decisions. The transformation significantly reduced manual effort, improved conversion rates, strengthened dealer relationships, and delivered up to a ninefold return on investment within the first year, positioning Morzze for scalable, predictable, and future ready growth.",
+
+    image: "/images/case6.jpeg",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
       <div
-        className="relative max-w-7xl mx-auto bg-no-repeat bg-bottom overflow-hidden  "
+        className="relative w-full bg-no-repeat bg-bottom overflow-hidden  "
         style={{
           backgroundImage: "url('/aboutImg.png')",
           backgroundSize: "clamp(100%, 30vw + 100%, 250%) auto",
@@ -47,15 +61,15 @@ export default function AboutPage() {
           </h1>
         </section>
       </div>
-      <section className="py-2 bg-gray-50">
+      <section className="py-2 ">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 ">
             {cards.map((card, index) => (
               <div
                 key={index}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden transition hover:shadow-2xl"
               >
-                <div className="relative h-[240] bg-pink-50">
+                <div className="relative h-[340] bg-pink-50">
                   <Image
                     src={card.image}
                     alt={card.title}
@@ -67,7 +81,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-gray-900 leading-snug">
                     {card.title}
                   </h3>
-                  <p className="mt-4 text-gray-600 text-sm leading-relaxed">
+                  <p className="mt-4 text-gray-600 text-[18px] leading-relaxed">
                     {card.description}
                   </p>
                 </div>

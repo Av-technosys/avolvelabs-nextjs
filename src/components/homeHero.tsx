@@ -3,11 +3,8 @@ import { Button } from "@/components/ui/button";
 
 const HomeHero = () => {
   return (
-    <section className="mx-auto max-w-7xl relative bg-[linear-gradient(to_right,#061C5B,#0B2FA0)] text-white">
+    <section className="w-full relative bg-[linear-gradient(to_right,#061C5B,#0B2FA0)] text-white">
       <div className=" px-6 py-20">  
-        <p className="mb-6 text-center text-sm font-medium tracking-wide text-white/80">
-          Salesforce. The #1 AI CRM.
-        </p>
         <h1 className="mx-auto max-w-5xl text-center font-playfair text-4xl font-bold leading-[1.15] md:text-6xl">
         Turn CRM Into a{" "}
           <span className="text-sky-400"> Revenue Generating Machine. </span>

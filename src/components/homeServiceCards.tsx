@@ -7,46 +7,46 @@ import {
 } from "@tabler/icons-react";
 const services = [
   {
+    title: "Manufacturing",
+    description:
+      "Optimize production, supply chains, forecasting, and partner coordination with intelligent automation systems.",
+    linkText: "Explore Financial Services",
+    icon: <IconShieldCheck className="w-8 h-8 text-[#003E9C]" />,
+  },
+  {
+    title: "Retail",
+    description:
+      "Boost in store and online sales with smarter inventory, personalization, and customer insights.",
+    linkText: "Explore Retail",
+    icon: <IconShoppingBagHeart className="w-8 h-8 text-[#003E9C]" />,
+  },
+  {
+    title: "E-Commerce & D2C",
+    description:
+      "Increase conversions, retention, and revenue through optimized customer journeys and automation.",
+    linkText: "Explore Consumer Goods",
+    icon: <IconBox className="w-8 h-8 text-[#003E9C]" />,
+  },
+  {
     title: "Financial Services",
     description:
-      "Connect with customers proactively to deliver AI-powered, high-value experiences.",
-    linkText: "Explore Financial Services",
-    icon: <IconShieldCheck className="w-8 h-8 text-[#7f22fe]" />,
-  },
-  {
-    title: "Retail",
-    description:
-      "Acquire profitable customers faster with unified, real-time data.",
+      "Streamline onboarding, improve customer trust, and scale securely with intelligent workflows.",
     linkText: "Explore Retail",
-    icon: <IconShoppingBagHeart className="w-8 h-8 text-[#7f22fe]" />,
+    icon: <IconShoppingBagHeart className="w-8 h-8 text-[#003E9C]" />,
   },
   {
-    title: "Consumer Goods",
+    title: "Healthcare & Education",
     description:
-      "Transform your business with consumer goods technology made for your industry.",
-    linkText: "Explore Consumer Goods",
-    icon: <IconBox className="w-8 h-8 text-[#7f22fe]" />,
-  },
-  {
-    title: "Retail",
-    description:
-      "Acquire profitable customers faster with unified, real-time data.",
+      "Enhance engagement, simplify operations, and improve service experiences with digital systems.",
     linkText: "Explore Retail",
-    icon: <IconShoppingBagHeart className="w-8 h-8 text-[#7f22fe]" />,
+    icon: <IconShoppingBagHeart className="w-8 h-8 text-[#003E9C]" />,
   },
   {
-    title: "Retail",
+    title: " B2B, SaaS & Professional Services",
     description:
-      "Acquire profitable customers faster with unified, real-time data.",
+      "Build predictable pipelines, manage long sales cycles, and strengthen long term client relationships.",
     linkText: "Explore Retail",
-    icon: <IconShoppingBagHeart className="w-8 h-8 text-[#7f22fe]" />,
-  },
-  {
-    title: "Retail",
-    description:
-      "Acquire profitable customers faster with unified, real-time data.",
-    linkText: "Explore Retail",
-    icon: <IconShoppingBagHeart className="w-8 h-8 text-[#7f22fe]" />,
+    icon: <IconShoppingBagHeart className="w-8 h-8 text-[#003E9C]" />,
   },
 ];
 
@@ -55,14 +55,12 @@ const HomeServiceCards = () => {
     <div className="bg-[linear-gradient(to_bottom,#FFFFFF,#AEDEFC)]">
       <section className="text-center md:px-8 px-8 py-10">
         <h1 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
-          Launch faster with 16+ Agentforce solutions, built{" "}
-          <br className="hidden md:block" /> for your industry.
+         Solutions Designed to Scale Across Industries
+{" "}
         </h1>
 
         <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 leading-relaxed">
-          Designed with industry expertise, these out-of-the-box solutions align
-          with your workflows, data, and customer needs, so you can modernize
-          faster, go to market sooner, and deliver value from day one.
+          Every industry operates differently, but the need for efficiency, growth, and customer centric systems is universal. Avolve Labs builds adaptable, intelligent, and scalable digital solutions tailored to the operational realities of each industry.
         </p>
       </section>
 
@@ -82,12 +80,12 @@ const HomeServiceCards = () => {
                 </p>
 
                 <div className="relative mt-auto flex items-center justify-between">
-                  <a
+                  {/* <a
                     href="#"
                     className="block max-w-[70%] pr-4 font-poppins text-[14px] text-[#032d60] underline decoration-2 underline-offset-4 hover:text-[#7f22fe] "
                   >
                     {service.linkText}
-                  </a>
+                  </a> */}
 
                   <div className="absolute -bottom-15 -right-12 w-48 h-48 pointer-events-none z-10">
                     <div className="absolute bottom-0 right-0">
@@ -99,7 +97,7 @@ const HomeServiceCards = () => {
                           cx="150"
                           cy="150"
                           r="100"
-                          fill="#7f22fe"
+                          fill="#003E9C"
                           className="opacity-90"
                         />
                       </svg>
@@ -116,9 +114,9 @@ const HomeServiceCards = () => {
       </section>
 
       <div className="">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="">
+        <svg viewBox="0 0 1450 120" preserveAspectRatio="none" className="">
           <path
-            d="M0 120 L0 120 C360 0 1080 0 1440 120 L1440 120 Z"
+            d="M0 120 L0 120 C360 0 1080 0 1450 120 L1440 120 Z"
             fill="white"
           />
         </svg>

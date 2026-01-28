@@ -5,12 +5,12 @@ const AboutMission = () => {
   const data = [
     {
       title: "Our Mission",
-      description: "Deploy highly skilled CRM experts to implement, customize, and optimize Salesforce & Zoho solutions.Deliver tailored solutions that align with each client’s unique business objectives.Ensure measurable business impact, helping clients scale efficiently and strategically.Continuously innovate and improve, staying ahead of industry trends.",
+      description: "Deploy highly skilled CRM experts to implement, customize, and optimize Salesforce & Zoho solutions. Deliver tailored solutions that align with each client unique business objectives. Ensure measurable business impact, helping clients scale efficiently and strategically. Continuously innovate and improve, staying ahead of industry trends.",
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Our Vision",
-      description: "Empower businesses with intelligent Salesforce & Zoho solutions that drive measurable growth.Be the most trusted partner for organizations seeking seamless CRM integration and optimization.Lead through innovation, setting benchmarks in CRM services and business transformation.Foster long-term partnerships by delivering consistent value and results.",
+      description: "Empower businesses with intelligent Salesforce & Zoho solutions that drive measurable growth. Be the most trusted partner for organizations seeking seamless CRM integration and optimization. Lead through innovation, setting benchmarks in CRM services and business transformation. Foster long term partnerships by delivering consistent value.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
     }
   ];

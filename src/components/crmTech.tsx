@@ -21,7 +21,7 @@ const CrmTech = ({
   orbit2 = ["Llama", "LangChain", "LangGraph", "Claude"],
 }: CrmTechProps) => {
   return (
-    <section className={`${bgClass} py-10 px-8  overflow-hidden mx-auto max-w-7xl`}>
+    <section className={`${bgClass} py-10 px-8  overflow-hidden w-full`}>
       <div className=" grid lg:grid-cols-2 gap-12 items-center">
 
         {/* Left */}

@@ -5,7 +5,6 @@ import HomeCircle from "@/components/homeCircle";
 import HomeCrmSales from "@/components/homeCrmSales";
 import HomeHero from "@/components/homeHero";
 import HomeLatest from "@/components/homeLatest";
-import HomeReportCard from "@/components/HomeReportCard";
 import HomeServiceCards from "@/components/homeServiceCards";
 import HomeValues from "@/components/HomeValues";
 import HomeVideo from "@/components/homeVideo";
@@ -20,9 +19,9 @@ export default function Home() {
       <HomeVideo />
       <HomeCircle />
       <HomeServiceCards />
-      <BrandCarousel />
-      <HomeReportCard />
+      {/* <HomeReportCard /> */}
       <HomeValues />
+      <BrandCarousel />
       <HomeCrmSales />
       <HomeLatest />
       <Testimonial />

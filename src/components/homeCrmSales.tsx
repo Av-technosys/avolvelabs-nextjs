@@ -1,7 +1,19 @@
 "use client";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
-import { Icon360, IconCheck } from "@tabler/icons-react";
+import { Icon360, IconChevronRight, IconProps } from "@tabler/icons-react";
+import { ComponentType } from "react";
+
+type SectionProps = {
+  title: string;
+  desc: string;
+  points: string[];
+  image: string;
+  icon: ComponentType<IconProps>;
+  reverse?: boolean;
+  accent?: string;
+};
+
 const Section = ({
   title,
   desc,
@@ -10,7 +22,7 @@ const Section = ({
   icon: Icon,
   reverse = false,
   accent,
-}: any) => (
+}: SectionProps) => (
   <div
     className={`grid items-center gap-8 lg:gap-16 lg:grid-cols-2  ${
       reverse ? "direction-rtl" : ""
@@ -29,7 +41,7 @@ const Section = ({
       <Card className="p-4 md:p-5 border-slate-100 shadow-sm">
         {points.map((item: string, i: number) => (
           <div key={i} className="flex items-start gap-3">
-            <IconCheck
+            <IconChevronRight
               className={`h-4 w-4 md:h-5 md:w-5 mt-1 shrink-0 ${accent}`}
             />
             <span className="text-sm md:text-base font-poppins text-gray-700 leading-snug">
@@ -40,15 +52,20 @@ const Section = ({
       </Card>
     </div>
     <div className={`${reverse ? "lg:order-1" : "lg:order-2"} order-2`}>
-      <div className="relative overflow-hidden h-[200] md:h-[320] rounded-2xl shadow-sm">
-        <Image
-          src={image}
-          alt={title}
-          width={600}
-          height={420}
-          className="w-full  object-cover"
-        />
-      </div>
+      <div className="relative overflow-hidden h-50 md:h-80 rounded-2xl shadow-sm flex items-center justify-center bg-white">
+  <Image
+    src={image}
+    alt={title}
+    width={600}
+    height={420}
+    className={`${
+      reverse
+        ? "w-[65%] md:w-[55%] object-contain p-4 md:p-0"
+        : "w-full h-full object-cover"
+    }`}
+  />
+</div>
+
     </div>
   </div>
 );
@@ -59,7 +76,7 @@ const HomeCrmSales = () => {
         <Section
           title="Salesforce CRM Solutions"
           desc="We design and implement scalable Salesforce solutions that power complex revenue operations, automate sales and service workflows, and enable AI-driven decision-making across teams."
-          image="/images/salesforce-crm.png"
+          image="/images/saleslogo.jpeg"
           icon={Icon360}
           accent="text-[#0176d3]"
           points={[
@@ -72,7 +89,7 @@ const HomeCrmSales = () => {
           reverse
           title="Zoho CRM"
           desc="We help growing businesses scale faster with cost-effective Zoho solutions that unify CRM, automation, marketing, finance, and operations into a single connected ecosystem."
-          image="/images/zoho-crm.png"
+          image="/images/zohologo.png"
           icon={Icon360}
           accent="text-emerald-600"
           points={[

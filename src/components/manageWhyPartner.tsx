@@ -26,7 +26,7 @@ const items = [
 
 const ManageWhyPartner = () => {
   return (
-    <section className="bg-[#FEEAC9] py-10 px-8 mx-auto max-w-7xl">
+    <section className="bg-[#FEEAC9] py-10 px-8 w-full">
         <div className="text-center mb-16">
           <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold">
             Why Partner with Avolvelabs for{" "}

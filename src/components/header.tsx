@@ -18,6 +18,7 @@ import {
   IconChevronDown,
   IconMenu2,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 const Header = () => {
   const [openMobileServices, setOpenMobileServices] = useState(false);
@@ -25,15 +26,17 @@ const Header = () => {
 
   return (
     <header className="border-b bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6">
+      <div className="flex w-full items-center justify-between px-4 py-4 md:px-6">
         <Link
           href="/"
           className="font-sans text-2xl font-bold text-blue-700 md:text-3xl"
         >
-          <img
+          <Image
             src="/avolvelabslogo.png"
             alt="Avolve Labs Logo"
             className="h-7 md:h-10  object-contain"
+            height={80}
+            width={160}
           />
         </Link>
 
@@ -75,7 +78,7 @@ const Header = () => {
 
           <div className="flex items-center gap-6">
             <Link href="/contact">
-              <Button className="rounded-full border-2 border-[#003E9C] bg-[#003E9C] px-5 py-5 text-base font-playfair hover:bg-white hover:text-[#003E9C]">
+              <Button className="rounded-full border-2 border-[#003E9C] bg-[#003E9C] px-5 py-5 text-base font-poppins hover:bg-white hover:text-[#003E9C]">
                 Let’s Talk
               </Button>
             </Link>

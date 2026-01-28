@@ -11,18 +11,18 @@ const HomeCircle = () => {
           unoptimized
           src="/images/circle.png"
           alt="Salesforce Circle"
-          className="drop-shadow-xl max-sm:h-[300]"
+          className="drop-shadow-2xl  w-[290] sm:w-[400] md:w-[750] h-auto"
         />
       </div>
 
       <div className="absolute bottom-0 w-full ">
         <svg
-          viewBox="0 0 1440 120"
+          viewBox="0 0 1450 120"
           preserveAspectRatio="none"
           className="relative block"
         >
           <path
-            d="M0 120 L0 80 C360 0 1080 0 1440 80 L1440 120 Z"
+            d="M0 120 L0 80 C360 0 1080 0 1450 80 L1450 120 Z"
             fill="white"
           />
         </svg>

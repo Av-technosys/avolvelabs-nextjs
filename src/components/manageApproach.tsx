@@ -30,7 +30,7 @@ const steps = [
 
 const ManageApproach = () => {
   return (
-    <section className="bg-black py-10 px-8 mx-auto max-w-7xl">
+    <section className="bg-black py-10 px-8 w-full">
         <div className="text-center mb-6">
           <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-white">
             Our Approach to Manage Services Adoption

@@ -4,7 +4,7 @@ const ManageHero = () => {
   return (
     <>
       <div
-        className="relative max-w-7xl mx-auto bg-no-repeat bg-bottom overflow-hidden"
+        className="relative w-full bg-no-repeat bg-bottom overflow-hidden"
         style={{
           backgroundImage: "url('/aboutImg.png')",
           backgroundSize: "clamp(100%, 30vw + 100%, 250%) auto",

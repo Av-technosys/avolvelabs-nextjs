@@ -5,7 +5,7 @@ const AboutHero = () => {
   return (
     <>
       <div
-        className="relative max-w-7xl mx-auto bg-no-repeat bg-bottom overflow-hidden"
+        className="relative w-full bg-no-repeat bg-bottom overflow-hidden"
         style={{
           backgroundImage: "url('/aboutImg.png')",
           backgroundSize: "clamp(100%, 30vw + 100%, 250%) auto",
@@ -37,11 +37,11 @@ const AboutHero = () => {
           </div>
           <div className="text-center md:px-8 px-8 py-10 md:py-5">
             <h2 className="font-playfair text-3xl md:text-5xl font-bold text-[#032d60] leading-tight">
-          Smarter Systems Designed for <br/> Growth and Adoption
+          Smarter Systems Designed for Growth
               <br className="hidden md:block" />
-              <span className="text-[#032d60]">customers&apos; hearts.</span>
+              <span className="text-[#032d60]">and Adoption customers hearts.</span>
             </h2>
-            <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-2xl mx-auto mt-5 md:mt-8 leading-relaxed">
+            <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-4xl mx-auto mt-5 md:mt-8 leading-relaxed">
           AvolveLabs solves the real challenges behind failed CRM projects: poor alignment, low adoption, and unrealized value. We build strategy led, revenue focused systems that match how your business actually operates, helping teams scale with clarity, efficiency, and impact.
 
             </p>

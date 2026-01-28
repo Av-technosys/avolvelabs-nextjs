@@ -48,8 +48,8 @@ through official email ID.
               {/* <a href="mailto:legal@avtech.com" className="block hover:underline">
                 legal@avtech.com
               </a> */}
-              <a href="mailto:baba@avtechnosys.com" className="block hover:underline">
-                Contact@avtechnosys.com
+              <a href="/contact" className="block hover:underline">
+                Contact@avolvelabs.com
               </a>
             </div>
 

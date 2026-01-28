@@ -16,16 +16,16 @@ const AboutBranding = () => {
   return (
     <>
     <section className="w-full">
-        <div className="relative w-full h-[300] md:h-[550] overflow-hidden">
+        <div className="relative w-full  min-h-[270] md:min-h-[450] lg:min-h-[650] overflow-hidden">
           <Image
-            src="/images/about.jpeg" // Aap apni actual image URL yahan daal sakte hain
+            src="/images/about.jpeg" 
             alt="Commitment visual"
             fill
             className="object-cover"
             priority
             unoptimized
           />
-          {/* Optional: Overlay agar image ke upar text thoda contrast chahiye */}
+         
           <div className="absolute inset-0 bg-black/10" />
         </div>
       </section>

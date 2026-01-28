@@ -53,7 +53,7 @@ const AboutWhoWeAre = () => {
   }, [started])
 
   return (
-    <section className="bg-blue-100 mx-auto max-w-7xl py-10 px-8">
+    <section className="bg-blue-100 w-full py-10 px-8">
       <div className="text-center ">
         <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold mb-8">
           Who We Are

@@ -6,22 +6,22 @@ const commitmentData = [
   {
     id: "clients",
     title: "Deep Domain Experience",
-    content: "We bring hands-on experience across industries including Manufacturing, Retail, Education, and Professional Services. Our team understands real business challenges, workflows, and revenue models, allowing us to design solutions that fit your operations, not just your technology stack."
+    content: "We bring hands on experience across industries including Manufacturing, Retail, Education, and Professional Services. Our team understands real business challenges, workflows, and revenue models, allowing us to design solutions that fit your operations, not just your technology stack."
   },
   {
     id: "excellence",
-    title: "AI-Led, Not AI-Labeled",
-    content: "We go beyond AI buzzwords. Our approach focuses on practical, real-world AI implementations that automate processes, enhance decision-making, improve customer engagement, and drive measurable efficiency across sales, service, and operations."
+    title: "AI Led, Not AI Labeled",
+    content: "We go beyond AI buzzwords. Our approach focuses on practical, real world AI implementations that automate processes, enhance decision making, improve customer engagement, and drive measurable efficiency across sales, service, and operations."
   },
   {
     id: "csr",
-    title: "Right-Priced, High-Impact Consulting",
-    content: "We deliver enterprise-grade outcomes without the inflated costs of traditional large consulting firms. Our pricing model ensures you get high-quality strategy, execution, and long-term value while maintaining cost efficiency and ROI."
+    title: "Right Priced, High Impact Consulting",
+    content: "We deliver enterprise grade outcomes without the inflated costs of traditional large consulting firms. Our pricing model ensures you get high quality strategy, execution, and long term value while maintaining cost efficiency and ROI."
   },
   {
     id: "csr-2",
     title: "Balanced Global Delivery Model",
-    content: "We combine onsite strategic leadership with scalable offshore execution to deliver speed, quality, and cost-effectiveness. This balanced model allows us to stay close to your business goals while maintaining flexible, efficient delivery."
+    content: "We combine onsite strategic leadership with scalable offshore execution to deliver speed, quality, and cost effectiveness. This balanced model allows us to stay close to your business goals while maintaining flexible, efficient delivery."
   }
 ]
 
@@ -64,7 +64,7 @@ const AboutCommitment = () => {
           <div className="md:col-span-4 flex justify-center order-1 md:order-2">
             <div className="relative w-64 h-64 md:w-90 md:h-90 rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-4 border-white">
               <Image
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" 
+                src="/images/robotimg.svg" 
                 alt="Commitment visual"
                 className="w-full h-full object-cover"
                  width={800}

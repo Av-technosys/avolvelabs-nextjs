@@ -7,8 +7,8 @@ import {
   IconChevronLeft,
   IconChevronRight,
   IconQuote,
+  IconUser,
 } from "@tabler/icons-react";
-import Image from "next/image";
 
 const testimonials = [
   {
@@ -17,8 +17,8 @@ const testimonials = [
     // companyLogo:
     //   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vodafone_Logo.svg/1000px-Vodafone_Logo.svg.png",
     content:
-      "The Zoho solution provided by Avolve Labs transformed the way we manage our sales processes. The team is skilled, proactive, and always available for support. Truly a trusted partner!",
-    initials: "PN",
+      "The Zoho solution provided by Avolvelabs transformed the way we manage our sales processes. The team is skilled, proactive, and always available for support. Truly a trusted partner!",
+    initials: <IconUser/>,
     color: "bg-gray-100 text-[#032d60]",
   },
   {
@@ -27,8 +27,8 @@ const testimonials = [
     // companyLogo:
     //   "https://www.oka.com/on/demandware.static/Sites-oka_gb-Site/-/default/dw06617e47/images/logo.svg",
     content:
-      "Avolve Labs’ Salesforce experts understood our business needs perfectly. Their team implemented a seamless CRM solution that improved our workflow efficiency significantly. Highly reliable and professional!",
-    initials: "RG",
+      "Avolvelabs Salesforce experts understood our business needs perfectly. Their team implemented a seamless CRM solution that improved our workflow efficiency significantly. Highly reliable and professional!",
+    initials: <IconUser/>,
     color: "bg-gray-100 text-gray-900",
   },
   {
@@ -37,7 +37,7 @@ const testimonials = [
     // companyLogo: "https://via.placeholder.com/100x30?text=TechCorp",
     content:
       "Their team provided exceptional support during our migration process. The expertise they brought to the table was exactly what we needed to scale our infrastructure.",
-    initials: "AS",
+    initials: <IconUser/>,
     color: "bg-gray-100 text-gray-900",
   },
 ];
@@ -71,14 +71,14 @@ const Testimonial = () => {
 
   return (
     <section className="px-8 py-10 overflow-hidden">
-      <div className="mx-auto max-w-7xl">
+      <div className="w-full">
         <div className="flex flex-col md:flex-row justify-between items-end md:items-center mb-12 gap-6">
           <div className="text-center md:text-left flex-1">
             <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-4">
               What Our Clients Say
             </h2>
             <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-2xl">
-              We don&apos;t just aim to impress—we consistently deliver. But
+              We don&apos;t just aim to impress we consistently deliver. But
               don&apos;t just take our word for it. Hear what our clients have
               to say.
             </p>

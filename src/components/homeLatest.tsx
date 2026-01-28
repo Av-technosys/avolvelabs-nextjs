@@ -2,42 +2,40 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
-import Image from "next/image";
-
-const LATEST_DATA = [
-  {
-    id: 1,
-    title: "Unifying Healthcare with a 360° Patient View ",
-    linkText: "Know More",
-    image:
-      "/images/Healthcare-CRM-1.jpg",
-  },
-  {
-    id: 2,
-    title:
-      "Modernizing Music Rights Management at Scale ",
-    linkText: "Know more",
-    image:
-"/images/music.jpg"  },
-  {
-    id: 3,
-    title: "Enabling a Seamless Pivot to Subscription-Based Revenue",
-    linkText: "Know more",
-    image:
-"/images/pivot.jpg"  },
-  {
-    id: 4,
-    title: "Transforming Broadband with Zero Touch Digital Onboarding",
-    linkText: "Know more",
-    image:
-"/images/dashboard.jpg"  },
-];
+// const LATEST_DATA = [
+//   {
+//     id: 1,
+//     title: "Unifying Healthcare with a 360° Patient View ",
+//     linkText: "Know More",
+//     image:
+//       "/images/Healthcare-CRM-1.jpg",
+//   },
+//   {
+//     id: 2,
+//     title:
+//       "Modernizing Music Rights Management at Scale ",
+//     linkText: "Know more",
+//     image:
+// "/images/music.jpg"  },
+//   {
+//     id: 3,
+//     title: "Enabling a Seamless Pivot to Subscription-Based Revenue",
+//     linkText: "Know more",
+//     image:
+// "/images/pivot.jpg"  },
+//   {
+//     id: 4,
+//     title: "Transforming Broadband with Zero Touch Digital Onboarding",
+//     linkText: "Know more",
+//     image:
+// "/images/dashboard.jpg"  },
+// ];
 
 const HomeLatest = () => {
   return (
     <>
-      <section className="max-w-7xl mx-auto py-10 px-8">
-        <div className="">
+      <section className="max-w-7xl mx-auto  px-8">
+        {/* <div className="">
           <h2 className="text-center text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold mb-12">
             Case Studies 
           </h2>
@@ -78,14 +76,14 @@ const HomeLatest = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
       <section className="text-center md:px-8 px-8 py-10">
         <h1 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
           Get started today.
         </h1>
 
-        <p className="font-poppins mt-10 max-w-3xl mx-auto text-[20px] md:text-[32px] lg:text-[32px]  text-[#032d60] leading-tight">
+        <p className="font-poppins mt-10 max-w-3xl mx-auto text-[17px] md:text-[27px] lg:text-[27px]  text-[#032d60] leading-tight">
           There nothing to install. No credit card required. Free for 30 days.
         </p>
 
