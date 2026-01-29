@@ -25,16 +25,18 @@ const AboutHero = () => {
       </div>
       <section className="bg-white">
         <div className="flex flex-col items-center">
-          <div className="w-full max-w-sm px-6 -mt-10 md:-mt-36 relative z-20">
-            <Image
-              width={800}
-              height={600}
-              unoptimized
-              src="/aboutPersonImg.png"
-              alt="People with robot"
-              className="w-full h-auto object-contain mx-auto rounded-4xl"
-            />
-          </div>
+    <div className="w-full max-w-md lg:max-w-lg px-6 -mt-10 md:-mt-36 relative z-20">
+  <video
+    src="/images/aboutvideo.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-auto object-contain mx-auto rounded-4xl"
+  />
+</div>
+
+
           <div className="text-center md:px-8 px-8 py-10 md:py-5">
             <h2 className="font-playfair text-3xl md:text-5xl font-bold text-[#032d60] leading-tight">
           Smarter Systems Designed for Growth
