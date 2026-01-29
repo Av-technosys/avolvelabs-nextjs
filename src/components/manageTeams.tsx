@@ -4,36 +4,23 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const partners = [
-  {
-    name: "Secret Escapes",
-    logo: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/company-logo-design-template-e089327a5c476ce5c70c74f7359c5898_screen.jpg?ts=1672291305",
-  },
-  {
-    name: "OpenTable",
-    logo: "https://www.shutterstock.com/image-illustration/infinity-logo-design-two-interconnected-600nw-2576179009.jpg",
-  },
-  {
-    name: "Wiley",
-    logo: "https://img.freepik.com/free-vector/business-logo-template-minimal-branding-design-vector_53876-136229.jpg?semt=ais_hybrid&w=740&q=80",
-  },
-  {
-    name: "Fisher & Paykel",
-    logo: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/company-logo-design-template-e089327a5c476ce5c70c74f7359c5898_screen.jpg?ts=1672291305",
-  },
-  {
-    name: "Simplyhealth",
-    logo: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/company-logo-design-template-e089327a5c476ce5c70c74f7359c5898_screen.jpg?ts=1672291305",
-  },
-  {
-    name: "The Auto Club Group (AAA)",
-    logo: "https://www.shutterstock.com/image-illustration/infinity-logo-design-two-interconnected-600nw-2576179009.jpg",
-  },
-]
+const logos = [
+    "/logoimages/analytics.svg",
+    "/logoimages/backstage.svg",
+    "/saleslogo/Slack-small.png",
+    "/logoimages/billing.svg",
+    "/logoimages/bookings.svg",
+    "/saleslogo/Salesforce-Logo.png",
+    "/logoimages/contracts.svg",
+    "/logoimages/creator.svg",
+    "/logoimages/marketingplus.svg",
+    "/saleslogo/MuleSoft.png",
+   
+  ];
 
 
 const ManageTeams = () => {
-  const duplicatedPartners = [...partners, ...partners];
+  const duplicatedLogos = [...logos, ...logos];
 
   return (
     <section className="relative w-full overflow-hidden bg-linear-to-b from-white to-[#FEEAC9]">
@@ -53,7 +40,7 @@ const ManageTeams = () => {
             repeat: Infinity 
           }}
         >
-          {duplicatedPartners.map((partner, index) => (
+          {duplicatedLogos.map((logo, index) => (
             <div 
               key={index} 
               className="shrink-0 bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-50 p-6 w-48 h-28 flex items-center justify-center transition-transform hover:scale-105"
@@ -62,8 +49,8 @@ const ManageTeams = () => {
               width={600}
               height={600}
               unoptimized
-                src={partner.logo}
-                alt={partner.name}
+                src={logo}
+                alt={logo}
                 className="max-h-14 w-auto object-contain"
               />
             </div>

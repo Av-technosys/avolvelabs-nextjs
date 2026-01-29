@@ -19,25 +19,25 @@ const page = () => {
        <ValueTeams/>
        <ValueWhat/>
        <ValueBook/>
-       <ValueApproach/>
-         <CrmTech 
+       {/* <ValueApproach/> */}
+         {/* <CrmTech 
        bgClass="bg-[#EDFFF0]"
          titleColor="text-[#032d60]"
          borderColor="border-black/40"
          title={`Powered by the\nManage Tech Stack`}
           description="Our managed services leverage a robust Manage Services and AI technology stack to deliver scalable, secure, and future-ready solutions."
          orbit1={["Salesforce", "HubSpot", "Zoho", "Dynamics"]}
-         orbit2={["OpenAI", "Claude", "Gemini", "Llama"]}/>
+         orbit2={["OpenAI", "Claude", "Gemini", "Llama"]}/> */}
        <ValueAgentSuite/>
        <ValueWhyPartner/>
        <ValueNew/>
-       <ValueBusinessValueDemo/>
+       {/* <ValueBusinessValueDemo/> */}
        <HomeLatest/>
-      <FAQ
+      {/* <FAQ
         textColor="#0f172a"
            hoverColor="#3291B6"
            iconBg="#EDFFF0"
-          iconHoverBg="#3291B6"/>
+          iconHoverBg="#3291B6"/> */}
     </div>
   )
 }

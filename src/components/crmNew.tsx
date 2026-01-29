@@ -5,20 +5,20 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const cards = [
   {
-    title: "Unified Data Core",
-    desc: "All customer signals flow into a single, governed intelligence layer.",
+    title: "Modular Value Sprints",
+    desc: "Large scale digital transformations are broken down into bite sized, high impact modules. This Lego style logic allows specific value adds to be deployed every few weeks. ",
   },
   {
     title: "Predictive Execution",
-    desc: "AI anticipates outcomes before teams react.",
+    desc: "The methodology shifts from reactive fixing to proactive optimization by anticipating bottlenecks before they happen.",
   },
   {
-    title: "Composable Architecture",
-    desc: "Swap tools, scale modules, evolve without rewrites.",
+    title: "Embedded Trust & Governance",
+    desc: "Compliance, security, and auditability are shifted left and embedded into every single iteration. This Trust by Design approach ensures that speed never compromises safety.",
   },
   {
-    title: "Trust by Design",
-    desc: "Security, auditability, and compliance embedded at every layer.",
+    title: "Proactive Scalability",
+    desc: "The framework is built on the principle of designing for future scale before the immediate need even arises. Every sprint is engineered to strengthen the ecosystem's capacity for complexity.",
   },
 ];
 
@@ -37,22 +37,24 @@ const CrmNew = () => {
             className="lg:col-span-5 space-y-8"
           >
             <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
-              Architecture CRM
-              <br /> Thinks in Systems
+             The Agile Loop:
+
+              <br />Engineering for Velocity
             </h2>
 
-            <p className="font-poppins text-md md:text-[18px] text-gray-700">
-              This isn&apos;t a stack of features. It&apos;s a deliberately engineered
-              system where data, automation, and teams move in sync.
+            <p className="font-poppins text-md md:text-[16px] text-gray-700">
+              In a high performance systems environment, Agile isn't just a process it’s the engine that powers iterative growth. It allows the architecture to function as a living organism that adapts to market shifts in real time.
+
             </p>
 
             <Card className="border-[#0176d3] bg-white shadow-lg md:block hidden">
               <CardContent className="p-6">
-                <p className="text-sm font-poppins uppercase tracking-wider text-[#0176d3] font-semibold">
-                  Core Principle
+                <p className="text-xl font-playfair font-bold text-[#032d60]">
+                 Continuous Intelligence Loops
+
                 </p>
-                <p className="mt-3 text-xl font-poppins text-[#032d60]">
-                  Design for scale before you need it.
+                <p className="mt-3 text-sm font-poppins text-[#032d60]">
+                  The system moves away from "one and done" implementations by utilizing constant pulses of real world data. Every user interaction serves as a feedback signal that informs the very next development cycle. 
                 </p>
               </CardContent>
             </Card>
@@ -88,7 +90,7 @@ const CrmNew = () => {
                     <h3 className="text-xl font-playfair font-bold text-[#032d60]">
                       {c.title}
                     </h3>
-                    <p className="mt-3 font-poppins text-gray-600 ">
+                    <p className="mt-3 text-sm font-poppins text-gray-600 ">
                       {c.desc}
                     </p>
                   </CardContent>

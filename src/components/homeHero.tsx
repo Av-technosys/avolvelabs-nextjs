@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const HomeHero = () => {
   return (
@@ -15,14 +16,16 @@ const HomeHero = () => {
 
         </p>
         <div className="mt-12 flex flex-col font-poppins items-center gap-4 sm:flex-row sm:justify-center">
+          <Link href="/contact">
           <Button
             size="lg"
             className="bg-[#0176d3] px-10 py-6 text-base font-semibold hover:bg-[#014486]"
           >
            Start Your Transformation
 
-          </Button>
+          </Button></Link>
 
+          <Link href="/casestudy">
           <Button
             size="lg"
             variant="outline"
@@ -30,7 +33,7 @@ const HomeHero = () => {
           >
           Explore Our Methodology
 
-          </Button>
+          </Button></Link>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { Button } from "@/components/ui/button"
+import Link from 'next/link'
 
 const ManageBook = () => {
   return (
@@ -16,6 +17,7 @@ const ManageBook = () => {
           <p className="font-poppins text-base md:text-[15px] max-w-3xl mb-10 leading-relaxed font-light">
             We work with you to identify the right use cases, assess data readiness, and define an AI roadmap aligned to your business goals, so you don&apos;t waste time or budget.
           </p>
+         <Link href="/contact">
          <Button
   className="font-poppins bg-white text-[#0176d3] hover:bg-gray-100 rounded-full text-lg  transition-all duration-300 shadow-xl border-none"
 >
@@ -24,6 +26,7 @@ const ManageBook = () => {
     Book Your Free AI Strategy Session Today!
   </span>
 </Button>
+         </Link>
 
         </div>
       </div>

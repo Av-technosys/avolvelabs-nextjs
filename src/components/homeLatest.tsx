@@ -87,7 +87,7 @@ const HomeLatest = () => {
           There nothing to install. No credit card required. Free for 30 days.
         </p>
 
-        <Link href="/" className="mt-8 md:mt-10 inline-block">
+        <Link target="_blank" href="https://store.zoho.in/ResellerCustomerSignUp.do?id=b3383bae8a8d4d5588223dbc7255a4d0b022d128fd51d94e98e55118213315b7" className="mt-8 md:mt-10 inline-block">
           <Button className="bg-[#0176d3] hover:bg-[#014486] text-white px-16 md:px-9 py-6 rounded-md text-base md:text-lg font-poppins">
             Try for free
           </Button>

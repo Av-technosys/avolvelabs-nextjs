@@ -5,42 +5,27 @@ import { ChevronRight } from "lucide-react";
 const steps = [
   {
     step: "1",
-    title: "Alignment & Business Logic",
-    points: [
-      "End to end revenue architecture aligning sales, marketing, and service.",
-      "Funnel, lifecycle, and data model design capturing the right data at the right time.",
-      "GTM process alignment embedded directly inside your CRM.",
-      "Actionable metrics and dashboards that drive real decisions.",
-    ],
+    title: "Revenue Ops: The North Star",
+    desc:
+      "We’re moving the needle from guesswork to pure mathematical certainty. We don’t just align departments. we hardwire your entire revenue engine into a single, cohesive end to end architecture. By hacking the funnel lifecycle and deploying a high fidelity data model, we’re capturing the signal through the noise. This is about embedding GTM DNA directly into your tech stack, surfacing the kind of real time analytics that make boardroom decisions a total breeze.",
   },
   {
     step: "2",
-    title: "User Experience & Adoption",
-    points: [
-      "Intuitive CRM platform design tailored to your business.",
-      "Role based UX and workflows optimized for each function.",
-      "Data, automation, and integration architecture to remove silos.",
-      "Clean, scalable implementations that are easy to maintain.",
-    ],
+    title: "The UX Revolution",
+    desc:
+      "Let’s be real: most CRMs are where productivity goes to die. We’re disrupting that cycle by building interfaces that people actually vibe with. We’re talking high utility, role specific UX that removes the friction from the daily grind. By nuking data silos and deploying a clean code integration architecture, we create a platform that’s not just maintained it’s built to scale at pace. It’s CRM, but make it intuitive.",
   },
   {
     step: "3",
-    title: "Future-Proofing & Efficiency",
-    points: [
-      "Agentic AI strategies aligned to revenue operations.",
-      "Autonomous agents managing CRM workflows across teams.",
-      "AI orchestration across systems and data sources.",
-      "Governance and trust frameworks for safe AI adoption.",
-    ],
+    title: "Agentic AI: Beyond the Hype",
+    desc:
+      "We’ve officially graduated from \"helpful chatbots\" to full throttle Autonomous Agents. We’re talking outcome driven AI strategies that don't just assist they execute. These agents are navigating your CRM workflows like pros, orchestrating data across your entire ecosystem without breaking a sweat. It’s a shift from manual oversight to AI led orchestration, allowing your team to stop doing and start leading while the tech handles the heavy lifting",
   },
   {
     step: "4",
-    title: "Roadmap\nCreation",
-    points: [
-      "Design phased rollout with quick-win pilots",
-      "Expand towards multi-agent ecosystems",
-      "Define timelines, ownership, and success metrics",
-    ],
+    title: "The Trust Protocol",
+    desc:
+      "In the AI Wild West, we’re the ones building the governance fortress. You can’t have hyper efficiency without a bulletproof trust framework. We’re ensuring that your transition into an AI first company is backed by safe, ethical, and secure protocols. From cross system orchestration to future proofed risk management, we’re making sure your tech stack isn't just fast it’s untouchable.",
   },
 ];
 
@@ -53,9 +38,8 @@ const CrmApproach = () => {
             Core Capabilities
           </h2>
           <p className="mt-4 font-poppins text-md md:text-[18px] text-gray-400 max-w-3xl mx-auto">
-            We guide you through every stage, from discovery and assessment to
-            design and roadmap creation, to ensure successful Agentic AI
-            adoption.
+            We architect end to end revenue foundations by aligning sales, marketing, and service into a unified system. By integrating data driven business logic with intuitive, role based UX and autonomous 
+
           </p>
         </div>
         <div className="relative mb-10 hidden md:block px-20">
@@ -102,19 +86,12 @@ const CrmApproach = () => {
                 "
               />
               <CardContent className="relative z-10 p-4">
-                <h3 className="text-xl font-playfair font-semibold text-[#4aa3ff] whitespace-pre-line">
+                <h3 className="text-xl font-playfair font-semibold text-[#f7faff] whitespace-pre-line">
                   {item.title}
                 </h3>
-                <ul className="mt-4 space-y-3">
-                  {item.points.map((point, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <ChevronRight className="text-white" />
-                      <span className="text-md font-poppins text-gray-300 leading-relaxed">
-                        {point}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-4 text-sm font-poppins text-gray-300 leading-relaxed">
+                  {item.desc}
+                </p>
               </CardContent>
             </Card>
           ))}

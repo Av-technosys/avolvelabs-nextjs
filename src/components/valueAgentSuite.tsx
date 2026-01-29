@@ -8,23 +8,23 @@ import {
 
 const agents = [
   {
-    title: "Sales Agent",
+    title: "Architecture Assessment & Health Check",
     icon: IconSparkles,
     desc:
-      "Our Sales Agent analyzes visitor activity and engagement data to craft personalized outreach emails based on the pages prospects have explored. It prepares tailored drafts and places them in the business development team’s email queue, reducing manual effort and ensuring timely, context-aware communication.",
+      "Is your current CRM slowing you down? We audit your existing setup to uncover technical debt, security gaps, and process bottlenecks.",
     active: true,
   },
   {
-    title: "Autonomous QA Agent",
+    title: "Adoption & Enablement Programs",
     icon: IconChecklist,
     desc:
-      "This AI agent accelerates the testing lifecycle by automatically generating, executing, and maintaining test cases for APIs, microservices, and user interfaces. It leverages OpenAPI specifications and UI components to create intelligent, self-healing test scripts.",
+      "We don’t just hand over a PDF manual. We design role-specific enablement programs so every user learns exactly what they need.",
   },
   {
-    title: "Database Agent",
+    title: "ROI Optimization & Value Measurement",
     icon: IconDatabase,
     desc:
-      "The Database Agent allows users to interact with databases using natural language, removing the need for technical query skills. It understands user intent, explores metadata, and generates optimized, read-only SQL queries.",
+      "Stop guessing if your CRM is delivering value. We implement frameworks that connect CRM usage directly to revenue and performance.",
   },
 ]
 
@@ -41,12 +41,10 @@ const ValueAgentSuite = () => {
 
         <div className="text-center mb-16">
           <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60]">
-            Avolvelabs Intelligent Agent Suite
+            CRM Strategy & Optimization Services
           </h2>
          <p className="mt-4 max-w-3xl mx-auto font-poppins text-md md:text-[18px] text-gray-700">
-            Our AI agents are designed to automate repetitive tasks, make
-            informed decisions, and enable teams to work more efficiently and
-            effectively.
+           From technical health checks to user adoption and ROI measurement, we help organizations unlock the full value of their CRM investments.
           </p>
         </div>
 

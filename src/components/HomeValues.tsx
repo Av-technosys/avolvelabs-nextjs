@@ -3,6 +3,7 @@ import React from "react";
 import { IconArrowRight } from "@tabler/icons-react";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const HomeValues = () => {
   return (
@@ -16,21 +17,13 @@ const HomeValues = () => {
            From technical health checks to user adoption and ROI measurement, we help organizations unlock the full value of their CRM investments.
           </p>
           <div className="flex flex-row gap-1 ">
+            <Link href="/services/crm-strategy-implementation" target="_blank">
             <Button className="bg-[#0176d3] font-poppins hover:bg-[#014486] text-white font-bold h-auto px-4 md:px-8 py-3 rounded-xl shadow-sm transition-all active:scale-95 whitespace-nowrap text-sm md:text-base">
               See what drives
             </Button>
+            </Link>
 
-            <Button
-              variant="outline"
-              className="group border-2 font-poppins border-[#0176d3] text-[#0176d3] hover:bg-blue-50 hover:text-[#0176d3] font-bold h-auto px-4 md:px-8 py-3 rounded-xl transition-all active:scale-95 whitespace-nowrap text-sm md:text-base"
-            >
-              Take the pledge
-              <IconArrowRight
-                size={18}
-                stroke={2.5}
-                className="ml-2 group-hover:translate-x-1 transition-transform inline"
-              />
-            </Button>
+            
           </div>
         </div>
         <div className="w-full lg:w-1/2 relative">

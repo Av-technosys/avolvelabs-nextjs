@@ -1,3 +1,4 @@
+import BrandCarousel from '@/components/brandCarousel'
 import CrmAgentSuite from '@/components/crmAgentSuite'
 import CrmApproach from '@/components/crmApproach'
 import CrmBook from '@/components/crmBook'
@@ -9,6 +10,7 @@ import CrmTech from '@/components/crmTech'
 import CrmWhat from '@/components/crmWhat'
 import CrmWhyPartner from '@/components/crmWhyPartner'
 import FAQ from '@/components/faq'
+import HomeCarousel from '@/components/homeCarousel'
 import HomeLatest from '@/components/homeLatest'
 import React from 'react'
 
@@ -17,16 +19,17 @@ const page = () => {
     <div>
       <CrmHero/>
       <CrmTeams/>
-      <CrmWhat/>
-      <CrmBook/>
+       <CrmWhat/>
+      {/* <CrmBook/> */}
       <CrmApproach/>
       <CrmTech/>
       <CrmNew/>
       <CrmAgentSuite/>
-      <CrmWhyPartner/> 
-      <CrmBusinessValueDemo/> 
+      {/* <CrmWhyPartner/>  */}
+      {/* <CrmBusinessValueDemo/>  */}
       <HomeLatest/>
-      <FAQ/>  
+        {/* <HomeCarousel /> */}
+      {/* <FAQ/>   */}
     </div>
   )
 }

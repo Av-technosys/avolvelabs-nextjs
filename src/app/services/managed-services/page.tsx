@@ -18,25 +18,25 @@ const page = () => {
       <ManageTeams/>
       <ManageWhat/>
       <ManageBook/>
-      <ManageApproach/>
-      <CrmTech 
+      {/* <ManageApproach/> */}
+      {/* <CrmTech 
        bgClass="bg-[#FEEAC9]"
          titleColor="text-[#032d60]"
          borderColor="border-black/40"
          title={`Powered by the\nManage Tech Stack`}
           description="Our managed services leverage a robust Manage Services and AI technology stack to deliver scalable, secure, and future-ready solutions."
          orbit1={["Salesforce", "HubSpot", "Zoho", "Dynamics"]}
-         orbit2={["OpenAI", "Claude", "Gemini", "Llama"]}/>
-         <ManageAgentSuite/>
+         orbit2={["OpenAI", "Claude", "Gemini", "Llama"]}/> */}
+         {/* <ManageAgentSuite/> */}
          <ManageWhyPartner/>
-        <ManagesBusinessValueDemo/>
+        {/* <ManagesBusinessValueDemo/> */}
         <HomeLatest/>
-      <FAQ
+      {/* <FAQ
            textColor="#0f172a"
            hoverColor="#3291B6"
            iconBg="#FEEAC9"
           iconHoverBg="#3291B6"
-            />
+            /> */}
     </div>
   )
 }

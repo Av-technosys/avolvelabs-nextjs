@@ -51,7 +51,7 @@ const AboutMission = () => {
                 <h3 className="font-playfair text-3xl md:text-4xl font-bold mb-4">
                   {item.title}
                 </h3>
-                <div className="overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[300] opacity-0 group-hover:opacity-100">
+                <div className="overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[300] lg:opacity-0 group-hover:opacity-100">
                   <p className="font-poppins text-sm md:text-base leading-relaxed text-gray-200">
                     {item.description}
                   </p>

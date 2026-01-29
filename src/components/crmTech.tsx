@@ -11,9 +11,9 @@ type CrmTechProps = {
 }
 
 const CrmTech = ({
-  title = "Powered by the Best in AI",
+  title = "Who This Service Is For",
   description =
-    "From cloud-native AI platforms to specialized frameworks, we use the best tools to build solutions that integrate seamlessly with your systems.",
+    "This service is designed for organizations looking to move beyond basic CRM usage and build systems that actively support efficiency, collaboration, and long-term growth.",
   bgClass = "bg-[#eef6ff]",
   titleColor = "text-[#032d60]",
   borderColor = "border-blue-300",

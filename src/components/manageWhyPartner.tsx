@@ -3,24 +3,24 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const items = [
   {
-    title: "Domain Expertise +\nSystems Integration Capabilities",
+    title: "What We Do",
     desc:
-      "A rare combination of deep integration experience and cutting-edge AI innovation, enabling intelligent automation across Boomi, Google Cloud, and beyond.",
+      "We serve as your Fractional Revenue Operations Center of Excellence, embedding directly into your tech stack to insulate sales and success leadership from backend volatility. Our mandate covers the full spectrum of systemic governance, and rigorous data integrity protocols."
   },
   {
-    title: "4-Hour Agentic AI\nConsultation",
+    title: "How We Do It",
     desc:
-      "Accelerate your journey with a focused strategy session that identifies use cases, assesses readiness, and lays out a roadmap aligned with your goals.",
+      "Our methodology utilizes a proactive, sprint based framework designed for maximum transparency and velocity. We bypass the limitations of the traditional helpdesk in favor of a dedicated pod structure that prioritizes architectural health."
   },
   {
-    title: "Co-Innovation That\nScales",
+    title: "Outcomes We Deliver",
     desc:
-      "We work as your innovation partner, rapidly prototyping agents with your team and transferring knowledge through hands-on collaboration and enablement.",
+      "We empower organizations to aggressively liquidate technical debt and establish a predictable, Opex optimized cost structure. By mitigating the overhead and risk associated with specialized full time hiring, we facilitate a leaner operational footprint.",
   },
   {
-    title: "Production-Ready\nArchitecture Advisory",
+    title: "Measurable Impact",
     desc:
-      "Backed by our experience in enterprise architecture, we guide you toward scalable, secure AI system designs, selecting the right tools, models, and deployment patterns.",
+      "Our focus extends beyond ticket resolution. We standardize system architecture, refactor continuously, enhance UI and UX, and remove friction across workflows. The result is a future ready, scalable foundation that supports sustained performance and long term growth.",
   },
 ]
 
@@ -29,15 +29,15 @@ const ManageWhyPartner = () => {
     <section className="bg-[#FEEAC9] py-10 px-8 w-full">
         <div className="text-center mb-16">
           <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold">
-            Why Partner with Avolvelabs for{" "}
+            {/* Why Partner with Avolvelabs for{" "} */}
             <span className="bg-linear-to-r from-[#4aa3ff] to-[#a855f7] bg-clip-text text-transparent">
-              Agentic AI
+             Precision Engineered RevOps Infrastructure
             </span>
           </h2>
 
-            <p className="mt-4 text-black/70 max-w-3xl mx-auto font-poppins text-md md:text-[18px]">
-            From strategy to deployment – your end-to-end partner for scalable,
-            production-ready agentic AI solutions
+            <p className="mt-4 text-black/70 max-w-5xl mx-auto font-poppins text-md md:text-[16px]">
+            In an era where operational friction is the silent killer of scale, we provide the specialized architectural oversight necessary to transform your go to market motion. We move beyond tactical support to deliver a unified, high performance ecosystem that bridges the gap between technical complexity and executive strategy.
+
           </p>
         </div>
 
