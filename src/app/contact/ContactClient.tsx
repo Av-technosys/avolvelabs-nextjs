@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -75,10 +76,10 @@ const ContactClient = () => {
     <div className="bg-[#F8FAFC] min-h-screen">
       <div className="bg-white py-16 px-6">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="grid gap-1 lg:gap-12 lg:grid-cols-2">
             <Card className="rounded-3xl border-none shadow-xl bg-white overflow-hidden mb-24">
               <CardContent className="p-10 md:p-14">
-                <h2 className="text-5xl font-bold text-[#111827] font-playfair">
+                <h2 className="text-4xl font-bold text-[#111827] font-playfair">
                   Request a Call Back
                 </h2>
                 <p className="mt-4 text-gray-500 text-lg font-poppins">
@@ -165,7 +166,7 @@ const ContactClient = () => {
                     {loading ? (
                       <IconLoader2 className="animate-spin mr-2" />
                     ) : (
-                      <IconSend className="mr-2" size={20} />
+                      <IconSend  size={20} />
                     )}
                     {loading ? "Sending Message..." : "Send Message"}
                   </Button>
@@ -174,12 +175,12 @@ const ContactClient = () => {
             </Card>
 
             <div className="flex flex-col justify-center">
-              <h2 className="text-5xl font-bold text-[#111827] mb-6 font-playfair">
+              <h2 className="text-4xl font-bold text-[#111827] md:text-left  text-center mb-4 font-playfair">
                 Our Location
               </h2>
               <div className="bg-linear-to-r from-[#061C5B] to-[#0B2FA0] text-white p-10 rounded-3xl shadow-2xl">
                 <h3 className="text-xl font-bold mb-8 font-playfair">
-                  Corporate Headquarters
+                  Corporate Headquarter
                 </h3>
                 <div className="space-y-6 font-poppins">
                   <div className="flex items-start gap-4">
@@ -191,13 +192,19 @@ const ContactClient = () => {
                       <p className="text-gray-300">Jaipur Rajasthan, India</p>
                     </div>
                   </div>
+                  
                   <div className="flex items-center gap-4">
                     <IconPhone size={22} />
+                    <Link href={"tel:+917877727352"}>
                     <p>+91-7877727352</p>
+                    </Link>
                   </div>
+                
                   <div className="flex items-center gap-4">
                     <IconMail size={22} />
+                    <Link className="cursor-pointer" href={"mailto:contact@avolvelabs.com"}>
                     <p>contact@avolvelabs.com</p>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -216,18 +223,18 @@ const ContactClient = () => {
         </div>
       </div>
 
-      <section className="flex bg-white flex-col md:flex-row w-full md:min-h-[70vh] min-h-[90vh] pt-10 gap-0">
-        <div className="flex-1 relative h-[50vh] md:h-[60vh]">
+      <section className="flex bg-white flex-col md:flex-row w-full md:min-h-[70vh] min-h-[90vh] ">
+        <div className="flex-1  relative h-[50vh] md:h-[60vh]">
           <Image
             src="/images/talk1.png"
             alt="Talk 1"
             fill
-            className="object-cover brightness-75"
+            className="object-cover brightness-75 "
             priority
           />
           <div className="absolute inset-0  transition-colors duration-500 flex items-center justify-center p-4">
-            <h2 className="text-white text-xl md:text-3xl  font-extrabold uppercase tracking-tighter text-center italic">
-              Jaipur, Rajasthan, India
+            <h2 className="text-white text-xl md:text-2xl  font-extrabold uppercase tracking-tighter text-center italic">
+              Jaipur, Rajasthan,<br/> India
             </h2>
           </div>
         </div>
@@ -239,8 +246,8 @@ const ContactClient = () => {
             className="object-cover brightness-75"
           />
           <div className="absolute inset-0   transition-colors duration-500 flex items-center justify-center p-4">
-            <h2 className="text-white text-xl md:text-3xl  font-extrabold uppercase tracking-tighter text-center font-poppins">
-              Frisco, Texas, U.S.A
+            <h2 className="text-white text-xl md:text-2xl  font-extrabold uppercase tracking-tighter text-center font-poppins">
+             Frisco, Texas (Dallas Fort Worth Area), U.S.A.
             </h2>
           </div>
         </div>
@@ -252,7 +259,7 @@ const ContactClient = () => {
             className="object-cover brightness-75"
           />
           <div className="absolute inset-0  transition-colors duration-500 flex items-center justify-center p-4">
-            <h2 className="text-white text-xl md:text-3xl  font-extrabold uppercase tracking-tighter text-center italic">
+            <h2 className="text-white text-xl md:text-2xl  font-extrabold uppercase tracking-tighter text-center italic">
               Worcester, United Kingdom
             </h2>
           </div>

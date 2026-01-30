@@ -91,7 +91,7 @@ const AboutWhoWeAre = () => {
       </div>
       <div className="flex justify-center mt-12">
         <Link href={"/contact"}>
-        <Button className="font-poppins rounded-full px-10 py-7 text-lg bg-[#0176d3] hover:bg-[#014486]">
+        <Button className="font-poppins cursor-pointer rounded-full px-10 py-7 text-lg bg-[#0176d3] hover:bg-[#014486]">
           Contact Us
         </Button> </Link>
       </div>

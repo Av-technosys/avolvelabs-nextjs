@@ -19,7 +19,7 @@ const ValueBook = () => {
           </p>
         <Link href="/contact">
          <Button
-  className="font-poppins bg-white text-[#0176d3] hover:bg-gray-100 rounded-xl md:rounded-full text-md md:text-lg  px-6 md:px-2 transition-all duration-300 shadow-xl border-none"
+  className="cursor-pointer font-poppins bg-white text-[#0176d3] hover:bg-gray-100 rounded-xl md:rounded-full text-md md:text-lg  px-6 md:px-2 transition-all duration-300 shadow-xl border-none"
 >
   <span className="block sm:hidden ">Book Now</span>
   <span className="hidden sm:block">

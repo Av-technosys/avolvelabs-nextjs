@@ -133,3 +133,18 @@
 .font-poppins {
   font-family: var(--font-poppins), sans-serif;
 } */
+
+.avolve-text {
+  color: white;
+  /* Duration 1.5s - Bohot smooth aur slow transition */
+  transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.02em;
+  display: inline-block;
+}
+
+.avolve-text:hover {
+  letter-spacing: 0.05em; /* Thoda zyada phailna premium lagta hai */
+  opacity: 1;
+  /* Soft white glow jo slow load hoga */
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}

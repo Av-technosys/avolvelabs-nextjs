@@ -54,7 +54,7 @@ const ManageWhyPartner = () => {
               "
             >
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold font-playfair text-[#3291B6] whitespace-pre-line">
+                <h3 className="text-xl font-semibold text-center font-playfair text-[#3291B6] whitespace-pre-line">
                   {item.title}
                 </h3>
 

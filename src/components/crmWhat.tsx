@@ -20,7 +20,7 @@ From Chaos to Clarity: Most CRM projects fail because they start with technology
         <div className="flex flex-row items-center justify-center gap-1 md:gap-3 mt-10 px-2">
             <Link href="/contact-us">
             <Button 
-              className="font-poppins bg-[#0176d3] hover:bg-[#015ba3] text-white px-6 py-6 rounded-lg text-base font-semibold transition-all duration-300 shadow-md"
+              className="font-poppins cursor-pointer bg-[#0176d3] hover:bg-[#015ba3] text-white px-6 py-6 rounded-lg text-base font-semibold transition-all duration-300 shadow-md"
             >
               Find out more
             </Button>
@@ -28,7 +28,7 @@ From Chaos to Clarity: Most CRM projects fail because they start with technology
             <Link href="/about">
             <Button 
               variant="outline" 
-              className="font-poppins border-[#0176d3] text-[#0176d3] hover:bg-[#f0f7ff] px-8 py-6 rounded-lg text-base font-semibold transition-all duration-300"
+              className="font-poppins cursor-pointer border-[#0176d3] text-[#0176d3] hover:bg-[#f0f7ff] px-8 py-6 rounded-lg text-base font-semibold transition-all duration-300"
             >
               Explore More
             </Button>
