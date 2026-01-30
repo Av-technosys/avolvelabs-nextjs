@@ -19,7 +19,7 @@ const ManageBook = () => {
           </p>
          <Link href="/contact">
          <Button
-  className="font-poppins bg-white text-[#0176d3] hover:bg-gray-100 rounded-full text-lg  transition-all duration-300 shadow-xl border-none"
+  className="font-poppins cursor-pointer bg-white text-[#0176d3] hover:bg-gray-100 rounded-full text-lg  transition-all duration-300 shadow-xl border-none"
 >
   <span className="block sm:hidden">Book Now</span>
   <span className="hidden sm:block">

@@ -66,7 +66,7 @@ const HomeLatest = () => {
 
                   <div className="mt-auto pt-4">
                     <Link
-                      href="/casestudy"
+                      href="/case-studies"
                       className="text-[#0176d3] font-poppins font-semibold text-[16px] underline hover:text-[#014486]"
                     >
                       {item.linkText}
@@ -88,7 +88,7 @@ const HomeLatest = () => {
         </p>
 
         <Link target="_blank" href="https://store.zoho.in/ResellerCustomerSignUp.do?id=b3383bae8a8d4d5588223dbc7255a4d0b022d128fd51d94e98e55118213315b7" className="mt-8 md:mt-10 inline-block">
-          <Button className="bg-[#0176d3] hover:bg-[#014486] text-white px-16 md:px-9 py-6 rounded-md text-base md:text-lg font-poppins">
+          <Button className="bg-[#0176d3] cursor-pointer hover:bg-[#014486] text-white px-16 md:px-9 py-6 rounded-md text-base md:text-lg font-poppins">
             Try for free
           </Button>
         </Link>

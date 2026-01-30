@@ -52,7 +52,7 @@ const HomeVideo = () => {
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link target="_blank" href="https://store.zoho.in/ResellerCustomerSignUp.do?id=b3383bae8a8d4d5588223dbc7255a4d0b022d128fd51d94e98e55118213315b7" className="w-full sm:w-auto">
-                  <Button className="font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full">
+                  <Button className="cursor-pointer font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full">
                     Start for free
                   </Button>
                 </Link>
@@ -85,8 +85,8 @@ const HomeVideo = () => {
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/casestudy" className="w-full sm:w-auto">
-                  <Button className="font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full flex gap-2">
+                <Link href="/case-studies" className="w-full sm:w-auto">
+                  <Button className=" cursor-pointer font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full flex gap-2">
                     See our stories <IconArrowUpRight size={18} />
                   </Button>
                 </Link>
@@ -120,7 +120,7 @@ const HomeVideo = () => {
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link target="_blank" href="https://store.zoho.in/ResellerCustomerSignUp.do?id=b3383bae8a8d4d5588223dbc7255a4d0b022d128fd51d94e98e55118213315b7" className="w-full sm:w-auto">
-                  <Button className="font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full">
+                  <Button className="cursor-pointer font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full">
                     Start for free
                   </Button>
                 </Link>
@@ -128,7 +128,7 @@ const HomeVideo = () => {
                 <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
-                    className="font-poppins border-[#0176d3] px-8 py-6 text-base text-[#0176d3] w-full"
+                    className="cursor-pointer font-poppins border-[#0176d3] px-8 py-6 text-base text-[#0176d3] w-full"
                   >
                     Contact for demo
                   </Button>

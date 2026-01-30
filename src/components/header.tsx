@@ -25,6 +25,8 @@ const Header = () => {
   const [openMobileServices, setOpenMobileServices] = useState(false);
   const [openSheet, setOpenSheet] = useState(false); // ✅ added
 
+  const [openPopover, setOpenPopover] = useState(false);
+
   return (
     <header className="border-b bg-white">
       <div className="flex w-full items-center justify-between px-4 py-4 md:px-6">
@@ -46,41 +48,44 @@ const Header = () => {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
 
-            <Popover>
+            <Popover open={openPopover} onOpenChange={setOpenPopover}>
               <PopoverTrigger className="flex items-center gap-1 cursor-pointer">
                 <span>Services</span>
                 <IconChevronDown className="h-4 w-4" />
               </PopoverTrigger>
 
-              <PopoverContent className="w-64 p-2 font-poppins">
+              <PopoverContent className="w-64 p-2 font-poppins ">
                 <Link
                   href="/services/crm-strategy-implementation"
-                  className="block rounded px-4 py-2 hover:bg-gray-100"
+                  className="block rounded px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => setOpenPopover(false)}
                 >
                   CRM Strategy & Implementation
                 </Link>
                 <Link
                   href="/services/managed-services"
-                  className="block rounded px-4 py-2 hover:bg-gray-100"
+                  className="block rounded px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => setOpenPopover(false)}
                 >
                   Managed Services
                 </Link>
                 <Link
                   href="/services/value-added-services"
-                  className="block rounded px-4 py-2 hover:bg-gray-100"
+                  className="block rounded px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => setOpenPopover(false)}
                 >
                   Value Added Services
                 </Link>
               </PopoverContent>
             </Popover>
 
-            <Link href="/casestudy">Case Studies</Link>
+            <Link href="/case-studies">Case Studies</Link>
           </nav>
 
           <div className="flex items-center gap-6">
             <Link href="/contact">
-              <Button className="rounded-full border-2 border-[#003E9C] bg-[#003E9C] px-5 py-5 text-base font-poppins hover:bg-white hover:text-[#003E9C]">
-                Let’s Talk
+              <Button className="cursor-pointer rounded-full border-2 border-[#003E9C] bg-[#003E9C] px-5 py-5 text-base font-poppins hover:bg-white hover:text-[#003E9C]">
+                Let&apos;s Talk
               </Button>
             </Link>
           </div>
@@ -112,7 +117,7 @@ const Header = () => {
               <nav className="flex flex-col gap-6 px-6 text-sm uppercase tracking-wide font-poppins">
                 <Link
                   href="/"
-                  className="border-b border-white/10 pb-4"
+                  className="border-b border-[#003E9C]/20 pb-4"
                   onClick={() => setOpenSheet(false)}
                 >
                   Home
@@ -120,13 +125,13 @@ const Header = () => {
 
                 <Link
                   href="/about"
-                  className="border-b border-white/10 pb-4"
+                  className="border-b border-[#003E9C]/20 pb-4"
                   onClick={() => setOpenSheet(false)}
                 >
                   About
                 </Link>
 
-                <div className="border-b border-white/10 pb-4">
+                <div className="border-b border-[#003E9C]/20 pb-4">
                   <button
                     onClick={() => setOpenMobileServices(!openMobileServices)}
                     className="flex w-full items-center justify-between"
@@ -181,15 +186,15 @@ const Header = () => {
                 </div>
 
                 <Link
-                  href="/casestudy"
-                  className="border-b border-white/10 pb-4 font-poppins"
+                  href="/case-studies"
+                  className="border-b border-[#003E9C]/20 pb-4 font-poppins"
                   onClick={() => setOpenSheet(false)}
                 >
                   Case Studies
                 </Link>
 
                 <Link href="/contact" onClick={() => setOpenSheet(false)}>
-                  <Button className="mt-6 w-full rounded-full bg-[#003E9c]  hover:bg-white py-6 font-poppins text-white">
+                  <Button className="mt-6 w-full rounded-full bg-[#003E9C] border hover:border-[#003E9C]  hover:bg-white hover:text-[#003E9C] py-6 font-poppins text-white">
                     Let&apos;s Talk
                   </Button>
                 </Link>

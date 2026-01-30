@@ -19,17 +19,17 @@ const HomeHero = () => {
           <Link href="/contact">
           <Button
             size="lg"
-            className="bg-[#0176d3] px-10 py-6 text-base font-semibold hover:bg-[#014486]"
+            className="cursor-pointer bg-[#0176d3] px-10 py-6 text-base font-semibold hover:bg-[#014486]"
           >
            Start Your Transformation
 
           </Button></Link>
 
-          <Link href="/casestudy">
+          <Link href="/case-studies">
           <Button
             size="lg"
             variant="outline"
-            className="border-white bg-white px-10 py-6 text-base font-semibold text-sky-600 hover:bg-gray-100"
+            className="cursor-pointer border-white bg-white px-10 py-6 text-base font-semibold text-sky-600 hover:bg-gray-100"
           >
           Explore Our Methodology
 
