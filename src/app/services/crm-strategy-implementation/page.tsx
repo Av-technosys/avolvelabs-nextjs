@@ -14,6 +14,14 @@ import HomeCarousel from '@/components/homeCarousel'
 import HomeLatest from '@/components/homeLatest'
 import React from 'react'
 
+export const metadata  = {
+  title:"CRM Strategy & Implementation Services | AvolveLabs",
+  description:"AvolveLabs offers professional CRM strategy and implementation services that align your business goals to improve adoption, workflows, efficiency, and revenue.",
+  alternates:{
+    canonical:"https://avolvelabs.com/services/crm-strategy-implementation",
+  }
+}
+
 const page = () => {
   return (
     <div>

@@ -1,6 +1,14 @@
-"use client";
-
 import Image from "next/image";
+
+
+export const metadata  = {
+  title:"Customer Relationship Management Case Studies | AvolveLabs",
+  description:"AvolveLabs CRM case studies highlight real business challenges, system design approaches, and outcomes across sales, operations, and revenue processes. ",
+  alternates:{
+    canonical:"https://avolvelabs.com/case-studies/",
+  }
+}
+
 const cards = [
   {
     title: "Unifying Healthcare with a 360° Patient View",
