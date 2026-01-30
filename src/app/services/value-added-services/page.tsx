@@ -12,6 +12,14 @@ import ValueWhat from '@/components/valueWhat'
 import ValueWhyPartner from '@/components/valueWhyPartner'
 import React from 'react'
 
+export const metadata  = {
+  title:"Value Added Services for Salesforce & Zoho CRM | AvolveLabs",
+  description:"AvolveLabs offers CRM value-added services for Salesforce and Zoho, including workflow optimisation, automation, integration, and business-aligned solutions.",
+  alternates:{
+    canonical:"https://avolvelabs.com/services/value-added-services",
+  }
+}
+
 const page = () => {
   return (
     <div>

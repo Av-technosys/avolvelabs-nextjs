@@ -43,7 +43,7 @@ const CrmNew = () => {
             </h2>
 
             <p className="font-poppins text-md md:text-[16px] text-gray-700">
-              In a high performance systems environment, Agile isn't just a process it’s the engine that powers iterative growth. It allows the architecture to function as a living organism that adapts to market shifts in real time.
+              In a high performance systems environment, Agile isn&apos;t just a process it&apos;s the engine that powers iterative growth. It allows the architecture to function as a living organism that adapts to market shifts in real time.
 
             </p>
 
@@ -54,7 +54,7 @@ const CrmNew = () => {
 
                 </p>
                 <p className="mt-3 text-sm font-poppins text-[#032d60]">
-                  The system moves away from "one and done" implementations by utilizing constant pulses of real world data. Every user interaction serves as a feedback signal that informs the very next development cycle. 
+                  The system moves away from &quot;one and done&quot; implementations by utilizing constant pulses of real world data. Every user interaction serves as a feedback signal that informs the very next development cycle. 
                 </p>
               </CardContent>
             </Card>

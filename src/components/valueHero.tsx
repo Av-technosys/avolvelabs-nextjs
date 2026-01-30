@@ -18,7 +18,7 @@ const ManageHero = () => {
             <br />
           </h1>
           <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-6xl mx-auto mt-6 md:mt-10 px-2 md:px-4 leading-relaxed">
-            Adoption isn’t training, it's design, behavior, and reinforcement.
+            Adoption isn&apos;t training, it&apos;s design, behavior, and reinforcement.
 Go-Live is Just the Starting Line
 Many companies implement expensive CRMs only to see them become expensive address books. We fix this by focusing on the human element and business metrics.
           </p>

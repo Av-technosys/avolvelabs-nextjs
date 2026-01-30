@@ -11,6 +11,15 @@ import ManageWhat from '@/components/manageWhat'
 import ManageWhyPartner from '@/components/manageWhyPartner'
 import React from 'react'
 
+
+export const metadata  = {
+  title:"CRM Managed Services for Salesforce & Zoho | AvolveLabs",
+  description:"AvolveLabs provides managed services for Salesforce and Zoho CRM, helping businesses optimise systems, improve adoption, and support revenue operations.",
+  alternates:{
+    canonical:"https://avolvelabs.com/services/managed-services",
+  }
+}
+
 const page = () => {
   return (
     <div>
