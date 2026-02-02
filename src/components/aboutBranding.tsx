@@ -16,19 +16,18 @@ const AboutBranding = () => {
   return (
     <>
     <section className="w-full">
-        <div className="relative w-full  min-h-[270] md:min-h-[450] lg:min-h-[650] overflow-hidden">
-          <Image
-            src="/images/about.jpeg" 
-            alt="Commitment visual"
-            fill
-            className="object-cover"
-            priority
-            unoptimized
-          />
-         
-          <div className="absolute inset-0 bg-black/10" />
-        </div>
-      </section>
+  <div className="relative w-full min-h-67.5 md:min-h-112.5 lg:min-h-162.5">
+    <Image
+      src="/images/about.jpeg"
+      alt="Commitment visual"
+      fill
+      className="object-contain"  
+      priority
+    />
+    <div className="absolute inset-0 bg-black/" />
+  </div>
+</section>
+
       
     <section className="md:hidden hidden mx-auto max-w-7xl bg-[linear-gradient(to_right,#061C5B,#0B2FA0)] px-8 py-10">
       <div className="">
@@ -75,8 +74,6 @@ const AboutBranding = () => {
         </div>
       </div>
     </section>
-    
-
     </>
   )
 }
