@@ -14,17 +14,16 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import {
-  IconArrowBadgeRight,
   IconChevronDown,
   IconMenu2,
 } from "@tabler/icons-react";
 import Image from "next/image";
-import { ChevronRight, ChevronRightCircle } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion"; 
 
 const Header = () => {
   const [openMobileServices, setOpenMobileServices] = useState(false);
-  const [openSheet, setOpenSheet] = useState(false); // ✅ added
-
+  const [openSheet, setOpenSheet] = useState(false);
   const [openPopover, setOpenPopover] = useState(false);
 
   return (
@@ -37,14 +36,14 @@ const Header = () => {
           <Image
             src="/avolvelabslogo.png"
             alt="Avolve Labs Logo"
-            className="h-7 md:h-10  object-contain"
+            className="h-7 md:h-10 object-contain"
             height={80}
             width={160}
           />
         </Link>
 
         <div className="hidden w-full items-center md:flex">
-          <nav className="mx-auto flex  items-center gap-4 lg:gap-12 lg:text-md md:text-md font-poppins font-medium text-gray-700">
+          <nav className="mx-auto flex items-center gap-4 lg:gap-12 lg:text-md md:text-md font-poppins font-medium text-gray-700">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
 
@@ -101,14 +100,14 @@ const Header = () => {
 
             <SheetContent
               side="left"
-              className="w-[85%]  bg-white  px-0 text-[#003E9C]"
+              className="w-[85%] bg-white px-0 text-[#003E9C]"
             >
               <SheetHeader className="px-6 pb-8 pt-6 flex items-start">
                 <Image
                   src="/avolvelabslogo.png"
                   alt="Avolve Labs Logo"
-                  width={50}
-                  height={10}
+                  width={150}
+                  height={40}
                   className="h-7 w-auto object-contain"
                   priority
                 />
@@ -131,6 +130,7 @@ const Header = () => {
                   About
                 </Link>
 
+         
                 <div className="border-b border-[#003E9C]/20 pb-4">
                   <button
                     onClick={() => setOpenMobileServices(!openMobileServices)}
@@ -138,51 +138,61 @@ const Header = () => {
                   >
                     SERVICES
                     <IconChevronDown
-                      className={`transition-transform ${
+                      className={`transition-transform duration-300 ${
                         openMobileServices ? "rotate-180" : ""
                       }`}
                     />
                   </button>
 
-                  {openMobileServices && (
-                    <div className="mt-4 flex flex-col gap-4 pl-4 text-[#003E9C] font-poppins">
-                      <Link
-                        href="/services/crm-strategy-implementation"
-                        className="flex items-center gap-2"
-                        onClick={() => {
-                          setOpenSheet(false);
-                          setOpenMobileServices(false);
-                        }}
+                  <AnimatePresence>
+                    {openMobileServices && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
                       >
-                        <ChevronRight />
-                        CRM Strategy & Implementation
-                      </Link>
+                        <div className="mt-4 flex flex-col gap-4 pl-4 text-[#003E9C] font-poppins lowercase first-letter:uppercase">
+                          <Link
+                            href="/services/crm-strategy-implementation"
+                            className="flex items-center gap-2"
+                            onClick={() => {
+                              setOpenSheet(false);
+                              setOpenMobileServices(false);
+                            }}
+                          >
+                            <ChevronRight size={16} />
+                            CRM Strategy & Implementation
+                          </Link>
 
-                      <Link
-                        href="/services/managed-services"
-                        className="flex items-center gap-2"
-                        onClick={() => {
-                          setOpenSheet(false);
-                          setOpenMobileServices(false);
-                        }}
-                      >
-                       <ChevronRight />
-                        Managed Services
-                      </Link>
+                          <Link
+                            href="/services/managed-services"
+                            className="flex items-center gap-2"
+                            onClick={() => {
+                              setOpenSheet(false);
+                              setOpenMobileServices(false);
+                            }}
+                          >
+                            <ChevronRight size={16} />
+                            Managed Services
+                          </Link>
 
-                      <Link
-                        href="/services/value-added-services"
-                        className="flex items-center gap-2"
-                        onClick={() => {
-                          setOpenSheet(false);
-                          setOpenMobileServices(false);
-                        }}
-                      >
-                       <ChevronRight />
-                        Value Added Services
-                      </Link>
-                    </div>
-                  )}
+                          <Link
+                            href="/services/value-added-services"
+                            className="flex items-center gap-2"
+                            onClick={() => {
+                              setOpenSheet(false);
+                              setOpenMobileServices(false);
+                            }}
+                          >
+                            <ChevronRight size={16} />
+                            Value Added Services
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 <Link
@@ -194,7 +204,7 @@ const Header = () => {
                 </Link>
 
                 <Link href="/contact" onClick={() => setOpenSheet(false)}>
-                  <Button className="mt-6 w-full rounded-full bg-[#003E9C] border hover:border-[#003E9C]  hover:bg-white hover:text-[#003E9C] py-6 font-poppins text-white">
+                  <Button className="mt-6 w-full rounded-full bg-[#003E9C] border hover:border-[#003E9C] hover:bg-white hover:text-[#003E9C] py-6 font-poppins text-white">
                     Let&apos;s Talk
                   </Button>
                 </Link>
