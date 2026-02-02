@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <>
-      <FraudAlert />
+      {/* <FraudAlert /> */}
       <HomeHero />
       <HomeCarousel />
       <HomeVideo />
