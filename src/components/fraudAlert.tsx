@@ -7,6 +7,7 @@ const FraudAlert = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Ye timer har baar chalega jab Layout 'Hard Reload' hoga
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 5000);
@@ -37,17 +38,19 @@ const FraudAlert = () => {
 
           <div className="mt-6 space-y-3 text-sm text-gray-600 leading-relaxed font-poppins">
             <p>
-             If you receive any calls from suspicious numbers regarding any job openings, investment opportunities, or business inquiries/clients, please report them immediately.
+              If you receive any calls from suspicious numbers regarding any job
+              openings, investment opportunities, or business inquiries/clients,
+              please report them immediately.
             </p>
+
             <p>
-           All official communication related to employee hiring, business engagements, or investments will only be made through our official portals and verified channels
-through official email ID.
+              All official communication related to employee hiring, business
+              engagements, or investments will only be made through our official
+              portals and verified channels through official email ID.
             </p>
 
             <div className="space-y-1 font-semibold text-blue-600">
-              {/* <a href="mailto:legal@avtech.com" className="block hover:underline">
-                legal@avtech.com
-              </a> */}
+
               <a href="/contact" className="block hover:underline">
                 Contact@avolvelabs.com
               </a>
