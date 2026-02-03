@@ -79,9 +79,9 @@ const ContactClient = () => {
           <div className="grid gap-1 lg:gap-12 lg:grid-cols-2">
             <Card className="rounded-3xl border-none shadow-xl bg-white overflow-hidden mb-24">
               <CardContent className="p-10 md:p-14">
-                <h2 className="text-4xl font-bold text-[#111827] font-playfair">
+                <h1 className="text-4xl font-bold text-[#111827] font-playfair">
                   Request a Call Back
-                </h2>
+                </h1>
                 <p className="mt-4 text-gray-500 text-lg font-poppins">
                   Fill out the form below and our team will reach out to you
                   shortly.

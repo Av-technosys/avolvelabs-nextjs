@@ -79,9 +79,9 @@ const HomeLatest = () => {
         </div> */}
       </section>
       <section className="text-center md:px-8 px-8 py-10">
-        <h1 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
+        <h4 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
           Get started today.
-        </h1>
+        </h4>
 
         <p className="font-poppins mt-10 max-w-3xl mx-auto text-[17px] md:text-[27px] lg:text-[27px]  text-[#032d60] leading-tight">
           There nothing to install. No credit card required. Free for 30 days.

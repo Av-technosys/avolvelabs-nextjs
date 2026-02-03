@@ -36,12 +36,12 @@ const HomeVideo = () => {
         <div className="mx-auto max-w-7xl px-8 md:px-11">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h1 className="text-3xl md:text-[35px] font-playfair font-bold text-[#032d60] leading-tight">
+              <h2 className="text-3xl md:text-[35px] font-playfair font-bold text-[#032d60] leading-tight">
                 CRM Strategy & Implementation
                 <span className="text-[#0176d3]">
                   <br /> Build the right revenue foundation
                 </span>
-              </h1>
+              </h2>
 
               <p className="mt-6 font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed">
                 We design CRM systems that actually support how your business
@@ -71,12 +71,12 @@ const HomeVideo = () => {
         <div className="mx-auto max-w-7xl px-8 md:px-11">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="lg:order-2">
-              <h1 className="text-3xl md:text-[35px] font-playfair font-bold text-[#032d60] leading-tight">
+              <h2 className="text-3xl md:text-[35px] font-playfair font-bold text-[#032d60] leading-tight">
                 Agentic AI & Automation
                 <span className="text-[#0176d3]">
                   <br /> AI that works like a team member
                 </span>
-              </h1>
+              </h2>
 
               <p className="mt-6 font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed">
                 We build autonomous AI agents that handle sales follow ups,
@@ -105,12 +105,12 @@ const HomeVideo = () => {
         <div className="mx-auto max-w-7xl px-8 md:px-11">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h1 className="text-3xl md:text-[35px] font-playfair font-bold text-[#032d60] leading-tight">
+              <h2 className="text-3xl md:text-[35px] font-playfair font-bold text-[#032d60] leading-tight">
                 Managed Services & Adoption
                 <span className="text-[#0176d3]">
                   <br /> Systems don’t fail. Adoption does.
                 </span>
-              </h1>
+              </h2>
 
               <p className="mt-6 font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed">
                 We stay with you post go live to continuously optimize, manage
