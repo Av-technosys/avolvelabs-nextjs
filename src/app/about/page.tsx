@@ -14,7 +14,7 @@ export const metadata  = {
   title:"About AvolveLabs | Customer Relationship Management Experts",
   description:"We are a leading CRM strategy and development company offering custom CRM software solutions to align technology with business goals and accelerate growth.",
   alternates:{
-    canonical:"https://avolvelabs.com/about/",
+    canonical:"https://avolvelabs.com/about",
   }
 }
 

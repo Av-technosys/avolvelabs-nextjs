@@ -74,9 +74,9 @@ const Testimonial = () => {
       <div className="w-full">
         <div className="flex flex-col md:flex-row justify-between items-end md:items-center mb-12 gap-6">
           <div className="text-center md:text-left flex-1">
-            <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-4">
+            <h4 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-4">
               What Our Clients Say
-            </h2>
+            </h4>
             <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-2xl">
               We don&apos;t just aim to impress we consistently deliver. But
               don&apos;t just take our word for it. Hear what our clients have
@@ -130,9 +130,9 @@ const Testimonial = () => {
                         {item.initials}
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#032d60] font-poppins text-sm md:text-base">
+                        <p className="font-bold text-[#032d60] font-poppins text-sm md:text-base">
                           {item.name}
-                        </h4>
+                        </p>
                         <p className="text-xs md:text-sm text-gray-500 font-poppins">
                           {item.role}
                         </p>
