@@ -18,19 +18,20 @@ export async function POST(request: NextRequest) {
     const userMail = process.env.EMAIL_USER;
     const userPass = process.env.EMAIL_PASS;
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: userMail,
-        pass: userPass,
-      },
-    });
+  const transporter = nodemailer.createTransport({
+  host: "smtp.hostinger.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: userMail,
+    pass: userPass,
+  },
+});
+
 
     const mailOptions = {
       from: `"${name}" <${process.env.EMAIL_USER}>`,
-      to: "avtechnosys02@gmail.com",
+      to: "Support@avolvelabs.com",
       replyTo: email,
       subject: `Enquiry: ${enquiryFor}`,
       html: `
