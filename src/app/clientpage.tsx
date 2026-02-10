@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { LoaderFive, LoaderFour,} from "@/components/ui/loader";
+// 1. LoaderFour/Five ki jagah VideoLoader import kiya
+import { VideoLoader } from "@/components/ui/loader"; 
 
 import BrandCarousel from "@/components/brandCarousel";
 import FraudAlert from "@/components/fraudAlert";
@@ -21,22 +22,23 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500); // change time if needed
+    }, 2000); // 2. Video dikhne ke liye time thoda badha diya
 
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
     return (
-      <div className="flex items-center text-5xl justify-center h-screen">
-        <LoaderFour text="Avolvelabs..." />
+      <div className="flex items-center justify-center h-screen bg-white dark:bg-slate-950">
+        {/* 3. LoaderFour hata kar VideoLoader call kiya */}
+        <VideoLoader />
       </div>
     );
   }
 
   return (
     <>
-      {/* <FraudAlert /> */}
+      {/* Aapki routing aur components bilkul same hain */}
       <HomeHero />
       <HomeCarousel />
       <HomeVideo />

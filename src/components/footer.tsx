@@ -54,6 +54,7 @@ const Footer = () => {
                 { name: "Home", href: "/" },
                 { name: "About", href: "/about" },
                 { name: "Case Studies", href: "/case-studies" },
+                { name: "Career", href: "/career" },
                 { name: "Let's Talk", href: "/contact" },
               ].map((item) => (
                 <Link key={item.name} href={item.href}>

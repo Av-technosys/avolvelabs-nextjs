@@ -202,8 +202,8 @@ const ContactClient = () => {
                 
                   <div className="flex items-center gap-4">
                     <IconMail size={22} />
-                    <Link className="cursor-pointer" href={"mailto:contact@avolvelabs.com"}>
-                    <p>contact@avolvelabs.com</p>
+                    <Link className="cursor-pointer" href="https://mail.google.com/mail/?view=cm&fs=1&to=Support@avolvelabs.com">
+                    <p>support@avolvelabs.com</p>
                     </Link>
                   </div>
                 </div>
