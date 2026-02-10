@@ -75,9 +75,17 @@ const Header = () => {
                 >
                   Value Added Services
                 </Link>
+                {/* <Link
+                  href="/services/devops"
+                  className="block rounded px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => setOpenPopover(false)}
+                >
+                  Devops
+                </Link> */}
               </PopoverContent>
             </Popover>
 
+            <Link href="/career">Career</Link>
             <Link href="/case-studies">Case Studies</Link>
           </nav>
 
@@ -189,6 +197,17 @@ const Header = () => {
                             <ChevronRight size={16} />
                             Value Added Services
                           </Link>
+                          <Link
+                            href="/services/devops"
+                            className="flex items-center gap-2"
+                            onClick={() => {
+                              setOpenSheet(false);
+                              setOpenMobileServices(false);
+                            }}
+                          >
+                            <ChevronRight size={16} />
+                            Devops
+                          </Link>
                         </div>
                       </motion.div>
                     )}
@@ -201,6 +220,13 @@ const Header = () => {
                   onClick={() => setOpenSheet(false)}
                 >
                   Case Studies
+                </Link>
+                <Link
+                  href="/career"
+                  className="border-b border-[#003E9C]/20 pb-4 font-poppins"
+                  onClick={() => setOpenSheet(false)}
+                >
+                  Career
                 </Link>
 
                 <Link href="/contact" onClick={() => setOpenSheet(false)}>

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { IconX } from "@tabler/icons-react";
+import Link from "next/link";
 
 const FraudAlert = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,10 +51,13 @@ const FraudAlert = () => {
             </p>
 
             <div className="space-y-1 font-semibold text-blue-600">
-
-              <a href="/contact" className="block hover:underline">
-                Contact@avolvelabs.com
-              </a>
+              <Link
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=Support@avolvelabs.com"
+                target="_blank"
+                className="block hover:underline"
+              >
+                Support@avolvelabs.com
+              </Link>
             </div>
 
             <p className="pt-4 text-sm font-medium text-gray-500 border-t border-gray-100">
