@@ -75,9 +75,11 @@ const Footer = () => {
             <div className="text-center md:text-right text-sm text-white font-poppins opacity-80">
               <p>Proudly created in India.</p>
               <p>All Right Reserved, All Wrong Reversed.</p>
+             <p className="text-md font-bold uppercase font-poppins"><Link href={"/privacy-policy"} > privacy policy</Link></p>
             </div>
           </div>
         </div>
+      
       </footer>
     </>
   );
