@@ -8,13 +8,13 @@ const PrivacyPolicy = () => {
       <section className="px-8 py-16 md:py-16 ">
         <div className="mx-auto max-w-7xl">
           <div className="text-left ">
-            <h1 className="font-playfair text-4xl md:text-[52px] font-bold text-[#032d60] mb-6">
+            <h1 className="font-playfair text-center text-4xl md:text-[52px] font-bold text-[#032d60] mb-6">
               Privacy Policy
             </h1>
-            <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-4xl leading-relaxed">
+            <p className="font-poppins mx-auto text-center text-md md:text-[18px] text-gray-700 max-w-4xl leading-relaxed">
               AvolveLabs (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is a CRM software development company proudly based in India. We are committed to protecting the privacy and security of personal information that our clients, website visitors, and users share with us.
             </p>
-            <p className="mt-3 font-poppins text-md md:text-[18px] text-gray-700 max-w-4xl leading-relaxed">
+            <p className="mt-3 font-poppins mx-auto text-center text-md md:text-[18px] text-gray-700 max-w-4xl leading-relaxed">
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (www.avolvelabs.com) or engage with our CRM development services. Please read this policy carefully. By using our website or services, you agree to the practices described in this document. If you do not agree with the terms of this Privacy Policy, please do not access or use our services.
             </p>
           </div>
@@ -116,15 +116,15 @@ const PrivacyPolicy = () => {
                 <p>We process your personal data under the following legal bases, in accordance with applicable Indian data protection law (including the Digital Personal Data Protection Act, 2023, where applicable) and international standards:</p>
                 <ul className="space-y-3 ml-2">
                   <li className="flex gap-1">
-                    <span className="font-bold text-[#032d60] min-w-[100px]">Consent Necessity: </span> 
+                    <span className="font-bold text-gray-700 min-w-[100px]">Consent Necessity: </span> 
                     <span>Where you have given us clear, informed consent to process your data for a specific purpose.</span>
                   </li>
                   <li className="flex gap-1">
-                    <span className="font-bold text-[#032d60] min-w-[100px]">Contractual Necessity:</span> 
+                    <span className="font-bold text-gray-700 min-w-[100px]">Contractual Necessity:</span> 
                     <span>Where processing is necessary to enter into or fulfill a contract with you or your organization.</span>
                   </li>
                   <li className="flex gap-1">
-                    <span className="font-bold text-[#032d60] min-w-[100px]"> Legal Obligation:</span> 
+                    <span className="font-bold text-gray-700 min-w-[100px]"> Legal Obligation:</span> 
                     <span>Where we are required to process data to comply with a legal or regulatory obligation.</span>
                   </li>
                 </ul>
@@ -186,13 +186,13 @@ const PrivacyPolicy = () => {
               <div className="space-y-4">
                 <h2 className="font-playfair text-2xl md:text-[32px] font-bold text-[#032d60]">9. Your Privacy Rights</h2>
                 <p className="text-md md:text-[18px]">Depending on your location and applicable law, you may have the following rights:</p>
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 ml-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-0 ml-2">
                   {[
                     "Right of Access", "Right to Rectification", "Right to Erasure", 
                     "Right to Restriction", "Right to Data Portability", 
                     "Right to Object", "Right to Withdraw Consent"
                   ].map((right) => (
-                    <div key={right} className="border-b border-gray-100 py-2 font-bold text-[#032d60] text-md md:text-[18px]">• {right}</div>
+                    <div key={right} className=" py-2 font-semibold text-gray-700 text-md md:text-[18px]">• {right}</div>
                   ))}
                 </div>
                 <p className="mt-4 text-md md:text-[18px]">To exercise any of these rights, please contact us at the details provided in Section 12. We will respond within 30 days.</p>
@@ -212,7 +212,7 @@ const PrivacyPolicy = () => {
             {/* 12. Final Section */}
             <div className="space-y-6">
               <h2 className="font-playfair text-2xl md:text-[32px] font-bold text-[#032d60]">
-               13. Changes to This Privacy Policy
+               12. Changes to This Privacy Policy
               </h2>
               <div className="font-poppins text-gray-700 space-y-4 text-md md:text-[18px]">
                 <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or business operations. When we make material changes, we will update the "Last Updated" date at the top of this policy and, where appropriate, notify you via email or a prominent notice on our website.</p>
