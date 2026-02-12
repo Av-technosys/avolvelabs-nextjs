@@ -1,7 +1,13 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-
+export const metadata = {
+  title: "Careers at AvolveLabs | Join Our Team	",
+  description: "Explore exciting career opportunities at AvolveLabs. Join our team of innovators and be part of a dynamic team driving innovation and growth. Contact us.",
+  alternates: {
+    canonical: "https://avolvelabs.com/career",
+  },
+};
 const Page = () => {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')

@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex min-h-[20vh] md:h-[30vh] items-center justify-center px-4">
           <Link href="/">
     
-            <motion.h1
+            <motion.p
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
@@ -23,7 +23,7 @@ const Footer = () => {
               className="avolve-text text-6xl cursor-pointer md:text-9xl font-extrabold tracking-tight leading-none font-sans"
             >
               avolvelabs
-            </motion.h1>
+            </motion.p>
           </Link>
         </div>
 

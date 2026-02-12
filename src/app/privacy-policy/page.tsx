@@ -1,6 +1,15 @@
 "use client"
 import React from 'react'
 
+export const metadata = {
+  title: "Our Privacy Policy | AvolveLabs	",
+  description: "Read AvolveLabs' Privacy Policy to understand how we collect, use, and protect your data when you use our services. Call us for more information.",
+  alternates: {
+    canonical: "https://avolvelabs.com/privacy-policy",
+  },
+};
+
+
 const PrivacyPolicy = () => {
   return (
     <div className="bg-white min-h-screen">
