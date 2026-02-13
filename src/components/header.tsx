@@ -75,13 +75,13 @@ const Header = () => {
                 >
                   Value Added Services
                 </Link>
-                {/* <Link
+                <Link
                   href="/services/devops"
                   className="block rounded px-4 py-2 hover:bg-gray-100 cursor-pointer"
                   onClick={() => setOpenPopover(false)}
                 >
                   Devops
-                </Link> */}
+                </Link>
               </PopoverContent>
             </Popover>
 

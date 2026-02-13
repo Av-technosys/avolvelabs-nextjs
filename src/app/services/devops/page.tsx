@@ -1,34 +1,37 @@
-import React from 'react'
-import HomeLatest from '@/components/homeLatest'
-import BrandCarousel from '@/components/brandCarousel'
-import DevOpsWhat from '@/components/devOpsWhat'
-import DevOpsApproach from '@/components/devOpsApproach'
-import DevOpsTech from '@/components/devOpsTech'
-import DevOpsAgentSuite from '@/components/devOpsAgentSuite'
-import DevOpsHero from '@/components/devOpsHero'
-
+import React from "react";
+import HomeLatest from "@/components/homeLatest";
+import BrandCarousel from "@/components/brandCarousel";
+import DevOpsWhat from "@/components/devOpsWhat";
+import DevOpsApproach from "@/components/devOpsApproach";
+import DevOpsTech from "@/components/devOpsTech";
+import DevOpsAgentSuite from "@/components/devOpsAgentSuite";
+import DevOpsHero from "@/components/devOpsHero";
+import DevopsTeams from "@/components/devopsTeams";
+import DevOpsNew from "@/components/devopsNew";
 
 export const metadata = {
   title: "DevOps Consulting & Automation Services | AvolveLabs",
-  description: "AvolveLabs provides end-to-end DevOps consulting, CI/CD automation, and cloud infrastructure management to accelerate your software delivery.",
+  description:
+    "AvolveLabs provides end-to-end DevOps consulting, CI/CD automation, and cloud infrastructure management to accelerate your software delivery.",
   alternates: {
     canonical: "https://avolvelabs.com/services/devops",
-  }
-}
+  },
+};
 
 const page = () => {
   return (
     <div className="bg-white">
-      <DevOpsHero/>
-     
-      <DevOpsWhat/>
-      <DevOpsApproach /> 
+      <DevOpsHero />
+      <DevopsTeams />
+      <DevOpsWhat />
+      <DevOpsApproach />
       <DevOpsTech />
-      <DevOpsAgentSuite/>
-      <BrandCarousel /> 
+      <DevOpsAgentSuite />
+      <BrandCarousel />
+      <DevOpsNew />
       <HomeLatest />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
