@@ -43,7 +43,7 @@ const ValueTeams = () => {
           {duplicatedLogos.map((logo, index) => (
             <div 
               key={index} 
-              className="shrink-0 bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-50 p-6 w-48 h-28 flex items-center justify-center transition-transform hover:scale-105"
+              className="shrink-0 bg-white rounded-xl p-6 w-48 h-28 flex items-center justify-center transition-transform hover:scale-105"
             >
               <Image
               width={600}
