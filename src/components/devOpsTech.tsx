@@ -12,7 +12,7 @@ type CrmTechProps = {
 
 const DevOpsTech = ({
   title = "Who This Service Is For",
-  description = "This service is designed for organizations looking to move beyond basic CRM usage and build systems that actively support efficiency, collaboration, and long-term growth.",
+  description = "This service is designed for organizations looking to move beyond basic development practices and build a structured DevOps ecosystem that drives efficiency, collaboration, and scalable long-term growth.",
   bgClass = "bg-[#E8E2DB]",
   titleColor = "text-[#032d60]",
   borderColor = "border-pink-400",
