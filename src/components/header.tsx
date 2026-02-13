@@ -80,7 +80,7 @@ const Header = () => {
                   className="block rounded px-4 py-2 hover:bg-gray-100 cursor-pointer"
                   onClick={() => setOpenPopover(false)}
                 >
-                  Devops
+                  Salesforce Devops
                 </Link>
               </PopoverContent>
             </Popover>
