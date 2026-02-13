@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 
 export const metadata = {
@@ -8,7 +7,6 @@ export const metadata = {
     canonical: "https://avolvelabs.com/privacy-policy",
   },
 };
-
 
 const PrivacyPolicy = () => {
   return (
@@ -125,15 +123,15 @@ const PrivacyPolicy = () => {
                 <p>We process your personal data under the following legal bases, in accordance with applicable Indian data protection law (including the Digital Personal Data Protection Act, 2023, where applicable) and international standards:</p>
                 <ul className="space-y-3 ml-2">
                   <li className="flex gap-1">
-                    <span className="font-bold text-gray-700 min-w-[100px]">Consent Necessity: </span> 
+                    <span className="font-bold text-gray-700 min-w-25">Consent Necessity: </span> 
                     <span>Where you have given us clear, informed consent to process your data for a specific purpose.</span>
                   </li>
                   <li className="flex gap-1">
-                    <span className="font-bold text-gray-700 min-w-[100px]">Contractual Necessity:</span> 
+                    <span className="font-bold text-gray-700 min-w-25">Contractual Necessity:</span> 
                     <span>Where processing is necessary to enter into or fulfill a contract with you or your organization.</span>
                   </li>
                   <li className="flex gap-1">
-                    <span className="font-bold text-gray-700 min-w-[100px]"> Legal Obligation:</span> 
+                    <span className="font-bold text-gray-700 min-w-25"> Legal Obligation:</span> 
                     <span>Where we are required to process data to comply with a legal or regulatory obligation.</span>
                   </li>
                 </ul>
@@ -224,7 +222,7 @@ const PrivacyPolicy = () => {
                12. Changes to This Privacy Policy
               </h2>
               <div className="font-poppins text-gray-700 space-y-4 text-md md:text-[18px]">
-                <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or business operations. When we make material changes, we will update the "Last Updated" date at the top of this policy and, where appropriate, notify you via email or a prominent notice on our website.</p>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or business operations. When we make material changes, we will update the &quot;Last Updated&quot; date at the top of this policy and, where appropriate, notify you via email or a prominent notice on our website.</p>
               </div>
             </div>
 
