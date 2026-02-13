@@ -27,7 +27,6 @@ const page = () => {
       <DevOpsApproach />
       <DevOpsTech />
       <DevOpsAgentSuite />
-      <BrandCarousel />
       <DevOpsNew />
       <HomeLatest />
     </div>
