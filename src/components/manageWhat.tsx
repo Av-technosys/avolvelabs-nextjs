@@ -9,16 +9,15 @@ const ManageWhat = () => {
       <div className="relative overflow-hidden">
         <section className="text-center px-8 pb-10">
           <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight max-w-4xl mx-auto">
-            What is Manage Service?
+           Scaling Your Business Without the Overhead
+
           </h2>
           <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-4xl mx-auto mt-8 leading-relaxed">
-            Crm Service is the complete platform that empowers your service
-            teams to deliver seamless support across every channel — from the
-            contact centre, to the field, to HR, and now IT Service. With humans
-            and AI agents working together on one unified, metadata-based
-            platform, you can transform every customer interaction into a
-            personalised experience while driving efficiency.
+          Salesforce is the engine of your enterprise, but maintaining it shouldn't be a full time distraction for your leadership. At Avolve Labs, we provide the technical expertise and strategic foresight required to transform a clunky database into a high-performance growth engine.We don’t just close tickets we solve business bottlenecks. Our mission is to ensure your CRM evolves at the speed of your ambition.
+
           </p>
+           <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-4xl mx-auto mt-8 leading-relaxed">
+</p>
           <div className="flex flex-row items-center justify-center gap-1 md:gap-3 mt-10 px-2">
             <Button
               asChild // <--- Ye sabse important hai

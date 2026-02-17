@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { IconBrandLinkedin, IconBrandInstagram } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconBrandInstagram, IconBrandFacebook } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -38,6 +38,13 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <IconBrandLinkedin className="h-8 w-8 hover:opacity-70 transition cursor-pointer" />
+              </Link>
+              <Link
+                target="_blank"
+                href="https://www.facebook.com/share/1NML27RcHE/?mibextid=wwXIfr"
+                aria-label="Facebook"
+              >
+                <IconBrandFacebook className="h-8 w-7 hover:opacity-70 transition cursor-pointer" />
               </Link>
               <Link
                 target="_blank"

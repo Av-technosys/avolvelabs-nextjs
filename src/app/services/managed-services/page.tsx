@@ -3,7 +3,10 @@ import FAQ from '@/components/faq'
 import HomeLatest from '@/components/homeLatest'
 import ManageAgentSuite from '@/components/manageAgentSuite'
 import ManageApproach from '@/components/manageApproach'
+import ManageAvolveDifference from '@/components/manageAvolveDifference'
+import ManageAvolvePath from '@/components/manageAvolvePath'
 import ManageBook from '@/components/manageBook'
+import ManageComparisonSection from '@/components/manageComparisonSection'
 import ManageHero from '@/components/manageHero'
 import ManagesBusinessValueDemo from '@/components/managesBusinessValueDemo'
 import ManageTeams from '@/components/manageTeams'
@@ -27,7 +30,7 @@ const page = () => {
       <ManageTeams/>
       <ManageWhat/>
       <ManageBook/>
-      {/* <ManageApproach/> */}
+      <ManageApproach/>
       {/* <CrmTech 
        bgClass="bg-[#FEEAC9]"
          titleColor="text-[#032d60]"
@@ -37,9 +40,12 @@ const page = () => {
          orbit1={["Salesforce", "HubSpot", "Zoho", "Dynamics"]}
          orbit2={["OpenAI", "Claude", "Gemini", "Llama"]}/> */}
          {/* <ManageAgentSuite/> */}
+        <ManagesBusinessValueDemo/>
          <ManageWhyPartner/>
-        {/* <ManagesBusinessValueDemo/> */}
-        <HomeLatest/>
+        <ManageComparisonSection/>
+        <ManageAvolveDifference/>
+        <ManageAvolvePath/>
+        {/* <HomeLatest/> */}
       {/* <FAQ
            textColor="#0f172a"
            hoverColor="#3291B6"
