@@ -77,7 +77,7 @@ const CareerClient = () => {
     }
 
     return (
-        <div className="bg-white text-slate-900 overflow-x-hidden">
+        <div className="bg-white text-[#032d60] overflow-x-hidden">
             {/* Hero Section */}
             <section className="relative overflow-hidden">
                 <div className="mx-auto max-w-6xl px-6 pb-16 pt-24">
@@ -114,7 +114,7 @@ const CareerClient = () => {
                                         style={{ animationDelay: `${idx * 100}ms` }}
                                     >
                                         <p className="text-xs uppercase tracking-[0.2em] text-slate-500 font-poppins">{item.label}</p>
-                                        <p className="mt-2 text-lg font-semibold text-slate-900 font-poppins">{item.value}</p>
+                                        <p className="mt-2 text-lg font-semibold text-[#032d60] font-poppins">{item.value}</p>
                                     </div>
                                 ))}
                             </div>
@@ -175,7 +175,7 @@ const CareerClient = () => {
                                     </span>
                                 </div>
                                 <p className="mt-4 font-poppins text-md text-gray-700 leading-relaxed">{role.desc}</p>
-                                <a href="#apply" className="mt-8 font-poppins inline-flex items-center gap-2 text-sm font-bold text-slate-900 transition group-hover:gap-3 group-hover:text-[#032d60]">
+                                <a href="#apply" className="mt-8 font-poppins inline-flex items-center gap-2 text-sm font-bold text-[#032d60] transition group-hover:gap-3 group-hover:text-[#032d60]">
                                     Apply for this role
                                     <span aria-hidden className="text-lg transition-transform group-hover:translate-x-1">-&gt;</span>
                                 </a>
