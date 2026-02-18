@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // 2. Video dikhne ke liye time thoda badha diya
+    }, 3000); // 2. Video dikhne ke liye time thoda badha diya
 
     return () => clearTimeout(timer);
   }, []);
