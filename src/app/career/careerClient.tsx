@@ -197,7 +197,7 @@ const CareerClient = () => {
                                 experience.
                             </p>
                         </div>
-                        <div className="grid gap-4">
+                        <div className="grid gap-0">
                             {[
                                 { step: '01', title: 'Intro call', text: 'A short chat to learn about your goals and our needs.' },
                                 { step: '02', title: 'Skill interview', text: 'Deep dive into your craft with our team.' },
@@ -207,7 +207,7 @@ const CareerClient = () => {
                                 <div
                                     key={item.step}
                                     data-animate-id={`process-card-${idx}`}
-                                    className={`flex items-start gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md hover:border-sky-200 ${visibleElements[`process-card-${idx}`] ? 'slide-up' : 'opacity-0'}`}
+                                    className={`flex items-start gap-0 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md hover:border-sky-200 ${visibleElements[`process-card-${idx}`] ? 'slide-up' : 'opacity-0'}`}
                                     style={{ animationDelay: `${idx * 150}ms` }}
                                 >
                                     <div className="text-sm font-bold text-sky-600 bg-sky-50 rounded-lg px-3 py-2 font-poppins">{item.step}</div>
@@ -234,7 +234,7 @@ const CareerClient = () => {
                             </p>
                             <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:shadow-lg">
                                 <h3 className="text-lg font-bold text-[#032d60] font-poppins">What we value in applicants</h3>
-                                <ul className="mt-6 grid gap-4 text-md text-gray-700 font-poppins">
+                                <ul className="mt-1 grid gap-0 text-md text-gray-700 font-poppins">
                                     {[
                                         'Clear communication and ownership',
                                         'Evidence of shipped work',
@@ -324,7 +324,7 @@ const CareerClient = () => {
                             <button 
                                 type="submit" 
                                 disabled={isSubmitting} 
-                                className="mt-8 w-full rounded-full bg-[#032d60] py-4 text-white font-bold transition hover:bg-[#021b3a] disabled:opacity-70"
+                                className="mt-0 w-full rounded-full bg-[#032d60] py-4 text-white font-bold transition hover:bg-[#021b3a] disabled:opacity-70"
                             >
                                 {isSubmitting ? 'Processing...' : 'Submit Application'}
                             </button>

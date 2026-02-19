@@ -18,7 +18,7 @@ const HomeValues = () => {
           </p>
           <div className="flex flex-row gap-1 ">
             <Link href="/services/crm-strategy-implementation" target="_blank">
-            <Button className="bg-[#0176d3] font-poppins hover:bg-[#014486] text-white font-bold h-auto px-4 md:px-8 py-3 rounded-xl shadow-sm transition-all active:scale-95 whitespace-nowrap text-sm md:text-base">
+            <Button className="bg-[#0176d3] font-poppins hover:bg-white text-white font-bold h-auto px-4 md:px-8 py-3 rounded-xl shadow-sm transition-all active:scale-95 whitespace-nowrap text-sm md:text-base">
               See what drives
             </Button>
             </Link>

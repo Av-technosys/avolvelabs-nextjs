@@ -59,7 +59,7 @@ const HomeServiceCards = () => {
 {" "}
         </h2>
 
-        <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 leading-relaxed">
+        <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 leading-4">
           Every industry operates differently, but the need for efficiency, growth, and customer centric systems is universal. Avolve Labs builds adaptable, intelligent, and scalable digital solutions tailored to the operational realities of each industry.
         </p>
       </section>
