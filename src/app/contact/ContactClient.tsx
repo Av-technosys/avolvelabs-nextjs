@@ -233,7 +233,7 @@ const ContactClient = () => {
             priority
           />
           <div className="absolute inset-0  transition-colors duration-500 flex items-center justify-center p-4">
-            <h2 className="text-white text-xl md:text-2xl  font-extrabold uppercase tracking-tighter text-center italic">
+            <h2 className="text-white text-xl md:text-xl  font-extrabold uppercase tracking-tighter text-center italic">
               Jaipur, Rajasthan,<br/> India
             </h2>
           </div>
@@ -246,8 +246,8 @@ const ContactClient = () => {
             className="object-cover brightness-75"
           />
           <div className="absolute inset-0   transition-colors duration-500 flex items-center justify-center p-4">
-            <h2 className="text-white text-xl md:text-2xl  font-extrabold uppercase tracking-tighter text-center font-poppins">
-             Frisco, Texas (Dallas Fort Worth Area), U.S.A.
+            <h2 className="text-white text-md md:text-2xl font-extrabold uppercase tracking-tighter text-center font-poppins">
+             Frisco, Texas  <br/> (Dallas Fort Worth Area), <br/> U.S.A.
             </h2>
           </div>
         </div>
@@ -260,7 +260,7 @@ const ContactClient = () => {
           />
           <div className="absolute inset-0  transition-colors duration-500 flex items-center justify-center p-4">
             <h2 className="text-white text-xl md:text-2xl  font-extrabold uppercase tracking-tighter text-center italic">
-              Worcester, United Kingdom
+              Worcester, <br/> United Kingdom
             </h2>
           </div>
         </div>

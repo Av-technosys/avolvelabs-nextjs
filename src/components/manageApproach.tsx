@@ -70,7 +70,7 @@ const ManageApproach = () => {
               </CardContent>
             </Card>
           ))}
-          <div className="hidden lg:flex items-center justify-center p-6 border border-dashed border-white/10 rounded-xl">
+          <div className=" lg:flex items-center justify-center p-6 border border-dashed border-white/10 rounded-xl">
             <p className="text-gray-500 font-poppins text-sm italic text-center">
              We handle the technical heavy lifting across the entire Salesforce ecosystem, allowing your sales and success teams to focus on what matters most: revenue and retention.
 
