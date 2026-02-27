@@ -14,7 +14,7 @@ const ManageBook = () => {
           <h2 className="font-playfair text-black text-xl md:text-[25px] font-bold mb-6 leading-tight max-w-4xl">
             Not Sure Where to Begin with Manage Services? We&apos;ll Help You Start Smart.
           </h2>
-          <p className="font-poppins text-base md:text-[15px] max-w-3xl mb-10 leading-relaxed font-light">
+          <p className="font-poppins text-base md:text-[15px] max-w-3xl mb-10 leading-3 font-light">
             We work with you to identify the right use cases, assess data readiness, and define an AI roadmap aligned to your business goals, so you don&apos;t waste time or budget.
           </p>
          <Link href="/contact">

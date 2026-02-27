@@ -25,9 +25,9 @@ const CrmWhat = () => {
               asChild
               className="font-poppins cursor-pointer bg-[#0176d3] hover:bg-[#015ba3] text-white px-6 py-6 rounded-lg text-base font-semibold transition-all duration-300 shadow-md"
             >
-              <Link href="/services/crm-strategy-implementation">Find out more</Link>
+              <Link href="/contact">Find out more</Link>
             </Button>
-            <Link href="/about">
+            <Link href="/case-studies">
               <Button
                 variant="outline"
                 className="font-poppins cursor-pointer border-[#0176d3] text-[#0176d3] hover:bg-[#f0f7ff] px-8 py-6 rounded-lg text-base font-semibold transition-all duration-300"
