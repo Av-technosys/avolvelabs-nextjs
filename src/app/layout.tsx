@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import FraudAlert from "@/components/fraudAlert";
-import Script from "next/script"; 
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,10 +56,132 @@ export default function RootLayout({
             gtag('config', 'G-8YFRJ28B7Y');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://avolvelabs.com/#organization",
+          "name": "Avolve Labs",
+          "url": "https://avolvelabs.com/",
+          "logo": "https://ik.imagekit.io/1vzspuubh/avolvelabslogo.webp",
+          "description": "Avolve Labs is a business automation company specializing in CRM, ERP strategy, implementation, and custom software solutions to streamline operations and drive growth for growing businesses in India, USA, and the UK.",
+          "sameAs": [
+            "https://www.linkedin.com/company/avolvelabs",
+            "https://www.facebook.com/share/1NML27RcHE/?mibextid=wwXIfr",
+            "https://www.instagram.com/avolvelabs/"
+          ],
+          "areaServed": [
+            { "@type": "Country", "name": "India" },
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "United Kingdom" }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://avolvelabs.com/#website",
+          "url": "https://avolvelabs.com/",
+          "name": "Avolve Labs",
+          "publisher": {
+            "@id": "https://avolvelabs.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://avolvelabs.com/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://avolvelabs.com/#service",
+          "name": "CRM, ERP & Business Automation Services",
+          "provider": {
+            "@id": "https://avolvelabs.com/#organization"
+          },
+          "serviceType": [
+            "CRM Implementation",
+            "ERP Consulting",
+            "Business Process Automation",
+            "Custom Software Development",
+            "product planning",
+            "Inventerory Planning",
+            "Manufacturing ERP Solutions"
+          ],
+          "areaServed": [
+            { "@type": "Country", "name": "India" },
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "United Kingdom" }
+          ],
+          "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceLocation": {
+              "@type": "Place",
+              "name": "Online Consultation"
+            }
+          },
+          "url": "https://avolvelabs.com/"
+        }
+      ]
+    }`,
+          }}
+        />
+        <Script
+          id="gtm-head"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M3BTK9NZ');`,
+          }}
+        />
+        <meta
+          property="og:title"
+          content="Avolve Labs — CRM, ERP & Business Automation Solutions"
+        />
+        <meta
+          property="og:description"
+          content="Avolve Labs is a business automation company specializing in CRM, ERP strategy, implementation, and custom software solutions to streamline operations and drive growth."
+        />
+        <meta property="og:url" content="https://avolvelabs.com/" />
+        <meta
+          property="og:image"
+          content="https://ik.imagekit.io/1vzspuubh/avolvelabslogo.webp"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Avolve Labs" />
+        {/* TWITTER CARD TAGS */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Avolve Labs — CRM, ERP & Business Automation Solutions"
+        />
+        <meta
+          name="twitter:description"
+          content="Avolve Labs is a business automation company specializing in CRM, ERP strategy, implementation, and custom software solutions to streamline operations and drive growth."
+        />
+        <meta
+          name="twitter:image"
+          content="https://ik.imagekit.io/1vzspuubh/avolvelabslogo.webp"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${playfair.variable} antialiased`}
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M3BTK9NZ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <Header />
         {children}
         <Footer />

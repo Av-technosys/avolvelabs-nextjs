@@ -34,11 +34,12 @@ const Header = () => {
           className="font-sans text-2xl font-bold text-blue-700 md:text-3xl"
         >
           <Image
-            src="/avolvelabslogo.png"
+            src="https://ik.imagekit.io/1vzspuubh/avolvelabslogo.webp"
             alt="Avolve Labs Logo"
             className="h-7 md:h-10 object-contain"
             height={80}
             width={160}
+            unoptimized
           />
         </Link>
 

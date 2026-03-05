@@ -13,7 +13,7 @@ const ManageWhat = () => {
 
           </h2>
           <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-4xl mx-auto mt-8 leading-relaxed">
-          Salesforce is the engine of your enterprise, but maintaining it shouldn't be a full time distraction for your leadership. At Avolve Labs, we provide the technical expertise and strategic foresight required to transform a clunky database into a high-performance growth engine.We don’t just close tickets we solve business bottlenecks. Our mission is to ensure your CRM evolves at the speed of your ambition.
+          Salesforce is the engine of your enterprise, but maintaining it shouldn&apos;t be a full time distraction for your leadership. At Avolve Labs, we provide the technical expertise and strategic foresight required to transform a clunky database into a high-performance growth engine.We don&apos;t just close tickets we solve business bottlenecks. Our mission is to ensure your CRM evolves at the speed of your ambition.
 
           </p>
            <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-4xl mx-auto mt-8 leading-relaxed">
