@@ -162,7 +162,7 @@ const Header = () => {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="mt-4 flex flex-col gap-4 pl-4 text-[#003E9C] font-poppins lowercase first-letter:uppercase">
+                        <div className="mt-4 flex flex-col gap-4 pl-4 text-[#003E9C] font-poppins first-letter:uppercase">
                           <Link
                             href="/services/crm-strategy-implementation"
                             className="flex items-center gap-2"

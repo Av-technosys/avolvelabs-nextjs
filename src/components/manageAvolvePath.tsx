@@ -69,7 +69,7 @@ const ManageAvolvePath = () => {
           Ready to stop fighting with Salesforce and start winning?
         </h3>
         <p className="font-poppins text-slate-500 mb-10 max-w-xl mx-auto">
-         Don&apos;t let your CRM be a source of frustration. Let&spos;s turn it into your greatest competitive advantage.
+         Don&apos;t let your CRM be a source of frustration. Let&apos;s turn it into your greatest competitive advantage.
         </p>
         <Button className="rounded-full bg-[#3291B6] hover:bg-[#256d8a] px-12 py-7 text-lg font-poppins font-semibold shadow-lg transition-transform hover:scale-105">
          <Link href={"/contact"}>   Get Started Now </Link>
