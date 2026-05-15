@@ -51,7 +51,7 @@ const HomeVideo = () => {
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link target="_blank" href="https://store.zoho.in/ResellerCustomerSignUp.do?id=b3383bae8a8d4d5588223dbc7255a4d0b022d128fd51d94e98e55118213315b7" className="w-full sm:w-auto">
+                <Link  href="/" className="w-full sm:w-auto">
                   <Button className="cursor-pointer font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full">
                     Start for free
                   </Button>
@@ -119,7 +119,7 @@ const HomeVideo = () => {
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link target="_blank" href="https://store.zoho.in/ResellerCustomerSignUp.do?id=b3383bae8a8d4d5588223dbc7255a4d0b022d128fd51d94e98e55118213315b7" className="w-full sm:w-auto">
+                <Link  href="/" className="w-full sm:w-auto">
                   <Button className="cursor-pointer font-poppins bg-[#0176d3] px-8 py-6 text-base hover:bg-[#014486] w-full">
                     Start for free
                   </Button>

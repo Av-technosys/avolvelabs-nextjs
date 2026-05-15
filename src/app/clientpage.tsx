@@ -16,24 +16,24 @@ import HomeVideo from "@/components/homeVideo";
 import Testimonial from "@/components/testimonial";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000); // 2. Video dikhne ke liye time thoda badha diya
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 3000); // 2. Video dikhne ke liye time thoda badha diya
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-white dark:bg-slate-950">
-        {/* 3. LoaderFour hata kar VideoLoader call kiya */}
-        <VideoLoader />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="flex items-center justify-center h-screen bg-white dark:bg-slate-950">
+  //       {/* 3. LoaderFour hata kar VideoLoader call kiya */}
+  //       <VideoLoader />
+  //     </div>
+  //   );
+  // }
 
   return (
     <>

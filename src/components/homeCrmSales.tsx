@@ -85,7 +85,7 @@ const HomeCrmSales = () => {
             "Scalable CRM architecture for enterprise growth",
           ]}
         />
-        <Section
+        {/* <Section
           reverse
           title="Zoho CRM"
           desc="We help growing businesses scale faster with cost-effective Zoho solutions that unify CRM, automation, marketing, finance, and operations into a single connected ecosystem."
@@ -97,7 +97,7 @@ const HomeCrmSales = () => {
             "End-to-end CRM, automation & integrations",
             "Sales, marketing, support & operations alignment",
           ]}
-        />
+        /> */}
       </div>
     </section>
   );

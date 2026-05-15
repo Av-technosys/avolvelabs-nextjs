@@ -23,7 +23,7 @@ const CrmHero = () => {
           <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-6xl mx-auto mt-6 md:mt-10 px-2 md:px-4 leading-relaxed">
             We move beyond standard implementations to design specific revenue architectures, human centric workflows, and autonomous AI agents.
 
-From Chaos to Clarity: Most CRM projects fail because they start with technology, not business goals. We start with Revenue Architecture. Whether you are using Salesforce, Zoho or HubSpot. we ensure your CRM maps directly to how your teams sell, serve, and scale.
+From Chaos to Clarity: Most CRM projects fail because they start with technology, not business goals. We start with Revenue Architecture. Whether you are using Salesforce or HubSpot. we ensure your CRM maps directly to how your teams sell, serve, and scale.
           </p>
           
         </section>

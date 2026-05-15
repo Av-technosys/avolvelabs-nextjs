@@ -64,7 +64,7 @@ const AboutWhoWeAre = () => {
           AvolveLabs is an outcome driven, AI first consulting firm that helps organizations build scalable, predictable revenue systems. We design and implement CRM and digital platforms that businesses actually use, aligning business strategy with technology to deliver measurable results.
           </p>
           <p>
-           Our team brings deep expertise across Salesforce, Zoho, enterprise integrations and automation. Rather than focusing on software installation alone, we engineer systems that improve adoption, streamline operations, and drive sustainable growth.
+           Our team brings deep expertise across Salesforce, enterprise integrations and automation. Rather than focusing on software installation alone, we engineer systems that improve adoption, streamline operations, and drive sustainable growth.
           </p>
         </div>
       </div>

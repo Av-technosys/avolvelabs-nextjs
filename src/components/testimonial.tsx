@@ -11,16 +11,16 @@ import {
 } from "@tabler/icons-react";
 
 const testimonials = [
-  {
-    name: "Priya Nair",
-    role: "",
-    // companyLogo:
-    //   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vodafone_Logo.svg/1000px-Vodafone_Logo.svg.png",
-    content:
-      "The Zoho solution provided by Avolvelabs transformed the way we manage our sales processes. The team is skilled, proactive, and always available for support. Truly a trusted partner!",
-    initials: <IconUser/>,
-    color: "bg-gray-100 text-[#032d60]",
-  },
+  // {
+  //   name: "Priya Nair",
+  //   role: "",
+  //   // companyLogo:
+  //   //   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vodafone_Logo.svg/1000px-Vodafone_Logo.svg.png",
+  //   content:
+  //     "The Zoho solution provided by Avolvelabs transformed the way we manage our sales processes. The team is skilled, proactive, and always available for support. Truly a trusted partner!",
+  //   initials: <IconUser/>,
+  //   color: "bg-gray-100 text-[#032d60]",
+  // },
   {
     name: "Rakesh Gupta",
     role: "",

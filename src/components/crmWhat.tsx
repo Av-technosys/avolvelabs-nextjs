@@ -16,7 +16,7 @@ const CrmWhat = () => {
             architectures, human centric workflows, and autonomous AI agents.
             From Chaos to Clarity: Most CRM projects fail because they start
             with technology, not business goals. We start with Revenue
-            Architecture. Whether you are using Salesforce, Zoho or HubSpot. we
+            Architecture. Whether you are using Salesforce or HubSpot. we
             ensure your CRM maps directly to how your teams sell, serve, and
             scale.
           </p>

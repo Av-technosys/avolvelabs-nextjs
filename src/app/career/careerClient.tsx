@@ -198,7 +198,7 @@ const CareerClient = () => {
               {
                 title: "Business Analyst",
                 type: "Internship",
-                desc: "We are looking for a Business Analyst Intern to support Salesforce and Zoho CRM projects through requirement gathering and process analysis.",
+                desc: "We are looking for a Business Analyst Intern to support Salesforce projects through requirement gathering and process analysis.",
               },
               {
                 title: "Java Developer (0–3 Years)",
@@ -210,11 +210,11 @@ const CareerClient = () => {
                 type: "Full time - Onsite",
                 desc: "Skilled in Apex, LWC, Flows, and Salesforce customization to build scalable CRM solutions.",
               },
-              {
-                title: "Zoho Developer",
-                type: "Full time - Onsite",
-                desc: "We are hiring a Zoho Developer experienced in Deluge scripting, Zoho CRM customization, workflows, and third-party integrations.",
-              },
+              // {
+              //   title: "Zoho Developer",
+              //   type: "Full time - Onsite",
+              //   desc: "We are hiring a Zoho Developer experienced in Deluge scripting, Zoho CRM customization, workflows, and third-party integrations.",
+              // },
             ].map((role, idx) => (
               <div
                 key={role.title}
@@ -434,7 +434,7 @@ const CareerClient = () => {
                       Salesforce Developer
                     </option>
                     <option value="Business Analyst">Business Analyst</option>
-                    <option value="Zoho Developer">Zoho Developer</option>
+                    {/* <option value="Zoho Developer">Zoho Developer</option> */}
                     <option value="Other">Other</option>
                   </select>
                 </label>

@@ -5,19 +5,19 @@ import Image from "next/image";
 
 const BrandCarousel = () => {
   const logos = [
-    "/logoimages/analytics.svg",
-    "/logoimages/backstage.svg",
+    // "/logoimages/analytics.svg",
+    // "/logoimages/backstage.svg",
     "/logoimages/1.png",
     "/saleslogo/Slack-small.png",
-    "/logoimages/billing.svg",
+    // "/logoimages/billing.svg",
     "/logoimages/2.png",
-    "/logoimages/bookings.svg",
+    // "/logoimages/bookings.svg",
     "/saleslogo/Salesforce-Logo.png",
     "/logoimages/3.png",
-    "/logoimages/contracts.svg",
+    // "/logoimages/contracts.svg",
     "/logoimages/4.png",
-    "/logoimages/creator.svg",
-    "/logoimages/marketingplus.svg",
+    // "/logoimages/creator.svg",
+    // "/logoimages/marketingplus.svg",
     "/saleslogo/MuleSoft.png",
     "/logoimages/5.png"
   ];

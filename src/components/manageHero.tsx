@@ -19,7 +19,7 @@ const ManageHero = () => {
             <span className="text-sky-600"> Your Business.</span>
           </h1>
           <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-6xl mx-auto mt-6 md:mt-10 px-2 md:px-4 leading-relaxed">
-            We don’t just keep the lights on. Our managed services provide continuous optimization, proactive administration, and strategic enhancements for Salesforce and Zoho.
+            We don’t just keep the lights on. Our managed services provide continuous optimization, proactive administration, and strategic enhancements for Salesforce.
           </p>
         </section>
         <div className="">

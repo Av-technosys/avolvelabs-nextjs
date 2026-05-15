@@ -38,14 +38,14 @@ const cards = [
   {
     title: "From Scattered Systems to a Centralized Growth Engine ",
     description:
-      "Goyal Salt partnered with us to streamline their operations by implementing a centralized system on Zoho. We integrated WhatsApp automation to enable faster customer communication and automated lead responses, reducing manual effort and improving conversion speed. All leads from multiple platforms were centralized into Zoho CRM, giving the sales team a single source of truth and better visibility into customer interactions. We also built a production management workflow to track orders, inventory, and fulfillment in real time. This transformation improved team efficiency, reduced response time, enhanced lead tracking, and created a more organized, scalable system to support Goyal Salt’s growing business.",
+      " We integrated WhatsApp automation to enable faster customer communication and automated lead responses, reducing manual effort and improving conversion speed giving the sales team a single source of truth and better visibility into customer interactions. We also built a production management workflow to track orders, inventory, and fulfillment in real time. This transformation improved team efficiency, reduced response time, enhanced lead tracking, and created a more organized, scalable system to support Goyal Salt’s growing business.",
 
     image: "/images/case4.jpeg",
   },
   {
     title: "Transforming Operations into a Competitive Edge ",
     description:
-      "Morzze, an ambitious manufacturing brand, faced growing complexity as sales, marketing, inventory, finance, and field operations operated in silos. Morzze reimagined its growth engine through a unified Zoho powered business ecosystem. Disconnected workflows were transformed into a seamless, automated revenue pipeline where every lead, follow up, order, and stock movement became fully traceable. Marketing and WhatsApp automation accelerated customer engagement, while real time dashboards empowered leadership with instant, data backed decisions. The transformation significantly reduced manual effort, improved conversion rates, strengthened dealer relationships, and delivered up to a ninefold return on investment within the first year, positioning Morzze for scalable, predictable, and future ready growth.",
+      "Morzze, an ambitious manufacturing brand, faced growing complexity as sales, marketing, inventory, finance, and field operations operated in silos. Disconnected workflows were transformed into a seamless, automated revenue pipeline where every lead, follow up, order, and stock movement became fully traceable. Marketing and WhatsApp automation accelerated customer engagement, while real time dashboards empowered leadership with instant, data backed decisions. The transformation significantly reduced manual effort, improved conversion rates, strengthened dealer relationships, and delivered up to a ninefold return on investment within the first year, positioning Morzze for scalable, predictable, and future ready growth.",
 
     image: "/images/case6.jpeg",
   },

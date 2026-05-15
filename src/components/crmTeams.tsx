@@ -6,16 +6,18 @@ import Image from 'next/image'
 
 const BrandCarousel = () => {
   const logos = [
-    "/logoimages/analytics.svg",
-    "/logoimages/backstage.svg",
+    // "/logoimages/analytics.svg",
+    // "/logoimages/backstage.svg",
     "/saleslogo/Slack-small.png",
-    "/logoimages/billing.svg",
-    "/logoimages/bookings.svg",
+    // "/logoimages/billing.svg",
+    // "/logoimages/bookings.svg",
     "/saleslogo/Salesforce-Logo.png",
-    "/logoimages/contracts.svg",
-    "/logoimages/creator.svg",
-    "/logoimages/marketingplus.svg",
+     "/saleslogo/Slack-small.png",
+    // "/logoimages/contracts.svg",
+    // "/logoimages/creator.svg",
+    // "/logoimages/marketingplus.svg",
     "/saleslogo/MuleSoft.png",
+    "/saleslogo/Salesforce-Logo.png",
    
   ];
 
