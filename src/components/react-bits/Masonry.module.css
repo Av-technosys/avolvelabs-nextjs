@@ -34,3 +34,14 @@
   pointer-events: none;
   border-radius: 8px;
 }
+
+@media (max-width: 700px) {
+  .itemWrapper {
+    padding: 7px 0;
+  }
+
+  .itemImg,
+  .colorOverlay {
+    border-radius: 10px;
+  }
+}

@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-4 z-50 bg-transparent px-4">
-      <div className="pointer-events-auto mx-auto flex h-[66px] w-full max-w-[1240px] items-center justify-between rounded-[26px] border border-white/80 bg-[#F0F8FF]/70 px-5 shadow-[0_22px_70px_rgba(7,42,200,0.12),inset_0_1px_0_rgba(255,255,255,0.95),inset_0_-14px_30px_rgba(7,42,200,0.035)] backdrop-blur-2xl md:h-[76px] md:rounded-[28px] md:px-7">
+      <div className="pointer-events-auto mx-auto flex h-[66px] w-full max-w-[1240px] items-center justify-between rounded-[26px] border border-white/85 bg-[#F0F8FF]/90 px-5 shadow-[0_14px_34px_rgba(7,42,200,0.08),inset_0_1px_0_rgba(255,255,255,0.96)] backdrop-blur-md md:h-[76px] md:rounded-[28px] md:px-7">
         <Link
           href="/"
           className="font-sans text-2xl font-bold text-[#072ac8] md:text-3xl"
@@ -45,7 +45,7 @@ const Header = () => {
         </Link>
 
         <div className="hidden w-full items-center md:flex">
-          <nav className="mx-auto flex items-center gap-4 rounded-full border border-white/70 bg-white/45 px-5 py-3 text-sm font-semibold text-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.88)] backdrop-blur-xl lg:gap-9">
+          <nav className="mx-auto flex items-center gap-4 rounded-full border border-white/75 bg-white/65 px-5 py-3 text-sm font-semibold text-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md lg:gap-9">
             <Link href="/" className="transition-colors hover:text-[#072ac8]">Home</Link>
             <Link href="/about" className="transition-colors hover:text-[#072ac8]">About</Link>
 
@@ -93,7 +93,7 @@ const Header = () => {
 
           <div className="flex items-center gap-6">
             <Link href="/contact">
-              <Button className="cursor-pointer rounded-full border border-white/80 bg-[linear-gradient(135deg,#124ce8,#072ac8_56%,#6781ff)] px-6 py-5 text-sm font-bold text-white shadow-[0_18px_38px_rgba(7,42,200,0.24),inset_0_1px_0_rgba(255,255,255,0.68),inset_0_-10px_22px_rgba(2,13,75,0.16)] backdrop-blur transition hover:border-white hover:shadow-[0_24px_50px_rgba(7,42,200,0.3),0_0_0_5px_rgba(64,93,243,0.11),inset_0_1px_0_rgba(255,255,255,0.72)]">
+              <Button className="cursor-pointer rounded-full border border-white/80 bg-[linear-gradient(135deg,#124ce8,#072ac8_56%,#6781ff)] px-6 py-5 text-sm font-bold text-white shadow-[0_12px_24px_rgba(7,42,200,0.18),inset_0_1px_0_rgba(255,255,255,0.68),inset_0_-8px_18px_rgba(2,13,75,0.14)] backdrop-blur transition hover:border-white hover:shadow-[0_16px_32px_rgba(7,42,200,0.22),0_0_0_4px_rgba(64,93,243,0.08),inset_0_1px_0_rgba(255,255,255,0.72)]">
                 Let&apos;s Talk
               </Button>
             </Link>
@@ -114,7 +114,7 @@ const Header = () => {
 
             <SheetContent
               side="left"
-              className="w-[85%] border-r border-white/80 bg-[#F0F8FF]/95 px-0 text-[#072ac8] backdrop-blur-xl"
+              className="w-[85%] border-r border-white/80 bg-[#F0F8FF]/95 px-0 text-slate-900 backdrop-blur-xl"
             >
               <SheetHeader className="px-6 pb-8 pt-6 flex items-start">
                 <SheetTitle>
@@ -129,10 +129,10 @@ const Header = () => {
                 </SheetTitle>
               </SheetHeader>
 
-              <nav className="flex flex-col gap-6 px-6 text-sm font-semibold uppercase tracking-wide">
+              <nav className="flex flex-col gap-6 px-6 text-sm font-semibold uppercase tracking-wide text-slate-900">
                 <Link
                   href="/"
-                  className="border-b border-[#072ac8]/20 pb-4"
+                  className="border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8]"
                   onClick={() => setOpenSheet(false)}
                 >
                   Home
@@ -140,7 +140,7 @@ const Header = () => {
 
                 <Link
                   href="/about"
-                  className="border-b border-[#072ac8]/20 pb-4"
+                  className="border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8]"
                   onClick={() => setOpenSheet(false)}
                 >
                   About
@@ -148,11 +148,11 @@ const Header = () => {
                 <div className="border-b border-[#072ac8]/20 pb-4">
                   <button
                     onClick={() => setOpenMobileServices(!openMobileServices)}
-                    className="flex w-full items-center justify-between"
+                    className="flex w-full appearance-none items-center justify-between border-0 bg-transparent p-0 text-left font-semibold text-slate-900 outline-none transition-colors hover:text-[#072ac8] focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0"
                   >
                     SERVICES
                     <IconChevronDown
-                      className={`transition-transform duration-300 ${
+                      className={`text-[#072ac8] transition-transform duration-300 ${
                         openMobileServices ? "rotate-180" : ""
                       }`}
                     />
@@ -167,10 +167,10 @@ const Header = () => {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="mt-4 flex flex-col gap-4 pl-4 text-[#072ac8] first-letter:uppercase">
+                        <div className="mt-4 flex flex-col gap-4 pl-4 text-[13px] font-semibold normal-case tracking-normal text-slate-700">
                           <Link
                             href="/services/crm-strategy-implementation"
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 transition-colors hover:text-[#072ac8]"
                             onClick={() => {
                               setOpenSheet(false);
                               setOpenMobileServices(false);
@@ -182,7 +182,7 @@ const Header = () => {
 
                           <Link
                             href="/services/managed-services"
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 transition-colors hover:text-[#072ac8]"
                             onClick={() => {
                               setOpenSheet(false);
                               setOpenMobileServices(false);
@@ -194,7 +194,7 @@ const Header = () => {
 
                           <Link
                             href="/services/value-added-services"
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 transition-colors hover:text-[#072ac8]"
                             onClick={() => {
                               setOpenSheet(false);
                               setOpenMobileServices(false);
@@ -205,7 +205,7 @@ const Header = () => {
                           </Link>
                           <Link
                             href="/services/devops"
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 transition-colors hover:text-[#072ac8]"
                             onClick={() => {
                               setOpenSheet(false);
                               setOpenMobileServices(false);
@@ -222,14 +222,14 @@ const Header = () => {
 
                 <Link
                   href="/case-studies"
-                  className="border-b border-[#072ac8]/20 pb-4"
+                  className="border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8]"
                   onClick={() => setOpenSheet(false)}
                 >
                   Case Studies
                 </Link>
                 <Link
                   href="/career"
-                  className="border-b border-[#072ac8]/20 pb-4 font-poppins"
+                  className="border-b border-[#072ac8]/20 pb-4 font-poppins transition-colors hover:text-[#072ac8]"
                   onClick={() => setOpenSheet(false)}
                 >
                   Career

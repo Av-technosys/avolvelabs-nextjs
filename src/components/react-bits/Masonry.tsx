@@ -134,7 +134,12 @@ export default function Masonry<T extends MasonryItem>({
       const col = colHeights.indexOf(Math.min(...colHeights));
       const x = columnWidth * col;
       const y = colHeights[col];
-      const h = item.height;
+      const h =
+        columns === 1
+          ? Math.round(Math.min(Math.max(item.height * 0.78, 300), 360))
+          : columns === 2
+            ? Math.round(item.height * 0.9)
+            : item.height;
 
       colHeights[col] += h;
 

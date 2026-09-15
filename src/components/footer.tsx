@@ -1,94 +1,122 @@
 "use client";
+
 import Link from "next/link";
-import { IconBrandLinkedin, IconBrandInstagram, IconBrandFacebook } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconArrowUpRight,
+} from "@tabler/icons-react";
+
+const footerLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services/crm-strategy-implementation" },
+  { name: "Case Studies", href: "/case-studies" },
+  { name: "Career", href: "/career" },
+  { name: "Contact", href: "/contact" },
+];
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/avolvelabs/",
+    icon: IconBrandLinkedin,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1NML27RcHE/?mibextid=wwXIfr",
+    icon: IconBrandFacebook,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/avolvelabs/",
+    icon: IconBrandInstagram,
+  },
+];
 
 const Footer = () => {
   return (
-    <>
-      <footer className="w-full bg-[linear-gradient(to_bottom,#0B2FA0,#061C5B)] text-white">
-        <div className="relative w-full">
-          <div className="bg-[linear-gradient(to_bottom,#0B2FA0,)] h-[80] md:h-[100] text-white text-center relative z-0" />
-          <div className="absolute top-0 left-0 w-full h-[80] bg-white rounded-b-full shadow-md shadow-white z-10" />
-        </div>
+    <footer className="relative overflow-hidden bg-[#06184d] text-white">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.45] to-transparent" />
+      <div className="absolute left-1/2 top-0 h-48 w-[72rem] -translate-x-1/2 rounded-full bg-[#072ac8]/[0.18] blur-3xl" />
 
-        <div className="flex min-h-[20vh] md:h-[30vh] items-center justify-center px-4">
-          <Link href="/">
-    
-            <motion.p
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="avolve-text text-6xl cursor-pointer md:text-9xl font-extrabold tracking-tight leading-none font-sans"
+      <div className="relative mx-auto w-[min(1200px,calc(100%-40px))] py-14 md:py-[72px]">
+        <div className="grid gap-10 border-b border-white/[0.14] pb-10 md:grid-cols-[1.2fr_0.8fr_1fr] md:items-start">
+          <div>
+            <Link
+              href="/"
+              className="inline-flex rounded-2xl border border-white/[0.22] bg-white px-5 py-3 shadow-[0_22px_60px_rgba(0,0,0,0.22),0_0_0_6px_rgba(255,255,255,0.045)] transition hover:-translate-y-0.5 hover:shadow-[0_28px_72px_rgba(0,0,0,0.28),0_0_0_7px_rgba(255,255,255,0.06)]"
+              aria-label="AvolveLabs home"
             >
-              avolvelabs
-            </motion.p>
-          </Link>
-        </div>
+              <Image
+                src="/avolvelabslogo.png"
+                alt="AvolveLabs"
+                width={190}
+                height={42}
+                className="h-9 w-auto object-contain"
+                priority={false}
+              />
+            </Link>
+            <p className="mt-5 max-w-md text-sm leading-7 text-white/[0.68]">
+              CRM, automation, and AI systems for teams that want cleaner operations
+              and measurable growth.
+            </p>
+          </div>
 
-        <div className="mx-auto max-w-11/12 border-t border-white/50" />
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm font-medium text-white/[0.72]">
+            {footerLinks.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="group inline-flex w-fit items-center gap-2 transition-colors hover:text-white"
+              >
+                {item.name}
+                <IconArrowUpRight className="h-3.5 w-3.5 opacity-0 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+              </Link>
+            ))}
+          </nav>
 
-        <div className="px-10 py-10">
-          <div className="w-full flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="flex justify-center md:justify-start gap-2">
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/company/avolvelabs/"
-                aria-label="LinkedIn"
-              >
-                <IconBrandLinkedin className="h-8 w-8 hover:opacity-70 transition cursor-pointer" />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://www.facebook.com/share/1NML27RcHE/?mibextid=wwXIfr"
-                aria-label="Facebook"
-              >
-                <IconBrandFacebook className="h-8 w-7 hover:opacity-70 transition cursor-pointer" />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://www.instagram.com/avolvelabs/"
-                aria-label="Instagram"
-              >
-                <IconBrandInstagram className="h-8 w-8 hover:opacity-70 transition cursor-pointer" />
-              </Link>
-            </div>
+          <div className="md:text-right">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full border border-white/[0.18] bg-white/[0.10] px-5 py-3 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur transition hover:border-white/[0.35] hover:bg-white/[0.14]"
+            >
+              Start a Project
+              <IconArrowUpRight className="h-4 w-4" />
+            </Link>
 
-            
-            <div className="flex flex-wrap justify-center gap-x-5 gap-y-3 text-md text-center font-poppins">
-              {[
-                { name: "Home", href: "/" },
-                { name: "About", href: "/about" },
-                { name: "Case Studies", href: "/case-studies" },
-                { name: "Career", href: "/career" },
-                { name: "Let's Talk", href: "/contact" },
-              ].map((item) => (
-                <Link key={item.name} href={item.href}>
-                  <motion.div
-                    whileHover={{ y: -8, x: 5 }}
-                    transition={{
-                      duration: 0.6,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    className="cursor-pointer"
+            <div className="mt-6 flex gap-3 md:justify-end">
+              {socialLinks.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.label}
+                    target="_blank"
+                    href={item.href}
+                    aria-label={item.label}
+                    className="grid h-10 w-10 place-items-center rounded-full border border-white/[0.16] bg-white/[0.08] text-white/[0.76] transition hover:-translate-y-0.5 hover:border-white/[0.32] hover:bg-white/[0.12] hover:text-white"
                   >
-                    {item.name}
-                  </motion.div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center md:text-right text-sm text-white font-poppins opacity-80">
-              <p>Proudly created in India.</p>
-              <p>All Right Reserved, All Wrong Reversed.</p>
-             <p className="text-md font-bold uppercase font-poppins"><Link href={"/privacy-policy"} > privacy policy</Link></p>
+                    <Icon className="h-5 w-5" />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
-      
-      </footer>
-    </>
+
+        <div className="flex flex-col gap-4 pt-7 text-xs text-white/[0.56] md:flex-row md:items-center md:justify-between">
+          <p>Proudly created in India.</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <span>All Right Reserved, All Wrong Reversed.</span>
+            <Link href="/privacy-policy" className="font-semibold text-white/[0.76] transition hover:text-white">
+              Privacy Policy
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 
