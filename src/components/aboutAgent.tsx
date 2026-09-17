@@ -1,49 +1,72 @@
+"use client";
+
 import React from "react";
-import { Button } from "@/components/ui/button";
+import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
+import styles from "@/app/pages.module.css";
 
 const AboutAgent = () => {
+  const reducedMotion = useReducedMotion();
+
   return (
-    <section className="px-8 py-10">
-      <hr
-        className="mx-auto mb-10 h-[2] w-full max-w-7xl border-0  bg-[radial-gradient(circle,#032d60,transparent_100%)]
-  opacity-30 px-8"
-      />
-      <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div className="order-first lg:order-last w-full">
-            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md border-none">
-              <Image
-                src="/images/aboutimg.webp"
-                alt="About section image"
-                fill
-                className="object-contain scale-125"
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-col space-y-6 mt-10">
-            <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
-              Our Story & Philosophy.
+    <section className={styles.sectionWhite}>
+      <div className={styles.container}>
+        <div className={styles.twoCol}>
+          {/* Text side */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: reducedMotion ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true }}
+          >
+            <span className={styles.eyebrow}>Our Story &amp; Philosophy</span>
+            <h2 className={styles.sectionTitle}>
+              Built to solve the{" "}
+              <span className={styles.sectionAccent}>
+                three biggest CRM failures.
+              </span>
             </h2>
-
-            <p className="font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed">
-              Avolvelabs founded to solve the three biggest failures in the
-              CRM industry: misalignment, low adoption, and unrealized value. We
-              believe that technology should follow strategy, not the other way
-              around. Our approach moves beyond standard implementation to
-              deliver End to End Revenue Architecture. Whether you are in
-              Manufacturing, Retail, Education, or Professional Services , we
-              engineer systems that map directly to how your teams sell, serve,
-              and scale.
+            <p className={styles.sectionDesc}>
+              AvolveLabs was founded to address misalignment, low adoption, and
+              unrealized CRM value. We believe technology should follow strategy —
+              not the other way around.
             </p>
+            <p
+              className={styles.sectionDesc}
+              style={{ marginTop: 16 }}
+            >
+              Our approach moves beyond standard implementation to deliver
+              end-to-end Revenue Architecture. Whether you are in Manufacturing,
+              Retail, Education, or Professional Services — we engineer systems
+              that map directly to how your teams sell, serve, and scale.
+            </p>
+          </motion.div>
 
-            {/* <div className="pt-4">
-              <Button className="bg-[#0176d3] hover:bg-[#014486] text-white px-8 py-6 rounded-md text-lg font-poppins">
-                Explore Agentforce
-              </Button>
-            </div> */}
-          </div>
+          {/* Image side */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: reducedMotion ? 0 : 0.6,
+              delay: reducedMotion ? 0 : 0.1,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            viewport={{ once: true }}
+            style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}
+          >
+            {/* Standard img tag avoids Next.js aggressive container cropping issues for arbitrary aspect ratios */}
+            <img
+              src="/images/aboutimg.webp"
+              alt="AvolveLabs — CRM strategy and implementation"
+              style={{
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+                filter: "drop-shadow(0 18px 50px rgba(7,42,200,0.12))",
+                borderRadius: 16,
+              }}
+            />
+          </motion.div>
         </div>
       </div>
     </section>

@@ -9,18 +9,20 @@ import BrandCarousel from "@/components/brandCarousel";
 import HomeLatest from "@/components/homeLatest";
 import Testimonial from "@/components/testimonial";
 import React from "react";
+import styles from "@/app/pages.module.css";
 
-export const metadata  = {
-  title:"About AvolveLabs | Customer Relationship Management Experts",
-  description:"We are a leading CRM strategy and development company offering custom CRM software solutions to align technology with business goals and accelerate growth.",
-  alternates:{
-    canonical:"https://avolvelabs.com/about",
-  }
-}
+export const metadata = {
+  title: "About AvolveLabs | Customer Relationship Management Experts",
+  description:
+    "We are a leading CRM strategy and development company offering custom CRM software solutions to align technology with business goals and accelerate growth.",
+  alternates: {
+    canonical: "https://avolvelabs.com/about",
+  },
+};
 
 const page = () => {
   return (
-    <div>
+    <main id="main-content" tabIndex={-1} className={styles.page}>
       <AboutHero />
       <AboutAgent />
       <AboutWhoWeAre />
@@ -28,10 +30,10 @@ const page = () => {
       <AboutCoreValues />
       <AboutCommitment />
       <AboutBranding />
-      <Testimonial />
       <BrandCarousel />
-      <HomeLatest/>
-    </div>
+      <Testimonial />
+      <HomeLatest />
+    </main>
   );
 };
 

@@ -166,6 +166,10 @@ export default function Home() {
 
 function HeroSection() {
   const reducedMotion = useReducedMotion();
+  const canHover =
+    typeof window !== "undefined" &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
   return (
     <section className={styles.hero}>
       <div className={styles.heroFibers} aria-hidden="true">
@@ -257,7 +261,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 16, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.52, delay: 0.38, ease: "easeOut" }}
-              whileHover={reducedMotion ? undefined : { y: -3, scale: 1.018 }}
+              whileHover={!canHover || reducedMotion ? undefined : { y: -3, scale: 1.018 }}
               whileTap={reducedMotion ? undefined : { y: 0, scale: 0.985 }}
             >
               <Link href="/contact" className={styles.btnPrimary}>
@@ -269,7 +273,7 @@ function HeroSection() {
               initial={{ opacity: 0, y: 16, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 0.52, delay: 0.45, ease: "easeOut" }}
-              whileHover={reducedMotion ? undefined : { y: -3, scale: 1.018 }}
+              whileHover={!canHover || reducedMotion ? undefined : { y: -3, scale: 1.018 }}
               whileTap={reducedMotion ? undefined : { y: 0, scale: 0.985 }}
             >
               <Link href="/case-studies" className={styles.btnGhost}>
@@ -514,21 +518,6 @@ function SalesforceSection() {
     <section className={styles.sfSection}>
       <div className={styles.container}>
         <div className={styles.sfLayout}>
-          <div className={styles.sfLeft}>
-            <span className={styles.eyebrow}>Salesforce Expertise</span>
-            <h2 className={styles.sectionTitle}>
-              More Than a Partner.{" "}
-              <span className={styles.sectionAccent}>A Proven Salesforce Expert.</span>
-            </h2>
-            <p>
-              Strategic. Certified. Results-driven. We bring deep Salesforce expertise to every
-              engagement — from Sales Cloud to Agentforce.
-            </p>
-            <Link href="/services/crm-strategy-implementation" className={styles.btnOutline}>
-              Explore Our Salesforce Capabilities <ArrowUpRight size={15} />
-            </Link>
-          </div>
-
           <div className={styles.sfShowcase}>
             <div className={styles.sfBadgeWrap}>
               <div className={styles.sfBadge}>
@@ -559,6 +548,21 @@ function SalesforceSection() {
               ))}
             </div>
           </div>
+
+          <div className={styles.sfLeft}>
+            <span className={styles.eyebrow}>Salesforce Expertise</span>
+            <h2 className={styles.sectionTitle}>
+              More Than a Partner.{" "}
+              <span className={styles.sectionAccent}>A Proven Salesforce Expert.</span>
+            </h2>
+            <p>
+              Strategic. Certified. Results-driven. We bring deep Salesforce expertise to every
+              engagement — from Sales Cloud to Agentforce.
+            </p>
+            <Link href="/services/crm-strategy-implementation" className={styles.btnOutline}>
+              Explore Our Salesforce Capabilities <ArrowUpRight size={15} />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
@@ -573,9 +577,7 @@ function TestimonialsSection() {
           <div className={styles.testimonialLeft}>
             <span className={styles.eyebrow}>What Our Clients Say</span>
             <h2 className={styles.sectionTitle}>
-              We don&apos;t just aim to impress.
-              <br />
-              We consistently deliver.
+              We don&apos;t just aim to impress. We consistently deliver.
             </h2>
             <p>But don&apos;t take our word for it. Hear directly from the teams we&apos;ve helped.</p>
           </div>

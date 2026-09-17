@@ -1219,12 +1219,16 @@
 }
 .sfLayout {
   display: grid;
-  grid-template-columns: minmax(340px, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
   gap: 72px;
   align-items: center;
 }
-.sfLeft .sectionTitle {
-  max-width: 560px;
+.sfLeft {
+  min-width: 0;
+}
+.sfLeft .sectionTitle,
+.testimonialLeft .sectionTitle {
+  max-width: 620px;
   margin: 0;
   color: var(--ink);
   font-size: clamp(34px, 3.35vw, 52px);
@@ -1232,6 +1236,9 @@
   line-height: 1.04;
   letter-spacing: 0;
   text-wrap: balance;
+}
+.sfLeft .sectionTitle {
+  max-width: 600px;
 }
 .sfLeft p {
   font-size: 14px;
@@ -1349,12 +1356,6 @@
 }
 .testimonialLeft {
   padding-top: 12px;
-}
-.testimonialLeft .sectionTitle {
-  max-width: 560px;
-  font-size: clamp(32px, 3vw, 44px);
-  line-height: 1.12;
-  font-weight: 650;
 }
 .testimonialLeft p {
   max-width: 440px;
@@ -1789,5 +1790,79 @@
   .home *, .home *::before, .home *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .home a:hover,
+  .home button:hover {
+    transform: none !important;
+  }
+
+  .sectionLink:hover { gap: 6px; }
+  .serviceStepAction:hover { gap: 9px; }
+  .caseSectionLink:hover,
+  .servicesLink:hover,
+  .industryLink:hover {
+    gap: 10px;
+  }
+  .sectionLink:hover,
+  .caseSectionLink:hover,
+  .servicesLink:hover,
+  .industryLink:hover,
+  .serviceStepAction:hover {
+    color: var(--blue);
+    transform: none;
+  }
+
+  .caseSectionLink:hover::after,
+  .servicesLink:hover::after,
+  .industryLink:hover::after,
+  .servicesLink:hover::after {
+    transform: scaleX(0);
+  }
+
+  .btnPrimary:hover,
+  .btnGhost:hover,
+  .btnOutline:hover,
+  .finalCta .btnPrimary:hover {
+    transform: none;
+  }
+
+  .btnPrimary:hover::before {
+    transform: translateX(-120%);
+  }
+
+  .brandLogo:hover,
+  .caseCard:hover,
+  .caseCard:hover .caseImg,
+  .serviceStep:hover .serviceIndex,
+  .serviceStepReverse:hover .serviceIndex {
+    transform: none;
+  }
+
+  .caseCard:hover .caseArrowBtn,
+  .caseMasonryCard:hover .caseArrowBtn {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--blue);
+    transform: none;
+  }
+
+  .caseMasonryCard:hover::before {
+    opacity: 1;
+  }
+
+  .industryChip:hover {
+    color: var(--ink2);
+    transform: none;
+  }
+
+  .industryChip:hover::before {
+    width: 0;
+  }
+
+  .industryChip:hover::after {
+    opacity: 0;
+    transform: translate(-8px, 6px) rotate(45deg);
   }
 }

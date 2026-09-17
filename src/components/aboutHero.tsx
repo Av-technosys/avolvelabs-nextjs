@@ -1,56 +1,109 @@
-import Image from "next/image";
+"use client";
+
 import React from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import GhostFibers from "@/components/GhostFibers";
+import styles from "@/app/pages.module.css";
 
 const AboutHero = () => {
+  const reducedMotion = useReducedMotion();
+
   return (
-    <>
-      <div
-        className="relative w-full bg-no-repeat bg-bottom overflow-hidden"
-        style={{
-          backgroundImage: "url('/aboutImg.png')",
-          backgroundSize: "clamp(100%, 30vw + 100%, 250%) auto",
-        }}
-      >
-        <section className="text-center md:px-8 px-6 pt-16 pb-20 md:pt-10 md:pb-64">
-          <h1 className="font-playfair text-2xl md:text-5xl font-bold text-[#032d60] leading-tight">
-           We Design the Foundation for Predictable
-            <br />
-            <span className="text-sky-600"> Scalable Revenue.</span>
-          </h1>
-          <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-3xl mx-auto mt-6 md:mt-10 px-2 md:px-4 leading-relaxed">
-          Most CRM projects fail quietly due to low adoption and misalignment. We exist to change that. AvolveLabs is an outcome led, AI first consultancy building platforms people actually want to use.
-
-          </p>
-        </section>
+    <section className={styles.pageHero}>
+      <div className={styles.pageHeroFibers} aria-hidden="true">
+        <GhostFibers
+          lightMode
+          lineColor="#9bb1e8"
+          glowColor="#dce9ff"
+          speed={0.06}
+          scale={1.5}
+          rotation={12}
+          rotationSpeed={0.014}
+          layers={6}
+          waveAmplitude={0.0065}
+          waveFrequency={1.85}
+          waveSpeed={0.068}
+          layerSpeed={0.026}
+          twist={0.032}
+          twistFrequency={2.25}
+          twistSpeed={0.34}
+          lineFrequency={3.35}
+          lineSpacing={0.76}
+          lineSharpness={27}
+          glowFalloff={12.5}
+          glowIntensity={0.94}
+          brightness={1.34}
+          blueBoost={1.04}
+          vignette={0}
+          grain={0.005}
+          dpr={1}
+          fps={40}
+        />
       </div>
-      <section className="bg-white">
-        <div className="flex flex-col items-center">
-    <div className="w-full max-w-md lg:max-w-lg px-6 -mt-10 md:-mt-36 relative z-20">
-  <video
-    src="/images/aboutvideo.mp4"
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="w-full h-auto object-contain mx-auto rounded-4xl"
-  />
-</div>
 
+      <div className={styles.pageHeroInner}>
+        <motion.div
+          className={styles.pageHeroBadge}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reducedMotion ? 0 : 0.45, ease: "easeOut" }}
+        >
+          <span className={styles.pageHeroBadgeDot} />
+          CRM. People. Progress.
+        </motion.div>
 
-          <div className="text-center md:px-8 px-8 py-10 md:py-5">
-            <h2 className="font-playfair text-3xl md:text-5xl font-bold text-[#032d60] leading-tight">
-          Smarter Systems Designed for Growth
-              <br className="hidden md:block" />
-              <span className="text-[#032d60]">and Adoption customers hearts.</span>
-            </h2>
-            <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-4xl mx-auto mt-5 md:mt-8 leading-relaxed">
-          AvolveLabs solves the real challenges behind failed CRM projects: poor alignment, low adoption, and unrealized value. We build strategy led, revenue focused systems that match how your business actually operates, helping teams scale with clarity, efficiency, and impact.
+        <motion.h1
+          className={styles.pageHeroH1}
+          initial={{ opacity: 0, y: 28, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{
+            duration: reducedMotion ? 0 : 0.58,
+            delay: reducedMotion ? 0 : 0.08,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          We Design the Foundation for{" "}
+          <span className={styles.pageHeroAccent}>
+            Predictable, Scalable Revenue.
+          </span>
+        </motion.h1>
 
-            </p>
-          </div>
-        </div>
-      </section>
-    </>
+        <motion.p
+          className={styles.pageHeroDesc}
+          initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{
+            duration: reducedMotion ? 0 : 0.54,
+            delay: reducedMotion ? 0 : 0.22,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          Most CRM projects fail quietly — from low adoption and misalignment.
+          AvolveLabs is an outcome-led, AI-first consultancy building platforms
+          people actually want to use.
+        </motion.p>
+
+        <motion.div
+          className={styles.pageHeroActions}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: reducedMotion ? 0 : 0.5,
+            delay: reducedMotion ? 0 : 0.34,
+            ease: "easeOut",
+          }}
+        >
+          <Link href="/contact" className={styles.btnPrimary}>
+            Start Your Transformation <ArrowUpRight size={16} />
+          </Link>
+          <Link href="/case-studies" className={styles.btnGhost}>
+            See Our Work <ArrowUpRight size={16} />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

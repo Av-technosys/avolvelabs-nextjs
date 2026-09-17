@@ -1,92 +1,139 @@
-"use client"
-import Image from 'next/image';
-import React, { useState } from 'react'
+"use client";
+
+import Image from "next/image";
+import React, { useState } from "react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import styles from "@/app/pages.module.css";
 
 const commitmentData = [
   {
-    id: "clients",
+    id: "experience",
     title: "Deep Domain Experience",
-    content: "We bring hands on experience across industries including Manufacturing, Retail, Education, and Professional Services. Our team understands real business challenges, workflows, and revenue models, allowing us to design solutions that fit your operations, not just your technology stack."
+    content:
+      "We bring hands-on experience across industries including Manufacturing, Retail, Education, and Professional Services. Our team understands real business challenges, workflows, and revenue models, allowing us to design solutions that fit your operations — not just your technology stack.",
   },
   {
-    id: "excellence",
-    title: "AI Led, Not AI Labeled",
-    content: "We go beyond AI buzzwords. Our approach focuses on practical, real world AI implementations that automate processes, enhance decision making, improve customer engagement, and drive measurable efficiency across sales, service, and operations."
+    id: "ai",
+    title: "AI-Led, Not AI-Labeled",
+    content:
+      "We go beyond AI buzzwords. Our approach focuses on practical, real-world AI implementations that automate processes, enhance decision-making, improve customer engagement, and drive measurable efficiency across sales, service, and operations.",
   },
   {
-    id: "csr",
-    title: "Right Priced, High Impact Consulting",
-    content: "We deliver enterprise grade outcomes without the inflated costs of traditional large consulting firms. Our pricing model ensures you get high quality strategy, execution, and long term value while maintaining cost efficiency and ROI."
+    id: "pricing",
+    title: "Right-Priced, High-Impact Consulting",
+    content:
+      "We deliver enterprise-grade outcomes without the inflated costs of traditional large consulting firms. Our pricing model ensures you get high-quality strategy, execution, and long-term value while maintaining cost efficiency and ROI.",
   },
   {
-    id: "csr-2",
+    id: "delivery",
     title: "Balanced Global Delivery Model",
-    content: "We combine onsite strategic leadership with scalable offshore execution to deliver speed, quality, and cost effectiveness. This balanced model allows us to stay close to your business goals while maintaining flexible, efficient delivery."
-  }
-]
+    content:
+      "We combine onsite strategic leadership with scalable offshore execution to deliver speed, quality, and cost-effectiveness. This balanced model allows us to stay close to your business goals while maintaining flexible, efficient delivery.",
+  },
+];
+
+import LineSidebar from "./LineSidebar";
+
+// We extract items array from commitmentData
+const sidebarItems = commitmentData.map(item => item.title);
 
 const AboutCommitment = () => {
-  const [activeTab, setActiveTab] = useState(commitmentData[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeTab = commitmentData[activeIndex];
+  const reducedMotion = useReducedMotion();
 
   return (
-    <section className="px-8 py-10">
-      <div className="mx-auto max-w-7xl">
-
-        <div className="text-center mb-16">
-          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-6">
-            Why AvolveLabs?
-
+    <section className={styles.sectionWhite}>
+      <div className={styles.container}>
+        {/* Heading */}
+        <div className={styles.sectionHeadCenter}>
+          <span className={styles.eyebrow}>Why AvolveLabs?</span>
+          <h2 className={styles.sectionTitle}>
+            What makes us{" "}
+            <span className={styles.sectionAccent}>different.</span>
           </h2>
-          <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-3xl mx-auto ">
-            At Avolvelabs, our values are the foundation of our culture, guiding how we 
-            operate, innovate, and grow alongside our clients and partners.
+          <p className={styles.sectionDesc} style={{ textAlign: "center" }}>
+            At AvolveLabs, our values are the foundation of how we operate,
+            innovate, and grow alongside our clients.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+        {/* Three-column layout */}
+        <div className={styles.commitmentGrid}>
+          {/* Left: Tab list via LineSidebar */}
+          <div className={styles.commitmentSidebar}>
+            <LineSidebar
+              items={sidebarItems}
+              accentColor="#072ac8"
+              textColor="#333"
+              markerColor="#cbd5e1"
+              showIndex={false}
+              showMarker={true}
+              proximityRadius={100}
+              maxShift={20}
+              falloff="smooth"
+              markerLength={40}
+              markerGap={12}
+              tickScale={0.3}
+              scaleTick={true}
+              itemGap={24}
+              fontSize={1.05}
+              smoothing={150}
+              defaultActive={0}
+              onItemClick={(idx: number) => setActiveIndex(idx)}
+            />
+          </div>
 
-          <div className="md:col-span-4 flex flex-col order-2 md:order-1">
-            {commitmentData.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setActiveTab(item)}
-                className={`text-left font-poppins text-lg md:text-xl font-bold py-6 border-b-2 transition-all duration-200 outline-none ${
-                  activeTab.id === item.id 
-                  ? "text-[#032d60] border-[#032d60]" 
-                  : "text-gray-400 border-gray-100 hover:text-gray-600"
-                }`}
+          {/* Centre: Image */}
+          <div
+            className={styles.commitmentImage}
+            style={{
+              width: 260,
+              height: 260,
+              borderRadius: "50%",
+              overflow: "hidden",
+              border: "3px solid rgba(255,255,255,0.9)",
+              boxShadow:
+                "0 20px 60px rgba(7,42,200,0.12), 0 0 0 8px rgba(7,42,200,0.06)",
+              flexShrink: 0,
+            }}
+          >
+            <Image
+              src="/images/robotimg.svg"
+              alt="AvolveLabs AI-driven CRM"
+              width={260}
+              height={260}
+              unoptimized
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+
+          {/* Right: Active content */}
+          <div
+            style={{
+              minHeight: 160,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeTab.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: reducedMotion ? 0 : 0.28, ease: "easeOut" }}
+                className={styles.sectionDesc}
+                style={{ margin: 0 }}
               >
-                {item.title}
-              </button>
-            ))}
+                {activeTab.content}
+              </motion.p>
+            </AnimatePresence>
           </div>
-
-          <div className="md:col-span-4 flex justify-center order-1 md:order-2">
-            <div className="relative w-64 h-64 md:w-90 md:h-90 rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-4 border-white">
-              <Image
-                src="/images/robotimg.svg" 
-                alt="Commitment visual"
-                className="w-full h-full object-cover"
-                 width={800}
-                height={600}
-                 unoptimized
-              />
-
-              <div className="absolute inset-0 bg-blue-600/10 mix-blend-overlay"></div>
-            </div>
-          </div>
-
-
-          <div className="md:col-span-4 min-h-[180] flex items-center  order-3 md:order-3">
-            <p className="font-poppins text-md md:text-[18px] text-gray-700 leading-relaxed transition-opacity duration-300">
-              {activeTab.content}
-            </p>
-          </div>
-
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutCommitment
+export default AboutCommitment;
