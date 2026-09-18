@@ -1,10 +1,11 @@
+"use client";
+
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
-    step: "1",
+    step: "01",
     title: "DevOps Strategy & Transformation",
     desc: `• DevOps maturity assessment
 • Release process redesign
@@ -14,7 +15,7 @@ const steps = [
 • Tool architecture (Copado, Gearset, AutoRABIT, DevOps Center, Jenkins, Azure DevOps)`,
   },
   {
-    step: "2",
+    step: "02",
     title: "CI/CD Implementation & Optimization",
     desc: `• Git integration (Gitflow, trunk-based models)
 • Pipeline architecture design
@@ -25,7 +26,7 @@ const steps = [
 • Multi-org deployment coordination`,
   },
   {
-    step: "3",
+    step: "03",
     title: "Release Management as a Service",
     desc: `• Promotion flow management
 • Back-promotion & conflict resolution
@@ -35,7 +36,7 @@ const steps = [
 • Stakeholder communication`,
   },
   {
-    step: "4",
+    step: "04",
     title: "Environment & Org Management",
     desc: `• Sandbox lifecycle design
 • Scratch org workflows
@@ -48,71 +49,68 @@ const steps = [
 
 const DevOpsApproach = () => {
   return (
-    <section className="bg-black py-10 px-8">
+    <section className="w-full bg-[#f7faff] px-6 py-16 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-6">
-          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-white">
+        {/* Header */}
+        <div className="mb-10 text-center md:mb-14">
+          <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[42px]">
             Core Capabilities
           </h2>
-          <p className="mt-4 font-poppins text-md md:text-[18px] text-gray-400 max-w-3xl mx-auto">
-           We assess your current Salesforce release processes and design a structured DevOps roadmap aligned with your business objectives.
 
+          <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+            We assess your current Salesforce release processes and design a structured DevOps roadmap aligned with your business objectives.
           </p>
         </div>
-        <div className="relative mb-10 hidden md:block px-20">
-          <div className="absolute top-1/2 left-30 right-30 h-px bg-gray-700" />
-          <div className="flex justify-between relative z-10 px-10">
-            {steps.map((item) => (
-              <div
-                key={item.step}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 text-white font-bold"
-              >
-                {item.step}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {steps.map((item) => (
-            <Card
+
+        {/* Services */}
+        <div>
+          {steps.map((item, index) => (
+            <div
               key={item.step}
-              className="
-                group relative overflow-hidden
-                bg-linear-to-b from-[#1a1a1a] to-black
-                border border-[#E8E2DB]
-                rounded-2xl
-                transition-all duration-500
-                hover:scale-[1.02]
-              "
+              className={`flex min-h-[280px] items-center border-t border-[#dbe4f2] py-12 md:min-h-[330px] md:py-16 ${index % 2 === 0
+                ? "md:flex-row"
+                : "md:flex-row-reverse"
+                }`}
             >
-              <div
-                className="
-                  absolute inset-0 opacity-0 group-hover:opacity-100
-                  transition duration-500
-                  bg-linear-to-br
-                  from-[#E8E2DB]/20 via-transparent to-pink-300/30
-                "
-              />
-              <div
-                className="
-                  absolute inset-0 rounded-2xl
-                  border border-transparent
-                  group-hover:border-[#00c6ff]
-                  group-hover:shadow-[0_0_30px_#00c6ff]
-                  transition-all duration-500
-                "
-              />
-              <CardContent className="relative z-10 p-4">
-                <h3 className="text-xl font-playfair font-semibold text-[#f7faff] whitespace-pre-line">
+              {/* Number */}
+              <div className="flex w-[28%] shrink-0 items-center justify-center md:w-[32%]">
+                <motion.span
+                  initial={{
+                    opacity: 0,
+                    x: index % 2 === 0 ? -80 : 80,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  whileHover={{
+                    x: 4,
+                  }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  className="cursor-pointer font-poppins text-[110px] font-bold leading-none tracking-[-0.08em] text-[#d7e1fb] md:text-[170px] lg:text-[185px]"
+                >
+                  {item.step}
+                </motion.span>
+              </div>
+
+              {/* Content */}
+              <div className="w-full text-center md:w-[68%] md:text-left">
+                <h3 className="font-playfair text-2xl font-bold leading-tight text-[#0b1425] md:text-[32px]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-sm font-poppins text-gray-300 leading-relaxed whitespace-pre-line">
 
+                <p className="mt-5 max-w-[820px] text-[15.5px] leading-[1.72] text-[#3d4b61]">
                   {item.desc}
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
+
+          <div className="border-t border-[#dbe4f2]" />
         </div>
       </div>
     </section>

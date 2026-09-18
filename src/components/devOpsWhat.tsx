@@ -1,44 +1,125 @@
+
 "use client";
-import React from "react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+
+import { motion } from "framer-motion";
 
 const DevOpsWhat = () => {
   return (
-    <>
-      <div className="relative overflow-hidden">
-        <section className="text-center px-8 pb-10">
-          <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight max-w-4xl mx-auto">
-            Accelerate Salesforce Delivery with Structured DevOps Governance
-          </h2>
-          <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-4xl mx-auto mt-8 leading-relaxed">
-            We design and implement enterprise-grade Salesforce DevOps
+    <section className="relative overflow-hidden bg-[#f7faff] px-5 pb-20 pt-16 sm:px-8 md:pb-28 md:pt-24 lg:px-12">
+      {/* Background Pattern */}
+      <div className="pointer-events-none absolute inset-0 opacity-50">
+        <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#dce8ff] blur-3xl" />
+        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#e7edff] blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e6ecf5_1px,transparent_1px),linear-gradient(to_bottom,#e6ecf5_1px,transparent_1px)] bg-[size:70px_70px]" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+
+          {/* Content - Left */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="absolute -left-3 -top-3 h-16 w-16 rounded-tl-[2rem] border-l border-t border-[#9dbaff] md:-left-5 md:-top-5" />
+
+            <div className="relative border-l border-[#c5d7f5] pl-6 md:pl-8">
+              <span className="mb-5 block font-playfair text-5xl leading-none text-[#b7caff]">
+                “
+              </span>
+
+              <p className="text-[15.5px] leading-[1.72] text-[#3d4b61]">
+                We design and implement enterprise-grade Salesforce DevOps
             frameworks that improve release velocity, reduce deployment risk,
             and ensure scalable business operations. From strategy to
             automation, we bring structure, visibility, and governance to your
             entire release lifecycle.
-          </p>
-          <div className="flex flex-row items-center justify-center gap-1 md:gap-3 mt-10 px-2">
-            <Button
-              asChild
-              className="font-poppins cursor-pointer bg-[#0176d3] hover:bg-[#015ba3] text-white px-6 py-6 rounded-lg text-base font-semibold transition-all duration-300 shadow-md"
-            >
-              <Link href="/contact">
-                Find out more
-              </Link>
-            </Button>
-            <Link href="/case-studies">
-              <Button
-                variant="outline"
-                className="font-poppins cursor-pointer border-[#0176d3] text-[#0176d3] hover:bg-[#f0f7ff] px-8 py-6 rounded-lg text-base font-semibold transition-all duration-300"
+              </p>
+            </div>
+
+            <div className="absolute -bottom-3 -right-2 h-16 w-16 rounded-br-[2rem] border-b border-r border-[#9dbaff] md:-right-4" />
+
+            {/* Buttons */}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 px-2">
+
+              <a
+                href="/contact"
+                className="group relative inline-flex cursor-pointer items-center gap-[10px] overflow-hidden rounded-full px-[25px] py-[15px] text-[13px] font-[760] text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.10),0_6px_14px_rgba(7,42,200,0.16)]"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(20,69,222,0.92) 0%, rgba(7,42,200,0.9) 58%, rgba(86,111,245,0.86) 100%)",
+                  border: "1px solid rgba(255,255,255,0.82)",
+                }}
               >
-                Explore More
-              </Button>
-            </Link>
-          </div>
-        </section>
+                <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/25 opacity-0 transition-[left,opacity] duration-[1400ms] ease-out group-hover:left-[120%] group-hover:opacity-100" />
+
+                <span className="relative z-10 flex items-center gap-[10px]">
+                  Find out more
+
+                  <svg
+                    className="flex-none transition-transform duration-300 group-hover:translate-x-1"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.33331 8H12.6666M12.6666 8L7.99998 3.33337M12.6666 8L7.99998 12.6667"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
+
+              <a
+                href="/case-studies"
+                className="group relative inline-flex cursor-pointer items-center gap-[8px] overflow-hidden rounded-full px-[22px] py-[14px] text-[13px] font-[650] text-[#071225] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.08),0_6px_12px_rgba(7,42,200,0.12)]"
+                style={{
+                  background:
+                    "linear-gradient(145deg, rgba(255,255,255,0.88), rgba(233,242,255,0.52))",
+                  border: "1px solid rgba(7,42,200,0.22)",
+                }}
+              >
+                <span className="pointer-events-none absolute inset-y-0 -left-full w-1/3 -skew-x-12 bg-[#8faeff]/20 opacity-0 transition-[left,opacity] duration-[1100ms] ease-out group-hover:left-[120%] group-hover:opacity-100" />
+
+                <span className="relative z-10">Explore More</span>
+              </a>
+
+            </div>
+          </motion.div>
+
+          {/* Heading - Right */}
+          {/* Heading - Right */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            viewport={{ once: true }}
+          >
+            <h2 className="max-w-[650px] font-playfair text-3xl font-bold leading-[1.2] text-[#0b1425] md:text-[46px] pl-10">
+              Accelerate Salesforce Delivery with
+              <br />
+              <span className="text-[#072ac8]">Structured DevOps Governance</span>
+            </h2>
+          </motion.div>
+
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 
