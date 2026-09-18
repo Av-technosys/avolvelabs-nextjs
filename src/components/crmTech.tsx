@@ -1,109 +1,158 @@
-import React from "react"
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
 
 type CrmTechProps = {
-  title?: string
-  description?: string
-  bgClass?: string
-  titleColor?: string
-  borderColor?: string
-  orbit1?: string[]
-  orbit2?: string[]
-}
+  title?: string;
+  description?: string;
+  bgClass?: string;
+  orbit1?: string[];
+  orbit2?: string[];
+};
+
+const techLogos: Record<string, string> = {
+  OpenAI: "https://api.iconify.design/logos/openai-icon.svg",
+
+  "Azure AI": "https://api.iconify.design/logos/microsoft-azure.svg",
+
+  Google: "https://api.iconify.design/logos/google-icon.svg",
+
+  Boomi:
+    "https://commons.wikimedia.org/wiki/Special:Redirect/file/Boomi-logo.svg",
+
+  Llama: "https://api.iconify.design/logos/meta-icon.svg",
+
+  LangChain:
+    "https://api.iconify.design/simple-icons/langchain.svg",
+
+  LangGraph:
+    "https://brandlogos.sgp1.digitaloceanspaces.com/svg/lobehub/langgraph-color.svg",
+
+  Claude: "https://api.iconify.design/logos/anthropic-icon.svg",
+};
+
+const positions = [
+  "left-1/2 top-0 -translate-x-1/2 -translate-y-1/2",
+  "right-0 top-1/2 translate-x-1/2 -translate-y-1/2",
+  "left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2",
+  "left-0 top-1/2 -translate-x-1/2 -translate-y-1/2",
+];
+
+const TechNode = ({
+  tech,
+  position,
+  reverse,
+  duration,
+}: {
+  tech: string;
+  position: string;
+  reverse: boolean;
+  duration: number;
+}) => (
+  <div className={`absolute ${position}`}>
+    <motion.div
+      animate={{ rotate: reverse ? -360 : 360 }}
+      transition={{
+        duration,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+    >
+      <div className="flex items-center gap-2 rounded-full border border-white/80 bg-white/90 px-2.5 py-2 shadow-[0_8px_25px_rgba(7,42,200,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(7,42,200,0.14)] sm:gap-3 sm:px-4 sm:py-3">
+        <img
+          src={techLogos[tech]}
+          alt={`${tech} logo`}
+          className="h-6 w-6 shrink-0 object-contain sm:h-8 sm:w-8"
+        />
+
+        <span className="whitespace-nowrap font-poppins text-[11px] font-semibold text-[#1b2940] sm:text-[14px]">
+          {tech}
+        </span>
+      </div>
+    </motion.div>
+  </div>
+);
 
 const CrmTech = ({
   title = "Who This Service Is For",
   description =
     "This service is designed for organizations looking to move beyond basic CRM usage and build systems that actively support efficiency, collaboration, and long-term growth.",
-  bgClass = "bg-[#eef6ff]",
-  titleColor = "text-[#032d60]",
-  borderColor = "border-blue-300",
+  bgClass = "bg-[#f5f9ff]",
   orbit1 = ["OpenAI", "Azure AI", "Google", "Boomi"],
   orbit2 = ["Llama", "LangChain", "LangGraph", "Claude"],
 }: CrmTechProps) => {
   return (
-    <section className={`${bgClass} py-10 px-8  overflow-hidden w-full`}>
-      <div className=" grid lg:grid-cols-2 gap-12 items-center">
-
-        {/* Left */}
-       <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-
-          <h2 className={`text-4xl text-[#032d60] font-bold font-playfair ${titleColor}`}>
-            {title.split("\n").map((line, i) => (
-              <span key={i} className="block">{line}</span>
-            ))}
+    <section className={`${bgClass} w-full overflow-hidden px-6 pt-0 pb-20`}>
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 text-center">
+          <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[38px]">
+            {title}
           </h2>
 
-          <p className="mt-6 font-poppins text-md md:text-[18px] text-gray-700 max-w-md">
+          <p className="mx-auto mt-2 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
             {description}
           </p>
         </div>
 
-        {/* Right Orbit */}
-        <div className="relative mx-auto h-75 w-75">
-          <div className={`absolute inset-0 rounded-full border border-dashed ${borderColor}`} />
-          <div className={`absolute inset-15 rounded-full border border-dashed ${borderColor}`} />
-          <div className={`absolute inset-32.5 rounded-full border border-dashed ${borderColor}`} />
+        {/* Graph */}
+        <div className="relative mx-auto h-[370px] w-full max-w-[900px] sm:h-[430px] md:h-[500px]">
+          {/* Outer Ring */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute left-1/2 top-1/2 h-[240px] w-[240px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#c5d7ff] sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] lg:h-[480px] lg:w-[480px]"
+          >
+            {orbit1.map((tech, index) => (
+              <TechNode
+                key={tech}
+                tech={tech}
+                position={positions[index]}
+                reverse
+                duration={30}
+              />
+            ))}
+          </motion.div>
 
-          <div className="absolute inset-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow flex items-center justify-center text-3xl font-bold text-blue-500">
-            AI
-          </div>
+          {/* Inner Ring */}
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{
+              duration: 24,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="absolute left-1/2 top-1/2 h-[155px] w-[155px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d8e4ff] sm:h-[200px] sm:w-[200px] md:h-[250px] md:w-[250px] lg:h-[320px] lg:w-[320px]"
+          >
+            {orbit2.map((tech, index) => (
+              <TechNode
+                key={tech}
+                tech={tech}
+                position={positions[index]}
+                reverse={false}
+                duration={24}
+              />
+            ))}
+          </motion.div>
 
-          {/* Orbit 1 */}
-          {orbit1.map((item, i) => (
-            <OrbitItem
-              key={item}
-              inset="0"
-              index={i}
-              total={orbit1.length}
-              text={item}
-            />
-          ))}
-
-          {/* Orbit 2 */}
-          {orbit2.map((item, i) => (
-            <OrbitItem
-              key={item}
-              inset="60px"
-              index={i}
-              total={orbit2.length}
-              text={item}
-            />
-          ))}
+          {/* AI Core */}
+          <motion.div
+            whileHover={{ scale: 1.04 }}
+            transition={{ duration: 0.3 }}
+            className="absolute left-1/2 top-1/2 flex h-[95px] w-[95px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-white/90 shadow-[0_15px_45px_rgba(7,42,200,0.12)] backdrop-blur-xl sm:h-[110px] sm:w-[110px] md:h-[125px] md:w-[125px] lg:h-[145px] lg:w-[145px]"
+          >
+            <span className="font-playfair text-3xl font-bold text-[#072ac8] sm:text-4xl md:text-5xl">
+              AI
+            </span>
+          </motion.div>
         </div>
-
       </div>
     </section>
-  )
-}
+  );
+};
 
-const OrbitItem = ({
-  inset,
-  index,
-  total,
-  text,
-}: {
-  inset: string
-  index: number
-  total: number
-  text: string
-}) => (
-  <div
-    className="absolute"
-    style={{
-      inset,
-      transform: `rotate(${index * (360 / total)}deg)`,
-    }}
-  >
-    <div className="absolute left-1/2 -translate-x-1/2 -top-5">
-      <CircleLabel text={text} />
-    </div>
-  </div>
-)
-
-const CircleLabel = ({ text }: { text: string }) => (
-  <div className="h-12 w-12 rounded-full bg-white shadow flex items-center justify-center text-[10px] font-semibold text-gray-700 text-center px-1">
-    {text}
-  </div>
-)
-
-export default CrmTech
+export default CrmTech;
