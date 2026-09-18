@@ -42,9 +42,7 @@ const ManageWhyPartner = () => {
         {/* Heading */}
         <div className="mb-12 text-center md:mb-20">
           <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[42px]">
-            <span className="bg-gradient-to-r from-[#4aa3ff] to-[#a855f7] bg-clip-text text-transparent">
              Precision Engineered RevOps Infrastructure
-            </span>
           </h2>
 
           <p className="mx-auto mt-4 max-w-4xl font-poppins text-[15.5px] leading-[1.72] text-[#3d4b61]">

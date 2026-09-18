@@ -18,7 +18,7 @@ const ManageWhat = () => {
               ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative order-2 lg:order-1"
           >
             <div className="absolute -left-3 -top-3 h-16 w-16 rounded-tl-[2rem] border-l border-t border-[#9dbaff] md:-left-5 md:-top-5" />
 
@@ -97,6 +97,7 @@ const ManageWhat = () => {
               ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{ once: true }}
+            className="order-1 lg:order-2"
           >
             <div className="relative pl-6 lg:pl-10">
               <span className="absolute left-2 top-2 h-16 w-1 rounded-full bg-[#072ac8] md:left-4 md:h-24" />

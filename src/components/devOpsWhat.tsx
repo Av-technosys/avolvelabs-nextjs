@@ -18,7 +18,7 @@ const DevOpsWhat = () => {
               ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative order-2 lg:order-1"
           >
             <div className="absolute -left-3 -top-3 h-16 w-16 rounded-tl-[2rem] border-l border-t border-[#9dbaff] md:-left-5 md:-top-5" />
 
@@ -102,6 +102,7 @@ const DevOpsWhat = () => {
               ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{ once: true }}
+            className="order-1 lg:order-2"
           >
             <h2 className="max-w-[650px] font-playfair text-3xl font-bold leading-[1.2] text-[#0b1425] md:text-[46px] pl-10">
               Accelerate Salesforce Delivery with
