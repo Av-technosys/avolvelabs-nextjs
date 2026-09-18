@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -26,6 +27,7 @@ const Header = () => {
   const [openMobileServices, setOpenMobileServices] = useState(false);
   const [openSheet, setOpenSheet] = useState(false);
   const [openPopover, setOpenPopover] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-4 z-50 bg-transparent px-4">
@@ -37,20 +39,20 @@ const Header = () => {
           <Image
             src="https://ik.imagekit.io/1vzspuubh/avolvelabslogo.webp"
             alt="Avolve Labs Logo"
-            className="h-7 md:h-10 object-contain"
-            height={80}
-            width={160}
+            className="h-8 md:h-12 w-auto object-contain"
+            height={96}
+            width={192}
             unoptimized
           />
         </Link>
 
         <div className="hidden w-full items-center md:flex">
           <nav className="mx-auto flex items-center gap-4 rounded-full border border-white/75 bg-white/65 px-5 py-3 text-sm font-semibold text-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md lg:gap-9">
-            <Link href="/" className="transition-colors hover:text-[#072ac8]">Home</Link>
-            <Link href="/about" className="transition-colors hover:text-[#072ac8]">About</Link>
+            <Link href="/" className={`transition-colors hover:text-[#072ac8] ${pathname === "/" ? "text-[#072ac8]" : ""}`}>Home</Link>
+            <Link href="/about" className={`transition-colors hover:text-[#072ac8] ${pathname === "/about" ? "text-[#072ac8]" : ""}`}>About</Link>
 
             <Popover open={openPopover} onOpenChange={setOpenPopover}>
-              <PopoverTrigger className="flex cursor-pointer items-center gap-1 transition-colors hover:text-[#072ac8]">
+              <PopoverTrigger className={`flex cursor-pointer items-center gap-1 transition-colors hover:text-[#072ac8] ${pathname?.startsWith("/services") ? "text-[#072ac8]" : ""}`}>
                 <span>Services</span>
                 <IconChevronDown className="h-4 w-4" />
               </PopoverTrigger>
@@ -87,8 +89,8 @@ const Header = () => {
               </PopoverContent>
             </Popover>
 
-            <Link href="/career" className="transition-colors hover:text-[#072ac8]">Career</Link>
-            <Link href="/case-studies" className="transition-colors hover:text-[#072ac8]">Case Studies</Link>
+            <Link href="/career" className={`transition-colors hover:text-[#072ac8] ${pathname === "/career" ? "text-[#072ac8]" : ""}`}>Career</Link>
+            <Link href="/case-studies" className={`transition-colors hover:text-[#072ac8] ${pathname === "/case-studies" ? "text-[#072ac8]" : ""}`}>Case Studies</Link>
           </nav>
 
           <div className="flex items-center gap-6">
@@ -119,11 +121,11 @@ const Header = () => {
               <SheetHeader className="px-6 pb-8 pt-6 flex items-start">
                 <SheetTitle>
                   <Image
-                    src="/avolvelabslogo.png"
-                    alt="Avolve Labs Logo"
-                    width={150}
+                    src="/images/logo.png"
+                    alt="Avolvelabs Logo"
+                    width={160}
                     height={40}
-                    className="h-7 w-auto object-contain"
+                    className="h-[30px] md:h-11 w-auto object-contain"
                     priority
                   />
                 </SheetTitle>
@@ -132,7 +134,7 @@ const Header = () => {
               <nav className="flex flex-col gap-6 px-6 text-sm font-semibold uppercase tracking-wide text-slate-900">
                 <Link
                   href="/"
-                  className="border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8]"
+                  className={`border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8] ${pathname === "/" ? "text-[#072ac8]" : ""}`}
                   onClick={() => setOpenSheet(false)}
                 >
                   Home
@@ -140,7 +142,7 @@ const Header = () => {
 
                 <Link
                   href="/about"
-                  className="border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8]"
+                  className={`border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8] ${pathname === "/about" ? "text-[#072ac8]" : ""}`}
                   onClick={() => setOpenSheet(false)}
                 >
                   About
@@ -148,7 +150,7 @@ const Header = () => {
                 <div className="border-b border-[#072ac8]/20 pb-4">
                   <button
                     onClick={() => setOpenMobileServices(!openMobileServices)}
-                    className="flex w-full appearance-none items-center justify-between border-0 bg-transparent p-0 text-left font-semibold text-slate-900 outline-none transition-colors hover:text-[#072ac8] focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0"
+                    className={`flex w-full appearance-none items-center justify-between border-0 bg-transparent p-0 text-left font-semibold outline-none transition-colors hover:text-[#072ac8] focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0 ${pathname?.startsWith("/services") ? "text-[#072ac8]" : "text-slate-900"}`}
                   >
                     SERVICES
                     <IconChevronDown
@@ -222,14 +224,14 @@ const Header = () => {
 
                 <Link
                   href="/case-studies"
-                  className="border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8]"
+                  className={`border-b border-[#072ac8]/20 pb-4 transition-colors hover:text-[#072ac8] ${pathname === "/case-studies" ? "text-[#072ac8]" : ""}`}
                   onClick={() => setOpenSheet(false)}
                 >
                   Case Studies
                 </Link>
                 <Link
                   href="/career"
-                  className="border-b border-[#072ac8]/20 pb-4 font-poppins transition-colors hover:text-[#072ac8]"
+                  className={`border-b border-[#072ac8]/20 pb-4 font-poppins transition-colors hover:text-[#072ac8] ${pathname === "/career" ? "text-[#072ac8]" : ""}`}
                   onClick={() => setOpenSheet(false)}
                 >
                   Career

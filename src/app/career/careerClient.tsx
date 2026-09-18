@@ -1,6 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
+import GhostFibers from "@/components/GhostFibers";
+import styles from "@/app/pages.module.css";
 
 const CareerClient = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,6 +18,8 @@ const CareerClient = () => {
   const [wordCount, setWordCount] = useState(0);
   const [fileError, setFileError] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -150,162 +156,86 @@ const CareerClient = () => {
   ];
 
   return (
-    <main
-      className="overflow-hidden bg-[#f0f8ff] text-[#09111f] selection:bg-[#072ac8] selection:text-white"
-      style={{ fontFamily: 'var(--font-geist-sans), "Inter", Arial, sans-serif', letterSpacing: 0 }}
-    >
+    <main className="bg-[#f0f8ff] text-[#09111f] selection:bg-[#072ac8] selection:text-white">
 
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section className="relative py-28 lg:py-32 px-5 sm:px-8 lg:px-12">
+      <section className={styles.pageHero}>
+        <div className={styles.pageHeroFibers} aria-hidden="true">
+          <GhostFibers
+            lightMode
+            lineColor="#9bb1e8"
+            glowColor="#dce9ff"
+            speed={0.06}
+            scale={1.5}
+            rotation={12}
+            rotationSpeed={0.014}
+            layers={6}
+            waveAmplitude={0.0065}
+            waveFrequency={1.85}
+            waveSpeed={0.068}
+            layerSpeed={0.026}
+            twist={0.032}
+            twistFrequency={2.25}
+            twistSpeed={0.34}
+            lineFrequency={3.35}
+            lineSpacing={0.76}
+            lineSharpness={27}
+            glowFalloff={12.5}
+            glowIntensity={0.94}
+            brightness={1.34}
+            blueBoost={1.04}
+            vignette={0}
+            grain={0.005}
+            dpr={1}
+            fps={40}
+          />
+        </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto w-full">
-          <div
-            data-animate-id="hero-title"
-            className={`grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center transition-all duration-1000 ease-out ${visibleElements["hero-title"] ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-              }`}
+        <div className={styles.pageHeroInner}>
+          <motion.div
+            className={styles.pageHeroBadge}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: reducedMotion ? 0 : 0.45, ease: "easeOut" }}
           >
-            <div className="text-left">
-              <div className="inline-flex items-center gap-[8px] px-[14px] py-[7px] rounded-full border border-white/86 bg-white/54 backdrop-blur-[16px] mb-[28px] shadow-[0_24px_80px_rgba(7,42,200,0.11),0_1px_0_rgba(255,255,255,0.92)_inset]">
-                <span className="w-2 h-2 rounded-full bg-[#9db2df] shrink-0 shadow-[0_0_0_4px_rgba(157,178,223,0.16),0_0_16px_rgba(7,42,200,0.34)] animate-ping" />
-                <span className="text-[11px] font-bold text-[#172033] tracking-normal uppercase">
-                  Avolvelabs Careers
-                </span>
-              </div>
+            <span className={styles.pageHeroBadgeDot} />
+            Avolvelabs Careers
+          </motion.div>
 
-              <h1 className="text-[28px] md:text-[54px] font-[760] leading-none text-[#09111f] mb-[24px] tracking-normal" style={{ textWrap: 'balance' } as React.CSSProperties}>
-                Build AI that
-                <br />
-                <span className="text-[#072ac8] pr-4">
-                  moves businesses.
-                </span>
-              </h1>
+          <motion.h1
+            className={styles.pageHeroH1}
+            initial={{ opacity: 0, y: 28, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: reducedMotion ? 0 : 0.58, delay: reducedMotion ? 0 : 0.08, ease: [0.16, 1, 0.3, 1] }}
+          >
+            Build AI that{" "}
+            <span className={styles.pageHeroAccent}>moves businesses.</span>
+          </motion.h1>
 
-              <p className="text-[15.5px] leading-[1.72] text-[#3d4b61] max-w-[540px] mb-[34px]">
-                We are a product-minded team designing practical AI systems for growth, automation, and insight. Join us to ship meaningful work.
-              </p>
+          <motion.p
+            className={styles.pageHeroDesc}
+            initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: reducedMotion ? 0 : 0.54, delay: reducedMotion ? 0 : 0.22, ease: [0.16, 1, 0.3, 1] }}
+          >
+            We are a product-minded team designing practical AI systems for growth, automation, and insight. Join us to ship meaningful work.
+          </motion.p>
 
-              <div className="flex flex-wrap items-center justify-start gap-4 mb-[34px]">
-                <a
-                  href="#open-roles"
-                  className="group relative inline-flex items-center gap-[10px] overflow-hidden rounded-full px-[25px] py-[15px] text-[13px] font-[760] text-white cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.10),0_6px_14px_rgba(7,42,200,0.16)]"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(20,69,222,0.92) 0%, rgba(7,42,200,0.9) 58%, rgba(86,111,245,0.86) 100%)",
-                    border: "1px solid rgba(255,255,255,0.82)",
-                  }}
-                >
-                  <span className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-white/25 opacity-0 transition-[left,opacity] duration-[1400ms] ease-out group-hover:left-[120%] group-hover:opacity-100" />
-
-                  <span className="relative z-10 flex items-center gap-[10px]">
-                    View open roles
-
-                    <svg
-                      className="flex-none transition-transform duration-300 group-hover:translate-x-1"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M3.33331 8H12.6666M12.6666 8L7.99998 3.33337M12.6666 8L7.99998 12.6667"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </a>
-
-                <a
-                  href="#apply"
-                  className="group relative inline-flex items-center gap-[8px] overflow-hidden rounded-full px-[22px] py-[14px] text-[13px] font-[650] text-[#071225] cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.08),0_6px_12px_rgba(7,42,200,0.12)]"
-                  style={{
-                    background: 'linear-gradient(145deg, rgba(255,255,255,0.88), rgba(233,242,255,0.52))',
-                    border: '1px solid rgba(7,42,200,0.22)',
-                  }}
-                >
-                  <span className="pointer-events-none absolute inset-y-0 -left-full w-1/3 -skew-x-12 bg-[#8faeff]/20 opacity-0 transition-[left,opacity] duration-[1100ms] ease-out group-hover:left-[120%] group-hover:opacity-100" />
-
-                  <span className="relative z-10">
-                    Apply now
-                  </span>
-                </a>
-              </div>
-            </div>
-
-            <div
-              data-animate-id="hero-bento"
-              className={`transition-all duration-1000 delay-300 ease-out ${visibleElements["hero-bento"] ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
-                }`}
-            >
-              <div
-                className="rounded-[2rem] p-8 md:p-10 text-left transition-all hover:-translate-y-1"
-                style={{
-                  background: 'rgba(255,255,255,0.54)',
-                  border: '1px solid rgba(255,255,255,0.82)',
-                  boxShadow: '0 24px 80px rgba(7,42,200,0.11), 0 1px 0 rgba(255,255,255,0.92) inset',
-                  backdropFilter: 'blur(16px)',
-                }}
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-[#072ac8]/10 flex items-center justify-center text-[#072ac8]">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                  </div>
-                  <h3 className="text-[22px] font-[650] leading-[1.2] text-[#09111f] tracking-normal">Small, senior, high-trust.</h3>
-                </div>
-
-                <p className="text-[14.5px] leading-[1.68] text-[#3d4b61] max-w-lg">
-                  We keep teams lean and highly collaborative. You will own problems end-to-end and work closely with founders, designers, and clients.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div
-              className="rounded-[2rem] p-8 md:p-10 text-left text-white relative overflow-hidden group"
-              style={{
-                background: '#0a2472',
-                boxShadow: '0 24px 80px rgba(10,36,114,0.3)',
-              }}
-            >
-              <div className="absolute top-[-50%] right-[-50%] w-full h-full bg-white blur-[80px] opacity-10 transition-transform group-hover:scale-150 duration-700" />
-              <h3 className="text-[10.5px] font-[700] uppercase tracking-[1.2px] text-white/60 mb-[14px]">Culture</h3>
-              <p className="text-[28px] font-[650] leading-[1.2] tracking-normal">Remote-first<br />& Async-friendly</p>
-            </div>
-
-            <div
-              className="rounded-[2rem] p-8 md:p-10 text-left flex flex-col justify-between transition-all hover:-translate-y-1"
-              style={{
-                background: 'rgba(255,255,255,0.54)',
-                border: '1px solid rgba(255,255,255,0.82)',
-                boxShadow: '0 24px 80px rgba(7,42,200,0.11), 0 1px 0 rgba(255,255,255,0.92) inset',
-                backdropFilter: 'blur(16px)',
-              }}
-            >
-              <h3 className="text-[10.5px] font-[700] uppercase tracking-[1.2px] text-[#072ac8] mb-[14px]">Focus</h3>
-              <p className="text-[22px] font-[650] leading-[1.2] text-[#09111f]">Deep focus & Ship weekly</p>
-            </div>
-
-            <div
-              className="md:col-span-2 rounded-[2rem] p-8 md:p-10 text-left flex items-end transition-all hover:-translate-y-1"
-              style={{
-                background: 'rgba(255,255,255,0.54)',
-                border: '1px solid rgba(255,255,255,0.82)',
-                boxShadow: '0 24px 80px rgba(7,42,200,0.11), 0 1px 0 rgba(255,255,255,0.92) inset',
-                backdropFilter: 'blur(16px)',
-              }}
-            >
-              <p className="text-[28px] font-[650] leading-[1.2] text-[#09111f] tracking-normal">
-                Design systems that{' '}
-                <span className="text-[#072ac8]">scale</span>.
-              </p>
-            </div>
-          </div>
+          <motion.div
+            className={styles.pageHeroActions}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: reducedMotion ? 0 : 0.5, delay: reducedMotion ? 0 : 0.34, ease: "easeOut" }}
+          >
+            <a href="#open-roles" className={styles.btnPrimary}>
+              View open roles <ArrowUpRight size={16} />
+            </a>
+            <a href="#apply" className={styles.btnGhost}>
+              Apply now <ArrowUpRight size={16} />
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -344,27 +274,23 @@ const CareerClient = () => {
                 data-animate-id={`role-strip-${idx}`}
                 onMouseEnter={() => setHoveredRole(idx)}
                 onMouseLeave={() => setHoveredRole(null)}
-                className={`group border-b border-[#072ac8]/14 py-10 transition-all duration-700 ease-out cursor-pointer ${visibleElements[`role-strip-${idx}`] ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-                  } ${hoveredRole === idx ? 'px-10 -mx-10 rounded-[8px] my-2 scale-[1.02] z-10 relative' : ''}`}
+                className={`group border-b border-[#072ac8]/14 py-10 transition-all duration-500 ease-out cursor-pointer ${visibleElements[`role-strip-${idx}`] ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                  } ${hoveredRole === idx ? 'px-8 -mx-8 rounded-[12px] my-1 bg-white/60 shadow-[0_12px_40px_rgba(7,42,200,0.06)] backdrop-blur-md z-10 relative border-transparent' : ''}`}
                 style={{
-                  ...(hoveredRole === idx ? {
-                    background: '#0a2472',
-                    boxShadow: '0 20px 48px rgba(10,36,114,0.3)',
-                  } : {}),
                   transitionDelay: `${idx * 100}ms`,
                 }}
               >
                 <div className="grid lg:grid-cols-[1fr_1.5fr_auto] gap-8 items-center">
                   <div>
-                    <span className={`inline-block px-[10px] py-[4px] rounded-full text-[10px] font-[700] uppercase tracking-[0.1em] mb-4 transition-colors duration-500 ${hoveredRole === idx ? 'bg-white/20 text-white' : 'bg-[#e6efff] text-[#072ac8]'}`}>
+                    <span className={`inline-block px-[10px] py-[4px] rounded-full text-[10px] font-[700] uppercase tracking-[0.1em] mb-4 transition-colors duration-300 ${hoveredRole === idx ? 'bg-[#072ac8]/10 text-[#072ac8]' : 'bg-[#e6efff] text-[#072ac8]'}`}>
                       {role.type}
                     </span>
-                    <h3 className={`text-[28px] font-[650] leading-[1.2] tracking-normal transition-colors duration-500 ${hoveredRole === idx ? 'text-white' : 'text-[#09111f]'}`}>
+                    <h3 className={`text-[28px] font-[650] leading-[1.2] tracking-normal transition-colors duration-300 text-[#09111f]`}>
                       {role.title}
                     </h3>
                   </div>
 
-                  <p className={`text-[14.5px] leading-[1.68] transition-colors duration-500 max-w-xl ${hoveredRole === idx ? 'text-white/80' : 'text-[#526174]'}`}>
+                  <p className={`text-[14.5px] leading-[1.68] transition-colors duration-300 max-w-xl text-[#526174]`}>
                     {role.desc}
                   </p>
 
@@ -374,12 +300,12 @@ const CareerClient = () => {
                         setSelectedRole(role.title);
                         document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
                       }}
-                      className={`flex h-[34px] w-[34px] items-center justify-center rounded-full transition-all duration-300 ${hoveredRole === idx
-                        ? 'bg-white text-[#072ac8] rotate-45'
+                      className={`flex h-[38px] w-[38px] items-center justify-center rounded-full transition-all duration-300 ${hoveredRole === idx
+                        ? 'bg-[#072ac8] text-white rotate-45 shadow-[0_4px_16px_rgba(7,42,200,0.2)]'
                         : 'bg-[rgba(255,255,255,0.82)] text-[#0a2472] border border-[rgba(7,42,200,0.14)] group-hover:bg-[#072ac8] group-hover:text-white group-hover:rotate-45'
                         }`}
                     >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                     </button>
                   </div>
                 </div>
@@ -393,7 +319,7 @@ const CareerClient = () => {
       {/* =====================================================
           PROCESS
       ===================================================== */}
-      <section className="py-24 lg:py-28 relative bg-[#e8f3fc] overflow-hidden">
+      <section className="py-24 lg:py-28 relative bg-[#f0f8ff] overflow-hidden">
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
@@ -411,10 +337,6 @@ const CareerClient = () => {
                 We move quickly and keep communication clear at every step. Expect thoughtful feedback and a respectful experience.
               </p>
 
-              <div className="hidden lg:block w-32 h-32 rounded-full border border-[#072ac8]/14 flex items-center justify-center relative bg-white/54 backdrop-blur-[16px]">
-                <div className="absolute inset-2 rounded-full border border-[#072ac8]/30 animate-spin-slow" style={{ animationDuration: '10s' }} />
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" className="text-[#072ac8]/30"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              </div>
             </div>
 
             <div className="relative">
@@ -433,7 +355,7 @@ const CareerClient = () => {
                       className="relative z-10 flex w-20 h-20 shrink-0 items-center justify-center rounded-full text-[21px] font-[760] text-white"
                       style={{
                         background: 'linear-gradient(135deg, rgba(20,69,222,0.92) 0%, rgba(7,42,200,0.9) 58%, rgba(86,111,245,0.86) 100%)',
-                        boxShadow: '0 16px 34px rgba(7,42,200,0.2)',
+                        boxShadow: '0 4px 14px rgba(7,42,200,0.1)',
                         border: '2px solid rgba(255,255,255,0.82)',
                       }}
                     >
@@ -466,8 +388,7 @@ const CareerClient = () => {
       ===================================================== */}
       <section
         id="apply"
-        className="py-24 lg:py-28 relative text-[#09111f]"
-        style={{ background: '#f0f8ff' }}
+        className={`${styles.sectionWhite} relative text-[#09111f]`}
       >
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -475,9 +396,12 @@ const CareerClient = () => {
 
             <div
               data-animate-id="apply-info"
-              className={`lg:sticky lg:top-32 self-start transition-all duration-1000 ${visibleElements["apply-info"] ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              className={`self-start transition-all duration-1000 ${visibleElements["apply-info"] ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
                 }`}
             >
+              <div className="mb-6">
+                 <span className={`${styles.eyebrow} !text-[#072ac8]`}>Join the Team</span>
+              </div>
               <h2 className="text-[36px] md:text-[52px] font-[650] leading-[1.2] tracking-normal mb-[18px]" style={{ textWrap: 'balance' } as React.CSSProperties}>
                 Tell us about{' '}
                 <span className="text-[#072ac8]">yourself.</span>
@@ -509,87 +433,74 @@ const CareerClient = () => {
             <form
               onSubmit={handleSubmit}
               data-animate-id="form-card"
-              className={`rounded-[2.5rem] p-8 sm:p-12 transition-all duration-1000 ease-out text-[#09111f] ${visibleElements["form-card"] ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
+              className={`transition-all duration-1000 ease-out text-[#09111f] ${visibleElements["form-card"] ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
                 }`}
-              style={{
-                background: 'rgba(255,255,255,0.96)',
-                boxShadow: '0 30px 100px rgba(7,42,200,0.16), 0 1px 0 rgba(255,255,255,0.92) inset',
-              }}
             >
-              <div className="mb-10">
-                <p className="text-[28px] font-[650] leading-[1.2] mb-2 text-[#09111f]">Application Form</p>
-                <p className="text-[13px] font-[500] text-[#526174]">All fields are required unless marked otherwise.</p>
-              </div>
+              <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2">
+                <div className="relative pt-2">
+                  <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Full Name *</label>
+                  <input name="fullName" type="text" required placeholder="Enter your name"
+                    className="h-[40px] mt-4 w-full border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0" />
+                </div>
 
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <label className="grid gap-2 text-[12px] font-[700] uppercase tracking-[0.05em] text-[#09111f]">
-                  Full Name
-                  <input name="fullName" type="text" required placeholder="Jane Doe"
-                    className="h-[52px] w-full rounded-[8px] border border-[#072ac8]/14 bg-[#f0f8ff] px-5 text-[14px] font-[400] text-[#09111f] placeholder:text-[#526174]/60 outline-none tracking-normal transition-all focus:border-[#072ac8] focus:bg-white focus:ring-4 focus:ring-[#072ac8]/10" />
-                </label>
+                <div className="relative pt-2">
+                  <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Email Address *</label>
+                  <input name="email" type="email" required placeholder="Enter your email"
+                    className="h-[40px] mt-4 w-full border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0" />
+                </div>
 
-                <label className="grid gap-2 text-[12px] font-[700] uppercase tracking-[0.05em] text-[#09111f]">
-                  Email Address
-                  <input name="email" type="email" required placeholder="jane@example.com"
-                    className="h-[52px] w-full rounded-[8px] border border-[#072ac8]/14 bg-[#f0f8ff] px-5 text-[14px] font-[400] text-[#09111f] placeholder:text-[#526174]/60 outline-none tracking-normal transition-all focus:border-[#072ac8] focus:bg-white focus:ring-4 focus:ring-[#072ac8]/10" />
-                </label>
+                <div className="relative pt-2 flex w-full items-end border-b border-[#072ac8]/20 focus-within:border-[#072ac8] transition-all">
+                  <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Mobile Number *</label>
+                  <select name="countryCode" defaultValue="+91"
+                    className="h-[40px] mt-4 w-[70px] shrink-0 bg-transparent text-[15px] font-[500] text-[#09111f] outline-none appearance-none cursor-pointer border-none px-0">
+                    <option value="+91">+91</option>
+                    <option value="+1">+1</option>
+                    <option value="+44">+44</option>
+                    <option value="+61">+61</option>
+                  </select>
+                  <input name="mobile" type="tel" inputMode="numeric" pattern="[0-9]*" maxLength={10} placeholder="00000 00000" required
+                    className="h-[40px] min-w-0 w-full bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none rounded-none border-none px-0 pl-2"
+                    onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, ""); }} />
+                </div>
 
-                <label className="grid gap-2 text-[12px] font-[700] uppercase tracking-[0.05em] text-[#09111f]">
-                  Mobile Number
-                  <div className="flex w-full">
-                    <select name="countryCode" defaultValue="+91"
-                      className="h-[52px] w-[90px] shrink-0 rounded-l-[8px] border border-r-0 border-[#072ac8]/14 bg-white text-[14px] text-[#09111f] px-3 outline-none focus:border-[#072ac8]">
-                      <option value="+91">+91</option>
-                      <option value="+1">+1</option>
-                      <option value="+44">+44</option>
-                      <option value="+61">+61</option>
-                    </select>
-                    <input name="mobile" type="tel" inputMode="numeric" pattern="[0-9]*" maxLength={10} placeholder="000 000 0000" required
-                      className="h-[52px] min-w-0 w-full rounded-r-[8px] border border-[#072ac8]/14 bg-[#f0f8ff] px-5 text-[14px] font-[400] text-[#09111f] placeholder:text-[#526174]/60 outline-none tracking-normal transition-all focus:border-[#072ac8] focus:bg-white focus:ring-4 focus:ring-[#072ac8]/10"
-                      onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, ""); }} />
-                  </div>
-                </label>
-
-                <label className="grid gap-2 text-[12px] font-[700] uppercase tracking-[0.05em] text-[#09111f]">
-                  Current Location
+                <div className="relative pt-2">
+                  <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Current Location *</label>
                   <input name="location" type="text" required placeholder="City, Country"
-                    className="h-[52px] w-full rounded-[8px] border border-[#072ac8]/14 bg-[#f0f8ff] px-5 text-[14px] font-[400] text-[#09111f] placeholder:text-[#526174]/60 outline-none tracking-normal transition-all focus:border-[#072ac8] focus:bg-white focus:ring-4 focus:ring-[#072ac8]/10" />
-                </label>
+                    className="h-[40px] mt-4 w-full border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0" />
+                </div>
 
-                <label className="grid gap-2 text-[12px] font-[700] uppercase tracking-[0.05em] text-[#09111f] sm:col-span-2">
-                  Role Applying For
-                  <div className="relative">
-                    <select name="role" value={selectedRole} onChange={(e) => setSelectedRole(e.target.value)} required
-                      className="h-[52px] w-full appearance-none rounded-[8px] border border-[#072ac8]/14 bg-[#f0f8ff] px-5 text-[14px] font-[400] text-[#09111f] outline-none tracking-normal transition-all hover:bg-white focus:border-[#072ac8] focus:bg-white focus:ring-4 focus:ring-[#072ac8]/10 [&>option]:bg-white">
-                      <option value="" disabled>Select a role</option>
-                      <option value="Java Developer">Java Developer</option>
-                      <option value="Salesforce Developer">Salesforce Developer</option>
-                      <option value="Business Analyst">Business Analyst</option>
-                      <option value="Other">Other (Open Application)</option>
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-[#526174]">
-                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1.5L6 6.5L11 1.5" /></svg>
-                    </div>
+                <div className="relative pt-2 sm:col-span-2">
+                  <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Role Applying For *</label>
+                  <select name="role" value={selectedRole} onChange={(e) => setSelectedRole(e.target.value)} required
+                    className={`h-[40px] mt-4 w-full appearance-none border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] outline-none transition-all focus:border-[#072ac8] rounded-none px-0 ${selectedRole ? 'text-[#09111f]' : 'text-[#526174]/40'}`}>
+                    <option value="" disabled>Select a role...</option>
+                    <option value="Java Developer" className="text-[#09111f]">Java Developer</option>
+                    <option value="Salesforce Developer" className="text-[#09111f]">Salesforce Developer</option>
+                    <option value="Business Analyst" className="text-[#09111f]">Business Analyst</option>
+                    <option value="Other" className="text-[#09111f]">Other (Open Application)</option>
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 top-6 flex items-center text-[#526174]">
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1.5L6 6.5L11 1.5" /></svg>
                   </div>
-                </label>
+                </div>
 
                 {selectedRole === "Other" && (
-                  <div className="sm:col-span-2 animate-in fade-in slide-in-from-top-2 duration-300">
-                    <input name="otherRole" type="text" required placeholder="Please specify your desired role"
-                      className="h-[52px] w-full rounded-[8px] border border-[#072ac8]/14 bg-[#f0f8ff] px-5 text-[14px] font-[400] text-[#09111f] placeholder:text-[#526174]/60 outline-none tracking-normal transition-all focus:border-[#072ac8] focus:ring-4 focus:ring-[#072ac8]/10" />
+                  <div className="sm:col-span-2 relative pt-2 animate-in fade-in slide-in-from-top-2 duration-300">
+                    <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Specify Role *</label>
+                    <input name="otherRole" type="text" required placeholder="Desired role title..."
+                      className="h-[40px] mt-4 w-full border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0" />
                   </div>
                 )}
 
-                <label className="grid gap-2 text-[12px] font-[700] uppercase tracking-[0.05em] text-[#09111f] sm:col-span-2">
-                  Career Objective (Max 50 words)
+                <div className="sm:col-span-2 relative pt-2">
+                  <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Career Objective *</label>
                   <textarea
                     name="project"
                     required
-                    placeholder="Tell us what you're looking for in your next role..."
-                    className="min-h-[140px] resize-y rounded-[8px] border border-[#072ac8]/14 bg-[#f0f8ff] p-5 text-[14px] font-[400] text-[#09111f] placeholder:text-[#526174]/50 outline-none tracking-normal transition-all hover:bg-white focus:border-[#072ac8] focus:bg-white focus:ring-4 focus:ring-[#072ac8]/10"
+                    placeholder="Briefly tell us what you're looking for in your next role..."
+                    className="min-h-[100px] mt-4 w-full resize-y border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0 py-2"
                     onChange={(e) => {
                       const words = e.target.value.trim().split(/\s+/).filter(Boolean);
-
                       if (words.length > 50) {
                         e.currentTarget.value = words.slice(0, 50).join(" ");
                         setWordCount(50);
@@ -598,15 +509,13 @@ const CareerClient = () => {
                       }
                     }}
                   />
-                  <span className="text-right text-[12px] font-[500] text-[#526174]">
+                  <span className="absolute bottom-4 right-0 text-[11px] font-[600] text-[#072ac8]/60">
                     {wordCount}/50 words
                   </span>
-                </label>
+                </div>
 
-                <label className="grid gap-2 text-[12px] font-[700] uppercase tracking-[0.05em] text-[#09111f] sm:col-span-2">
-                  Resume / CV (PDF or DOCX, Max 5MB)
-
-                  <div className="relative overflow-hidden rounded-[8px] border-2 border-dashed border-[#072ac8]/20 bg-[#f0f8ff] transition-all hover:border-[#072ac8] hover:bg-[#e6efff] focus-within:border-[#072ac8] focus-within:bg-[#e6efff]">
+                <div className="sm:col-span-2 pt-2">
+                  <div className="relative overflow-hidden border border-[#072ac8]/20 rounded-xl bg-white/40 transition-all focus-within:border-[#072ac8] p-5 shadow-sm">
                     <input
                       type="file"
                       name="resume"
@@ -615,10 +524,9 @@ const CareerClient = () => {
                       className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
                       onChange={handleFileChange}
                     />
-
-                    <div className="flex flex-col items-center justify-center gap-3 p-10 text-center pointer-events-none">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#072ac8] shadow-[0_4px_16px_rgba(7,42,200,0.1)]">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <div className="flex items-center gap-4 px-2 pointer-events-none">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#072ac8]/10 text-[#072ac8]">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                           <path d="M17 8l-5-5-5 5" />
                           <path d="M12 3v12" />
@@ -627,39 +535,34 @@ const CareerClient = () => {
 
                       {selectedFile ? (
                         <div>
-                          <p className="text-[14px] font-[600] text-[#072ac8] break-all">
+                          <p className="text-[14px] font-[650] text-[#072ac8] break-all">
                             {selectedFile.name}
                           </p>
-                          <p className="mt-1 text-[12px] text-[#526174] font-normal">
-                            {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
-                          </p>
-                          <p className="mt-2 text-[11px] text-[#526174] font-normal">
-                            Click to replace file
+                          <p className="mt-0.5 text-[12px] text-[#526174] font-medium">
+                            {(selectedFile.size / 1024 / 1024).toFixed(2)} MB • Click to replace
                           </p>
                         </div>
                       ) : (
                         <div>
-                          <span className="text-[14px] font-[600] text-[#072ac8]">Click to upload</span>
-                          <span className="text-[14px] text-[#526174]"> or drag and drop</span>
-                          <p className="mt-1 text-[12px] text-[#526174] font-normal">PDF or DOCX (max. 5MB)</p>
+                          <p className="text-[14px] font-[650] text-[#09111f]">Upload Resume / CV *</p>
+                          <p className="mt-0.5 text-[12px] text-[#526174] font-medium">PDF or DOCX (Max 5MB). Drag & drop here.</p>
                         </div>
                       )}
                     </div>
                   </div>
-
                   {fileError && (
-                    <span className="text-[12px] font-[500] text-red-600">
+                    <span className="text-[12px] font-[600] text-red-600 mt-3 block px-2">
                       {fileError}
                     </span>
                   )}
-                </label>
+                </div>
               </div>
 
-              <div className="mt-10">
+              <div className="mt-12 flex justify-start">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group relative isolate flex h-[52px] w-full items-center justify-center gap-3 overflow-hidden rounded-full text-[13px] font-[760] text-white cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.10),0_6px_14px_rgba(7,42,200,0.16)] disabled:cursor-not-allowed disabled:opacity-70"
+                  className="group relative isolate flex h-[52px] min-w-[220px] items-center justify-center gap-3 overflow-hidden rounded-full text-[13px] font-[760] text-white cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.10),0_6px_14px_rgba(7,42,200,0.16)] disabled:cursor-not-allowed disabled:opacity-70"
                   style={{
                     background: 'linear-gradient(135deg, rgba(20,69,222,0.92) 0%, rgba(7,42,200,0.9) 58%, rgba(86,111,245,0.86) 100%)',
                     border: '1px solid rgba(255,255,255,0.82)',
@@ -678,17 +581,16 @@ const CareerClient = () => {
                     )}
                   </span>
                 </button>
-
               </div>
 
               {status === "success" && (
-                <div className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-center text-sm font-semibold text-emerald-700 animate-in fade-in slide-in-from-bottom-2 duration-500">
+                <div className="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-center text-[14px] font-semibold text-emerald-700 animate-in fade-in slide-in-from-bottom-2 duration-500">
                   🎉 Your application has been sent successfully. We'll be in touch!
                 </div>
               )}
 
               {status === "error" && (
-                <div className="mt-6 rounded-2xl border border-red-200 bg-red-50 p-5 text-center text-sm font-semibold text-red-600 animate-in fade-in slide-in-from-bottom-2 duration-500">
+                <div className="mt-8 rounded-2xl border border-red-200 bg-red-50 p-5 text-center text-[14px] font-semibold text-red-600 animate-in fade-in slide-in-from-bottom-2 duration-500">
                   {errorMessage}
                 </div>
               )}
