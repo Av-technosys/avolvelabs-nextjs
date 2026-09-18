@@ -28,34 +28,34 @@ const ManageAvolvePath = () => {
   ];
 
   return (
-    <section className="bg-white py-10 px-8 w-full overflow-hidden">
+    <section className="bg-white py-16 px-8 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto text-center mb-20">
-        <h2 className=" text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight mb-4">
-          Your Path to a <span className="text-[#3291B6]">High-Performance CRM</span>
+        <h2 className=" text-[#0b1425] font-playfair text-3xl md:text-[42px] font-bold leading-tight mb-4">
+          Your Path to a <span className="text-[#072ac8]">High-Performance CRM</span>
         </h2>
-        <p className="leading-relaxed font-poppins text-md md:text-[16px] text-gray-700">
+        <p className="leading-[1.72] font-poppins text-[15.5px] text-[#3d4b61] max-w-2xl mx-auto">
           Getting started with Avolve Labs is a seamless, four-step process:
         </p>
       </div>
 
       <div className="max-w-7xl mx-auto relative px-4">
         {/* --- Dotted Connector Line (Only for Desktop) --- */}
-        <div className="hidden lg:block absolute top-8 left-1/2 -translate-x-2/4 w-[80%] h-px border-t-2 border-dashed border-slate-200 z-0" />
+        <div className="hidden lg:block absolute top-8 left-1/2 -translate-x-2/4 w-[80%] h-px border-t-2 border-dashed border-[#dce6f4] z-0" />
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((item, index) => (
             <div key={index} className="relative z-10 group text-center lg:text-left">
               {/* Step Icon */}
-              <div className="w-16 h-16 rounded-2xl bg-white border border-slate-100 shadow-sm flex items-center justify-center mb-6 mx-auto lg:mx-0 group-hover:bg-[#3291B6] group-hover:text-white group-hover:border-[#3291B6] transition-all duration-300">
-                <div className="text-[#3291B6] group-hover:text-white">
+              <div className="w-16 h-16 rounded-2xl bg-white border border-[#d9dfe8] shadow-sm flex items-center justify-center mb-6 mx-auto lg:mx-0 group-hover:bg-[#072ac8] group-hover:text-white group-hover:border-[#072ac8] transition-all duration-300">
+                <div className="text-[#072ac8] group-hover:text-white">
                   {item.icon}
                 </div>
               </div>
               
-              <h3 className="font-playfair text-xl font-bold text-[#032d60] mb-3">
+              <h3 className="font-playfair text-xl font-bold text-[#0b1425] mb-3">
                 {item.title}
               </h3>
-              <p className="font-poppins text-slate-500 text-sm leading-relaxed">
+              <p className="font-poppins text-[#526174] text-[15px] leading-relaxed">
                 {item.desc}
               </p>
             </div>
@@ -64,14 +64,14 @@ const ManageAvolvePath = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="max-w-4xl mx-auto mt-24 text-center bg-slate-50 rounded-[2.5rem] p-8 md:p-16 border border-slate-100">
-        <h3 className="font-playfair text-2xl md:text-3xl font-bold text-[#032d60] mb-4">
+      <div className="max-w-4xl mx-auto mt-24 text-center bg-white rounded-[2.5rem] p-8 md:p-16 border border-[#dce6f4] shadow-[0_8px_30px_rgba(7,42,200,0.03)]">
+        <h3 className="font-playfair text-2xl md:text-3xl font-bold text-[#0b1425] mb-4">
           Ready to stop fighting with Salesforce and start winning?
         </h3>
-        <p className="font-poppins text-slate-500 mb-10 max-w-xl mx-auto">
+        <p className="font-poppins text-[#526174] mb-10 max-w-xl mx-auto leading-relaxed">
          Don&apos;t let your CRM be a source of frustration. Let&apos;s turn it into your greatest competitive advantage.
         </p>
-        <Button className="rounded-full bg-[#3291B6] hover:bg-[#256d8a] px-12 py-7 text-lg font-poppins font-semibold shadow-lg transition-transform hover:scale-105">
+        <Button className="rounded-full bg-[#1f7bf2] hover:bg-[#1766c2] px-12 py-7 text-lg font-poppins font-semibold shadow-[0_8px_20px_rgba(31,123,242,0.25)] transition-transform hover:-translate-y-1 asChild">
          <Link href={"/contact"}>   Get Started Now </Link>
         </Button>
       </div>

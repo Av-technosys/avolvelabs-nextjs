@@ -1,38 +1,106 @@
-import React from 'react'
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
 
 const ManageHero = () => {
   return (
-    <>
-      <div
-        className="relative w-full bg-no-repeat bg-bottom overflow-hidden"
-        style={{
-          backgroundImage: "url('/aboutImg.png')",
-          backgroundSize: "clamp(100%, 30vw + 100%, 250%) auto",
-          backgroundColor: "#FFF8DE",
-          backgroundBlendMode: "multiply",
-        }}
-      >
-        <section className="text-center md:px-8 px-6 pt-16 pb-20 md:pt-10 md:pb-52 bg-linear-to-b from-white/40 to-transparent">
-          <h1 className="font-playfair text-3xl md:text-6xl font-bold text-[#032d60] leading-tight">
-           Your CRM Should Evolve as Fast as 
-            <br />
-            <span className="text-sky-600"> Your Business.</span>
-          </h1>
-          <p className="font-poppins text-sm md:text-lg text-gray-700 max-w-6xl mx-auto mt-6 md:mt-10 px-2 md:px-4 leading-relaxed">
-            We don’t just keep the lights on. Our managed services provide continuous optimization, proactive administration, and strategic enhancements for Salesforce.
-          </p>
-        </section>
-        <div className="">
-          <svg viewBox="380 0 1040 120" preserveAspectRatio="none" className="">
-            <path
-              d="M0 120 L0 120 C360 0 1080 0 1440 120 L1440 120 Z"
-              fill="white"
-            />
-          </svg>
+    <section className="relative overflow-hidden bg-white px-5 pb-16 pt-32 sm:px-8 md:pb-24 md:pt-40 lg:px-12">
+      <div className="relative mx-auto max-w-7xl">
+        {/* Top Label */}
+        <motion.div
+          initial={{ opacity: 0, y: -15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-10 flex items-center justify-center gap-3 md:justify-start"
+        >
+          <span className="h-px w-10 bg-[#072ac8]" />
+          <span className="font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-[#072ac8]">
+            Managed Services
+          </span>
+        </motion.div>
+
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true }}
+          >
+            <div className="relative">
+              <span className="absolute -left-4 top-2 h-16 w-1 rounded-full bg-[#072ac8] md:-left-6 md:h-24" />
+
+              <h2 className="max-w-[650px] font-playfair text-3xl font-bold leading-[1.2] text-[#0b1425] md:text-[46px]">
+                Your CRM Should Evolve as Fast as
+                <br />
+                <span className="text-[#072ac8]">Your Business.</span>
+              </h2>
+            </div>
+
+            <div className="mt-8 flex items-center gap-4">
+              <div className="h-2 w-2 rounded-full bg-[#072ac8]" />
+              <p className="font-poppins text-xs font-medium uppercase tracking-[0.15em] text-[#526174]">
+                Optimization • Administration • Strategy
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Description */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="absolute -right-3 -top-3 h-16 w-16 rounded-tr-[2rem] border-r border-t border-[#9dbaff] md:-right-5 md:-top-5" />
+
+            <div className="relative border-l border-[#c5d7f5] pl-6 md:pl-8">
+              <span className="mb-5 block font-playfair text-5xl leading-none text-[#b7caff]">
+                “
+              </span>
+
+              <p className="max-w-xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+                We don’t just keep the lights on. Our managed services provide continuous optimization, proactive administration, and strategic enhancements for Salesforce.
+                <br />
+                <br />
+                From Reactive to Proactive: We ensure your CRM evolves seamlessly with your business needs, minimizing friction and maximizing ROI.
+              </p>
+
+              <div className="mt-8 flex items-center gap-3">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#072ac8]" />
+                <span className="font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-[#526174]">
+                  Continuous Enhancement
+                </span>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-4 -right-2 h-16 w-16 rounded-br-[2rem] border-b border-r border-[#9dbaff] md:-right-4" />
+          </motion.div>
         </div>
       </div>
-    </>
-  );
-}
 
-export default ManageHero
+      {/* Bottom Curve */}
+      <div className="absolute bottom-0 left-0 w-full translate-y-px">
+        <svg
+          viewBox="0 0 1440 90"
+          preserveAspectRatio="none"
+          className="block h-[45px] w-full md:h-[70px]"
+        >
+          <path
+            d="M0 90 C360 0 1080 0 1440 90 L1440 90 L0 90 Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+    </section>
+  );
+};
+
+export default ManageHero;

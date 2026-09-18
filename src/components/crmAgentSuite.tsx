@@ -70,7 +70,7 @@ const CrmAgentSuite = () => {
               >
                 {/* Icon Badge */}
                 <div
-                  className={`absolute left-8 top-[-28px] z-20 flex h-16 w-16 items-center justify-center rounded-full border border-blue-200 bg-white shadow-[0_6px_22px_rgba(7,42,200,0.14)] ${
+                  className={`absolute left-8 top-[-28px] z-20 flex h-16 w-16 items-center justify-center rounded-full border border-[#d9dfe8] bg-white shadow-sm ${
                     isCenter ? "md:left-1/2 md:-translate-x-1/2" : ""
                   }`}
                 >
@@ -82,11 +82,11 @@ const CrmAgentSuite = () => {
                 </div>
 
                 <Card
-                  className={`h-full min-h-[390px] rounded-[24px] border bg-white/90 transition-all duration-300 ${
+                  className={`h-full min-h-[390px] rounded-[24px] border bg-white transition-all duration-300 ${
                     isCenter
-                      ? "border-blue-400 shadow-[0_18px_50px_rgba(7,42,200,0.18)] md:min-h-[410px]"
-                      : "border-blue-100 shadow-[0_12px_35px_rgba(7,42,200,0.08)]"
-                  } hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(7,42,200,0.16)]`}
+                      ? "border-[#c5d7f5] shadow-lg md:min-h-[410px]"
+                      : "border-[#d9dfe8] shadow-sm"
+                  } hover:-translate-y-1 hover:shadow-xl`}
                 >
                   <CardContent className="flex h-full min-h-[390px] flex-col p-7 pt-14 md:min-h-[410px] md:p-8 md:pt-16">
                     {/* Number */}

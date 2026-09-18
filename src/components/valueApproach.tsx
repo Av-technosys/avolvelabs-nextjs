@@ -1,104 +1,115 @@
-import React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+"use client";
+
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const steps = [
   {
-    step: "1",
-    title: "Human-Augmented AI\nUse Case Discovery",
+    step: "01",
+    title: "Human-Augmented AI Use Case Discovery",
     desc:
       "We collaborate with business and IT stakeholders to identify high-impact opportunities where human intelligence and autonomous agents can co-exist. We focus on use cases that are feasible today, while laying the foundation for full autonomy tomorrow.",
   },
   {
-    step: "2",
-    title: "AI Readiness\nAssessment",
+    step: "02",
+    title: "AI Readiness Assessment",
     desc:
       "We assess your organization’s readiness across data maturity, system interoperability, integration landscape, and security posture. This ensures that the AI agents we design can operate effectively within your environment.",
   },
   {
-    step: "3",
-    title: "AI Design & Tooling\nStrategy",
+    step: "03",
+    title: "AI Design & Tooling Strategy",
     desc:
       "We define the appropriate architecture, toolkits, and platforms (e.g., Boomi AgentStudio, Google ADK, LLMs, RAG pipelines) to build scalable, secure, and purpose-fit agents tailored to your needs.",
   },
   {
-    step: "4",
-    title: "Roadmap\nCreation",
+    step: "04",
+    title: "Roadmap Creation",
     desc:
       "We develop a phased execution plan, starting with quick-win pilots and expanding to multi-agent ecosystems. The roadmap includes timelines, ownership, guardrails, and metrics to ensure scalable adoption and continuous improvement.",
   },
-]
+];
 
 const ValueApproach = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section className="bg-black py-10 px-8">
+    <section className="w-full bg-white px-6 py-16 md:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-6">
-          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-white">
+        {/* Header */}
+        <div className="mb-16 text-center md:mb-20">
+          <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[42px]">
             Our Approach to Value Added Services Adoption
           </h2>
-          <p className="mt-4 font-poppins text-md md:text-[18px] text-gray-400 max-w-3xl mx-auto">
+          <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
             We guide you through every stage, from discovery and assessment to
             design and roadmap creation, to ensure successful Agentic AI adoption.
           </p>
         </div>
-        <div className="relative mb-10 hidden md:block px-20">
-          <div className="absolute top-1/2 left-30 right-30 h-px bg-gray-700" />
-          <div className="flex justify-between relative z-10 px-10">
-            {steps.map((item) => (
+
+        {/* Content Section */}
+        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[0.4fr_1fr] md:gap-16 lg:grid-cols-[0.3fr_1fr] lg:gap-24">
+          {/* Left Side - Vertical Numbers */}
+          <div className="flex flex-col gap-6 md:gap-8 border-l-2 border-[#f0f4fc] pl-6 md:pl-10">
+            {steps.map((item, index) => (
               <div
                 key={item.step}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 text-white font-bold"
+                className="cursor-pointer transition-transform duration-300 hover:translate-x-2"
+                onMouseEnter={() => setActiveIndex(index)}
+                onClick={() => setActiveIndex(index)}
               >
-                {item.step}
+                <div className="flex items-center gap-4">
+                  <div
+                    className={`h-2 w-2 rounded-full transition-all duration-300 -ml-[31px] md:-ml-[47px] ${
+                      activeIndex === index ? "bg-[#072ac8] scale-150" : "bg-transparent"
+                    }`}
+                  />
+                  <span
+                    className={`font-poppins text-[70px] font-bold leading-none tracking-[-0.05em] transition-all duration-300 md:text-[90px] lg:text-[110px] ${
+                      activeIndex === index
+                        ? "text-[#d7e1fb] opacity-100"
+                        : "text-[#d7e1fb] opacity-40 hover:opacity-70"
+                    }`}
+                  >
+                    {item.step}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {steps.map((item) => (
-            <Card
-              key={item.step}
-              className="
-                group relative overflow-hidden
-                bg-linear-to-b from-[#1a1a1a] to-black
-                border border-white/10
-                rounded-2xl
-                transition-all duration-500
-                hover:scale-[1.02]
-              "
-            >
 
-              <div
-                className="
-                  absolute inset-0 opacity-0 group-hover:opacity-100
-                  transition duration-500
-                  bg-linear-to-br
-                  from-[#FEEAC9]/20 via-transparent to-[#3291B6]/20
-                "
-              />
-              <div
-                className="
-                  absolute inset-0 rounded-2xl
-                  border border-transparent
-                  group-hover:border-[#EDFFF0]
-                  group-hover:shadow-[0_0_30px_#00c6ff]
-                  transition-all duration-500
-                "
-              />
-              <CardContent className="relative z-10 p-4">
-                <h3 className="text-xl font-playfair font-semibold text-[#EDFFF0] whitespace-pre-line">
-                  {item.title}
+          {/* Right Side - Active Content */}
+          <div className="relative w-full min-h-[480px] sm:min-h-[400px] md:min-h-[450px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="absolute left-0 top-0 flex w-full flex-col pt-4 md:pt-8"
+              >
+                <div className="mb-6 inline-flex items-center gap-3">
+                  <span className="h-[2px] w-12 bg-gradient-to-r from-[#072ac8] to-transparent" />
+                  <span className="font-poppins text-xs font-semibold uppercase tracking-[0.15em] text-[#072ac8]">
+                    Step {steps[activeIndex].step}
+                  </span>
+                </div>
+
+                <h3 className="font-playfair text-2xl font-bold leading-[1.2] text-[#0b1425] md:text-[32px]">
+                  {steps[activeIndex].title}
                 </h3>
-                <p className="mt-4 text-md font-poppins text-gray-300 leading-relaxed">
-                  {item.desc}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+
+                <div className="mt-6 text-[15.5px] leading-[1.8] text-[#3d4b61] whitespace-pre-line">
+                  {steps[activeIndex].desc}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default ValueApproach;

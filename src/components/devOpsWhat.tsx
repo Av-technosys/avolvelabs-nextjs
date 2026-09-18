@@ -5,14 +5,7 @@ import { motion } from "framer-motion";
 
 const DevOpsWhat = () => {
   return (
-    <section className="relative overflow-hidden bg-[#f7faff] px-5 pb-20 pt-16 sm:px-8 md:pb-28 md:pt-24 lg:px-12">
-      {/* Background Pattern */}
-      <div className="pointer-events-none absolute inset-0 opacity-50">
-        <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#dce8ff] blur-3xl" />
-        <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#e7edff] blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e6ecf5_1px,transparent_1px),linear-gradient(to_bottom,#e6ecf5_1px,transparent_1px)] bg-[size:70px_70px]" />
-      </div>
-
+    <section className="relative overflow-hidden bg-white px-5 pb-20 pt-16 sm:px-8 md:pb-28 md:pt-24 lg:px-12">
       <div className="relative mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
 

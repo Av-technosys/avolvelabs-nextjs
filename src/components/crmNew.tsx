@@ -1,34 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
 const cards = [
   {
     title: "Continuous Intelligence Loops",
-    desc:
-      'The system moves away from "one and done" implementations by utilizing constant pulses of real world data. Every user interaction serves as a feedback signal that informs the very next development cycle.',
+    desc: 'The system moves away from "one and done" implementations by utilizing constant pulses of real world data. Every user interaction serves as a feedback signal that informs the very next development cycle.',
   },
   {
     title: "Modular Value Sprints",
-    desc:
-      "Large scale digital transformations are broken down into bite sized, high impact modules. This Lego style logic allows specific value adds to be deployed every few weeks.",
+    desc: "Large scale digital transformations are broken down into bite sized, high impact modules. This Lego style logic allows specific value adds to be deployed every few weeks.",
   },
   {
     title: "Predictive Execution",
-    desc:
-      "The methodology shifts from reactive fixing to proactive optimization by anticipating bottlenecks before they happen.",
+    desc: "The methodology shifts from reactive fixing to proactive optimization by anticipating bottlenecks before they happen.",
   },
   {
     title: "Embedded Trust & Governance",
-    desc:
-      "Compliance, security, and auditability are shifted left and embedded into every single iteration. This Trust by Design approach ensures that speed never compromises safety.",
+    desc: "Compliance, security, and auditability are shifted left and embedded into every single iteration. This Trust by Design approach ensures that speed never compromises safety.",
   },
   {
     title: "Proactive Scalability",
-    desc:
-      "The framework is built on the principle of designing for future scale before the immediate need even arises. Every sprint is engineered to strengthen the ecosystem's capacity for complexity.",
+    desc: "The framework is built on the principle of designing for future scale before the immediate need even arises. Every sprint is engineered to strengthen the ecosystem's capacity for complexity.",
   },
 ];
 
@@ -49,9 +44,7 @@ const CrmNew = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#f7faff] px-4 py-10 pb-24 sm:px-8 md:pb-32">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e6ecf5_1px,transparent_1px),linear-gradient(to_bottom,#e6ecf5_1px,transparent_1px)] bg-size-[60px_60px]" />
-
+    <section className="relative overflow-hidden bg-white px-4 py-10 pb-24 sm:px-8 md:pb-32">
       <div className="relative mx-auto max-w-7xl">
         {/* Heading + Paragraph */}
         <motion.div
@@ -107,15 +100,13 @@ const CrmNew = () => {
                 className="absolute left-1/2 top-0 w-[270px] sm:w-[285px] md:w-[290px]"
               >
                 <Card
-                  className={`h-[380px] overflow-hidden rounded-2xl bg-white/90 sm:h-[400px] ${
-                    isActive
-                      ? "border-[#8dbbff] shadow-[0_12px_35px_rgba(7,42,200,0.12)]"
-                      : "border-[#c5dcff] shadow-[0_8px_25px_rgba(7,42,200,0.06)]"
+                  className={`h-[380px] overflow-hidden rounded-2xl border border-[#d9dfe8] bg-white sm:h-[400px] ${
+                    isActive ? "border-[#aeb8c8]" : ""
                   }`}
                 >
                   <CardContent className="flex h-full flex-col p-5 pt-0 sm:p-6 sm:pt-0">
                     {/* Number */}
-                    <span className="font-playfair text-[56px] font-bold leading-none text-[#d5e1ff]">
+                    <span className="font-playfair text-[56px] font-bold leading-none text-[#d5dbe5]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
@@ -131,7 +122,7 @@ const CrmNew = () => {
                     </div>
 
                     {/* Bottom Line */}
-                    <div className="mt-auto h-1 w-14 shrink-0 rounded-full bg-[#76a7ff]" />
+                    <div className="mt-auto h-1 w-14 shrink-0 rounded-full bg-blue-500" />
                   </CardContent>
                 </Card>
               </motion.div>

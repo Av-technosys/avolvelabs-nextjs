@@ -77,8 +77,8 @@ const TechNode = ({
 const CrmTech = ({
   title = "Who This Service Is For",
   description =
-    "This service is designed for organizations looking to move beyond basic CRM usage and build systems that actively support efficiency, collaboration, and long-term growth.",
-  bgClass = "bg-[#f5f9ff]",
+  "This service is designed for organizations looking to move beyond basic CRM usage and build systems that actively support efficiency, collaboration, and long-term growth.",
+  bgClass = "bg-white",
   orbit1 = ["OpenAI", "Azure AI", "Google", "Boomi"],
   orbit2 = ["Llama", "LangChain", "LangGraph", "Claude"],
 }: CrmTechProps) => {

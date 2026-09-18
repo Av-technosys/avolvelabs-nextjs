@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+
 const ManagesBusinessValueDemo = () => {
   const features = [
     {
@@ -22,44 +25,67 @@ const ManagesBusinessValueDemo = () => {
   ];
 
   return (
-    <section className="bg-[#f8fafc] py-10 px-8 w-full overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="space-y-6">
-            <h2 className="font-bold md:text-left text-center text-[#0f172a] leading-tight font-playfair text-3xl md:text-[38px] ">
-              A Partnership Model <br />
-              <span className="text-[#3291B6] ">Designed for Transparency</span>
-            </h2>
-            <div className="h-1.5 w-20 bg-[#FEEAC9] rounded-full max-md:mx-auto" />
-            <p className="font-poppins text-lg text-slate-600 leading-relaxed max-w-lg md:text-left text-center">
-              Many Salesforce partners hide behind black box contracts. We
-              believe in a collaborative, agile approach that prioritizes your
-              ROI over our billable hours.
-            </p>
+    <section className="bg-white px-5 py-16 sm:px-8 lg:px-12 w-full overflow-hidden">
+      <div className="mx-auto max-w-7xl">
 
-            {/* <div className="pt-4">
-              <Button className="rounded-full bg-[#3291B6] hover:bg-[#256d8a] px-10 py-7 text-lg font-poppins font-medium shadow-lg shadow-blue-900/10 transition-all hover:scale-105">
-                Book a Transparency Audit
-              </Button>
-            </div> */}
+        <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 items-center">
+          
+          {/* Left: Heading & Paragraph */}
+          <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="font-playfair text-3xl font-bold leading-[1.15] text-[#0b1425] md:text-[46px]">
+                A Partnership Model
+                <br />
+                <span className="text-[#072ac8]">Designed for Transparency</span>
+              </h2>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="mb-6 h-1 w-16 bg-[#072ac8] rounded-full" />
+              <p className="font-poppins text-[16px] leading-[1.72] text-[#3d4b61]">
+                Many Salesforce partners hide behind black box contracts. We
+                believe in a collaborative, agile approach that prioritizes your
+                ROI over our billable hours.
+              </p>
+            </motion.div>
           </div>
-          <div className="grid gap-8">
+
+          {/* Right: 2x2 Feature Cards Grid */}
+          <div className="grid gap-6 sm:grid-cols-2">
             {features.map((item, index) => (
-              <div key={index} className="flex gap-5 group">
-                <div className="shrink-0 mt-1">
-                  <CheckCircle2 className="w-6 h-6 text-[#3291B6]" />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                className="group relative flex flex-col gap-5 rounded-3xl border border-[#d9dfe8] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#072ac8]/30 hover:shadow-[0_12px_40px_rgba(7,42,200,0.08)]"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#072ac8]/10 text-[#072ac8] transition-colors duration-300 group-hover:bg-[#072ac8] group-hover:text-white">
+                  <CheckCircle2 className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-playfair text-xl font-bold text-[#0f172a] mb-2 group-hover:text-[#3291B6] transition-colors">
+                  <h3 className="mb-3 font-playfair text-xl font-bold tracking-wide text-[#0b1425]">
                     {item.title}
                   </h3>
-                  <p className="font-poppins text-slate-500 text-sm md:text-base leading-relaxed">
+                  <p className="font-poppins text-[14.5px] leading-[1.72] text-[#526174]">
                     {item.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

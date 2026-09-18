@@ -1,19 +1,16 @@
-"use client"
 
-import React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+"use client";
+
 import {
   IconSparkles,
   IconChecklist,
-  IconDatabase,
-} from "@tabler/icons-react"
+} from "@tabler/icons-react";
 
 const agents = [
   {
     title: "Data Deployment & Governance",
     icon: IconSparkles,
     desc: "DevOps without structured data governance creates instability. We ensure consistent and compliant data across environments.",
-    active: true,
     color: "text-blue-500",
   },
   {
@@ -28,6 +25,7 @@ const DevOpsAgentSuite = () => {
   return (
     <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-8 md:py-16">
       <div className="relative mx-auto max-w-7xl">
+
         {/* Heading */}
         <div className="mb-12 text-center md:mb-20">
           <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[42px]">
@@ -35,38 +33,27 @@ const DevOpsAgentSuite = () => {
           </h2>
 
           <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
-             Our AI agents are designed to automate repetitive tasks, make
+            Our AI agents are designed to automate repetitive tasks, make
             informed decisions, and enable teams to work more efficiently and
             effectively.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="relative mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-3 md:gap-6">
-          {/* Connecting Lines */}
-          <div className="pointer-events-none absolute left-[27%] right-[27%] top-1/2 hidden h-px bg-gradient-to-r from-blue-300 via-blue-500 to-violet-300 md:block" />
+        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-12">
 
           {agents.map((item, index) => {
-            const Icon = item.icon
-            const isCenter = index === 1
+            const Icon = item.icon;
 
             return (
               <div
                 key={item.title}
-                className={`relative z-10 ${
-                  index === 0
-                    ? "md:-rotate-[5deg]"
-                    : index === 2
-                      ? "md:rotate-[5deg]"
-                      : "md:-translate-y-10"
+                className={`relative ${
+                  index === 0 ? "md:-rotate-[5deg]" : "md:rotate-[5deg]"
                 }`}
               >
                 {/* Icon Badge */}
-                <div
-                  className={`absolute left-8 top-[-28px] z-20 flex h-16 w-16 items-center justify-center rounded-full border border-blue-200 bg-white shadow-[0_6px_22px_rgba(7,42,200,0.14)] ${
-                    isCenter ? "md:left-1/2 md:-translate-x-1/2" : ""
-                  }`}
-                >
+                <div className="absolute -top-7 left-8 z-20 flex h-16 w-16 items-center justify-center rounded-full border border-[#d9dfe8] bg-white">
                   <Icon
                     size={30}
                     stroke={1.7}
@@ -74,14 +61,11 @@ const DevOpsAgentSuite = () => {
                   />
                 </div>
 
-                <Card
-                  className={`h-full min-h-[390px] rounded-[24px] border bg-white/90 transition-all duration-300 ${
-                    isCenter
-                      ? "border-blue-400 shadow-[0_18px_50px_rgba(7,42,200,0.18)] md:min-h-[410px]"
-                      : "border-blue-100 shadow-[0_12px_35px_rgba(7,42,200,0.08)]"
-                  } hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(7,42,200,0.16)]`}
-                >
-                  <CardContent className="flex h-full min-h-[390px] flex-col p-7 pt-14 md:min-h-[410px] md:p-8 md:pt-16">
+                {/* Card */}
+                <div className="flex min-h-[390px] flex-col rounded-[24px] border border-[#d9dfe8] bg-white transition-transform duration-300 hover:-translate-y-1 md:min-h-[410px]">
+
+                  <div className="flex h-full min-h-[390px] flex-col p-7 pt-14 md:min-h-[410px] md:p-8 md:pt-16">
+
                     {/* Number */}
                     <span className="mb-4 text-right font-playfair text-[52px] font-bold leading-none text-[#d5e1ff]">
                       {String(index + 1).padStart(2, "0")}
@@ -99,20 +83,18 @@ const DevOpsAgentSuite = () => {
                     </div>
 
                     {/* Bottom Line */}
-                    <div
-                      className={`mt-auto h-1 w-14 rounded-full ${
-                        index === 2 ? "bg-violet-400" : "bg-blue-500"
-                      }`}
-                    />
-                  </CardContent>
-                </Card>
+                    <div className="mt-auto h-1 w-14 rounded-full bg-blue-500" />
+
+                  </div>
+                </div>
               </div>
-            )
+            );
           })}
+
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default DevOpsAgentSuite
+export default DevOpsAgentSuite;

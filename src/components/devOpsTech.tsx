@@ -77,8 +77,8 @@ const TechNode = ({
 const DevOpsTech = ({
   title = "Who This Service Is For",
   description =
-    "This service is designed for organizations looking to move beyond basic development practices and build a structured DevOps ecosystem that drives efficiency, collaboration, and scalable long-term growth.",
-  bgClass = "bg-[#f5f9ff]",
+  "This service is designed for organizations looking to move beyond basic development practices and build a structured DevOps ecosystem that drives efficiency, collaboration, and scalable long-term growth.",
+  bgClass = "bg-white",
   orbit1 = ["OpenAI", "Azure AI", "Google", "Boomi"],
   orbit2 = ["Llama", "LangChain", "LangGraph", "Claude"],
 }: CrmTechProps) => {

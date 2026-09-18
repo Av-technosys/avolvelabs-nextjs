@@ -27,7 +27,7 @@ const DevOpsTeams = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f7faff] text-center">
+    <section className="relative w-full overflow-hidden bg-white text-center">
       {/* Heading */}
       <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 lg:px-12">
         <motion.h1

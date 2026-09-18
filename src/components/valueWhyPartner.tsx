@@ -1,5 +1,6 @@
-import React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+"use client";
+
+import { useState } from "react";
 
 const items = [
   {
@@ -22,55 +23,126 @@ const items = [
     desc:
       "Backed by our experience in enterprise architecture, we guide you toward scalable, secure AI system designs, selecting the right tools, models, and deployment patterns.",
   },
-]
+] as const;
+
+type DeliverableItem = (typeof items)[number];
+
+interface DeliverableCardProps {
+  item: DeliverableItem;
+  index: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+}
+
+const DeliverableCard = ({
+  item,
+  index,
+  isExpanded,
+  onToggle,
+}: DeliverableCardProps) => {
+  const number = String(index + 1).padStart(2, "0");
+
+  return (
+    <article className="group border-t border-[#d9dfe8] transition-colors duration-300 hover:border-[#3291B6]">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={isExpanded}
+        aria-controls={`deliverable-desc-${index}`}
+        className="flex w-full items-start gap-4 py-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3291B6] focus-visible:ring-offset-4 sm:gap-6 sm:py-8"
+      >
+        {/* Content */}
+        <div className="min-w-0 flex-1">
+          <h3 className="pr-4 font-playfair text-xl font-bold leading-[1.3] text-[#032d60] sm:text-2xl">
+            {item.title}
+          </h3>
+
+          <div
+            id={`deliverable-desc-${index}`}
+            className="grid transition-[grid-template-rows,opacity] duration-500 ease-out"
+            style={{
+              gridTemplateRows: isExpanded ? "1fr" : "0fr",
+              opacity: isExpanded ? 1 : 0,
+            }}
+          >
+            <div className="min-h-0 overflow-hidden">
+              <p className="pt-4 font-poppins text-sm leading-[1.7] text-[#526b91] sm:text-[15px]">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Toggle Icon */}
+        <span
+          className="mt-1 shrink-0 text-[#9ba8b9] transition-transform duration-300 group-hover:text-[#3291B6]"
+          style={{
+            transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)",
+          }}
+          aria-hidden="true"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </span>
+      </button>
+    </article>
+  );
+};
 
 const ValueWhyPartner = () => {
-  return (
-    <section className="bg-[#EDFFF0] py-10 px-8">
-      <div className="mx-auto max-w-7xl">
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-        <div className="text-center mb-16">
-          <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold">
-            {/* Why Partner with Avolvelabs for{" "} */}
-            <span className="bg-linear-to-r from-[#4aa3ff] to-[#a855f7] bg-clip-text text-transparent">
-              What We Deliver
-            </span>
+  const toggleCard = (index: number) => {
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  };
+
+  return (
+    <section className="bg-white px-6 py-16 sm:px-8 md:py-24">
+      <div className="mx-auto max-w-7xl">
+        {/* Section Header */}
+        <div className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
+          <h2 className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-[42px]">
+            What We{" "}
+            <span className="text-[#072ac8]">Deliver</span>
           </h2>
 
-           <p className="mt-4 text-black/70 max-w-3xl mx-auto font-poppins text-md md:text-[18px]">
-            From strategy to deployment – your end-to-end partner for scalable,
-            production-ready solutions
+          <p className="mx-auto mt-4 max-w-3xl font-poppins text-[15.5px] leading-[1.72] text-[#3d4b61]">
+            From strategy to deployment – your end-to-end partner for
+            scalable, production-ready solutions
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {items.map((item, i) => (
-            <Card
-              key={i}
-              className="
-                bg-transparent
-                border-2 border-black/20
-                rounded-2xl
-                transition-colors duration-300
-                hover:border-[#3291B6]
-              "
-            >
-              <CardContent className="md:p-6  ">
-                <h3 className="text-xl font-semibold font-playfair text-[#3291B6] whitespace-pre-line">
-                  {item.title}
-                </h3>
-
-                {/* <p className="mt-4 text-sm font-poppins text-black/50 leading-relaxed">
-                  {item.desc}
-                </p> */}
-              </CardContent>
-            </Card>
+        {/* Deliverable Items */}
+        <div
+          className="mx-auto max-w-6xl"
+          role="region"
+          aria-label="Deliverable items"
+        >
+          {items.map((item, index) => (
+            <DeliverableCard
+              key={item.title}
+              item={item}
+              index={index}
+              isExpanded={expandedIndex === index}
+              onToggle={() => toggleCard(index)}
+            />
           ))}
-        </div>
 
+          <div className="border-t border-[#d9dfe8]" />
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default ValueWhyPartner;

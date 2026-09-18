@@ -1,25 +1,35 @@
 "use client";
-import React from "react";
+
+import { useState } from "react";
 import { motion } from "framer-motion";
+import {
+  CheckCircle2,
+  GraduationCap,
+  Zap,
+} from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Zap, GraduationCap, CheckCircle2 } from "lucide-react";
 
 const performanceItems = [
   {
     title: "Deployment Time Tracking",
-    desc: "Real-time monitoring of code-to-production speed to ensure rapid delivery cycles.",
+    desc: "Monitor deployment timelines to identify bottlenecks and improve delivery speed across engineering teams.",
   },
   {
     title: "Promotion Cycle Measurement",
-    desc: "Tracking the journey of features across environments to identify and fix bottlenecks.",
+    desc: "Measure the time taken to promote changes across environments and optimize the release pipeline.",
   },
   {
     title: "Failure Rate Analysis",
-    desc: "In-depth data on release stability to minimize downtime and enhance user experience.",
+    desc: "Analyze deployment failures to identify recurring issues and improve overall pipeline reliability.",
   },
   {
     title: "Rollback Metrics",
-    desc: "Automated insights into recovery speed and stability post-deployment failures.",
+    desc: "Track rollback frequency and recovery timelines to reduce operational risks and improve release confidence.",
+  },
+  {
+    title: "The Strategic Outcome",
+    desc: "Data-driven release improvement and transparent leadership visibility across the entire engineering organization.",
+    isOutcome: true,
   },
 ];
 
@@ -32,161 +42,224 @@ const enablementList = [
 ];
 
 const DevOpsNew = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleDragEnd = (
+    _: MouseEvent | TouchEvent | PointerEvent,
+    info: { offset: { x: number } }
+  ) => {
+    if (info.offset.x < -60 && activeIndex < performanceItems.length - 1) {
+      setActiveIndex((prev) => prev + 1);
+    }
+
+    if (info.offset.x > 60 && activeIndex > 0) {
+      setActiveIndex((prev) => prev - 1);
+    }
+  };
+
   return (
-    <div className="flex flex-col gap-0">
-      <section className="relative overflow-hidden bg-[#f7faff] py-16 px-8">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#e6ecf5_1px,transparent_1px),linear-gradient(to_bottom,#e6ecf5_1px,transparent_1px)] bg-size-[60px_60px]" />
+    <section className="relative overflow-hidden bg-white px-4 py-10 pb-24 sm:px-8 md:pb-32">
+      <div className="mx-auto max-w-7xl">
+        {/* Performance & Visibility */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mx-auto mb-8 max-w-4xl text-center"
+        >
+          <h2 className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-[42px]">
+            Performance & Visibility
+          </h2>
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-12 md:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-              className="lg:col-span-5 space-y-8"
-            >
-              <div>
-                <h2 className="text-[#032d60] font-playfair text-3xl md:text-[42px] font-bold leading-tight">
-                  Performance & <br />
-                  <span className="text-[#0176d3]">Visibility</span>
-                </h2>
-                <h3 className="mt-4 font-playfair text-xl md:text-2xl font-semibold text-[#032d60]">
-                  Pipeline Analytics
-                </h3>
-              </div>
+          <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+            Gain complete visibility into your DevOps pipeline with
+            actionable insights that improve deployment speed, reliability,
+            and engineering performance.
+          </p>
+        </motion.div>
 
-              <p className="font-poppins text-md md:text-[17px] text-gray-700 leading-relaxed">
-                We provide real-time visibility into release performance and
-                bottlenecks. Our analytics engine ensures that every stage of
-                your delivery pipeline is measurable and optimized.
-              </p>
+        {/* Performance Cards */}
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
+          className="relative mx-auto h-[540px] w-full max-w-[1500px] cursor-grab touch-pan-y active:cursor-grabbing sm:h-[560px]"
+        >
+          {performanceItems.map((item, index) => {
+            const offset = index - activeIndex;
+            const distance = Math.abs(offset);
+            const isActive = offset === 0;
 
-              <Card className="border-l-4 border-[#0176d3] bg-white shadow-xl">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-[#f0f7ff] p-2 rounded-full">
-                      <Zap className="w-5 h-5 text-[#0176d3]" />
-                    </div>
-                    <p className="text-lg font-playfair font-bold text-[#032d60]">
-                      The Strategic Outcome
-                    </p>
-                  </div>
-                  <p className="text-sm font-poppins text-gray-600">
-                    Data-driven release improvement and transparent leadership
-                    visibility across the entire engineering organization.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-            <motion.div
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              variants={{
-                hidden: {},
-                show: { transition: { staggerChildren: 0.15 } },
-              }}
-              className="lg:col-span-7 grid sm:grid-cols-2 gap-6 relative"
-            >
-              {performanceItems.map((item, i) => (
-                <motion.div
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 30 },
-                    show: { opacity: 1, y: 0 },
-                  }}
-                  whileHover={{ y: -8 }}
-                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                  className={`
-                    ${i === 0 ? "sm:translate-y-8" : ""} 
-                    ${i === 3 ? "sm:-translate-y-8" : ""}
-                  `}
+            return (
+              <motion.div
+                key={item.title}
+                onClick={() => setActiveIndex(index)}
+                animate={{
+                  x: `calc(-50% + ${offset * 290}px)`,
+                  y: distance * 85,
+                  scale: isActive ? 1 : 0.98,
+                  opacity: distance > 2 ? 0 : 1,
+                  zIndex: performanceItems.length - distance,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 180,
+                  damping: 24,
+                }}
+                className="absolute left-1/2 top-0 w-[270px] sm:w-[285px] md:w-[290px]"
+              >
+                <Card
+                  className={`h-[380px] overflow-hidden rounded-2xl border border-[#d9dfe8] bg-white sm:h-[400px] ${
+                    isActive ? "border-[#aeb8c8]" : ""
+                  }`}
                 >
-                  <Card className="h-full bg-white/90 backdrop-blur-sm border border-gray-100 shadow-md hover:shadow-xl hover:border-[#0176d3]/50 transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="h-10 w-10 bg-[#f0f7ff] rounded-lg flex items-center justify-center mb-4 text-[#0176d3] font-bold">
-                        0{i + 1}
-                      </div>
-                      <h3 className="text-lg font-playfair font-bold text-[#032d60]">
+                  <CardContent className="flex h-full flex-col p-5 pt-0 sm:p-6 sm:pt-0">
+                    {/* Number */}
+                    <span className="font-playfair text-[56px] font-bold leading-none text-[#d5dbe5]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    {/* Content */}
+                    <div className="mt-4">
+                      {item.isOutcome && (
+                        <Zap className="mb-4 h-7 w-7 text-[#0176d3]" />
+                      )}
+
+                      <h3 className="font-playfair text-[21px] font-bold leading-[1.2] text-[#032d60]">
                         {item.title}
                       </h3>
-                      <p className="mt-2 text-sm font-poppins text-gray-600 leading-snug">
+
+                      <p className="mt-4 font-poppins text-[14px] leading-[1.55] text-[#526b91]">
                         {item.desc}
                       </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
+                    </div>
+
+                    {/* Bottom Line */}
+                    <div className="mt-auto h-1 w-14 shrink-0 rounded-full bg-blue-500" />
+                  </CardContent>
+                </Card>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Navigation Dots */}
+        <div className="relative mt-4 flex justify-center gap-2">
+          {performanceItems.map((item, index) => (
+            <button
+              key={item.title}
+              aria-label={`Show ${item.title}`}
+              onClick={() => setActiveIndex(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index
+                  ? "w-7 bg-[#072ac8]"
+                  : "w-2 bg-[#c5d7ff]"
+              }`}
+            />
+          ))}
         </div>
-      </section>
-      <section className="relative overflow-hidden bg-white py-20 px-8 border-t border-gray-100">
-        <div className="relative mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="lg:col-span-6 space-y-6"
-            >
-              <div className="space-y-3">
-                <h2 className="text-[#032d60] font-playfair text-3xl md:text-[42px] font-bold leading-tight uppercase tracking-tight">
-                  DevOps Enablement
-                </h2>
-                <h3 className="text-[#0176d3] font-playfair text-xl md:text-2xl font-semibold">
-                  DevOps Training & Center of Excellence
-                </h3>
-                <p className="font-poppins text-gray-700 text-lg leading-relaxed">
-                  We help organizations build internal DevOps capability and
-                  long-term maturity.
-                </p>
-              </div>
-              <div className="grid gap-3">
-                {enablementList.map((line, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="flex items-center gap-3 bg-[#f8fbff] p-4 rounded-xl border border-[#e1efff]"
-                  >
-                    <CheckCircle2 className="text-[#0176d3] w-5 h-5 shrink-0" />
-                    <span className="font-poppins font-medium text-[#032d60]">
-                      {line}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="lg:col-span-6 flex justify-center lg:justify-end"
-            >
-              <div className="relative p-1 bg-linear-to-br from-[#0176d3] to-[#032d60] rounded-3xl shadow-2xl w-full max-w-md">
-                <div className="bg-[#032d60] rounded-[22px] p-8 md:p-12 text-center space-y-6">
-                  <div className="inline-flex p-4 bg-white/10 rounded-2xl mb-2">
-                    <GraduationCap className="w-12 h-12 text-white" />
-                  </div>
-                  <h4 className="text-white/70 font-poppins text-sm uppercase tracking-[0.2em]">
-                    The Final Outcome
-                  </h4>
-                  <p className="text-white font-playfair text-3xl md:text-4xl font-bold leading-tight">
-                    Self-sufficient <br /> DevOps teams.
-                  </p>
-                  <div className="pt-4">
-                    <div className="h-1 w-20 bg-[#0176d3] mx-auto rounded-full" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+
+        {/* DevOps Enablement */}
+        <div className="mt-28 grid items-start gap-12 md:grid-cols-2 md:gap-20">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-[42px]">
+              DevOps{" "}
+              <span className="text-[#072ac8]">Enablement</span>
+            </h2>
+
+            <h3 className="mt-5 font-playfair text-2xl font-bold leading-[1.2] text-[#032d60] md:text-[30px]">
+              DevOps Training & Center of Excellence
+            </h3>
+
+            <p className="mt-5 max-w-xl font-poppins text-[15px] leading-[1.75] text-[#526b91]">
+              We enable teams to become self-sufficient by providing
+              structured training, clear documentation, and continuous
+              mentorship throughout the DevOps transformation.
+            </p>
+          </motion.div>
+
+          {/* Enablement Points */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.15,
+                },
+              },
+            }}
+            className="w-full space-y-5 pl-3 sm:pl-8"
+          >
+            {enablementList.map((line, index) => (
+              <motion.div
+                key={line}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    x: -35,
+                  },
+                  show: {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      duration: 0.6,
+                      ease: "easeOut",
+                    },
+                  },
+                }}
+                className="flex w-full items-center gap-4 py-2"
+              >
+                <span className="shrink-0 font-playfair text-xl font-bold text-[#d5dbe5]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-[#0176d3]" />
+
+                <span className="flex-1 font-poppins text-sm font-medium text-[#032d60] sm:text-[15px]">
+                  {line}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-      </section>
-    </div>
+
+        {/* Final Outcome */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mt-20 border-t border-[#d9dfe8] pt-10"
+        >
+          <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-6">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#d9dfe8]">
+              <GraduationCap className="h-7 w-7 text-[#0176d3]" />
+            </div>
+
+            <div>
+              <p className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[#526b91]">
+                The Final Outcome
+              </p>
+
+              <h3 className="mt-2 font-playfair text-2xl font-bold text-[#032d60] md:text-[30px]">
+                Self-sufficient DevOps teams.
+              </h3>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
