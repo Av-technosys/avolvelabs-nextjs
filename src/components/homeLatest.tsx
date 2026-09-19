@@ -17,8 +17,8 @@ const HomeLatest = () => {
               <span>revenue engine?</span>
             </h2>
           </div>
-          <Link href="/contact" className={styles.btnPrimary}>
-            Start Your Transformation <ArrowUpRight size={16} />
+          <Link href="/contact" className={`${styles.btnPrimary} !text-white`}>
+            Start Your Transformation <ArrowUpRight size={16} className="text-white" />
           </Link>
         </div>
       </div>

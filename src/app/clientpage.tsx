@@ -264,8 +264,8 @@ function HeroSection() {
               whileHover={!canHover || reducedMotion ? undefined : { y: -3, scale: 1.018 }}
               whileTap={reducedMotion ? undefined : { y: 0, scale: 0.985 }}
             >
-              <Link href="/contact" className={styles.btnPrimary}>
-                Start Your Transformation <ArrowUpRight size={16} />
+              <Link href="/contact" className={`${styles.btnPrimary} !text-white`}>
+                Start Your Transformation <ArrowUpRight size={16} className="text-white" />
               </Link>
             </motion.div>
             <motion.div
@@ -624,8 +624,8 @@ function FinalCta() {
               <span> No credit card required.</span>
             </h2>
           </div>
-          <Link href="/contact" className={styles.btnPrimary}>
-            Start Your Transformation <ArrowUpRight size={16} />
+          <Link href="/contact" className={`${styles.btnPrimary} !text-white`}>
+            Start Your Transformation <ArrowUpRight size={16} className="text-white" />
           </Link>
         </div>
       </div>

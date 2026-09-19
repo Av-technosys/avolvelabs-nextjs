@@ -60,7 +60,7 @@ const HomeHero = () => {
           <Link href="/contact">
             <Button
               size="lg"
-              className="cursor-pointer bg-[#0a369d] px-10 py-6 text-base font-semibold hover:bg-[#014486] shadow-lg transition-all"
+              className="cursor-pointer bg-[#0a369d] px-10 py-6 text-base font-semibold !text-white hover:bg-[#014486] shadow-lg transition-all"
             >
               Start Your Transformation
             </Button>

@@ -71,7 +71,7 @@
   background:
     linear-gradient(135deg, rgba(10, 54, 157, 0.92) 0%, rgba(10, 54, 157, 0.9) 58%, rgba(10, 54, 157, 0.86) 100%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0));
-  color: #fff;
+  color: #ffffff !important;
   text-shadow: 0 1px 1px rgba(1, 11, 48, 0.34);
   border: 1px solid rgba(255, 255, 255, 0.82);
   border-radius: 999px;
