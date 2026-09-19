@@ -5,11 +5,19 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 const HomeValues = () => {
   return (
     <section className="max-w-7xl mx-auto py-10 px-8">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-        <div className=" lg:w-1/2 flex flex-col items-start">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className=" lg:w-1/2 flex flex-col items-start"
+        >
           <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-[1.1] mb-8 tracking-tight">
          CRM Strategy & Optimization Services
           </h2>
@@ -18,14 +26,12 @@ const HomeValues = () => {
           </p>
           <div className="flex flex-row gap-1 ">
             <Link href="/services/crm-strategy-implementation" target="_blank">
-            <Button className="bg-[#0176d3] font-poppins hover:bg-blue-500 text-white font-bold h-auto px-4 md:px-8 py-3 rounded-xl shadow-sm transition-all active:scale-95 whitespace-nowrap text-sm md:text-base">
+            <Button className="bg-[#0a369d] font-poppins hover:bg-[#0a369d] text-white font-bold h-auto px-4 md:px-8 py-3 rounded-xl shadow-sm transition-all active:scale-95 whitespace-nowrap text-sm md:text-base">
               See what drives
             </Button>
             </Link>
-
-            
           </div>
-        </div>
+        </motion.div>
         <div className="w-full lg:w-1/2 relative">
           <div className="relative rounded-[32px] overflow-hidden shadow-2xl w-full h-0 pb-[75%] bg-[linear-gradient(to_right,#061C5B,#0B2FA0)]">
             <Image

@@ -3,11 +3,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import styles from "@/app/pages.module.css";
 
 const ManageBook = () => {
   return (
-    <section className="relative w-full bg-white px-5 py-6 sm:px-8 lg:px-12">
-      <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[2.5rem] bg-white border border-[#d9dfe8] shadow-[0_0_50px_rgba(7,42,200,0.08)]">
+    <section className="relative w-full bg-[var(--ice)] px-5 py-6 sm:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[2.5rem] bg-white border border-[#d9dfe8] shadow-[0_0_50px_rgba(10, 54, 157,0.08)]">
 
 
         {/* Content */}
@@ -18,10 +19,10 @@ const ManageBook = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-4xl lg:text-[42px]"
+              className={styles.sectionTitle} style={{ textAlign: "left" }}
             >
               Not Sure Where to Begin with Managed Services? <br className="hidden lg:block mt-2" />
-              <span className="text-[#072ac8]">We&apos;ll Help You Start Smart.</span>
+              <span className={styles.sectionAccent}>We&apos;ll Help You Start Smart.</span>
             </motion.h2>
             
             <motion.p 
@@ -29,7 +30,7 @@ const ManageBook = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-6 font-poppins text-base font-light leading-relaxed text-[#3d4b61] md:text-[17px] max-w-2xl"
+              className={`${styles.sectionDesc} mt-6 max-w-2xl`} style={{ textAlign: "left", margin: "1.5rem 0 0 0" }}
             >
               We work with you to identify the right use cases, assess data readiness, and define an AI roadmap aligned to your business goals, so you don&apos;t waste time or budget.
             </motion.p>
@@ -44,10 +45,10 @@ const ManageBook = () => {
           >
             <Link
               href="/contact"
-              className="group relative inline-flex cursor-pointer items-center gap-[10px] overflow-hidden rounded-full px-[25px] py-[15px] font-poppins text-[15px] font-[760] text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.10),0_6px_14px_rgba(7,42,200,0.16)] md:px-[35px] md:py-[20px] md:text-[17px]"
+              className="group relative inline-flex cursor-pointer items-center gap-[10px] overflow-hidden rounded-full px-[25px] py-[15px] text-[15px] font-[760] text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(10, 54, 157,0.10),0_6px_14px_rgba(10, 54, 157,0.16)] md:px-[35px] md:py-[20px] md:text-[17px] font-sans"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(20,69,222,0.92) 0%, rgba(7,42,200,0.9) 58%, rgba(86,111,245,0.86) 100%)",
+                  "linear-gradient(135deg, rgba(10, 54, 157,0.92) 0%, rgba(10, 54, 157,0.9) 58%, rgba(10, 54, 157,0.86) 100%)",
                 border: "1px solid rgba(255,255,255,0.82)",
               }}
             >

@@ -156,7 +156,7 @@ const CareerClient = () => {
   ];
 
   return (
-    <main className="bg-[#f0f8ff] text-[#09111f] selection:bg-[#072ac8] selection:text-white">
+    <main className="bg-[#f0f8ff] text-[#09111f] selection:bg-[#0a369d] selection:text-white">
 
       {/* =====================================================
           HERO
@@ -267,22 +267,22 @@ const CareerClient = () => {
             </p>
           </div>
 
-          <div className="border-t border-[#072ac8]/14 flex flex-col">
+          <div className="border-t border-[#0a369d]/14 flex flex-col">
             {roles.map((role, idx) => (
               <div
                 key={role.title}
                 data-animate-id={`role-strip-${idx}`}
                 onMouseEnter={() => setHoveredRole(idx)}
                 onMouseLeave={() => setHoveredRole(null)}
-                className={`group border-b border-[#072ac8]/14 py-10 transition-all duration-500 ease-out cursor-pointer ${visibleElements[`role-strip-${idx}`] ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-                  } ${hoveredRole === idx ? 'px-8 -mx-8 rounded-[12px] my-1 bg-white/60 shadow-[0_12px_40px_rgba(7,42,200,0.06)] backdrop-blur-md z-10 relative border-transparent' : ''}`}
+                className={`group border-b border-[#0a369d]/14 py-10 transition-all duration-500 ease-out cursor-pointer ${visibleElements[`role-strip-${idx}`] ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                  } ${hoveredRole === idx ? 'px-8 -mx-8 rounded-[12px] my-1 bg-white/60 shadow-[0_12px_40px_rgba(10, 54, 157,0.06)] backdrop-blur-md z-10 relative border-transparent' : ''}`}
                 style={{
                   transitionDelay: `${idx * 100}ms`,
                 }}
               >
                 <div className="grid lg:grid-cols-[1fr_1.5fr_auto] gap-8 items-center">
                   <div>
-                    <span className={`inline-block px-[10px] py-[4px] rounded-full text-[10px] font-[700] uppercase tracking-[0.1em] mb-4 transition-colors duration-300 ${hoveredRole === idx ? 'bg-[#072ac8]/10 text-[#072ac8]' : 'bg-[#e6efff] text-[#072ac8]'}`}>
+                    <span className={`inline-block px-[10px] py-[4px] rounded-full text-[10px] font-[700] uppercase tracking-[0.1em] mb-4 transition-colors duration-300 ${hoveredRole === idx ? 'bg-[#0a369d]/10 text-[#0a369d]' : 'bg-[#e6efff] text-[#0a369d]'}`}>
                       {role.type}
                     </span>
                     <h3 className={`text-[28px] font-[650] leading-[1.2] tracking-normal transition-colors duration-300 text-[#09111f]`}>
@@ -301,8 +301,8 @@ const CareerClient = () => {
                         document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" });
                       }}
                       className={`flex h-[38px] w-[38px] items-center justify-center rounded-full transition-all duration-300 ${hoveredRole === idx
-                        ? 'bg-[#072ac8] text-white rotate-45 shadow-[0_4px_16px_rgba(7,42,200,0.2)]'
-                        : 'bg-[rgba(255,255,255,0.82)] text-[#0a2472] border border-[rgba(7,42,200,0.14)] group-hover:bg-[#072ac8] group-hover:text-white group-hover:rotate-45'
+                        ? 'bg-[#0a369d] text-white rotate-45 shadow-[0_4px_16px_rgba(10, 54, 157,0.2)]'
+                        : 'bg-[rgba(255,255,255,0.82)] text-[#0a2472] border border-[rgba(10, 54, 157,0.14)] group-hover:bg-[#0a369d] group-hover:text-white group-hover:rotate-45'
                         }`}
                     >
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -331,7 +331,7 @@ const CareerClient = () => {
             >
               <h2 className="text-[36px] md:text-[52px] font-[650] leading-[1.2] text-[#09111f] mb-[18px] tracking-normal" style={{ textWrap: 'balance' } as React.CSSProperties}>
                 Transparent from{' '}
-                <span className="text-[#072ac8]">hello</span> to offer.
+                <span className="text-[#0a369d]">hello</span> to offer.
               </h2>
               <p className="text-[14.5px] leading-[1.68] text-[#526174] mb-8 max-w-md">
                 We move quickly and keep communication clear at every step. Expect thoughtful feedback and a respectful experience.
@@ -340,7 +340,7 @@ const CareerClient = () => {
             </div>
 
             <div className="relative">
-              <div className="absolute left-[39px] top-[40px] bottom-[40px] w-[2px] bg-[linear-gradient(180deg,transparent,rgba(7,42,200,0.22),transparent)]" />
+              <div className="absolute left-[39px] top-[40px] bottom-[40px] w-[2px] bg-[linear-gradient(180deg,transparent,rgba(10, 54, 157,0.22),transparent)]" />
 
               <div className="space-y-10">
                 {process.map((item, idx) => (
@@ -354,8 +354,8 @@ const CareerClient = () => {
                     <div
                       className="relative z-10 flex w-20 h-20 shrink-0 items-center justify-center rounded-full text-[21px] font-[760] text-white"
                       style={{
-                        background: 'linear-gradient(135deg, rgba(20,69,222,0.92) 0%, rgba(7,42,200,0.9) 58%, rgba(86,111,245,0.86) 100%)',
-                        boxShadow: '0 4px 14px rgba(7,42,200,0.1)',
+                        background: 'linear-gradient(135deg, rgba(10, 54, 157,0.92) 0%, rgba(10, 54, 157,0.9) 58%, rgba(10, 54, 157,0.86) 100%)',
+                        boxShadow: '0 4px 14px rgba(10, 54, 157,0.1)',
                         border: '2px solid rgba(255,255,255,0.82)',
                       }}
                     >
@@ -367,7 +367,7 @@ const CareerClient = () => {
                       style={{
                         background: 'rgba(255,255,255,0.54)',
                         border: '1px solid rgba(255,255,255,0.82)',
-                        boxShadow: '0 24px 80px rgba(7,42,200,0.11), 0 1px 0 rgba(255,255,255,0.92) inset',
+                        boxShadow: '0 24px 80px rgba(10, 54, 157,0.11), 0 1px 0 rgba(255,255,255,0.92) inset',
                         backdropFilter: 'blur(16px)',
                       }}
                     >
@@ -400,19 +400,19 @@ const CareerClient = () => {
                 }`}
             >
               <div className="mb-6">
-                 <span className={`${styles.eyebrow} !text-[#072ac8]`}>Join the Team</span>
+                 <span className={`${styles.eyebrow} !text-[#0a369d]`}>Join the Team</span>
               </div>
               <h2 className="text-[36px] md:text-[52px] font-[650] leading-[1.2] tracking-normal mb-[18px]" style={{ textWrap: 'balance' } as React.CSSProperties}>
                 Tell us about{' '}
-                <span className="text-[#072ac8]">yourself.</span>
+                <span className="text-[#0a369d]">yourself.</span>
               </h2>
 
               <p className="text-[14.5px] leading-[1.68] text-[#526174] mb-10 max-w-md">
                 Share your background and what you want to build next. We respond to every application within 7 days.
               </p>
 
-              <div className="space-y-6 border-t border-[#072ac8]/14 pt-8">
-                <h3 className="text-[10.5px] font-[700] uppercase tracking-[1.2px] text-[#072ac8]">What we value</h3>
+              <div className="space-y-6 border-t border-[#0a369d]/14 pt-8">
+                <h3 className="text-[10.5px] font-[700] uppercase tracking-[1.2px] text-[#0a369d]">What we value</h3>
                 {[
                   "Clear communication and ownership",
                   "Evidence of shipped work",
@@ -420,8 +420,8 @@ const CareerClient = () => {
                   "Ability to collaborate across disciplines",
                 ].map((line) => (
                   <div key={line} className="flex items-start gap-4">
-                    <div className="w-6 h-6 rounded-full bg-[#072ac8]/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#072ac8]" />
+                    <div className="w-6 h-6 rounded-full bg-[#0a369d]/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#0a369d]" />
                     </div>
                     <p className="text-[14.5px] leading-[1.68] text-[#3d4b61]">{line}</p>
                   </div>
@@ -440,16 +440,16 @@ const CareerClient = () => {
                 <div className="relative pt-2">
                   <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Full Name *</label>
                   <input name="fullName" type="text" required placeholder="Enter your name"
-                    className="h-[40px] mt-4 w-full border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0" />
+                    className="h-[40px] mt-4 w-full border-0 border-b border-[#0a369d]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#0a369d] focus-visible:ring-0 rounded-none px-0" />
                 </div>
 
                 <div className="relative pt-2">
                   <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Email Address *</label>
                   <input name="email" type="email" required placeholder="Enter your email"
-                    className="h-[40px] mt-4 w-full border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0" />
+                    className="h-[40px] mt-4 w-full border-0 border-b border-[#0a369d]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#0a369d] focus-visible:ring-0 rounded-none px-0" />
                 </div>
 
-                <div className="relative pt-2 flex w-full items-end border-b border-[#072ac8]/20 focus-within:border-[#072ac8] transition-all">
+                <div className="relative pt-2 flex w-full items-end border-b border-[#0a369d]/20 focus-within:border-[#0a369d] transition-all">
                   <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Mobile Number *</label>
                   <select name="countryCode" defaultValue="+91"
                     className="h-[40px] mt-4 w-[70px] shrink-0 bg-transparent text-[15px] font-[500] text-[#09111f] outline-none appearance-none cursor-pointer border-none px-0">
@@ -466,13 +466,13 @@ const CareerClient = () => {
                 <div className="relative pt-2">
                   <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Current Location *</label>
                   <input name="location" type="text" required placeholder="City, Country"
-                    className="h-[40px] mt-4 w-full border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0" />
+                    className="h-[40px] mt-4 w-full border-0 border-b border-[#0a369d]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#0a369d] focus-visible:ring-0 rounded-none px-0" />
                 </div>
 
                 <div className="relative pt-2 sm:col-span-2">
                   <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Role Applying For *</label>
                   <select name="role" value={selectedRole} onChange={(e) => setSelectedRole(e.target.value)} required
-                    className={`h-[40px] mt-4 w-full appearance-none border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] outline-none transition-all focus:border-[#072ac8] rounded-none px-0 ${selectedRole ? 'text-[#09111f]' : 'text-[#526174]/40'}`}>
+                    className={`h-[40px] mt-4 w-full appearance-none border-0 border-b border-[#0a369d]/20 bg-transparent text-[15px] font-[500] outline-none transition-all focus:border-[#0a369d] rounded-none px-0 ${selectedRole ? 'text-[#09111f]' : 'text-[#526174]/40'}`}>
                     <option value="" disabled>Select a role...</option>
                     <option value="Java Developer" className="text-[#09111f]">Java Developer</option>
                     <option value="Salesforce Developer" className="text-[#09111f]">Salesforce Developer</option>
@@ -488,7 +488,7 @@ const CareerClient = () => {
                   <div className="sm:col-span-2 relative pt-2 animate-in fade-in slide-in-from-top-2 duration-300">
                     <label className="absolute left-0 top-0 text-[11px] font-bold uppercase tracking-wider text-[#526174]">Specify Role *</label>
                     <input name="otherRole" type="text" required placeholder="Desired role title..."
-                      className="h-[40px] mt-4 w-full border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0" />
+                      className="h-[40px] mt-4 w-full border-0 border-b border-[#0a369d]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#0a369d] focus-visible:ring-0 rounded-none px-0" />
                   </div>
                 )}
 
@@ -498,7 +498,7 @@ const CareerClient = () => {
                     name="project"
                     required
                     placeholder="Briefly tell us what you're looking for in your next role..."
-                    className="min-h-[100px] mt-4 w-full resize-y border-0 border-b border-[#072ac8]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#072ac8] focus-visible:ring-0 rounded-none px-0 py-2"
+                    className="min-h-[100px] mt-4 w-full resize-y border-0 border-b border-[#0a369d]/20 bg-transparent text-[15px] font-[500] text-[#09111f] placeholder:text-[#526174]/40 outline-none transition-all focus:border-[#0a369d] focus-visible:ring-0 rounded-none px-0 py-2"
                     onChange={(e) => {
                       const words = e.target.value.trim().split(/\s+/).filter(Boolean);
                       if (words.length > 50) {
@@ -509,13 +509,13 @@ const CareerClient = () => {
                       }
                     }}
                   />
-                  <span className="absolute bottom-4 right-0 text-[11px] font-[600] text-[#072ac8]/60">
+                  <span className="absolute bottom-4 right-0 text-[11px] font-[600] text-[#0a369d]/60">
                     {wordCount}/50 words
                   </span>
                 </div>
 
                 <div className="sm:col-span-2 pt-2">
-                  <div className="relative overflow-hidden border border-[#072ac8]/20 rounded-xl bg-white/40 transition-all focus-within:border-[#072ac8] p-5 shadow-sm">
+                  <div className="relative overflow-hidden border border-[#0a369d]/20 rounded-xl bg-white/40 transition-all focus-within:border-[#0a369d] p-5 shadow-sm">
                     <input
                       type="file"
                       name="resume"
@@ -525,7 +525,7 @@ const CareerClient = () => {
                       onChange={handleFileChange}
                     />
                     <div className="flex items-center gap-4 px-2 pointer-events-none">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#072ac8]/10 text-[#072ac8]">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0a369d]/10 text-[#0a369d]">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                           <path d="M17 8l-5-5-5 5" />
@@ -535,7 +535,7 @@ const CareerClient = () => {
 
                       {selectedFile ? (
                         <div>
-                          <p className="text-[14px] font-[650] text-[#072ac8] break-all">
+                          <p className="text-[14px] font-[650] text-[#0a369d] break-all">
                             {selectedFile.name}
                           </p>
                           <p className="mt-0.5 text-[12px] text-[#526174] font-medium">
@@ -562,9 +562,9 @@ const CareerClient = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group relative isolate flex h-[52px] min-w-[220px] items-center justify-center gap-3 overflow-hidden rounded-full text-[13px] font-[760] text-white cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.10),0_6px_14px_rgba(7,42,200,0.16)] disabled:cursor-not-allowed disabled:opacity-70"
+                  className="group relative isolate flex h-[52px] min-w-[220px] items-center justify-center gap-3 overflow-hidden rounded-full text-[13px] font-[760] text-white cursor-pointer transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(10, 54, 157,0.10),0_6px_14px_rgba(10, 54, 157,0.16)] disabled:cursor-not-allowed disabled:opacity-70"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(20,69,222,0.92) 0%, rgba(7,42,200,0.9) 58%, rgba(86,111,245,0.86) 100%)',
+                    background: 'linear-gradient(135deg, rgba(10, 54, 157,0.92) 0%, rgba(10, 54, 157,0.9) 58%, rgba(10, 54, 157,0.86) 100%)',
                     border: '1px solid rgba(255,255,255,0.82)',
                   }}
                 >

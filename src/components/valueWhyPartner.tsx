@@ -1,6 +1,6 @@
-"use client";
-
-import { useState } from "react";
+import React from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import styles from "@/app/pages.module.css"
 
 const items = [
   {
@@ -23,126 +23,84 @@ const items = [
     desc:
       "Backed by our experience in enterprise architecture, we guide you toward scalable, secure AI system designs, selecting the right tools, models, and deployment patterns.",
   },
-] as const;
-
-type DeliverableItem = (typeof items)[number];
-
-interface DeliverableCardProps {
-  item: DeliverableItem;
-  index: number;
-  isExpanded: boolean;
-  onToggle: () => void;
-}
-
-const DeliverableCard = ({
-  item,
-  index,
-  isExpanded,
-  onToggle,
-}: DeliverableCardProps) => {
-  const number = String(index + 1).padStart(2, "0");
-
-  return (
-    <article className="group border-t border-[#d9dfe8] transition-colors duration-300 hover:border-[#3291B6]">
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={isExpanded}
-        aria-controls={`deliverable-desc-${index}`}
-        className="flex w-full items-start gap-4 py-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3291B6] focus-visible:ring-offset-4 sm:gap-6 sm:py-8"
-      >
-        {/* Content */}
-        <div className="min-w-0 flex-1">
-          <h3 className="pr-4 font-playfair text-xl font-bold leading-[1.3] text-[#032d60] sm:text-2xl">
-            {item.title}
-          </h3>
-
-          <div
-            id={`deliverable-desc-${index}`}
-            className="grid transition-[grid-template-rows,opacity] duration-500 ease-out"
-            style={{
-              gridTemplateRows: isExpanded ? "1fr" : "0fr",
-              opacity: isExpanded ? 1 : 0,
-            }}
-          >
-            <div className="min-h-0 overflow-hidden">
-              <p className="pt-4 font-poppins text-sm leading-[1.7] text-[#526b91] sm:text-[15px]">
-                {item.desc}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Toggle Icon */}
-        <span
-          className="mt-1 shrink-0 text-[#9ba8b9] transition-transform duration-300 group-hover:text-[#3291B6]"
-          style={{
-            transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)",
-          }}
-          aria-hidden="true"
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </span>
-      </button>
-    </article>
-  );
-};
+]
 
 const ValueWhyPartner = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
-  const toggleCard = (index: number) => {
-    setExpandedIndex((prev) => (prev === index ? null : index));
-  };
-
   return (
-    <section className="bg-white px-6 py-16 sm:px-8 md:py-24">
-      <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
-        <div className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
-          <h2 className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-[42px]">
+    <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-8 md:py-16">
+      <div className="relative mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mb-12 text-center md:mb-20">
+          <h2 className={styles.sectionTitle}>
             What We{" "}
-            <span className="text-[#072ac8]">Deliver</span>
+            <span className={styles.sectionAccent}>Deliver</span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl font-poppins text-[15.5px] leading-[1.72] text-[#3d4b61]">
-            From strategy to deployment – your end-to-end partner for
-            scalable, production-ready solutions
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
+            From strategy to deployment – your end-to-end partner for scalable,
+            production-ready solutions
           </p>
         </div>
 
-        {/* Deliverable Items */}
-        <div
-          className="mx-auto max-w-6xl"
-          role="region"
-          aria-label="Deliverable items"
-        >
+        {/* Cards */}
+        <div className="relative mx-auto grid max-w-7xl items-start gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {items.map((item, index) => (
-            <DeliverableCard
+            <div
               key={item.title}
-              item={item}
-              index={index}
-              isExpanded={expandedIndex === index}
-              onToggle={() => toggleCard(index)}
-            />
-          ))}
+              className={`relative z-10 transition-transform duration-300 ${
+                index === 0
+                  ? "lg:-rotate-[5deg]"
+                  : index === 1
+                  ? "lg:-rotate-[2deg] lg:-translate-y-8"
+                  : index === 2
+                  ? "lg:rotate-[2deg] lg:-translate-y-8"
+                  : "lg:rotate-[5deg]"
+              }`}
+            >
+              {/* Icon Badge */}
+              <div
+                className="absolute left-8 top-[-28px] z-20 flex h-16 w-16 items-center justify-center rounded-full border border-[#d9dfe8] bg-white shadow-sm"
+              >
+                {/* Fallback Icon */}
+                <div className="h-8 w-8 rounded-full bg-blue-100 text-[#0a369d] flex items-center justify-center">✦</div>
+              </div>
 
-          <div className="border-t border-[#d9dfe8]" />
+              <Card
+                className={`h-full min-h-[460px] rounded-[24px] border border-[#d9dfe8] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
+              >
+                <CardContent className="flex h-full flex-col p-6 pt-14 md:p-8 md:pt-16">
+                  {/* Number */}
+                  <span className="mb-4 text-right text-[52px] font-bold leading-none text-[#d5e1ff]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Content */}
+                  <div>
+                    <h3 className={`${styles.sectionTitle} whitespace-pre-line`} style={{ fontSize: "clamp(18px, 2vw, 22px)", marginBottom: 16 }}>
+                      {item.title}
+                    </h3>
+
+                    <p className={styles.sectionDesc}>
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Line */}
+                  <div className="mt-auto pt-6">
+                    <div
+                      className={`h-1 w-14 rounded-full ${
+                        index >= 2 ? "bg-violet-400" : "bg-[#0a369d]"
+                      }`}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ValueWhyPartner;
+export default ValueWhyPartner

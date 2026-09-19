@@ -8,6 +8,7 @@ import {
   Target,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 const ManageAvolveDifference = () => {
   const points = [
@@ -29,7 +30,7 @@ const ManageAvolveDifference = () => {
   ];
 
   return (
-    <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] py-20 px-5 sm:px-8 lg:px-12 w-full overflow-hidden">
+    <section className="bg-white py-20 px-5 sm:px-8 lg:px-12 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Centered Heading Section */}
@@ -39,7 +40,7 @@ const ManageAvolveDifference = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#072ac8]/10 text-[#072ac8] text-xs font-semibold tracking-wider uppercase mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a369d]/10 text-[#0a369d] text-xs font-semibold tracking-wider uppercase mb-6"
           >
             <XCircle className="w-4 h-4" />
             <span>THE AVOLVE DIFFERENCE</span>
@@ -50,10 +51,10 @@ const ManageAvolveDifference = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-6 text-[#0b1425] font-playfair text-3xl md:text-[42px] font-bold leading-tight"
+            className={styles.sectionTitle}
           >
             What We{" "}
-            <span className="text-[#072ac8]">Don&apos;t</span> Do
+            <span className={styles.sectionAccent}>Don&apos;t</span> Do
           </motion.h2>
           
           <motion.p
@@ -61,7 +62,7 @@ const ManageAvolveDifference = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="leading-[1.72] font-poppins text-[16px] text-[#526174]"
+            className={styles.sectionDesc} style={{ margin: "20px auto 0" }}
           >
             We differentiate ourselves by what we refuse to be:{" "}
             <br className="hidden md:block" />
@@ -83,20 +84,20 @@ const ManageAvolveDifference = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                className="group relative p-8 md:p-10 rounded-[2rem] bg-white border border-[#e1e9f5] shadow-sm hover:shadow-[0_20px_40px_rgba(7,42,200,0.06)] hover:-translate-y-2 hover:border-[#c5d7f5] transition-all duration-500 overflow-hidden"
+                className="group relative p-8 md:p-10 rounded-[2rem] bg-white border border-[#e1e9f5] shadow-sm hover:shadow-[0_20px_40px_rgba(10, 54, 157,0.06)] hover:-translate-y-2 hover:border-[#c5d7f5] transition-all duration-500 overflow-hidden"
               >
                 <div className="relative z-10">
                   {/* Floating Icon */}
-                  <div className="w-16 h-16 rounded-full bg-[#072ac8]/5 flex items-center justify-center text-[#072ac8] mb-8 group-hover:bg-[#072ac8] group-hover:text-white group-hover:scale-110 transition-all duration-500 border border-[#072ac8]/10 group-hover:border-transparent">
+                  <div className="w-16 h-16 rounded-full bg-[#0a369d]/5 flex items-center justify-center text-[#0a369d] mb-8 group-hover:bg-[#0a369d] group-hover:text-white group-hover:scale-110 transition-all duration-500 border border-[#0a369d]/10 group-hover:border-transparent">
                     <Icon className="w-7 h-7" strokeWidth={1.5} />
                   </div>
 
                   {/* Text Content */}
-                  <h3 className="font-playfair text-[22px] font-bold text-[#0b1425] mb-4 group-hover:text-[#072ac8] transition-colors duration-300">
+                  <h3 className={`${styles.sectionTitle} group-hover:text-[#0a369d] transition-colors duration-300`} style={{ fontSize: "22px", marginBottom: 16 }}>
                     {item.title}
                   </h3>
                   
-                  <p className="font-poppins text-[#526174] text-[15px] leading-[1.75]">
+                  <p className={styles.sectionDesc} style={{ margin: 0 }}>
                     {item.desc}
                   </p>
                 </div>

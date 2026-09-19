@@ -3,6 +3,7 @@
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Target, Zap, Activity, BarChart } from "lucide-react"
+import styles from "@/app/pages.module.css"
 
 const items = [
   {
@@ -10,14 +11,14 @@ const items = [
     icon: Target,
     desc:
       "We serve as your Fractional Revenue Operations Center of Excellence, embedding directly into your tech stack to insulate sales and success leadership from backend volatility. Our mandate covers the full spectrum of systemic governance, and rigorous data integrity protocols.",
-    color: "text-blue-500",
+    color: "text-[#0a369d]",
   },
   {
     title: "How We Do It",
     icon: Zap,
     desc:
       "Our methodology utilizes a proactive, sprint based framework designed for maximum transparency and velocity. We bypass the limitations of the traditional helpdesk in favor of a dedicated pod structure that prioritizes architectural health.",
-    color: "text-blue-500",
+    color: "text-[#0a369d]",
   },
   {
     title: "Outcomes We Deliver",
@@ -41,11 +42,11 @@ const ManageWhyPartner = () => {
       <div className="relative mx-auto max-w-7xl">
         {/* Heading */}
         <div className="mb-12 text-center md:mb-20">
-          <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[42px]">
+          <h2 className={styles.sectionTitle}>
              Precision Engineered RevOps Infrastructure
           </h2>
 
-          <p className="mx-auto mt-4 max-w-4xl font-poppins text-[15.5px] leading-[1.72] text-[#3d4b61]">
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "56rem" }}>
             In an era where operational friction is the silent killer of scale, we provide the specialized architectural oversight necessary to transform your go to market motion. We move beyond tactical support to deliver a unified, high performance ecosystem that bridges the gap between technical complexity and executive strategy.
           </p>
         </div>
@@ -90,11 +91,11 @@ const ManageWhyPartner = () => {
 
                     {/* Content */}
                     <div>
-                      <h3 className="font-playfair text-[22px] font-bold leading-[1.25] text-[#032d60]">
+                      <h3 className={styles.sectionTitle} style={{ fontSize: "22px", marginBottom: 16 }}>
                         {item.title}
                       </h3>
 
-                      <p className="mt-4 font-poppins text-[14.5px] leading-[1.7] text-[#526b91]">
+                      <p className={styles.sectionDesc} style={{ marginTop: 0 }}>
                         {item.desc}
                       </p>
                     </div>
@@ -103,7 +104,7 @@ const ManageWhyPartner = () => {
                     <div className="mt-auto pt-6">
                       <div
                         className={`h-1 w-14 rounded-full ${
-                          index >= 2 ? "bg-violet-400" : "bg-blue-500"
+                          index >= 2 ? "bg-violet-400" : "bg-[#0a369d]"
                         }`}
                       />
                     </div>

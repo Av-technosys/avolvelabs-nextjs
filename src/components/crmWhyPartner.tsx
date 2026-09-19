@@ -1,5 +1,6 @@
 import React from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import styles from "@/app/pages.module.css"
 
 const items = [
   {
@@ -26,49 +27,80 @@ const items = [
 
 const CrmWhyPartner = () => {
   return (
-    <section className="bg-[#073b64] py-10 px-8">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-8 md:py-16">
+      <div className="relative mx-auto max-w-7xl">
 
-        <div className="text-center mb-16">
-          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-white">
+        {/* Heading */}
+        <div className="mb-12 text-center md:mb-20">
+          <h2 className={styles.sectionTitle}>
             Why Partner with Avolvelabs for{" "}
-            <span className="bg-linear-to-r from-[#4aa3ff] to-[#a855f7] bg-clip-text text-transparent">
+            <span className={styles.sectionAccent}>
               Agentic AI
             </span>
           </h2>
 
-          <p className="mt-4 text-blue-100 max-w-3xl mx-auto font-poppins text-md md:text-[18px]">
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
             From strategy to deployment – your end-to-end partner for scalable,
             production-ready agentic AI solutions
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {items.map((item, i) => (
-            <Card
-              key={i}
-              className="
-                bg-transparent
-                border border-white/20
-                rounded-2xl
-              
-                hover:border-[#4aa3ff]
-                transition-transform duration-300 ease-in-out hover:-translate-y-2 cursor-default
-              "
+        {/* Cards */}
+        <div className="relative mx-auto grid max-w-7xl items-start gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {items.map((item, index) => (
+            <div
+              key={item.title}
+              className={`relative z-10 transition-transform duration-300 ${
+                index === 0
+                  ? "lg:-rotate-[5deg]"
+                  : index === 1
+                  ? "lg:-rotate-[2deg] lg:-translate-y-8"
+                  : index === 2
+                  ? "lg:rotate-[2deg] lg:-translate-y-8"
+                  : "lg:rotate-[5deg]"
+              }`}
             >
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold font-playfair text-white whitespace-pre-line">
-                  {item.title}
-                </h3>
+              {/* Icon Badge */}
+              <div
+                className="absolute left-8 top-[-28px] z-20 flex h-16 w-16 items-center justify-center rounded-full border border-[#d9dfe8] bg-white shadow-sm"
+              >
+                {/* Fallback Icon for CRM */}
+                <div className="h-8 w-8 rounded-full bg-blue-100 text-[#0a369d] flex items-center justify-center">✦</div>
+              </div>
 
-                <p className="mt-4 text-sm font-poppins text-blue-100 leading-relaxed">
-                  {item.desc}
-                </p>
-              </CardContent>
-            </Card>
+              <Card
+                className={`h-full min-h-[460px] rounded-[24px] border border-[#d9dfe8] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
+              >
+                <CardContent className="flex h-full flex-col p-6 pt-14 md:p-8 md:pt-16">
+                  {/* Number */}
+                  <span className="mb-4 text-right text-[52px] font-bold leading-none text-[#d5e1ff]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Content */}
+                  <div>
+                    <h3 className={`${styles.sectionTitle} whitespace-pre-line`} style={{ fontSize: "clamp(18px, 2vw, 22px)", marginBottom: 16 }}>
+                      {item.title}
+                    </h3>
+
+                    <p className={styles.sectionDesc}>
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Line */}
+                  <div className="mt-auto pt-6">
+                    <div
+                      className={`h-1 w-14 rounded-full ${
+                        index >= 2 ? "bg-violet-400" : "bg-[#0a369d]"
+                      }`}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
-
       </div>
     </section>
   )

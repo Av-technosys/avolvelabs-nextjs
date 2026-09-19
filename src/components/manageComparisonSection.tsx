@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Zap, X, CheckCircle2 } from "lucide-react";
+import styles from "@/app/pages.module.css";
 
 const ComparisonSection = () => {
   const comparisonData = [
@@ -28,17 +29,17 @@ const ComparisonSection = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-5 sm:px-8 lg:px-12 w-full overflow-hidden">
+    <section className="bg-[var(--ice)] py-16 px-5 sm:px-8 lg:px-12 w-full overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-[#0b1425] font-playfair text-3xl md:text-[42px] font-bold leading-tight">
+          <h2 className={styles.sectionTitle}>
             The Comparison: <br />
-            <span className="text-[#072ac8]">
+            <span className={styles.sectionAccent}>
               Avolve Labs vs. In House Hiring
             </span>
           </h2>
-          <p className="max-w-2xl mx-auto leading-[1.72] font-poppins text-[15.5px] text-[#3d4b61] mt-5">
+          <p className={styles.sectionDesc} style={{ margin: "20px auto 0" }}>
             Building an internal Salesforce team is expensive and risky. Here is
             how we compare to the traditional hiring model:
           </p>
@@ -54,8 +55,8 @@ const ComparisonSection = () => {
               Feature
             </span>
           </div>
-          <h3 className="font-playfair text-[22px] text-[#072ac8] font-bold flex items-center gap-2">
-            <Zap className="fill-[#072ac8] text-[#072ac8] w-5 h-5" /> Avolve Labs
+          <h3 className="font-playfair text-[22px] text-[#0a369d] font-bold flex items-center gap-2">
+            <Zap className="fill-[#0a369d] text-[#0a369d] w-5 h-5" /> Avolve Labs
           </h3>
         </div>
 
@@ -67,7 +68,7 @@ const ComparisonSection = () => {
           {comparisonData.map((row, index) => (
             <div
               key={index}
-              className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center bg-white border border-[#dce6f4] rounded-[2rem] p-6 md:p-4 shadow-sm hover:shadow-[0_8px_30px_rgba(7,42,200,0.06)] hover:border-[#c5d7f5] transition-all duration-300"
+              className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 md:gap-8 items-center bg-white border border-[#dce6f4] rounded-[2rem] p-6 md:p-4 shadow-sm hover:shadow-[0_8px_30px_rgba(10, 54, 157,0.06)] hover:border-[#c5d7f5] transition-all duration-300"
             >
               {/* In House */}
               <div className="text-center md:text-right order-2 md:order-1 md:pr-4">
@@ -85,9 +86,9 @@ const ComparisonSection = () => {
               </div>
 
               {/* Avolve Labs */}
-              <div className="text-center md:text-left order-3 md:order-3 bg-[#072ac8]/[0.03] rounded-2xl p-5 md:p-0 md:bg-transparent md:pl-4">
-                <p className="text-xs font-bold text-[#072ac8] uppercase tracking-wider mb-2 md:hidden flex items-center justify-center gap-1">
-                  <Zap className="fill-[#072ac8] w-3 h-3" /> Avolve Labs
+              <div className="text-center md:text-left order-3 md:order-3 bg-[#0a369d]/[0.03] rounded-2xl p-5 md:p-0 md:bg-transparent md:pl-4">
+                <p className="text-xs font-bold text-[#0a369d] uppercase tracking-wider mb-2 md:hidden flex items-center justify-center gap-1">
+                  <Zap className="fill-[#0a369d] w-3 h-3" /> Avolve Labs
                 </p>
                 <div className="flex items-center justify-center md:justify-start gap-3 text-[#0b1425]">
                   <p className="font-poppins text-[15.5px] font-semibold leading-relaxed">{row.avolve}</p>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import styles from "@/app/pages.module.css";
 
 const cards = [
   {
@@ -44,7 +45,7 @@ const CrmNew = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-10 pb-24 sm:px-8 md:pb-32">
+    <section className="relative overflow-hidden bg-[var(--ice)] px-4 py-10 pb-24 sm:px-8 md:pb-32">
       <div className="relative mx-auto max-w-7xl">
         {/* Heading + Paragraph */}
         <motion.div
@@ -54,13 +55,13 @@ const CrmNew = () => {
           viewport={{ once: true }}
           className="mx-auto mb-8 max-w-4xl text-center"
         >
-          <h2 className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-[42px]">
+          <h2 className={styles.sectionTitle}>
             The Agile Loop:
             <br />
             Engineering for Velocity
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
             In a high performance systems environment, Agile isn&apos;t just a
             process it&apos;s the engine that powers iterative growth. It allows
             the architecture to function as a living organism that adapts to
@@ -106,23 +107,23 @@ const CrmNew = () => {
                 >
                   <CardContent className="flex h-full flex-col p-5 pt-0 sm:p-6 sm:pt-0">
                     {/* Number */}
-                    <span className="font-playfair text-[56px] font-bold leading-none text-[#d5dbe5]">
+                    <span className="text-[56px] font-bold leading-none text-[#d5dbe5]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
                     {/* Content */}
                     <div className="mt-4">
-                      <h3 className="font-playfair text-[21px] font-bold leading-[1.2] text-[#032d60]">
+                      <h3 className={styles.sectionTitle} style={{ fontSize: "clamp(18px, 2vw, 21px)", marginBottom: 16 }}>
                         {card.title}
                       </h3>
 
-                      <p className="mt-4 font-poppins text-[14px] leading-[1.55] text-[#526b91]">
+                      <p className={styles.sectionDesc}>
                         {card.desc}
                       </p>
                     </div>
 
                     {/* Bottom Line */}
-                    <div className="mt-auto h-1 w-14 shrink-0 rounded-full bg-blue-500" />
+                    <div className="mt-auto h-1 w-14 shrink-0 rounded-full bg-[#0a369d]" />
                   </CardContent>
                 </Card>
               </motion.div>
@@ -139,7 +140,7 @@ const CrmNew = () => {
               onClick={() => setActiveIndex(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 activeIndex === index
-                  ? "w-7 bg-[#072ac8]"
+                  ? "w-7 bg-[#0a369d]"
                   : "w-2 bg-[#c5d7ff]"
               }`}
             />

@@ -64,7 +64,7 @@ const AboutCommitment = () => {
           <div className={styles.commitmentSidebar}>
             <LineSidebar
               items={sidebarItems}
-              accentColor="#072ac8"
+              accentColor="#0a369d"
               textColor="#333"
               markerColor="#cbd5e1"
               showIndex={false}
@@ -94,7 +94,7 @@ const AboutCommitment = () => {
               overflow: "hidden",
               border: "3px solid rgba(255,255,255,0.9)",
               boxShadow:
-                "0 20px 60px rgba(7,42,200,0.12), 0 0 0 8px rgba(7,42,200,0.06)",
+                "0 20px 60px rgba(10, 54, 157,0.12), 0 0 0 8px rgba(10, 54, 157,0.06)",
               flexShrink: 0,
             }}
           >

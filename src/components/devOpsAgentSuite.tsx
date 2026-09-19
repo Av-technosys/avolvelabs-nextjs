@@ -5,19 +5,20 @@ import {
   IconSparkles,
   IconChecklist,
 } from "@tabler/icons-react";
+import styles from "@/app/pages.module.css";
 
 const agents = [
   {
     title: "Data Deployment & Governance",
     icon: IconSparkles,
     desc: "DevOps without structured data governance creates instability. We ensure consistent and compliant data across environments.",
-    color: "text-blue-500",
+    color: "text-[#0a369d]",
   },
   {
     title: "Security & Compliance",
     icon: IconChecklist,
     desc: "We implement enterprise-grade governance controls across your DevOps lifecycle.",
-    color: "text-blue-500",
+    color: "text-[#0a369d]",
   },
 ];
 
@@ -28,11 +29,11 @@ const DevOpsAgentSuite = () => {
 
         {/* Heading */}
         <div className="mb-12 text-center md:mb-20">
-          <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[42px]">
+          <h2 className={styles.sectionTitle}>
             DATA & GOVERNANCE
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
             Our AI agents are designed to automate repetitive tasks, make
             informed decisions, and enable teams to work more efficiently and
             effectively.
@@ -67,23 +68,23 @@ const DevOpsAgentSuite = () => {
                   <div className="flex h-full min-h-[390px] flex-col p-7 pt-14 md:min-h-[410px] md:p-8 md:pt-16">
 
                     {/* Number */}
-                    <span className="mb-4 text-right font-playfair text-[52px] font-bold leading-none text-[#d5e1ff]">
+                    <span className="mb-4 text-right text-[52px] font-bold leading-none text-[#d5e1ff]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
                     {/* Content */}
                     <div>
-                      <h3 className="font-playfair text-[24px] font-bold leading-[1.25] text-[#032d60]">
+                      <h3 className={styles.sectionTitle} style={{ fontSize: "clamp(20px, 2vw, 24px)", marginBottom: 12 }}>
                         {item.title}
                       </h3>
 
-                      <p className="mt-5 font-poppins text-[15px] leading-[1.7] text-[#526b91]">
+                      <p className={styles.sectionDesc}>
                         {item.desc}
                       </p>
                     </div>
 
                     {/* Bottom Line */}
-                    <div className="mt-auto h-1 w-14 rounded-full bg-blue-500" />
+                    <div className="mt-auto h-1 w-14 rounded-full bg-[#0a369d]" />
 
                   </div>
                 </div>

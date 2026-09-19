@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 type CrmTechProps = {
   title?: string;
@@ -59,14 +60,14 @@ const TechNode = ({
         ease: "linear",
       }}
     >
-      <div className="flex items-center gap-2 rounded-full border border-white/80 bg-white/90 px-2.5 py-2 shadow-[0_8px_25px_rgba(7,42,200,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(7,42,200,0.14)] sm:gap-3 sm:px-4 sm:py-3">
+      <div className="flex items-center gap-2 rounded-full border border-white/80 bg-white/90 px-2.5 py-2 shadow-[0_8px_25px_rgba(10, 54, 157,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(10, 54, 157,0.14)] sm:gap-3 sm:px-4 sm:py-3">
         <img
           src={techLogos[tech]}
           alt={`${tech} logo`}
           className="h-6 w-6 shrink-0 object-contain sm:h-8 sm:w-8"
         />
 
-        <span className="whitespace-nowrap font-poppins text-[11px] font-semibold text-[#1b2940] sm:text-[14px]">
+        <span className="whitespace-nowrap text-[11px] font-semibold text-[#1b2940] sm:text-[14px]">
           {tech}
         </span>
       </div>
@@ -86,11 +87,11 @@ const DevOpsTech = ({
     <section className={`${bgClass} w-full overflow-hidden px-6 pt-0 pb-20`}>
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
-          <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[38px]">
+          <h2 className={styles.sectionTitle}>
             {title}
           </h2>
 
-          <p className="mx-auto mt-2 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
             {description}
           </p>
         </div>
@@ -143,9 +144,9 @@ const DevOpsTech = ({
           <motion.div
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.3 }}
-            className="absolute left-1/2 top-1/2 flex h-[95px] w-[95px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-white/90 shadow-[0_15px_45px_rgba(7,42,200,0.12)] backdrop-blur-xl sm:h-[110px] sm:w-[110px] md:h-[125px] md:w-[125px] lg:h-[145px] lg:w-[145px]"
+            className="absolute left-1/2 top-1/2 flex h-[95px] w-[95px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white bg-white/90 shadow-[0_15px_45px_rgba(10, 54, 157,0.12)] backdrop-blur-xl sm:h-[110px] sm:w-[110px] md:h-[125px] md:w-[125px] lg:h-[145px] lg:w-[145px]"
           >
-            <span className="font-playfair text-3xl font-bold text-[#072ac8] sm:text-4xl md:text-5xl">
+            <span className="text-3xl font-bold text-[#0a369d] sm:text-4xl md:text-5xl font-serif">
               AI
             </span>
           </motion.div>

@@ -50,7 +50,7 @@ const FraudAlert = () => {
               portals and verified channels through official email ID.
             </p>
 
-            <div className="space-y-1 font-semibold text-blue-600">
+            <div className="space-y-1 font-semibold text-[#0a369d]">
               <Link
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=Support@avolvelabs.com"
                 target="_blank"

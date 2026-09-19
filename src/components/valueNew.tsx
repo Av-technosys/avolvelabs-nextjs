@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 const stats = [
   { value: "3x", label: "Faster Decisions" },
@@ -21,7 +22,7 @@ const values = [
 
 const ValueNew = () => {
   return (
-    <section className="bg-white px-6 py-8 sm:px-8 md:py-12">
+    <section className="bg-[var(--ice)] px-6 py-8 sm:px-8 md:py-12">
       <div className="mx-auto max-w-7xl">
         
         {/* Header - Matched to valueWhyPartner Typography */}
@@ -33,13 +34,13 @@ const ValueNew = () => {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <p className="font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-[#072ac8]">
+            <p className={styles.eyebrow} style={{ marginBottom: 12 }}>
               Measurable Impact
             </p>
-            <h2 className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-[42px]">
+            <h2 className={styles.sectionTitle} style={{ textAlign: "left" }}>
               Business Value,
               <br />
-              You Can Actually <span className="text-[#072ac8]">Measure</span>
+              You Can Actually <span className={styles.sectionAccent}>Measure</span>
             </h2>
           </motion.div>
           <motion.div 
@@ -49,7 +50,7 @@ const ValueNew = () => {
             viewport={{ once: true }}
             className="max-w-md"
           >
-            <p className="font-poppins text-[15.5px] leading-[1.72] text-[#3d4b61]">
+            <p className={styles.sectionDesc}>
               We don&apos;t sell features. friction, improve decision-making, and scale cleanly as your business grows.
             </p>
           </motion.div>
@@ -73,11 +74,11 @@ const ValueNew = () => {
                 }}
                 className="relative group flex-1"
               >
-                 <div className="flex flex-col border-l-2 border-[#d9dfe8] pl-5 transition-all duration-500 group-hover:border-[#072ac8]">
-                   <span className="font-playfair text-4xl md:text-5xl font-bold tracking-tight text-[#0b1425] transition-colors duration-500 group-hover:text-[#072ac8]">
+                 <div className="flex flex-col transition-all duration-500 group-hover:border-[#0a369d]">
+                   <span className="text-4xl md:text-5xl font-bold tracking-tight transition-colors duration-500 group-hover:text-[#0a369d]">
                      {stat.value}
                    </span>
-                   <span className="mt-2 font-poppins text-xs uppercase tracking-widest text-[#3d4b61]">
+                   <span className="mt-2 text-xs uppercase tracking-widest transition-colors duration-500">
                      {stat.label}
                    </span>
                  </div>
@@ -98,10 +99,10 @@ const ValueNew = () => {
               className="relative group cursor-default"
             >
               <div className="relative z-10 pt-2">
-                <h3 className="font-playfair text-xl md:text-2xl font-bold text-[#0b1425] mb-3 transition-colors duration-500 group-hover:text-[#072ac8]">
+                <h3 className={styles.sectionTitle} style={{ fontSize: "clamp(18px, 2vw, 24px)", marginBottom: 12, textAlign: "left" }}>
                   {val.title}
                 </h3>
-                <p className="font-poppins text-[15.5px] leading-[1.72] text-[#3d4b61] max-w-sm">
+                <p className={styles.sectionDesc} style={{ maxWidth: "24rem" }}>
                   {val.desc}
                 </p>
               </div>

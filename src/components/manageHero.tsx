@@ -2,10 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 const ManageHero = () => {
   return (
-    <section className="relative overflow-hidden bg-white px-5 pb-16 pt-32 sm:px-8 md:pb-24 md:pt-40 lg:px-12">
+    <section className="relative overflow-hidden bg-[var(--ice)] px-5 pb-16 pt-32 sm:px-8 md:pb-24 md:pt-40 lg:px-12">
       <div className="relative mx-auto max-w-7xl">
         {/* Top Label */}
         <motion.div
@@ -13,10 +14,9 @@ const ManageHero = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-10 flex items-center justify-center gap-3 md:justify-start"
+          className={styles.sectionHead}
         >
-          <span className="h-px w-10 bg-[#072ac8]" />
-          <span className="font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-[#072ac8]">
+          <span className={styles.eyebrow}>
             Managed Services
           </span>
         </motion.div>
@@ -30,17 +30,17 @@ const ManageHero = () => {
             viewport={{ once: true }}
           >
             <div className="relative">
-              <span className="absolute -left-4 top-2 h-16 w-1 rounded-full bg-[#072ac8] md:-left-6 md:h-24" />
+              <span className="absolute -left-4 top-2 h-16 w-1 rounded-full bg-[#0a369d] md:-left-6 md:h-24" />
 
-              <h2 className="max-w-[650px] font-playfair text-3xl font-bold leading-[1.2] text-[#0b1425] md:text-[46px]">
+              <h2 className={styles.sectionTitle} style={{ maxWidth: "650px" }}>
                 Your CRM Should Evolve as Fast as
                 <br />
-                <span className="text-[#072ac8]">Your Business.</span>
+                <span className={styles.sectionAccent}>Your Business.</span>
               </h2>
             </div>
 
             <div className="mt-8 flex items-center gap-4">
-              <div className="h-2 w-2 rounded-full bg-[#072ac8]" />
+              <div className="h-2 w-2 rounded-full bg-[#0a369d]" />
               <p className="font-poppins text-xs font-medium uppercase tracking-[0.15em] text-[#526174]">
                 Optimization • Administration • Strategy
               </p>
@@ -66,7 +66,7 @@ const ManageHero = () => {
                 “
               </span>
 
-              <p className="max-w-xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+              <p className={styles.sectionDesc} style={{ maxWidth: "36rem" }}>
                 We don’t just keep the lights on. Our managed services provide continuous optimization, proactive administration, and strategic enhancements for Salesforce.
                 <br />
                 <br />
@@ -74,7 +74,7 @@ const ManageHero = () => {
               </p>
 
               <div className="mt-8 flex items-center gap-3">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#072ac8]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0a369d]" />
                 <span className="font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-[#526174]">
                   Continuous Enhancement
                 </span>

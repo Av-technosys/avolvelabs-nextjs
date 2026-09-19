@@ -4,6 +4,8 @@ import { Card } from "@/components/ui/card";
 import { Icon360, IconChevronRight, IconProps } from "@tabler/icons-react";
 import { ComponentType } from "react";
 
+import { motion } from "framer-motion";
+
 type SectionProps = {
   title: string;
   desc: string;
@@ -23,7 +25,11 @@ const Section = ({
   reverse = false,
   accent,
 }: SectionProps) => (
-  <div
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
     className={`grid items-center gap-8 lg:gap-16 lg:grid-cols-2  ${
       reverse ? "direction-rtl" : ""
     }`}
@@ -78,7 +84,7 @@ const HomeCrmSales = () => {
           desc="We design and implement scalable Salesforce solutions that power complex revenue operations, automate sales and service workflows, and enable AI-driven decision-making across teams."
           image="/images/saleslogo.jpeg"
           icon={Icon360}
-          accent="text-[#0176d3]"
+          accent="text-[#0a369d]"
           points={[
             "Certified experts in Sales Cloud & Service Cloud",
             "Agentforce implementations for AI-powered sales & service",

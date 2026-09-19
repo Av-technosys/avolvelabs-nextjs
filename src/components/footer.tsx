@@ -36,7 +36,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#030C1F] pt-20 pb-8 flex flex-col items-center justify-between min-h-[320px]">
+    <footer className="relative bg-[#141b41] pt-20 pb-8 flex flex-col items-center justify-between min-h-[320px]">
       {/* Huge Centered Logo with Subtle Bottom Fade */}
       <div className="relative w-full px-6 flex justify-center items-center flex-1 mb-16">
         <Link href="/" className="inline-block cursor-pointer">
@@ -57,10 +57,10 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="w-full px-6 lg:px-12">
-        <div className="w-full h-px bg-white/[0.08] mb-8" />
-        
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] uppercase tracking-widest text-[#7a849c]">
-          
+        <div className="w-full h-px bg-white/[0.15] mb-8" />
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] uppercase tracking-widest text-[#dee2e6]">
+
           {/* Left: Socials */}
           <div className="flex items-center gap-4 w-full md:w-1/3 justify-center md:justify-start">
             {socialLinks.map((item) => {
@@ -73,7 +73,7 @@ const Footer = () => {
                   aria-label={item.label}
                   className="transition hover:text-white"
                 >
-                  <Icon className="w-4 h-4" stroke={1.5} />
+                  <Icon className="w-6 h-6" stroke={1.5} />
                 </Link>
               );
             })}

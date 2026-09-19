@@ -8,6 +8,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import styles from "@/app/pages.module.css";
 
 const performanceItems = [
   {
@@ -58,7 +59,7 @@ const DevOpsNew = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-10 pb-24 sm:px-8 md:pb-32">
+    <section className="relative overflow-hidden bg-[var(--ice)] px-4 py-10 pb-24 sm:px-8 md:pb-32">
       <div className="mx-auto max-w-7xl">
         {/* Performance & Visibility */}
         <motion.div
@@ -68,11 +69,11 @@ const DevOpsNew = () => {
           viewport={{ once: true }}
           className="mx-auto mb-8 max-w-4xl text-center"
         >
-          <h2 className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-[42px]">
+          <h2 className={styles.sectionTitle}>
             Performance & Visibility
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
             Gain complete visibility into your DevOps pipeline with
             actionable insights that improve deployment speed, reliability,
             and engineering performance.
@@ -117,27 +118,27 @@ const DevOpsNew = () => {
                 >
                   <CardContent className="flex h-full flex-col p-5 pt-0 sm:p-6 sm:pt-0">
                     {/* Number */}
-                    <span className="font-playfair text-[56px] font-bold leading-none text-[#d5dbe5]">
+                    <span className="text-[56px] font-bold leading-none text-[#d5dbe5]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
                     {/* Content */}
                     <div className="mt-4">
                       {item.isOutcome && (
-                        <Zap className="mb-4 h-7 w-7 text-[#0176d3]" />
+                        <Zap className="mb-4 h-7 w-7 text-[#0a369d]" />
                       )}
 
-                      <h3 className="font-playfair text-[21px] font-bold leading-[1.2] text-[#032d60]">
+                      <h3 className={styles.sectionTitle} style={{ fontSize: "clamp(18px, 2vw, 21px)", marginBottom: 16 }}>
                         {item.title}
                       </h3>
 
-                      <p className="mt-4 font-poppins text-[14px] leading-[1.55] text-[#526b91]">
+                      <p className={styles.sectionDesc}>
                         {item.desc}
                       </p>
                     </div>
 
                     {/* Bottom Line */}
-                    <div className="mt-auto h-1 w-14 shrink-0 rounded-full bg-blue-500" />
+                    <div className="mt-auto h-1 w-14 shrink-0 rounded-full bg-[#0a369d]" />
                   </CardContent>
                 </Card>
               </motion.div>
@@ -154,7 +155,7 @@ const DevOpsNew = () => {
               onClick={() => setActiveIndex(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 activeIndex === index
-                  ? "w-7 bg-[#072ac8]"
+                  ? "w-7 bg-[#0a369d]"
                   : "w-2 bg-[#c5d7ff]"
               }`}
             />
@@ -170,16 +171,16 @@ const DevOpsNew = () => {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-playfair text-3xl font-bold leading-tight text-[#0b1425] md:text-[42px]">
+            <h2 className={styles.sectionTitle} style={{ textAlign: "left" }}>
               DevOps{" "}
-              <span className="text-[#072ac8]">Enablement</span>
+              <span className={styles.sectionAccent}>Enablement</span>
             </h2>
 
-            <h3 className="mt-5 font-playfair text-2xl font-bold leading-[1.2] text-[#032d60] md:text-[30px]">
+            <h3 className={styles.sectionTitle} style={{ fontSize: "clamp(20px, 3vw, 30px)", marginTop: 20, textAlign: "left" }}>
               DevOps Training & Center of Excellence
             </h3>
 
-            <p className="mt-5 max-w-xl font-poppins text-[15px] leading-[1.75] text-[#526b91]">
+            <p className={styles.sectionDesc} style={{ marginTop: 20, maxWidth: "36rem" }}>
               We enable teams to become self-sufficient by providing
               structured training, clear documentation, and continuous
               mentorship throughout the DevOps transformation.
@@ -224,9 +225,9 @@ const DevOpsNew = () => {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-[#0176d3]" />
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-[#0a369d]" />
 
-                <span className="flex-1 font-poppins text-sm font-medium text-[#032d60] sm:text-[15px]">
+                <span className="flex-1 text-sm font-medium text-[#032d60] sm:text-[15px] font-sans">
                   {line}
                 </span>
               </motion.div>
@@ -244,15 +245,15 @@ const DevOpsNew = () => {
         >
           <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-6">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#d9dfe8]">
-              <GraduationCap className="h-7 w-7 text-[#0176d3]" />
+              <GraduationCap className="h-7 w-7 text-[#0a369d]" />
             </div>
 
             <div>
-              <p className="font-poppins text-xs font-semibold uppercase tracking-[0.18em] text-[#526b91]">
+              <p className={styles.eyebrow} style={{ marginBottom: 8 }}>
                 The Final Outcome
               </p>
 
-              <h3 className="mt-2 font-playfair text-2xl font-bold text-[#032d60] md:text-[30px]">
+              <h3 className={styles.sectionTitle} style={{ fontSize: "clamp(20px, 3vw, 30px)", textAlign: "left" }}>
                 Self-sufficient DevOps teams.
               </h3>
             </div>

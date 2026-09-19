@@ -62,7 +62,7 @@ const AboutAgent = () => {
                 width: "100%",
                 height: "auto",
                 objectFit: "contain",
-                filter: "drop-shadow(0 18px 50px rgba(7,42,200,0.12))",
+                filter: "drop-shadow(0 18px 50px rgba(10, 54, 157,0.12))",
                 borderRadius: 16,
               }}
             />

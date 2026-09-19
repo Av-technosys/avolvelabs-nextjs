@@ -38,7 +38,7 @@ const HomeReportCard = () => {
             </h3>
 
             {/* Shadcn-style Button */}
-            <button className="group mt-4 font-poppins flex items-center gap-2 px-8 py-3.5 border-2 border-[#0176d3] text-[#0176d3] font-bold rounded-xl hover:bg-[#0176d3] hover:text-white transition-all duration-300 active:scale-95">
+            <button className="group mt-4 font-poppins flex items-center gap-2 px-8 py-3.5 border-2 border-[#0a369d] text-[#0a369d] font-bold rounded-xl hover:bg-[#0a369d] hover:text-white transition-all duration-300 active:scale-95">
               Read the Valoir report
               <IconExternalLink
                 size={18}

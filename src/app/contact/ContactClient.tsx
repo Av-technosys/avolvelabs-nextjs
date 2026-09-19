@@ -35,7 +35,7 @@ const offices = [
 
 const contactItems = [
   {
-    icon: <IconMapPin size={22} className="text-[#072ac8]" />,
+    icon: <IconMapPin size={22} className="text-[#0a369d]" />,
     content: (
       <>
         <p className="text-[17px] font-[760] text-[#09111f]">Avolvelabs Pvt. Ltd.</p>
@@ -46,12 +46,12 @@ const contactItems = [
     ),
   },
   {
-    icon: <IconPhone size={22} className="text-[#072ac8]" />,
+    icon: <IconPhone size={22} className="text-[#0a369d]" />,
     href: "tel:+917877727352",
     content: <p className="text-[16px] font-[500] text-[#526174]">+91-7877727352</p>,
   },
   {
-    icon: <IconMail size={22} className="text-[#072ac8]" />,
+    icon: <IconMail size={22} className="text-[#0a369d]" />,
     href: "https://mail.google.com/mail/?view=cm&fs=1&to=Support@avolvelabs.com",
     content: (
       <p className="break-all text-[16px] font-[500] text-[#526174]">
@@ -81,12 +81,12 @@ const Field = ({
   <div className="group relative pt-2">
     <label
       htmlFor={id}
-      className="text-[11px] font-bold uppercase tracking-wider text-[#526174] transition-colors group-focus-within:text-[#072ac8]"
+      className="text-[11px] font-bold uppercase tracking-wider text-[#526174] transition-colors group-focus-within:text-[#0a369d]"
     >
       {label} {required && "*"}
     </label>
     <div className="relative mt-2">
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 text-[#526174] transition-colors group-focus-within:text-[#072ac8]">
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 text-[#526174] transition-colors group-focus-within:text-[#0a369d]">
         {icon}
       </div>
       <Input
@@ -95,7 +95,7 @@ const Field = ({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="h-[40px] rounded-none border-0 border-b border-[#072ac8]/20 bg-transparent px-0 pl-9 text-[15px] font-medium text-[#09111f] shadow-none outline-none transition-all duration-300 placeholder:text-[#526174]/40 focus-visible:border-[#072ac8] focus-visible:ring-0"
+        className="h-[40px] rounded-none border-0 border-b border-[#0a369d]/20 bg-transparent px-0 pl-9 text-[15px] font-medium text-[#09111f] shadow-none outline-none transition-all duration-300 placeholder:text-[#526174]/40 focus-visible:border-[#0a369d] focus-visible:ring-0"
       />
     </div>
   </div>
@@ -156,7 +156,7 @@ const ContactClient = () => {
   };
 
   return (
-    <main className="bg-[#f0f8ff] text-[#09111f] selection:bg-[#072ac8] selection:text-white">
+    <main className="bg-[#f0f8ff] text-[#09111f] selection:bg-[#0a369d] selection:text-white">
       {/* Hero Section */}
       <section className="bg-[#f0f8ff] relative z-10 pt-40 pb-16 md:pt-48 md:pb-20 lg:pt-[220px] lg:pb-[100px]">
         <div className="max-w-6xl mx-auto px-6">
@@ -196,7 +196,7 @@ const ContactClient = () => {
               {contactItems.map((item, i) => {
                 const content = (
                   <div className="flex items-center gap-4 py-5">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-white border border-[#072ac8]/10 shadow-[0_2px_8px_rgba(7,42,200,0.07)]">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-white border border-[#0a369d]/10 shadow-[0_2px_8px_rgba(10, 54, 157,0.07)]">
                       {item.icon}
                     </div>
                     <div>{item.content}</div>
@@ -224,11 +224,11 @@ const ContactClient = () => {
       </section>
 
       {/* Form Section */}
-      <section className={`${styles.sectionWhite} px-6 py-20 lg:py-28 relative`}>
+      <section className="bg-white px-6 py-20 lg:py-28 relative">
         <div className="mx-auto w-[min(900px,calc(100%-40px))]">
           <div className="mb-14">
             <div className={styles.sectionHeadCenter}>
-               <span className={`${styles.eyebrow} !text-[#072ac8] !font-[800] uppercase tracking-[1.5px]`}>REACH OUT</span>
+               <span className={`${styles.eyebrow} !text-[#0a369d] !font-[800] uppercase tracking-[1.5px]`}>REACH OUT</span>
                <h2 className={styles.sectionTitle}>
                  Request a <span className={styles.sectionAccent}>Call Back.</span>
                </h2>
@@ -299,7 +299,7 @@ const ContactClient = () => {
             <div className="group relative pt-2 md:col-span-2">
               <label
                 htmlFor="message"
-                className="text-[11px] font-bold uppercase tracking-wider text-[#526174] transition-colors group-focus-within:text-[#072ac8]"
+                className="text-[11px] font-bold uppercase tracking-wider text-[#526174] transition-colors group-focus-within:text-[#0a369d]"
               >
                 Message *
               </label>
@@ -308,7 +308,7 @@ const ContactClient = () => {
                 name="message"
                 required
                 placeholder="Tell us more about your project..."
-                className="mt-3 min-h-[120px] resize-none rounded-none border-0 border-b border-[#072ac8]/20 bg-transparent p-0 text-[15px] font-medium text-[#09111f] shadow-none outline-none transition-all duration-300 placeholder:text-[#526174]/40 focus-visible:border-[#072ac8] focus-visible:ring-0"
+                className="mt-3 min-h-[120px] resize-none rounded-none border-0 border-b border-[#0a369d]/20 bg-transparent p-0 text-[15px] font-medium text-[#09111f] shadow-none outline-none transition-all duration-300 placeholder:text-[#526174]/40 focus-visible:border-[#0a369d] focus-visible:ring-0"
               />
             </div>
 
@@ -345,7 +345,7 @@ const ContactClient = () => {
 
           {/* Header */}
           <div className={`${styles.sectionHeadCenter} mb-14`}>
-            <span className={`${styles.eyebrow} !text-[#072ac8] !font-[800]`}>REACH US</span>
+            <span className={`${styles.eyebrow} !text-[#0a369d] !font-[800]`}>REACH US</span>
             <h2 className={styles.sectionTitle}>
               Where To Find <span className={styles.sectionAccent}>Us.</span>
             </h2>
@@ -363,13 +363,13 @@ const ContactClient = () => {
                 className="group grid grid-cols-[auto_1fr_auto] md:grid-cols-[56px_1fr_260px] items-center gap-6 py-9 md:py-10"
               >
                 {/* Index */}
-                <span className="text-[11px] font-[800] text-[#072ac8]/25 tracking-[1px] tabular-nums">
+                <span className="text-[11px] font-[800] text-[#0a369d]/25 tracking-[1px] tabular-nums">
                   0{idx + 1}
                 </span>
 
                 {/* City info */}
                 <div>
-                  <span className="text-[10.5px] font-[800] uppercase tracking-[1.8px] text-[#072ac8] block mb-1.5">
+                  <span className="text-[10.5px] font-[800] uppercase tracking-[1.8px] text-[#0a369d] block mb-1.5">
                     {tag}
                   </span>
                   <h3 className="text-[26px] md:text-[32px] font-[760] text-[#09111f] leading-none tracking-tight">

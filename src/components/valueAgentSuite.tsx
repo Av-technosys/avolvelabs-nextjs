@@ -7,6 +7,7 @@ import {
   IconChecklist,
   IconDatabase,
 } from "@tabler/icons-react"
+import styles from "@/app/pages.module.css"
 
 const agents = [
   {
@@ -14,14 +15,14 @@ const agents = [
     icon: IconSparkles,
     desc:
       "Is your current CRM slowing you down? We audit your existing setup to uncover technical debt, security gaps, and process bottlenecks.",
-    color: "text-blue-500",
+    color: "text-[#0a369d]",
   },
   {
     title: "Adoption & Enablement Programs",
     icon: IconChecklist,
     desc:
       "We don’t just hand over a PDF manual. We design role-specific enablement programs so every user learns exactly what they need.",
-    color: "text-blue-500",
+    color: "text-[#0a369d]",
   },
   {
     title: "ROI Optimization & Value Measurement",
@@ -38,11 +39,11 @@ const ValueAgentSuite = () => {
       <div className="relative mx-auto max-w-7xl">
         {/* Heading */}
         <div className="mb-12 text-center md:mb-20">
-          <h2 className="font-playfair text-3xl font-bold text-[#0b1425] md:text-[42px]">
+          <h2 className={styles.sectionTitle}>
             CRM Strategy & Optimization Services
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl font-poppins text-[15.5px] leading-[1.72] text-[#3d4b61]">
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
             From technical health checks to user adoption and ROI measurement, we help organizations unlock the full value of their CRM investments.
           </p>
         </div>
@@ -50,7 +51,7 @@ const ValueAgentSuite = () => {
         {/* Cards */}
         <div className="relative mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-3 md:gap-6">
           {/* Connecting Lines */}
-          <div className="pointer-events-none absolute left-[27%] right-[27%] top-1/2 hidden h-px bg-gradient-to-r from-blue-300 via-blue-500 to-violet-300 md:block" />
+          <div className="pointer-events-none absolute left-[27%] right-[27%] top-1/2 hidden h-px bg-gradient-to-r from-[#0a369d] via-[#0a369d] to-violet-300 md:block" />
 
           {agents.map((item, index) => {
             const Icon = item.icon
@@ -89,17 +90,17 @@ const ValueAgentSuite = () => {
                 >
                   <CardContent className="flex h-full min-h-[390px] flex-col p-7 pt-14 md:min-h-[410px] md:p-8 md:pt-16">
                     {/* Number */}
-                    <span className="mb-4 text-right font-playfair text-[52px] font-bold leading-none text-[#d5e1ff]">
+                    <span className="mb-4 text-right text-[52px] font-bold leading-none text-[#d5e1ff]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
                     {/* Content */}
                     <div>
-                      <h3 className="font-playfair text-[24px] font-bold leading-[1.25] text-[#032d60]">
+                      <h3 className={styles.sectionTitle} style={{ fontSize: "clamp(20px, 2vw, 24px)", marginBottom: 12 }}>
                         {item.title}
                       </h3>
 
-                      <p className="mt-5 font-poppins text-[15px] leading-[1.7] text-[#526b91]">
+                      <p className={styles.sectionDesc}>
                         {item.desc}
                       </p>
                     </div>
@@ -107,7 +108,7 @@ const ValueAgentSuite = () => {
                     {/* Bottom Line */}
                     <div
                       className={`mt-auto h-1 w-14 rounded-full ${
-                        index === 2 ? "bg-violet-400" : "bg-blue-500"
+                        index === 2 ? "bg-violet-400" : "bg-[#0a369d]"
                       }`}
                     />
                   </CardContent>

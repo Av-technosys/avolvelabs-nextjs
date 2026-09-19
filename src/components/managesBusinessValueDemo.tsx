@@ -3,6 +3,7 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 const ManagesBusinessValueDemo = () => {
   const features = [
@@ -38,10 +39,10 @@ const ManagesBusinessValueDemo = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-playfair text-3xl font-bold leading-[1.15] text-[#0b1425] md:text-[46px]">
+              <h2 className={styles.sectionTitle} style={{ textAlign: "left" }}>
                 A Partnership Model
                 <br />
-                <span className="text-[#072ac8]">Designed for Transparency</span>
+                <span className={styles.sectionAccent}>Designed for Transparency</span>
               </h2>
             </motion.div>
             
@@ -51,8 +52,8 @@ const ManagesBusinessValueDemo = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="mb-6 h-1 w-16 bg-[#072ac8] rounded-full" />
-              <p className="font-poppins text-[16px] leading-[1.72] text-[#3d4b61]">
+              <div className="mb-6 h-1 w-16 bg-[#0a369d] rounded-full" />
+              <p className={styles.sectionDesc} style={{ textAlign: "left" }}>
                 Many Salesforce partners hide behind black box contracts. We
                 believe in a collaborative, agile approach that prioritizes your
                 ROI over our billable hours.
@@ -69,16 +70,16 @@ const ManagesBusinessValueDemo = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className="group relative flex flex-col gap-5 rounded-3xl border border-[#d9dfe8] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#072ac8]/30 hover:shadow-[0_12px_40px_rgba(7,42,200,0.08)]"
+                className="group relative flex flex-col gap-5 rounded-3xl border border-[#d9dfe8] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#0a369d]/30 hover:shadow-[0_12px_40px_rgba(10, 54, 157,0.08)]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#072ac8]/10 text-[#072ac8] transition-colors duration-300 group-hover:bg-[#072ac8] group-hover:text-white">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0a369d]/10 text-[#0a369d] transition-colors duration-300 group-hover:bg-[#0a369d] group-hover:text-white">
                   <CheckCircle2 className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="mb-3 font-playfair text-xl font-bold tracking-wide text-[#0b1425]">
+                  <h3 className={styles.sectionTitle} style={{ fontSize: "20px", marginBottom: 12, textAlign: "left" }}>
                     {item.title}
                   </h3>
-                  <p className="font-poppins text-[14.5px] leading-[1.72] text-[#526174]">
+                  <p className={styles.sectionDesc} style={{ margin: 0, textAlign: "left" }}>
                     {item.desc}
                   </p>
                 </div>

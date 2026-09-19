@@ -2,21 +2,20 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 const DevOpsHero = () => {
   return (
-    <section className="relative overflow-hidden bg-white px-5 pb-16 pt-32 sm:px-8 md:pb-24 md:pt-40 lg:px-12">
+    <section className="relative overflow-hidden bg-[var(--ice)] px-5 pb-16 pt-32 sm:px-8 md:pb-24 md:pt-40 lg:px-12">
       <div className="relative mx-auto max-w-7xl">
-        {/* Top Label */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-10 flex items-center justify-center gap-3 md:justify-start"
+          className={styles.sectionHead}
         >
-          <span className="h-px w-10 bg-[#072ac8]" />
-          <span className="font-poppins text-xs font-semibold uppercase tracking-[0.2em] text-[#072ac8]">
+          <span className={styles.eyebrow}>
             Intelligent CRM Solutions
           </span>
         </motion.div>
@@ -30,18 +29,17 @@ const DevOpsHero = () => {
             viewport={{ once: true }}
           >
             <div className="relative">
-              <span className="absolute -left-4 top-2 h-16 w-1 rounded-full bg-[#072ac8] md:-left-6 md:h-24" />
-
-              <h2 className="max-w-[650px] font-playfair text-3xl font-bold leading-[1.2] text-[#0b1425] md:text-[46px]">
+              <span className="absolute -left-4 top-2 h-16 w-1 rounded-full bg-[#0a369d] md:-left-6 md:h-24" />
+              <h2 className={styles.sectionTitle}>
                 Accelerate Salesforce delivery with
                 <br />
-                <span className="text-[#072ac8]">DevOps governance practices.</span>
+                <span className={styles.sectionAccent}>DevOps governance practices.</span>
               </h2>
             </div>
 
             <div className="mt-8 flex items-center gap-4">
-              <div className="h-2 w-2 rounded-full bg-[#072ac8]" />
-              <p className="font-poppins text-xs font-medium uppercase tracking-[0.15em] text-[#526174]">
+              <div className="h-2 w-2 rounded-full bg-[#0a369d]" />
+              <p className="text-[11.5px] font-semibold uppercase tracking-[0.15em] text-[#526174]">
                 Strategy • Systems • Scale
               </p>
             </div>
@@ -62,17 +60,17 @@ const DevOpsHero = () => {
             <div className="absolute -right-3 -top-3 h-16 w-16 rounded-tr-[2rem] border-r border-t border-[#9dbaff] md:-right-5 md:-top-5" />
 
             <div className="relative border-l border-[#c5d7f5] pl-6 md:pl-8">
-              <span className="mb-5 block font-playfair text-5xl leading-none text-[#b7caff]">
+              <span className="mb-5 block text-5xl leading-none text-[#b7caff] font-serif">
                 “
               </span>
 
-              <p className="max-w-xl text-[15.5px] leading-[1.72] text-[#3d4b61]">
+              <p className={styles.sectionDesc} style={{ maxWidth: "36rem" }}>
                 We help organizations design, implement, and operate structured Salesforce DevOps frameworks that accelerate release velocity, minimize risk, and support scalable business operations.
               </p>
 
               <div className="mt-8 flex items-center gap-3">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#072ac8]" />
-                <span className="font-poppins text-xs font-semibold uppercase tracking-[0.12em] text-[#526174]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#0a369d]" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#526174]">
                   Built around your business
                 </span>
               </div>
@@ -92,7 +90,7 @@ const DevOpsHero = () => {
         >
           <path
             d="M0 90 C360 0 1080 0 1440 90 L1440 90 L0 90 Z"
-            fill="white"
+            fill="var(--background, white)"
           />
         </svg>
       </div>

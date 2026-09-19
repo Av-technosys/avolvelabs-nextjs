@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import styles from "@/app/pages.module.css";
 
 const logos = [
   "/logoimages/analytics.svg",
@@ -27,7 +28,7 @@ const ManageTeams = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="relative w-full overflow-hidden bg-white text-center">
+    <section className="relative w-full overflow-hidden bg-[var(--ice)] text-center">
       {/* Heading */}
       <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 lg:px-12">
         <motion.h1
@@ -35,7 +36,7 @@ const ManageTeams = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl font-playfair text-3xl font-[760] leading-[1.2] text-[#032d60] sm:text-4xl md:text-[38px]"
+          className={styles.sectionTitle}
         >
           Service teams in every industry scale with Managed Services.
         </motion.h1>
@@ -53,7 +54,7 @@ const ManageTeams = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="absolute left-1/2 top-1/2 z-10 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-4 border-white bg-[#072ac8] shadow-[0_8px_25px_rgba(7,42,200,0.12)] sm:h-32 sm:w-32"
+          className="absolute left-1/2 top-1/2 z-10 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-4 border-white bg-[#0a369d] shadow-[0_8px_25px_rgba(10, 54, 157,0.12)] sm:h-32 sm:w-32"
         >
           <span className="font-playfair text-sm font-bold text-white sm:text-lg leading-tight">
             Managed

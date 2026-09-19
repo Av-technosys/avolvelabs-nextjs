@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Search, Map, Rocket, TrendingUp, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 const ManageAvolvePath = () => {
   const steps = [
@@ -31,7 +32,7 @@ const ManageAvolvePath = () => {
   ];
 
   return (
-    <section className="bg-white py-20 px-5 sm:px-8 lg:px-12 w-full overflow-hidden">
+    <section className="bg-[var(--ice)] py-20 px-5 sm:px-8 lg:px-12 w-full overflow-hidden">
       
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-24">
@@ -40,16 +41,16 @@ const ManageAvolvePath = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-[#0b1425] font-playfair text-3xl md:text-[42px] font-bold leading-tight mb-6"
+          className={styles.sectionTitle}
         >
-          Your Path to a <span className="text-[#072ac8]">High-Performance CRM</span>
+          Your Path to a <span className={styles.sectionAccent}>High-Performance CRM</span>
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="leading-[1.72] font-poppins text-[15.5px] text-[#3d4b61] max-w-2xl mx-auto"
+          className={styles.sectionDesc} style={{ margin: "20px auto 0" }}
         >
           Getting started with Avolve Labs is a seamless, four-step process:
         </motion.p>
@@ -70,7 +71,7 @@ const ManageAvolvePath = () => {
               <div key={index} className="relative grid grid-cols-1 md:grid-cols-2 items-center group">
                 
                 {/* Center Node / Icon */}
-                <div className="hidden sm:flex absolute left-12 md:left-1/2 top-0 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 z-10 w-14 h-14 rounded-full bg-white border-2 border-[#dce6f4] items-center justify-center text-[#072ac8] transition-all duration-300 group-hover:border-[#072ac8] group-hover:bg-[#072ac8] group-hover:text-white">
+                <div className="hidden sm:flex absolute left-12 md:left-1/2 top-0 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 z-10 w-14 h-14 rounded-full bg-white border-2 border-[#dce6f4] items-center justify-center text-[#0a369d] transition-all duration-300 group-hover:border-[#0a369d] group-hover:bg-[#0a369d] group-hover:text-white">
                   {item.icon}
                 </div>
 
@@ -82,22 +83,22 @@ const ManageAvolvePath = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-50px" }}
                       transition={{ duration: 0.6 }}
-                      className="bg-white p-8 rounded-[2rem] border border-[#d9dfe8] shadow-sm hover:shadow-[0_12px_40px_rgba(7,42,200,0.06)] hover:-translate-y-1 hover:border-[#c5d7f5] transition-all duration-300 w-full max-w-[420px]"
+                      className="bg-white p-8 rounded-[2rem] border border-[#d9dfe8] shadow-sm hover:shadow-[0_12px_40px_rgba(10, 54, 157,0.06)] hover:-translate-y-1 hover:border-[#c5d7f5] transition-all duration-300 w-full max-w-[420px]"
                     >
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-[#072ac8] font-bold tracking-[0.2em] text-xs uppercase">
+                        <span className="text-[#0a369d] font-bold tracking-[0.2em] text-xs uppercase">
                           Phase 0{index + 1}
                         </span>
-                        <div className="sm:hidden text-[#072ac8] bg-[#072ac8]/5 p-2 rounded-full">
+                        <div className="sm:hidden text-[#0a369d] bg-[#0a369d]/5 p-2 rounded-full">
                           {item.icon}
                         </div>
                       </div>
                       
-                      <h3 className="font-playfair text-[22px] font-bold text-[#0b1425] mb-3">
+                      <h3 className={styles.sectionTitle} style={{ fontSize: "22px", marginBottom: 16 }}>
                         {item.title}
                       </h3>
                       
-                      <p className="font-poppins text-[#526174] text-[15px] leading-relaxed">
+                      <p className={styles.sectionDesc} style={{ margin: 0 }}>
                         {item.desc}
                       </p>
                     </motion.div>
@@ -112,22 +113,22 @@ const ManageAvolvePath = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true, margin: "-50px" }}
                       transition={{ duration: 0.6 }}
-                      className="bg-white p-8 rounded-[2rem] border border-[#d9dfe8] shadow-sm hover:shadow-[0_12px_40px_rgba(7,42,200,0.06)] hover:-translate-y-1 hover:border-[#c5d7f5] transition-all duration-300 w-full max-w-[420px]"
+                      className="bg-white p-8 rounded-[2rem] border border-[#d9dfe8] shadow-sm hover:shadow-[0_12px_40px_rgba(10, 54, 157,0.06)] hover:-translate-y-1 hover:border-[#c5d7f5] transition-all duration-300 w-full max-w-[420px]"
                     >
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-[#072ac8] font-bold tracking-[0.2em] text-xs uppercase">
+                        <span className="text-[#0a369d] font-bold tracking-[0.2em] text-xs uppercase">
                           Phase 0{index + 1}
                         </span>
-                        <div className="sm:hidden text-[#072ac8] bg-[#072ac8]/5 p-2 rounded-full">
+                        <div className="sm:hidden text-[#0a369d] bg-[#0a369d]/5 p-2 rounded-full">
                           {item.icon}
                         </div>
                       </div>
                       
-                      <h3 className="font-playfair text-[22px] font-bold text-[#0b1425] mb-3">
+                      <h3 className={styles.sectionTitle} style={{ fontSize: "22px", marginBottom: 16 }}>
                         {item.title}
                       </h3>
                       
-                      <p className="font-poppins text-[#526174] text-[15px] leading-relaxed">
+                      <p className={styles.sectionDesc} style={{ margin: 0 }}>
                         {item.desc}
                       </p>
                     </motion.div>
@@ -152,10 +153,10 @@ const ManageAvolvePath = () => {
           <span className="block text-[#526174] text-xs font-bold tracking-[0.15em] uppercase mb-4">
             Get Started Today
           </span>
-          <h3 className="font-playfair text-3xl md:text-4xl lg:text-[40px] font-bold text-[#0b1425] mb-4 leading-tight">
+          <h3 className={styles.sectionTitle} style={{ fontSize: "32px", marginBottom: 16 }}>
             Ready to stop fighting with Salesforce and start winning?
           </h3>
-          <p className="font-poppins text-[#526174] max-w-lg mx-auto lg:mx-0 leading-relaxed text-[15.5px]">
+          <p className={styles.sectionDesc} style={{ maxWidth: "32rem", margin: "16px auto 0" }}>
            Don&apos;t let your CRM be a source of frustration. Let&apos;s turn it into your greatest competitive advantage.
           </p>
         </div>
@@ -163,10 +164,10 @@ const ManageAvolvePath = () => {
         <div className="relative z-10 lg:w-2/5 flex justify-center lg:justify-end shrink-0">
           <Link
             href="/contact"
-            className="group relative inline-flex cursor-pointer items-center justify-center gap-[10px] overflow-hidden rounded-full px-[32px] py-[18px] text-[15px] font-[760] font-poppins text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(20,69,222,0.10),0_8px_20px_rgba(7,42,200,0.25)]"
+            className="group relative inline-flex cursor-pointer items-center justify-center gap-[10px] overflow-hidden rounded-full px-[32px] py-[18px] text-[15px] font-[760] font-sans text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_0_4px_rgba(10, 54, 157,0.10),0_8px_20px_rgba(10, 54, 157,0.25)]"
             style={{
               background:
-                "linear-gradient(135deg, rgba(20,69,222,0.92) 0%, rgba(7,42,200,0.9) 58%, rgba(86,111,245,0.86) 100%)",
+                "linear-gradient(135deg, rgba(10, 54, 157,0.92) 0%, rgba(10, 54, 157,0.9) 58%, rgba(10, 54, 157,0.86) 100%)",
               border: "1px solid rgba(255,255,255,0.82)",
             }}
           >
