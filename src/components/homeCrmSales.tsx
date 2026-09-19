@@ -73,7 +73,7 @@ const Section = ({
 </div>
 
     </div>
-  </div>
+  </motion.div>
 );
 const HomeCrmSales = () => {
   return (
