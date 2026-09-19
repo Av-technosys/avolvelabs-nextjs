@@ -95,7 +95,7 @@ const Header = () => {
 
           <div className="flex items-center gap-6">
             <Link href="/contact">
-              <Button className="cursor-pointer rounded-full border border-white/80 bg-[linear-gradient(135deg,#124ce8,#0a369d_56%,#6781ff)] px-6 py-5 text-sm font-bold text-white shadow-[0_12px_24px_rgba(10, 54, 157,0.18),inset_0_1px_0_rgba(255,255,255,0.68),inset_0_-8px_18px_rgba(2,13,75,0.14)] backdrop-blur transition hover:border-white hover:shadow-[0_16px_32px_rgba(10, 54, 157,0.22),0_0_0_4px_rgba(64,93,243,0.08),inset_0_1px_0_rgba(255,255,255,0.72)]">
+              <Button className="cursor-pointer rounded-full border border-white/80 bg-[linear-gradient(135deg,#124ce8,#0a369d_56%,#6781ff)] px-6 py-5 text-sm font-bold !text-white shadow-[0_12px_24px_rgba(10, 54, 157,0.18),inset_0_1px_0_rgba(255,255,255,0.68),inset_0_-8px_18px_rgba(2,13,75,0.14)] backdrop-blur transition hover:border-white hover:shadow-[0_16px_32px_rgba(10, 54, 157,0.22),0_0_0_4px_rgba(64,93,243,0.08),inset_0_1px_0_rgba(255,255,255,0.72)]">
                 Let&apos;s Talk
               </Button>
             </Link>
@@ -121,12 +121,13 @@ const Header = () => {
               <SheetHeader className="px-6 pb-8 pt-6 flex items-start">
                 <SheetTitle>
                   <Image
-                    src="/images/logo.png"
-                    alt="Avolvelabs Logo"
+                    src="https://ik.imagekit.io/1vzspuubh/avolvelabslogo.webp"
+                    alt="Avolve Labs Logo"
                     width={160}
                     height={40}
                     className="h-[30px] md:h-11 w-auto object-contain"
                     priority
+                    unoptimized
                   />
                 </SheetTitle>
               </SheetHeader>
@@ -238,7 +239,7 @@ const Header = () => {
                 </Link>
 
                 <Link href="/contact" onClick={() => setOpenSheet(false)}>
-                  <Button className="mt-6 w-full rounded-full border border-white/80 bg-[linear-gradient(135deg,#124ce8,#0a369d_56%,#6781ff)] py-6 font-bold text-white shadow-[0_18px_38px_rgba(10, 54, 157,0.24),inset_0_1px_0_rgba(255,255,255,0.68),inset_0_-10px_22px_rgba(2,13,75,0.16)] hover:border-white">
+                  <Button className="mt-6 w-full rounded-full border border-white/80 bg-[linear-gradient(135deg,#124ce8,#0a369d_56%,#6781ff)] py-6 font-bold !text-white shadow-[0_18px_38px_rgba(10, 54, 157,0.24),inset_0_1px_0_rgba(255,255,255,0.68),inset_0_-10px_22px_rgba(2,13,75,0.16)] hover:border-white">
                     Let&apos;s Talk
                   </Button>
                 </Link>
