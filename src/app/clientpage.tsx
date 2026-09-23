@@ -163,7 +163,7 @@ export default function Home() {
     </main>
   );
 }
-
+// hero
 function HeroSection() {
   const reducedMotion = useReducedMotion();
   const canHover =
