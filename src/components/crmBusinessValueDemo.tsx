@@ -1,16 +1,17 @@
 import React from "react"
 import { Button } from "@/components/ui/button"
+import styles from "@/app/pages.module.css"
 
 const CrmBusinessValueDemo = () => {
   return (
-    <section className="bg-[#e8f2ff] py-10 px-8">
+    <section className="bg-[var(--ice)] py-10 px-8">
       <div className="mx-auto max-w-4xl text-center">
 
-        <h2 className="text-[32px] md:text-[32px] lg:text-[32px] font-playfair font-bold text-[#032d60]">
+        <h2 className={styles.sectionTitle}>
           Wondering How AI Can Deliver Business Value?
         </h2>
 
-        <p className="mt-4 font-poppins text-md md:text-[18px] text-gray-700">
+        <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
           We&apos;ll showcase real-world Agentic AI use cases and help you plan for
           quick wins using your existing tools, data, and infrastructure.
         </p>

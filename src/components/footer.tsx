@@ -1,94 +1,109 @@
 "use client";
+
 import Link from "next/link";
-import { IconBrandLinkedin, IconBrandInstagram, IconBrandFacebook } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
+
+const footerLinks = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Case Studies", href: "/case-studies" },
+  { name: "Career", href: "/career" },
+  { name: "Let's Talk", href: "/contact" },
+];
+
+const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/avolvelabs/",
+    icon: IconBrandLinkedin,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1NML27RcHE/?mibextid=wwXIfr",
+    icon: IconBrandFacebook,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/avolvelabs/",
+    icon: IconBrandInstagram,
+  },
+];
 
 const Footer = () => {
   return (
-    <>
-      <footer className="w-full bg-[linear-gradient(to_bottom,#0B2FA0,#061C5B)] text-white">
-        <div className="relative w-full">
-          <div className="bg-[linear-gradient(to_bottom,#0B2FA0,)] h-[80] md:h-[100] text-white text-center relative z-0" />
-          <div className="absolute top-0 left-0 w-full h-[80] bg-white rounded-b-full shadow-md shadow-white z-10" />
-        </div>
+    <footer className="relative bg-[#141b41] pt-20 pb-8 flex flex-col items-center justify-between min-h-[320px]">
+      {/* Huge Centered Logo with Subtle Bottom Fade */}
+      <div className="relative w-full px-6 flex justify-center items-center flex-1 mb-16">
+        <Link href="/" className="inline-block cursor-pointer">
+          <Image
+            src="/Footer_logo.png"
+            alt="AvolveLabs"
+            width={814}
+            height={145}
+            className="w-[85vw] md:w-[75vw] lg:w-[65vw] max-w-[1200px] h-auto object-contain select-none"
+            style={{
+              WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+              maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+            }}
+            priority
+          />
+        </Link>
+      </div>
 
-        <div className="flex min-h-[20vh] md:h-[30vh] items-center justify-center px-4">
-          <Link href="/">
-    
-            <motion.p
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="avolve-text text-6xl cursor-pointer md:text-9xl font-extrabold tracking-tight leading-none font-sans"
-            >
-              avolvelabs
-            </motion.p>
-          </Link>
-        </div>
+      {/* Bottom Section */}
+      <div className="w-full px-6 lg:px-12">
+        <div className="w-full h-px bg-white/[0.15] mb-8" />
 
-        <div className="mx-auto max-w-11/12 border-t border-white/50" />
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] uppercase tracking-widest text-[#dee2e6]">
 
-        <div className="px-10 py-10">
-          <div className="w-full flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="flex justify-center md:justify-start gap-2">
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/company/avolvelabs/"
-                aria-label="LinkedIn"
-              >
-                <IconBrandLinkedin className="h-8 w-8 hover:opacity-70 transition cursor-pointer" />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://www.facebook.com/share/1NML27RcHE/?mibextid=wwXIfr"
-                aria-label="Facebook"
-              >
-                <IconBrandFacebook className="h-8 w-7 hover:opacity-70 transition cursor-pointer" />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://www.instagram.com/avolvelabs/"
-                aria-label="Instagram"
-              >
-                <IconBrandInstagram className="h-8 w-8 hover:opacity-70 transition cursor-pointer" />
-              </Link>
-            </div>
-
-            
-            <div className="flex flex-wrap justify-center gap-x-5 gap-y-3 text-md text-center font-poppins">
-              {[
-                { name: "Home", href: "/" },
-                { name: "About", href: "/about" },
-                { name: "Case Studies", href: "/case-studies" },
-                { name: "Career", href: "/career" },
-                { name: "Let's Talk", href: "/contact" },
-              ].map((item) => (
-                <Link key={item.name} href={item.href}>
-                  <motion.div
-                    whileHover={{ y: -8, x: 5 }}
-                    transition={{
-                      duration: 0.6,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
-                    className="cursor-pointer"
-                  >
-                    {item.name}
-                  </motion.div>
+          {/* Left: Socials */}
+          <div className="flex items-center gap-4 w-full md:w-1/3 justify-center md:justify-start">
+            {socialLinks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.label}
+                  target="_blank"
+                  href={item.href}
+                  aria-label={item.label}
+                  className="transition hover:text-white"
+                >
+                  <Icon className="w-6 h-6" stroke={1.5} />
                 </Link>
-              ))}
-            </div>
-
-            <div className="text-center md:text-right text-sm text-white font-poppins opacity-80">
-              <p>Proudly created in India.</p>
-              <p>All Right Reserved, All Wrong Reversed.</p>
-             <p className="text-md font-bold uppercase font-poppins"><Link href={"/privacy-policy"} > privacy policy</Link></p>
-            </div>
+              );
+            })}
           </div>
+
+          {/* Middle: Links */}
+          <nav className="flex flex-wrap items-center justify-center gap-6 w-full md:w-1/3">
+            {footerLinks.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="transition hover:text-white whitespace-nowrap"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Right: Copyright */}
+          <div className="flex flex-col items-center md:items-end text-right w-full md:w-1/3 gap-1">
+            <span>Proudly created in India.</span>
+            <span>All Right Reserved, All Wrong Reversed.</span>
+            <Link href="/privacy-policy" className="mt-1 font-semibold transition hover:text-white">
+              PRIVACY POLICY
+            </Link>
+          </div>
+
         </div>
-      
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 };
 

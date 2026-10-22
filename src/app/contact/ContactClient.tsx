@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import {
   IconPhone,
@@ -6,25 +7,108 @@ import {
   IconMapPin,
   IconSend,
   IconLoader2,
+  IconUser,
+  IconBuilding,
+  IconMessage2,
+  IconArrowRight,
+  IconCheck,
+  IconAlertCircle,
 } from "@tabler/icons-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useReducedMotion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import styles from "@/app/pages.module.css";
 
+const offices = [
+  ["Jaipur", "Rajasthan, India", "INDIA", "/images/talk1.png"],
+  [
+    "Frisco",
+    "Texas (Dallas Fort Worth Area), U.S.A.",
+    "UNITED STATES",
+    "/images/talk2.png",
+  ],
+  ["Worcester", "United Kingdom", "UNITED KINGDOM", "/images/talk3.png"],
+] as const;
 
+const contactItems = [
+  {
+    icon: <IconMapPin size={22} className="text-[#0a369d]" />,
+    content: (
+      <>
+        <p className="text-[17px] font-[760] text-[#09111f]">Avolvelabs Pvt. Ltd.</p>
+        <p className="mt-1 text-[14.5px] leading-relaxed text-[#526174]">
+          Jaipur, Rajasthan, India
+        </p>
+      </>
+    ),
+  },
+  {
+    icon: <IconPhone size={22} className="text-[#0a369d]" />,
+    href: "tel:+917877727352",
+    content: <p className="text-[16px] font-[500] text-[#526174]">+91-7877727352</p>,
+  },
+  {
+    icon: <IconMail size={22} className="text-[#0a369d]" />,
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=Support@avolvelabs.com",
+    content: (
+      <p className="break-all text-[16px] font-[500] text-[#526174]">
+        support@avolvelabs.com
+      </p>
+    ),
+  },
+];
+
+type FieldProps = {
+  id: string;
+  label: string;
+  placeholder: string;
+  icon: React.ReactNode;
+  required?: boolean;
+  type?: string;
+};
+
+const Field = ({
+  id,
+  label,
+  placeholder,
+  icon,
+  required,
+  type = "text",
+}: FieldProps) => (
+  <div className="group relative pt-2">
+    <label
+      htmlFor={id}
+      className="text-[11px] font-bold uppercase tracking-wider text-[#526174] transition-colors group-focus-within:text-[#0a369d]"
+    >
+      {label} {required && "*"}
+    </label>
+    <div className="relative mt-2">
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 text-[#526174] transition-colors group-focus-within:text-[#0a369d]">
+        {icon}
+      </div>
+      <Input
+        id={id}
+        name={id}
+        type={type}
+        required={required}
+        placeholder={placeholder}
+        className="h-[40px] rounded-none border-0 border-b border-[#0a369d]/20 bg-transparent px-0 pl-9 text-[15px] font-medium text-[#09111f] shadow-none outline-none transition-all duration-300 placeholder:text-[#526174]/40 focus-visible:border-[#0a369d] focus-visible:ring-0"
+      />
+    </div>
+  </div>
+);
 
 const ContactClient = () => {
-  const [loading, setLoading] = useState<boolean>(false);
+  const reducedMotion = useReducedMotion();
+  const [loading, setLoading] = useState(false);
+
   const [status, setStatus] = useState<{
     type: "success" | "error" | null;
     msg: string;
-  }>({
-    type: null,
-    msg: "",
-  });
+  }>({ type: null, msg: "" });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,8 +116,7 @@ const ContactClient = () => {
     setStatus({ type: null, msg: "" });
 
     try {
-      const formData = new FormData(e.currentTarget);
-      const data = Object.fromEntries(formData.entries());
+      const data = Object.fromEntries(new FormData(e.currentTarget).entries());
 
       const response = await fetch("/api/sendmail", {
         method: "POST",
@@ -42,19 +125,18 @@ const ContactClient = () => {
       });
 
       const contentType = response.headers.get("content-type");
-      let result;
-      if (contentType && contentType.includes("application/json")) {
-        result = await response.json();
-      } else {
-        result = { msg: await response.text() };
-      }
+
+      const result = contentType?.includes("application/json")
+        ? await response.json()
+        : { msg: await response.text() };
 
       if (response.ok) {
         setStatus({
           type: "success",
           msg: result.msg || "Message sent successfully!",
         });
-        (e.target as HTMLFormElement).reset();
+
+        e.currentTarget.reset();
       } else {
         setStatus({
           type: "error",
@@ -63,6 +145,7 @@ const ContactClient = () => {
       }
     } catch (error) {
       console.error("Fetch Error:", error);
+
       setStatus({
         type: "error",
         msg: "Could not connect to server. Please check your internet or API route.",
@@ -73,199 +156,247 @@ const ContactClient = () => {
   };
 
   return (
-    <div className="bg-[#F8FAFC] min-h-screen">
-      <div className="bg-white py-16 px-6">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-1 lg:gap-12 lg:grid-cols-2">
-            <Card className="rounded-3xl border-none shadow-xl bg-white overflow-hidden mb-24">
-              <CardContent className="p-10 md:p-14">
-                <h1 className="text-4xl font-bold text-[#111827] font-playfair">
-                  Request a Call Back
-                </h1>
-                <p className="mt-4 text-gray-500 text-lg font-poppins">
-                  Fill out the form below and our team will reach out to you
-                  shortly.
-                </p>
+    <main className="bg-[#f0f8ff] text-[#09111f] selection:bg-[#0a369d] selection:text-white">
+      {/* Hero Section */}
+      <section className="bg-[#f0f8ff] relative z-10 pt-40 pb-16 md:pt-48 md:pb-20 lg:pt-[220px] lg:pb-[100px]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-[1.2fr_1fr] gap-14 lg:gap-24 items-start">
+            
+            {/* Left side: Heading */}
+            <div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.58, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className={styles.pageHeroH1}
+                style={{ textWrap: "balance" } as React.CSSProperties}
+              >
+                Let&apos;s Start a <br className="hidden md:block"/><span className={styles.pageHeroAccent}>Conversation.</span>
+              </motion.h1>
 
-                {status.msg && (
-                  <div
-                    className={`mt-6 p-4 rounded-xl text-sm font-medium ${status.type === "success" ? "bg-green-50 text-green-700 border-green-200" : "bg-red-50 text-red-700 border-red-200"} border`}
-                  >
-                    {status.msg}
-                  </div>
-                )}
-
-                <form
-                  onSubmit={handleSubmit}
-                  className="mt-10 grid gap-6 md:grid-cols-2"
-                >
-                  <div className="space-y-2 font-playfair">
-                    <label className="text-sm font-semibold">Full Name *</label>
-                    <Input
-                      name="name"
-                      required
-                      placeholder="Enter your name"
-                      className="bg-gray-50 h-12"
-                    />
-                  </div>
-                  <div className="space-y-2 font-playfair">
-                    <label className="text-sm font-semibold">
-                      Email Address *
-                    </label>
-                    <Input
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="Enter your email"
-                      className="bg-gray-50 h-12"
-                    />
-                  </div>
-                  <div className="space-y-2 font-playfair">
-                    <label className="text-sm font-semibold">
-                      Phone Number
-                    </label>
-                    <Input
-                      name="mobile"
-                      placeholder="Enter phone number"
-                      className="bg-gray-50 h-12"
-                    />
-                  </div>
-                  <div className="space-y-2 font-playfair">
-                    <label className="text-sm font-semibold">
-                      Company Name
-                    </label>
-                    <Input
-                      name="company"
-                      placeholder="Enter company name"
-                      className="bg-gray-50 h-12"
-                    />
-                  </div>
-                  <div className="md:col-span-2 space-y-2 font-playfair">
-                    <label className="text-sm font-semibold">Subject *</label>
-                    <Input
-                      name="enquiryFor"
-                      required
-                      placeholder="How can we help?"
-                      className="bg-gray-50 h-12"
-                    />
-                  </div>
-                  <div className="md:col-span-2 space-y-2 font-playfair">
-                    <label className="text-sm font-semibold">Message *</label>
-                    <Textarea
-                      name="message"
-                      required
-                      placeholder="Tell us more..."
-                      className="bg-gray-50 min-h-30"
-                    />
-                  </div>
-                  <Button
-                    disabled={loading}
-                    type="submit"
-                    className="md:col-span-2 font-playfair bg-[#0176d3] hover:bg-[#015ba3] text-white h-14 text-lg rounded-xl transition-all"
-                  >
-                    {loading ? (
-                      <IconLoader2 className="animate-spin mr-2" />
-                    ) : (
-                      <IconSend  size={20} />
-                    )}
-                    {loading ? "Sending Message..." : "Send Message"}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            <div className="flex flex-col justify-center">
-              <h2 className="text-4xl font-bold text-[#111827] md:text-left  text-center mb-4 font-playfair">
-                Our Location
-              </h2>
-              <div className="bg-linear-to-r from-[#061C5B] to-[#0B2FA0] text-white p-10 rounded-3xl shadow-2xl">
-                <h3 className="text-xl font-bold mb-8 font-playfair">
-                  Corporate Headquarter
-                </h3>
-                <div className="space-y-6 font-poppins">
-                  <div className="flex items-start gap-4">
-                    <IconMapPin className="mt-1 shrink-0" size={24} />
-                    <div>
-                      <p className="font-semibold text-lg">
-                        Avolvelabs Pvt. Ltd.
-                      </p>
-                      <p className="text-gray-300">Jaipur Rajasthan, India</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <IconPhone size={22} />
-                    <Link href={"tel:+917877727352"}>
-                    <p>+91-7877727352</p>
-                    </Link>
-                  </div>
-                
-                  <div className="flex items-center gap-4">
-                    <IconMail size={22} />
-                    <Link className="cursor-pointer" href="https://mail.google.com/mail/?view=cm&fs=1&to=Support@avolvelabs.com">
-                    <p>support@avolvelabs.com</p>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 rounded-3xl h-96 overflow-hidden   shadow-inner">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.382562431!2d75.7062635!3d26.8851417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                ></iframe>
-              </div>
+              <motion.p
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.54, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className={styles.pageHeroDesc}
+              >
+                Ready to transform your CRM experience? Connect with our experts
+                and discover how Avolvelabs can drive measurable growth for your
+                business.
+              </motion.p>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <section className="flex bg-white flex-col md:flex-row w-full md:min-h-[70vh] min-h-[90vh] ">
-        <div className="flex-1  relative h-[50vh] md:h-[60vh]">
-          <Image
-            src="/images/talk1.png"
-            alt="Talk 1"
-            fill
-            className="object-cover brightness-75 "
-            priority
-          />
-          <div className="absolute inset-0  transition-colors duration-500 flex items-center justify-center p-4">
-            <h2 className="text-white text-xl md:text-xl  font-extrabold uppercase tracking-tighter text-center italic">
-              Jaipur, Rajasthan,<br/> India
-            </h2>
-          </div>
-        </div>
-        <div className="flex-1 relative h-[50vh] md:h-[60vh] ">
-          <Image
-            src="/images/talk2.png"
-            alt="Talk 2"
-            fill
-            className="object-cover brightness-75"
-          />
-          <div className="absolute inset-0   transition-colors duration-500 flex items-center justify-center p-4">
-            <h2 className="text-white text-md md:text-2xl font-extrabold uppercase tracking-tighter text-center font-poppins">
-             Frisco, Texas  <br/> (Dallas Fort Worth Area), <br/> U.S.A.
-            </h2>
-          </div>
-        </div>
-        <div className="flex-1 relative h-[50vh] md:h-[60vh] overflow-hidden group">
-          <Image
-            src="/images/talk3.png"
-            alt="Talk 3"
-            fill
-            className="object-cover brightness-75"
-          />
-          <div className="absolute inset-0  transition-colors duration-500 flex items-center justify-center p-4">
-            <h2 className="text-white text-xl md:text-2xl  font-extrabold uppercase tracking-tighter text-center italic">
-              Worcester, <br/> United Kingdom
-            </h2>
+            {/* Right side: Contact Details */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:pl-10 divide-y divide-[#dde6f5]"
+            >
+              {contactItems.map((item, i) => {
+                const content = (
+                  <div className="flex items-center gap-4 py-5">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-white border border-[#0a369d]/10 shadow-[0_2px_8px_rgba(10, 54, 157,0.07)]">
+                      {item.icon}
+                    </div>
+                    <div>{item.content}</div>
+                  </div>
+                );
+
+                return item.href ? (
+                  <Link
+                    key={i}
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    className="group block hover:opacity-75 transition-opacity duration-200"
+                  >
+                    {content}
+                  </Link>
+                ) : (
+                  <div key={i}>
+                    {content}
+                  </div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Form Section */}
+      <section className="bg-white px-6 py-20 lg:py-28 relative">
+        <div className="mx-auto w-[min(900px,calc(100%-40px))]">
+          <div className="mb-14">
+            <div className={styles.sectionHeadCenter}>
+               <span className={`${styles.eyebrow} !text-[#0a369d] !font-[800] uppercase tracking-[1.5px]`}>REACH OUT</span>
+               <h2 className={styles.sectionTitle}>
+                 Request a <span className={styles.sectionAccent}>Call Back.</span>
+               </h2>
+            </div>
+          </div>
+
+          {status.msg && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className={`mb-10 flex gap-3 rounded-lg p-4 text-[13px] font-medium ${
+                status.type === "success"
+                  ? "bg-green-100 text-green-800"
+                  : "bg-red-100 text-red-800"
+              }`}
+            >
+              {status.type === "success" ? (
+                <IconCheck size={18} className="mt-0.5" />
+              ) : (
+                <IconAlertCircle size={18} className="mt-0.5" />
+              )}
+              <span>{status.msg}</span>
+            </motion.div>
+          )}
+
+          <form
+            onSubmit={handleSubmit}
+            className="grid gap-x-12 gap-y-10 md:grid-cols-2"
+          >
+            <Field
+              id="name"
+              label="Full Name"
+              placeholder="Enter your name"
+              required
+              icon={<IconUser size={18} />}
+            />
+            <Field
+              id="email"
+              label="Email Address"
+              placeholder="Enter your email"
+              required
+              type="email"
+              icon={<IconMail size={18} />}
+            />
+            <Field
+              id="mobile"
+              label="Phone Number"
+              placeholder="Enter phone number"
+              icon={<IconPhone size={18} />}
+            />
+            <Field
+              id="company"
+              label="Company Name"
+              placeholder="Enter company name"
+              icon={<IconBuilding size={18} />}
+            />
+
+            <div className="md:col-span-2">
+              <Field
+                id="enquiryFor"
+                label="Subject"
+                placeholder="How can we help?"
+                required
+                icon={<IconMessage2 size={18} />}
+              />
+            </div>
+
+            <div className="group relative pt-2 md:col-span-2">
+              <label
+                htmlFor="message"
+                className="text-[11px] font-bold uppercase tracking-wider text-[#526174] transition-colors group-focus-within:text-[#0a369d]"
+              >
+                Message *
+              </label>
+              <Textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Tell us more about your project..."
+                className="mt-3 min-h-[120px] resize-none rounded-none border-0 border-b border-[#0a369d]/20 bg-transparent p-0 text-[15px] font-medium text-[#09111f] shadow-none outline-none transition-all duration-300 placeholder:text-[#526174]/40 focus-visible:border-[#0a369d] focus-visible:ring-0"
+              />
+            </div>
+
+            <div className="mt-6 flex justify-center md:col-span-2">
+              <Button
+                type="submit"
+                disabled={loading}
+                className={styles.btnPrimary}
+              >
+                {loading ? (
+                  <>
+                    <IconLoader2 size={18} className="animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <IconSend size={18} />
+                    Send Message
+                    <IconArrowRight
+                      size={17}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </>
+                )}
+              </Button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      {/* Offices Section */}
+      <section className="bg-white px-6 py-20 lg:py-28 overflow-hidden">
+        <div className="mx-auto w-[min(1200px,calc(100%-40px))]">
+
+          {/* Header */}
+          <div className={`${styles.sectionHeadCenter} mb-14`}>
+            <span className={`${styles.eyebrow} !text-[#0a369d] !font-[800]`}>REACH US</span>
+            <h2 className={styles.sectionTitle}>
+              Where To Find <span className={styles.sectionAccent}>Us.</span>
+            </h2>
+          </div>
+
+          {/* Rows with dividers */}
+          <div className="divide-y divide-[#e8eef8]">
+            {offices.map(([city, subtitle, tag, image], idx) => (
+              <motion.div
+                key={city}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="group grid grid-cols-[auto_1fr_auto] md:grid-cols-[56px_1fr_260px] items-center gap-6 py-9 md:py-10"
+              >
+                {/* Index */}
+                <span className="text-[11px] font-[800] text-[#0a369d]/25 tracking-[1px] tabular-nums">
+                  0{idx + 1}
+                </span>
+
+                {/* City info */}
+                <div>
+                  <span className="text-[10.5px] font-[800] uppercase tracking-[1.8px] text-[#0a369d] block mb-1.5">
+                    {tag}
+                  </span>
+                  <h3 className="text-[26px] md:text-[32px] font-[760] text-[#09111f] leading-none tracking-tight">
+                    {city}
+                  </h3>
+                  <p className="text-[13.5px] text-[#526174] mt-2 leading-relaxed">
+                    {subtitle}
+                  </p>
+                </div>
+
+                {/* Image — natural, no bg container */}
+                <div className="hidden md:block relative h-[110px] w-[260px] overflow-hidden rounded-[14px]">
+                  <Image
+                    src={image}
+                    alt={`${city}, ${subtitle}`}
+                    fill
+                    priority={idx === 0}
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+    </main>
   );
 };
 

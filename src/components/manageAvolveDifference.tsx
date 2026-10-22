@@ -1,80 +1,111 @@
+"use client";
+
 import React from "react";
 import {
   XCircle,
-  ShieldCheck,
   ZapOff,
   MessageSquareOff,
   Target,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 const ManageAvolveDifference = () => {
   const points = [
     {
       title: "We don't over-engineer",
-      desc: " If a simple, native Flow solves the problem, we won't charge you for 500 lines of custom Apex code. We build for maintainability.",
-      icon: <ZapOff className="w-6 h-6 text-[#3291B6]" />,
+      desc: "If a simple, native Flow solves the problem, we won't charge you for 500 lines of custom Apex code. We build for maintainability.",
+      icon: ZapOff,
     },
     {
       title: "We don't hide behind a help desk",
-      desc: " We aren't just a reactive support line. We are proactive partners who suggest improvements before you even realize you need them.",
-      icon: <MessageSquareOff className="w-6 h-6 text-[#3291B6]" />,
+      desc: "We aren't just a reactive support line. We are proactive partners who suggest improvements before you even realize you need them.",
+      icon: MessageSquareOff,
     },
     {
       title: "We don't ignore the Why",
-      desc: " We never make a technical change without understanding the business goal behind it. Every click should contribute to your bottom line.",
-      icon: <Target className="w-6 h-6 text-[#3291B6]" />,
+      desc: "We never make a technical change without understanding the business goal behind it. Every click should contribute to your bottom line.",
+      icon: Target,
     },
   ];
 
   return (
-    <section className="bg-[#f8fafc] py-10 px-8 w-full">
+    <section className="bg-white py-20 px-5 sm:px-8 lg:px-12 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          {/* Left Side: Bold Header */}
-          <div className="lg:col-span-5">
-            <div className="flex justify-center md:justify-start">
-            <div className="inline-flex  items-center gap-2 px-3 py-1 rounded-full bg-[#3291B6]/10 text-[#3291B6] text-sm font-bold mb-6">
-              <XCircle className="w-4 h-4" />
-              <span>THE AVOLVE DIFFERENCE</span>
-</div>
-            </div>
-            <h2 className="mb-6 text-center md:text-left text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
-              What We <br className="md:block hidden" />
-              <span className="italic text-[#3291B6]">Don&apos;t</span> Do
-            </h2>
-            <p className="leading-relaxed md:text-left text-center font-poppins text-md md:text-[16px] text-gray-700">
-              We differentiate ourselves by what we refuse to be:{" "}
-              <br className="hidden md:block" />
-              <span className="font-semibold text-slate-700">
-                a churn and burn development shop.
-              </span>
-            </p>
-          </div>
-
-          {/* Right Side: Points */}
-          <div className="lg:col-span-7 space-y-4">
-            {points.map((item, index) => (
-              <div
-                key={index}
-                className="group p-8 rounded-2xl border border-slate-100 bg-slate-50/30 hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300"
-              >
-                <div className="flex gap-6">
-                  <div className="shrink-0 w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-playfair text-xl font-bold text-[#032d60] mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="font-poppins text-slate-500 text-[15px] leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        
+        {/* Centered Heading Section */}
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a369d]/10 text-[#0a369d] text-xs font-semibold tracking-wider uppercase mb-6"
+          >
+            <XCircle className="w-4 h-4" />
+            <span>THE AVOLVE DIFFERENCE</span>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className={styles.sectionTitle}
+          >
+            What We{" "}
+            <span className={styles.sectionAccent}>Don&apos;t</span> Do
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className={styles.sectionDesc} style={{ margin: "20px auto 0" }}
+          >
+            We differentiate ourselves by what we refuse to be:{" "}
+            <br className="hidden md:block" />
+            <span className="font-semibold text-[#0b1425]">
+              a churn and burn development shop.
+            </span>
+          </motion.p>
         </div>
+
+        {/* 3-Column Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {points.map((item, index) => {
+            const Icon = item.icon;
+            
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                className="group relative p-8 md:p-10 rounded-[2rem] bg-white border border-[#e1e9f5] shadow-sm hover:shadow-[0_20px_40px_rgba(10, 54, 157,0.06)] hover:-translate-y-2 hover:border-[#c5d7f5] transition-all duration-500 overflow-hidden"
+              >
+                <div className="relative z-10">
+                  {/* Floating Icon */}
+                  <div className="w-16 h-16 rounded-full bg-[#0a369d]/5 flex items-center justify-center text-[#0a369d] mb-8 group-hover:bg-[#0a369d] group-hover:text-white group-hover:scale-110 transition-all duration-500 border border-[#0a369d]/10 group-hover:border-transparent">
+                    <Icon className="w-7 h-7" strokeWidth={1.5} />
+                  </div>
+
+                  {/* Text Content */}
+                  <h3 className={`${styles.sectionTitle} group-hover:text-[#0a369d] transition-colors duration-300`} style={{ fontSize: "22px", marginBottom: 16 }}>
+                    {item.title}
+                  </h3>
+                  
+                  <p className={styles.sectionDesc} style={{ margin: 0 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );

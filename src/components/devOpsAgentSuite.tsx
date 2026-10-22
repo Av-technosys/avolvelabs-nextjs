@@ -1,61 +1,97 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { IconSparkles, IconChecklist, IconDatabase } from "@tabler/icons-react";
+
+"use client";
+
+import {
+  IconSparkles,
+  IconChecklist,
+} from "@tabler/icons-react";
+import styles from "@/app/pages.module.css";
 
 const agents = [
   {
     title: "Data Deployment & Governance",
     icon: IconSparkles,
     desc: "DevOps without structured data governance creates instability. We ensure consistent and compliant data across environments.",
-    active: true,
+    color: "text-[#0a369d]",
   },
   {
     title: "Security & Compliance",
     icon: IconChecklist,
     desc: "We implement enterprise-grade governance controls across your DevOps lifecycle.",
+    color: "text-[#0a369d]",
   },
 ];
 
 const DevOpsAgentSuite = () => {
   return (
-    <section className="relative py-10 px-8">
-      <div className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 md:h-[500] md:w-[500]  rounded-full bg-[#E8E2DB] blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-[500] w-[500] rounded-full bg-pink-300/30 blur-3xl" />
-
+    <section className="relative overflow-hidden bg-white px-4 py-12 sm:px-8 md:py-16">
       <div className="relative mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold">
+
+        {/* Heading */}
+        <div className="mb-12 text-center md:mb-20">
+          <h2 className={styles.sectionTitle}>
             DATA & GOVERNANCE
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto font-poppins text-md md:text-[18px] text-gray-700">
+
+          <p className={styles.sectionDesc} style={{ margin: "16px auto 0", maxWidth: "48rem" }}>
             Our AI agents are designed to automate repetitive tasks, make
             informed decisions, and enable teams to work more efficiently and
             effectively.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {agents.map((item, i) => {
+        {/* Cards */}
+        <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2 md:gap-12">
+
+          {agents.map((item, index) => {
             const Icon = item.icon;
+
             return (
-              <Card
-                key={i}
-                className={`rounded-2xl border transition-colors duration-300 hover:border-blue-400 `}
+              <div
+                key={item.title}
+                className={`relative ${
+                  index === 0 ? "md:-rotate-[5deg]" : "md:rotate-[5deg]"
+                }`}
               >
-                <CardContent className="md:p-5 p-3">
-                  <Icon size={32} stroke={1.6} className="text-blue-500 mb-4" />
+                {/* Icon Badge */}
+                <div className="absolute -top-7 left-8 z-20 flex h-16 w-16 items-center justify-center rounded-full border border-[#d9dfe8] bg-white">
+                  <Icon
+                    size={30}
+                    stroke={1.7}
+                    className={item.color}
+                  />
+                </div>
 
-                  <h3 className="text-xl font-semibold font-playfair text-gray-900">
-                    {item.title}
-                  </h3>
+                {/* Card */}
+                <div className="flex min-h-[390px] flex-col rounded-[24px] border border-[#d9dfe8] bg-white transition-transform duration-300 hover:-translate-y-1 md:min-h-[410px]">
 
-                  <p className="mt-4 text-sm leading-relaxed font-poppins text-gray-600">
-                    {item.desc}
-                  </p>
-                </CardContent>
-              </Card>
+                  <div className="flex h-full min-h-[390px] flex-col p-7 pt-14 md:min-h-[410px] md:p-8 md:pt-16">
+
+                    {/* Number */}
+                    <span className="mb-4 text-right text-[52px] font-bold leading-none text-[#d5e1ff]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    {/* Content */}
+                    <div>
+                      <h3 className={styles.sectionTitle} style={{ fontSize: "clamp(20px, 2vw, 24px)", marginBottom: 12 }}>
+                        {item.title}
+                      </h3>
+
+                      <p className={styles.sectionDesc}>
+                        {item.desc}
+                      </p>
+                    </div>
+
+                    {/* Bottom Line */}
+                    <div className="mt-auto h-1 w-14 rounded-full bg-[#0a369d]" />
+
+                  </div>
+                </div>
+              </div>
             );
           })}
+
         </div>
       </div>
     </section>

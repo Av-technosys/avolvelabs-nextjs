@@ -1,65 +1,64 @@
-import Image from 'next/image';
-import React from 'react';
+"use client";
+
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import styles from "@/app/pages.module.css";
 
 const AboutMission = () => {
-  const data = [
-    {
-      title: "Our Mission",
-      description: "Deploy highly skilled CRM experts to implement, customize, and optimize Salesforce. Deliver tailored solutions that align with each client unique business objectives. Ensure measurable business impact, helping clients scale efficiently and strategically. Continuously innovate and improve, staying ahead of industry trends.",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Our Vision",
-      description: "Empower businesses with intelligent Salesforce solutions that drive measurable growth. Be the most trusted partner for organizations seeking seamless CRM integration and optimization. Lead through innovation, setting benchmarks in CRM services and business transformation. Foster long term partnerships by delivering consistent value.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
-    }
-  ];
+  const reducedMotion = useReducedMotion();
+  const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
   return (
-    <section className="px-8 py-10">
-      <div className="mx-auto max-w-7xl">
-
-        <div className="text-center mb-12">
-          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-4">
-            Our Mission & Vision
+    <section className={styles.sectionWhite}>
+      <div className={styles.container}>
+        <div className={styles.sectionHeadCenter}>
+          <span className={styles.eyebrow}>Mission &amp; Vision</span>
+          <h2 className={styles.sectionTitle}>
+            Where strategy meets{" "}
+            <span className={styles.sectionAccent}>lasting impact.</span>
           </h2>
-          <p className="font-poppins text-md md:text-[18px] text-gray-700">
-            We take pride in our work, and the industry has taken notice.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {data.map((item, index) => (
-            <div 
-              key={index}
-              className="group relative h-[400] md:h-[400] overflow-hidden rounded-[30px] cursor-pointer shadow-xl"
-            >
+        {/* Row 1 — number left, text right */}
+        <motion.div
+          className={styles.mvRow}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: reducedMotion ? 0 : 0.5, ease }}
+          viewport={{ once: true }}
+        >
+          <span className={styles.mvNum}>01</span>
+          <div className={styles.mvContent}>
+            <h3 className={styles.mvLabel}>Our Mission</h3>
+            <p className={styles.sectionDesc}>
+              To deploy highly skilled CRM experts who implement, customize, and
+              optimize Salesforce — delivering tailored solutions aligned with
+              each client&apos;s unique business objectives and ensuring measurable
+              impact at every stage.
+            </p>
+          </div>
+        </motion.div>
 
-              <Image
-               width={800}
-                height={600}
-                unoptimized
-                src={item.image} 
-                alt={item.title}
-                className="absolute inset-0 h-full w-full object-cover "
-              />
+        <div className={styles.mvHr} aria-hidden="true" />
 
-
-              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
-
-              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12 text-white">
-                <h3 className="font-playfair text-3xl md:text-4xl font-bold mb-4">
-                  {item.title}
-                </h3>
-                <div className="overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-[300] lg:opacity-0 group-hover:opacity-100">
-                  <p className="font-poppins text-sm md:text-base leading-relaxed text-gray-200">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Row 2 — text left, number right */}
+        <motion.div
+          className={`${styles.mvRow} ${styles.mvRowReverse}`}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: reducedMotion ? 0 : 0.5, delay: reducedMotion ? 0 : 0.08, ease }}
+          viewport={{ once: true }}
+        >
+          <span className={styles.mvNum}>02</span>
+          <div className={styles.mvContent}>
+            <h3 className={styles.mvLabel}>Our Vision</h3>
+            <p className={styles.sectionDesc}>
+              To be the most trusted partner for seamless CRM integration and
+              optimization — empowering businesses with intelligent Salesforce
+              solutions that drive measurable growth and long-term success.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

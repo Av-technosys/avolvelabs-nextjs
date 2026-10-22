@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   IconBox,
@@ -53,7 +54,13 @@ const services = [
 const HomeServiceCards = () => {
   return (
     <div className="bg-[linear-gradient(to_bottom,#FFFFFF,#AEDEFC)]">
-      <section className="text-center md:px-8 px-8 py-10">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center md:px-8 px-8 py-10"
+      >
         <h2 className="text-[#032d60] font-playfair text-3xl md:text-[38px] font-bold leading-tight">
          Solutions Designed to Scale Across Industries
 {" "}
@@ -62,15 +69,21 @@ const HomeServiceCards = () => {
         <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-3xl mx-auto mt-6 leading-4">
           Every industry operates differently, but the need for efficiency, growth, and customer centric systems is universal. Avolve Labs builds adaptable, intelligent, and scalable digital solutions tailored to the operational realities of each industry.
         </p>
-      </section>
+      </motion.section>
 
       <section className="max-w-4xl mx-auto px-8 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
           {services.map((service, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="relative overflow-hidden border-none shadow-[0_10px_40px_rgba(0,0,0,0.08)] rounded-[24px] transition-transform duration-300 hover:-translate-y-2 group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
+              <Card
+                className="relative overflow-hidden border-none h-full shadow-[0_10px_40px_rgba(0,0,0,0.08)] rounded-[24px] transition-transform duration-300 hover:-translate-y-2 group"
+              >
               <CardContent className="p-8 h-full flex flex-col">
                 <h3 className="font-playfair text-[20px] font-bold text-[#032d60] mb-4">
                   {service.title}
@@ -109,6 +122,7 @@ const HomeServiceCards = () => {
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
           ))}
         </div>
       </section>

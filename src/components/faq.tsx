@@ -14,7 +14,7 @@ const faqData = [
     answer: (
       <p>
         Salesforce is the{" "}
-        <span className="text-blue-600 font-medium underline">
+        <span className="text-[#0a369d] font-medium underline">
           #1 AI CRM
         </span>{" "}
         (customer relationship management) platform.
@@ -50,9 +50,9 @@ type FAQProps = {
 
 const FAQ = ({
   textColor = "#032d60",
-  hoverColor = "#0176d3",
+  hoverColor = "#0a369d",
   iconBg = "#e0f2fe",
-  iconHoverBg = "#0176d3",
+  iconHoverBg = "#0a369d",
 }: FAQProps) => {
   return (
     <section

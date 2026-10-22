@@ -1,6 +1,8 @@
 "use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
+import styles from "@/app/pages.module.css";
 
 const coreValues = [
   {
@@ -41,62 +43,111 @@ const AboutCoreValues = () => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
   return (
-    <section className="px-8 py-10">
-      <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-12">
-          <h2 className="font-playfair text-3xl md:text-[38px] font-bold text-[#032d60] mb-4">
-            Our Methodology
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.sectionHeadCenter}>
+          <span className={styles.eyebrow}>Our Methodology</span>
+          <h2 className={styles.sectionTitle}>
+            A structured path to{" "}
+            <span className={styles.sectionAccent}>
+              maximum ROI & adoption.
+            </span>
           </h2>
-          <p className="font-poppins text-md md:text-[18px] text-gray-700 max-w-4xl mx-auto">
-           We do not just implement software. We follow a structured, outcome driven methodology designed to maximize adoption, accelerate ROI, and deliver long term business value. Every engagement is built around real business goals, not generic feature deployments.
-
+          <p className={styles.sectionDesc} style={{ textAlign: "center" }}>
+            We don&apos;t just implement software. We follow a structured,
+            outcome-driven methodology designed to maximize adoption, accelerate
+            ROI, and deliver long-term business value.
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 h-[550] md:h-[350]">
+        {/* Accordion panels */}
+        <div className={styles.coreValuesGrid}>
           {coreValues.map((value, index) => {
             const isExpanded = hoveredIndex === index;
-
             return (
               <div
                 key={value.id}
                 onMouseEnter={() => setHoveredIndex(index)}
-                className={`relative overflow-hidden rounded-[30px] transition-all duration-700 ease-in-out cursor-pointer 
-                  ${isExpanded ? "flex-5" : "flex-1"}`}
+                className={styles.coreValueItem}
+                style={{ flex: isExpanded ? 5 : 1 }}
               >
-                <div className="absolute inset-0">
-                  <Image
-                    unoptimized
-                    width={800}
-                    height={600}
-                    src={value.image}
-                    alt={value.title}
-                    className="h-full w-full object-cover transition-transform duration-700 scale-105"
-                  />
-                  <div
-                    className={`absolute inset-0 transition-opacity duration-500 ${isExpanded ? "bg-black/60" : "bg-black/40"}`}
-                  />
-                </div>
+                {/* Background image */}
+                <Image
+                  src={value.image}
+                  alt={value.title}
+                  fill
+                  unoptimized
+                  className="object-cover"
+                  style={{
+                    transform: isExpanded ? "scale(1.04)" : "scale(1)",
+                    transition: "transform 0.7s ease",
+                  }}
+                />
+                {/* Overlay */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: isExpanded
+                      ? "linear-gradient(to top, rgba(9,17,31,0.88) 0%, rgba(9,17,31,0.42) 54%, rgba(9,17,31,0.1) 100%)"
+                      : "linear-gradient(to top, rgba(9,17,31,0.72) 0%, rgba(9,17,31,0.3) 100%)",
+                    transition: "background 0.5s ease",
+                  }}
+                />
 
-                <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                  {!isExpanded && (
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <h3 className="font-playfair font-bold text-2xl md:text-2xl whitespace-nowrap md:rotate-90 opacity-100 transition-opacity duration-300">
-                        {value.title}
-                      </h3>
-                    </div>
-                  )}
-
+                {/* Collapsed: vertical title */}
+                {!isExpanded && (
                   <div
-                    className={`transition-all duration-500 ${isExpanded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      pointerEvents: "none",
+                    }}
                   >
-                    <h3 className="font-playfair font-bold text-2xl md:text-3xl mb-4">
+                    <span className={styles.coreValueTitleCollapsed}>
                       {value.title}
-                    </h3>
-                    <p className="font-poppins text-sm md:text-[16px] leading-relaxed text-gray-200 max-w-xl">
-                      {value.description}
-                    </p>
+                    </span>
                   </div>
+                )}
+
+                {/* Expanded: content */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                    padding: 28,
+                    color: "#fff",
+                    opacity: isExpanded ? 1 : 0,
+                    transform: isExpanded ? "translateY(0)" : "translateY(14px)",
+                    transition: "opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontSize: 22,
+                      fontWeight: 700,
+                      margin: "0 0 12px",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {value.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      lineHeight: 1.65,
+                      color: "rgba(255,255,255,0.82)",
+                      margin: 0,
+                    }}
+                  >
+                    {value.description}
+                  </p>
                 </div>
               </div>
             );
