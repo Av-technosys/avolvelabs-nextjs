@@ -50,6 +50,46 @@ const cards = [
     image: "/images/case6.jpeg",
     category: "Manufacturing",
   },
+  {
+    title: "R-One Power Solutions: Building a Connected Solar Project Workflow with Zoho One",
+    description:
+      "A signed solar deal starts a chain of work across sales, site teams, procurement, finance, and service. R-One Power Solutions needed a clearer way to manage those handoffs while building a system that could follow each project from the first inquiry to support after installation.",
+    image: "/images/solar-case-study.png",
+    category: "Solar EPC",
+    link: "/case-studies/r-one-power-solutions",
+  },
+  {
+    title: "Toshcon: Replacing Excel Spreadsheets with a Smart Manufacturing ERP",
+    description:
+      "Managing multi-level Bills of Materials (BOMs), work orders, raw material consumption, and shop-floor productivity across separate Excel spreadsheets led to operational bottlenecks. AvolveLabs designed a custom, connected Zoho Manufacturing ERP layer built on Zoho Creator, Inventory, Books, and Analytics.",
+    image: "/images/case4.jpeg",
+    category: "Manufacturing",
+    link: "/case-studies/toshcon-zoho-erp-manufacturing",
+  },
+  {
+    title: "Morzze Builds a Connected Customer Experience with Zoho One",
+    description:
+      "Morzze, a premium luxury kitchen and bathroom manufacturer, needed a unified system to manage its entire customer lifecycle across expanding digital channels and dealer networks. Morzze deployed Zoho One to consolidate sales, marketing, and post-sale operations into a single connected ecosystem.",
+    image: "/images/case6.jpeg",
+    category: "Luxury Manufacturing",
+    link: "/case-studies/morzze-connected-customer-experience-zoho-one",
+  },
+  {
+    title: "Toshcon: Building a Connected Customer & Field Operations Engine",
+    description:
+      "As Toshcon scaled across multiple regions, managing customer touchpoints through disconnected tools created blind spots. AvolveLabs architected a unified Zoho One ecosystem bridging sales, marketing, field service, and internal operations.",
+    image: "/images/dashboard.jpg",
+    category: "Field Operations & CRM",
+    link: "/case-studies/toshcon-zoho-one-transformation",
+  },
+  {
+    title: "Roop Shree Bandhej: From Multiple Tools to One Connected Zoho One System",
+    description:
+      "Roop Shree Bandhej was using multiple tools for lead management, WhatsApp communication, inventory, social media, order tracking, and invoicing. AvolveLabs implemented Zoho One to bring their sales, marketing, inventory, customer communication, and order operations into one connected ecosystem.",
+    image: "/images/pivot.jpg",
+    category: "Apparel & Retail",
+    link: "/case-studies/roop-shree-bandhej-zoho-one",
+  },
 ];
 
 export default function CaseStudiesClient() {
@@ -128,6 +168,19 @@ export default function CaseStudiesClient() {
                     <p className="font-poppins text-[#526174] text-[15px] leading-relaxed">
                       {card.description}
                     </p>
+                    {card.link && (
+                      <div className="pt-6">
+                        <Link
+                          href={card.link}
+                          className="inline-flex items-center gap-2 text-[#0a369d] font-semibold text-[15px] hover:text-[#0a2472] transition-colors group/link"
+                        >
+                          <span className="border-b border-[#0a369d]/40 group-hover/link:border-[#0a369d] transition-colors pb-0.5">
+                            Read Full Case Study
+                          </span>
+                          <ArrowRight size={16} className="transition-transform duration-300 group-hover/link:translate-x-1" />
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               );
