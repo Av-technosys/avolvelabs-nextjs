@@ -25,8 +25,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/case-studies`,
       lastModified: new Date(),
-      changeFrequency: "monthly", 
-      priority: 0.7, 
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/case-studies/r-one-power-solutions`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/case-studies/toshcon-zoho-erp-manufacturing`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/case-studies/morzze-connected-customer-experience-zoho-one`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/case-studies/toshcon-zoho-one-transformation`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/case-studies/roop-shree-bandhej-zoho-one`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/services/crm-strategy-implementation`,
