@@ -19,7 +19,7 @@ export default function ROnePowerSolutionsPage() {
       industry="Solar EPC"
       partner="AvolveLabs"
       coreApps="Zoho CRM, Zoho Inventory, and Zoho Books, zoho projects"
-      image="/images/solar-case-study.jpg"
+      image="/images/solar-case-study.png"
       imageAlt="R-One Power Solutions Solar Project Workflow"
       lead="A signed solar deal starts a chain of work across sales, site teams, procurement, finance, and service. R-One Power Solutions needed a clearer way to manage those handoffs while building a system that could follow each project from the first inquiry to support after installation."
       sections={[
