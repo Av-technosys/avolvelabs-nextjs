@@ -9,6 +9,14 @@ import { motion } from "framer-motion";
 
 const cards = [
   {
+    title: "R-One Power Solutions: Building a Connected Solar Project Workflow with Zoho One",
+    description:
+      "A signed solar deal starts a chain of work across sales, site teams, procurement, finance, and service. R-One Power Solutions needed a clearer way to manage those handoffs while building a system that could follow each project from the first inquiry to support after installation.",
+    image: "/images/solar-case-study.png",
+    category: "Solar EPC",
+    link: "/case-studies/r-one-power-solutions",
+  },
+  {
     title: "Unifying Healthcare with a 360° Patient View",
     description:
       "To bridge the gap between disconnected touchpoints and scattered medical records, a leading U.S. non-profit healthcare system partnered with us to centralize their data landscape. By implementing Salesforce Data Cloud and the Einstein 1 Platform, we consolidated information from electronic records, call centers, and in-person visits into a single, real-time 360° patient profile. This transformation broke down information silos, establishing a centralized hub that empowers physicians with holistic insights to deliver proactive, personalized care while securing a scalable foundation for future innovation.",
@@ -49,14 +57,6 @@ const cards = [
       "Morzze, an ambitious manufacturing brand, faced growing complexity as sales, marketing, inventory, finance, and field operations operated in silos. Disconnected workflows were transformed into a seamless, automated revenue pipeline where every lead, follow-up, order, and stock movement became fully traceable. Marketing and WhatsApp automation accelerated customer engagement, while real-time dashboards empowered leadership with instant, data-backed decisions. The transformation significantly reduced manual effort, improved conversion rates, strengthened dealer relationships, and delivered up to a ninefold return on investment within the first year, positioning Morzze for scalable, predictable, and future-ready growth.",
     image: "/images/case6.jpeg",
     category: "Manufacturing",
-  },
-  {
-    title: "R-One Power Solutions: Building a Connected Solar Project Workflow with Zoho One",
-    description:
-      "A signed solar deal starts a chain of work across sales, site teams, procurement, finance, and service. R-One Power Solutions needed a clearer way to manage those handoffs while building a system that could follow each project from the first inquiry to support after installation.",
-    image: "/images/solar-case-study.png",
-    category: "Solar EPC",
-    link: "/case-studies/r-one-power-solutions",
   },
   {
     title: "Toshcon: Replacing Excel Spreadsheets with a Smart Manufacturing ERP",
@@ -124,15 +124,28 @@ export default function CaseStudiesClient() {
             </div>
 
             <div className="relative -mt-24 md:-mt-32 mx-4 md:mx-12 lg:mx-20 bg-white/90 p-8 md:p-12 rounded-[20px] md:rounded-[32px] shadow-[0_20px_60px_rgba(10, 54, 157,0.06)] border border-white backdrop-blur-xl">
-              <span className="block text-[11px] font-bold uppercase tracking-[0.2em] text-[#0a369d] mb-4">
+              <span className="block font-sans text-[10px] font-bold not-italic leading-[15px] tracking-[2px] text-[#0A369D] uppercase mb-4">
                 Featured • {featured.category}
               </span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold text-[#0b1425] leading-[1.15] mb-6 tracking-tight">
+              <h2 className="font-playfair text-[28px] sm:text-[36px] font-bold not-italic leading-[36px] sm:leading-[45px] tracking-[-0.9px] text-[#0B1425] mb-6">
                 {featured.title}
               </h2>
-              <p className="font-poppins text-[#526174] text-[15.5px] leading-relaxed max-w-3xl">
+              <p className="font-poppins text-[15px] font-normal not-italic leading-[24.375px] tracking-normal text-[#526174] max-w-3xl">
                 {featured.description}
               </p>
+              {featured.link && (
+                <div className="pt-6">
+                  <Link
+                    href={featured.link}
+                    className="inline-flex items-center gap-2 text-[#0a369d] font-semibold text-[15px] hover:text-[#0a2472] transition-colors group/link"
+                  >
+                    <span className="border-b border-[#0a369d]/40 group-hover/link:border-[#0a369d] transition-colors pb-0.5">
+                      Read Full Case Study
+                    </span>
+                    <ArrowRight size={16} className="transition-transform duration-300 group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
+              )}
             </div>
           </motion.div>
 
@@ -161,13 +174,13 @@ export default function CaseStudiesClient() {
                   </div>
 
                   <div className="w-full md:w-1/2 flex flex-col justify-center">
-                    <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[#0a369d] mb-4 opacity-80">
+                    <span className="block font-sans text-[10px] font-bold not-italic leading-[15px] tracking-[2px] text-[#0A369D] uppercase mb-4">
                       {card.category}
                     </span>
-                    <h3 className="font-playfair text-2xl md:text-4xl font-bold text-[#0b1425] leading-[1.25] mb-6 tracking-tight">
+                    <h3 className="font-playfair text-[28px] sm:text-[36px] font-bold not-italic leading-[36px] sm:leading-[45px] tracking-[-0.9px] text-[#0B1425] mb-6">
                       {card.title}
                     </h3>
-                    <p className="font-poppins text-[#526174] text-[15px] leading-relaxed">
+                    <p className="font-poppins text-[15px] font-normal not-italic leading-[24.375px] tracking-normal text-[#526174]">
                       {card.description}
                     </p>
                     {card.link && (
