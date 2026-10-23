@@ -116,6 +116,7 @@ export default function CaseStudiesClient() {
                 src={featured.image}
                 alt={featured.title}
                 fill
+                unoptimized
                 className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]"
                 priority
               />
@@ -154,6 +155,7 @@ export default function CaseStudiesClient() {
                       src={card.image}
                       alt={card.title}
                       fill
+                      unoptimized
                       className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.04]"
                     />
                   </div>

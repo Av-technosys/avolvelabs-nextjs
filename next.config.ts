@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
         hostname: "ik.imagekit.io", 
       },
     ],
+    unoptimized: true,
   },
   async redirects() {
     return [
