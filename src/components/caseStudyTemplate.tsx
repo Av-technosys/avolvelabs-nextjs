@@ -69,23 +69,26 @@ export default function CaseStudyTemplate({
         <div className="relative mx-auto w-[min(1200px,calc(100%-40px))] z-10">
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#526174] hover:text-[#0a369d] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-[#0a369d] font-semibold text-[15px] hover:text-[#0a2472] transition-colors group/link mb-8 w-fit"
           >
-            <ArrowLeft size={16} /> Back to Case Studies
+            <ArrowLeft size={16} className="transition-transform duration-300 group-hover/link:-translate-x-1" />
+            <span className="border-b border-[#0a369d]/40 group-hover/link:border-[#0a369d] transition-colors pb-0.5">
+              Back to Case Studies
+            </span>
           </Link>
 
-          <span className="block text-xs font-bold uppercase tracking-[0.2em] text-[#0a369d] mb-4">
+          <span className="block font-sans text-[10px] font-bold not-italic leading-[15px] tracking-[2px] text-[#0A369D] uppercase mb-4">
             {badge}
           </span>
 
-          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-[#0b1425] leading-[1.2] tracking-tight mb-10 max-w-5xl">
+          <h1 className="font-playfair text-[28px] sm:text-[36px] font-bold not-italic leading-[36px] sm:leading-[45px] tracking-[-0.9px] text-[#0B1425] mb-10 max-w-5xl">
             {title}
           </h1>
 
           {/* Project Details Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 md:p-8 rounded-[20px] bg-white/90 border border-slate-200/80 shadow-[0_15px_40px_rgba(10,54,157,0.06)] backdrop-blur-md">
             <div>
-              <span className="block text-[11px] font-bold uppercase tracking-[0.15em] text-[#0a369d] mb-1.5">
+              <span className="block font-sans text-[10px] font-bold not-italic leading-[15px] tracking-[2px] text-[#0A369D] uppercase mb-1.5">
                 Client
               </span>
               <p className="font-poppins text-base font-semibold text-[#0b1425]">
@@ -94,7 +97,7 @@ export default function CaseStudyTemplate({
             </div>
 
             <div>
-              <span className="block text-[11px] font-bold uppercase tracking-[0.15em] text-[#0a369d] mb-1.5">
+              <span className="block font-sans text-[10px] font-bold not-italic leading-[15px] tracking-[2px] text-[#0A369D] uppercase mb-1.5">
                 Industry
               </span>
               <p className="font-poppins text-base font-semibold text-[#0b1425]">
@@ -104,16 +107,16 @@ export default function CaseStudyTemplate({
 
             {solution ? (
               <div>
-                <span className="block text-[11px] font-bold uppercase tracking-[0.15em] text-[#0a369d] mb-1.5">
+                <span className="block font-sans text-[10px] font-bold not-italic leading-[15px] tracking-[2px] text-[#0A369D] uppercase mb-1.5">
                   Solution
                 </span>
-                <p className="font-poppins text-sm font-semibold text-[#0b1425] leading-snug">
+                <p className="font-poppins text-base font-semibold text-[#0b1425] leading-snug">
                   {solution}
                 </p>
               </div>
             ) : (
               <div>
-                <span className="block text-[11px] font-bold uppercase tracking-[0.15em] text-[#0a369d] mb-1.5">
+                <span className="block font-sans text-[10px] font-bold not-italic leading-[15px] tracking-[2px] text-[#0A369D] uppercase mb-1.5">
                   Implementation Partner
                 </span>
                 <p className="font-poppins text-base font-semibold text-[#0b1425]">
@@ -123,10 +126,10 @@ export default function CaseStudyTemplate({
             )}
 
             <div>
-              <span className="block text-[11px] font-bold uppercase tracking-[0.15em] text-[#0a369d] mb-1.5">
+              <span className="block font-sans text-[10px] font-bold not-italic leading-[15px] tracking-[2px] text-[#0A369D] uppercase mb-1.5">
                 {solution ? "Partner" : "Core Applications Delivered"}
               </span>
-              <p className="font-poppins text-sm font-semibold text-[#0b1425] leading-snug">
+              <p className="font-poppins text-base font-semibold text-[#0b1425] leading-snug">
                 {solution ? partner : coreApps}
               </p>
             </div>
@@ -152,7 +155,7 @@ export default function CaseStudyTemplate({
 
           {/* Lead Introduction */}
           <div className="mb-14 pb-10 border-b border-slate-200">
-            <p className="font-poppins text-lg sm:text-xl text-[#0b1425] font-medium leading-relaxed">
+            <p className="font-poppins text-[15px] font-normal not-italic leading-[24.375px] tracking-normal text-[#0B1425]">
               {lead}
             </p>
           </div>
@@ -171,11 +174,11 @@ export default function CaseStudyTemplate({
                 key={idx}
                 className={isLast ? "mb-14" : "mb-14 pb-10 border-b border-slate-200"}
               >
-                <h2 className="font-playfair text-2xl sm:text-3xl font-bold text-[#0b1425] mb-5 tracking-tight">
+                <h2 className="font-playfair text-[28px] sm:text-[36px] font-bold not-italic leading-[36px] sm:leading-[45px] tracking-[-0.9px] text-[#0B1425] mb-5">
                   {section.title}
                 </h2>
 
-                <div className="font-poppins text-[#526174] text-[15.5px] leading-relaxed space-y-4">
+                <div className="font-poppins text-[#526174] text-[15px] font-normal not-italic leading-[24.375px] tracking-normal space-y-4">
                   {contentArray.map((p, pIdx) => (
                     <p key={pIdx}>{p}</p>
                   ))}
