@@ -1,9 +1,15 @@
 import { MetadataRoute } from "next";
+import { getPublishedBlogLinks } from "@/lib/db/public-blogs";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = "force-dynamic";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://avolvelabs.com";
+  const articles = await getPublishedBlogLinks();
 
   return [
+    { url: `${baseUrl}/blogs`, changeFrequency: "weekly", priority: 0.7 },
+    ...articles.map(article => ({ url: `${baseUrl}/blogs/${article.slug}`, lastModified: article.updatedAt, changeFrequency: "monthly" as const, priority: 0.6 })),
     {
       url: `${baseUrl}/`,
       lastModified: new Date(),
