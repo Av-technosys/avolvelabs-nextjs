@@ -46,8 +46,8 @@ const Header = () => {
           />
         </Link>
 
-        <div className="hidden w-full items-center md:flex">
-          <nav className="mx-auto flex items-center gap-4 rounded-full border border-white/75 bg-white/65 px-5 py-3 text-sm font-semibold text-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md lg:gap-9">
+        <div className="hidden w-full items-center lg:flex">
+          <nav className="mx-auto flex items-center gap-4 rounded-full border border-white/75 bg-white/65 px-5 py-3 text-sm font-semibold text-slate-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md lg:gap-5 xl:gap-8">
             <Link href="/" className={`transition-colors hover:text-[#0a369d] ${pathname === "/" ? "text-[#0a369d]" : ""}`}>Home</Link>
             <Link href="/about" className={`transition-colors hover:text-[#0a369d] ${pathname === "/about" ? "text-[#0a369d]" : ""}`}>About</Link>
 
@@ -91,6 +91,7 @@ const Header = () => {
 
             <Link href="/career" className={`transition-colors hover:text-[#0a369d] ${pathname === "/career" ? "text-[#0a369d]" : ""}`}>Career</Link>
             <Link href="/case-studies" className={`transition-colors hover:text-[#0a369d] ${pathname === "/case-studies" ? "text-[#0a369d]" : ""}`}>Case Studies</Link>
+            <Link href="/blogs" aria-current={pathname.startsWith("/blogs") ? "page" : undefined} className={`transition-colors hover:text-[#0a369d] ${pathname.startsWith("/blogs") ? "text-[#0a369d]" : ""}`}>Blogs</Link>
           </nav>
 
           <div className="flex items-center gap-6">
@@ -102,7 +103,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sheet open={openSheet} onOpenChange={setOpenSheet}>
             <SheetTrigger asChild>
               <button
@@ -230,6 +231,8 @@ const Header = () => {
                 >
                   Case Studies
                 </Link>
+                <Link href="/blogs" aria-current={pathname.startsWith("/blogs") ? "page" : undefined} onClick={() => setOpenSheet(false)} className={`border-b border-[#0a369d]/20 pb-4 transition-colors hover:text-[#0a369d] ${pathname.startsWith("/blogs") ? "text-[#0a369d]" : ""}`}>Blogs</Link>
+
                 <Link
                   href="/career"
                   className={`border-b border-[#0a369d]/20 pb-4 font-poppins transition-colors hover:text-[#0a369d] ${pathname === "/career" ? "text-[#0a369d]" : ""}`}

@@ -1,0 +1,33 @@
+.theme {
+  --primary: #0a369d;
+  --primary-foreground: #fff;
+  --secondary: #e6efff;
+  --secondary-foreground: #0a369d;
+  --ring: #0a369d;
+  font-family: var(--font-poppins), sans-serif;
+  color: var(--foreground);
+}
+
+:global(.dark) .theme {
+  --primary: #9abbff;
+  --primary-foreground: #10234a;
+  --secondary: #1b2d50;
+  --secondary-foreground: #c7d9ff;
+  --ring: #9abbff;
+}
+
+.theme :is(button, a, input, select, textarea, [contenteditable]):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.theme input:not([type='checkbox'], [type='file']),
+.theme textarea,
+.theme select {
+  background-color: var(--card);
+}
+
+.theme ::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}

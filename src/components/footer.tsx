@@ -12,6 +12,7 @@ const footerLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Case Studies", href: "/case-studies" },
+  { name: "Blogs", href: "/blogs" },
   { name: "Career", href: "/career" },
   { name: "Let's Talk", href: "/contact" },
 ];
