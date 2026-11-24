@@ -135,7 +135,7 @@ export default function HomeCarousel({ items = carouselData }: HomeCarouselProps
   return (
     <div className="w-full relative select-none">
       {/* Carousel Track */}
-      <div className="overflow-hidden w-full py-5 sm:py-6 md:py-10" ref={emblaRef}>
+      <div className="overflow-visible w-full py-5 sm:py-6 md:py-10" ref={emblaRef}>
         <div className="flex -ml-2 sm:-ml-3 md:-ml-4 items-center">
           {items.map((item, index) => {
             const isActive = index === selectedIndex;
