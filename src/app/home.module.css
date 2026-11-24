@@ -1486,6 +1486,33 @@
     0 1px 0 rgba(255, 255, 255, 0.78) inset;
 }
 
+.sendBtn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  background-color: #174bb0 !important;
+  background: #174bb0 !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  padding: 13px 32px !important;
+  border: 0 !important;
+  box-shadow: 0 4px 14px rgba(23, 75, 176, 0.35) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+.sendBtn:hover {
+  background-color: #133f99 !important;
+  background: #133f99 !important;
+  box-shadow: 0 6px 18px rgba(23, 75, 176, 0.45) !important;
+  transform: translateY(-1px) !important;
+}
+.sendBtn:active {
+  transform: translateY(0) !important;
+}
+
 @media (max-width: 1100px) {
   .container { width: calc(100% - 64px); }
   .heroInner {
