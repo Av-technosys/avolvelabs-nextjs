@@ -12,6 +12,8 @@ import styles from "./home.module.css";
 import GhostFibers from "@/components/GhostFibers";
 import LogoLoop from "@/components/react-bits/LogoLoop";
 import Masonry from "@/components/react-bits/Masonry";
+import HomeCarousel from "@/components/homeCarousel";
+import HomeContact from "@/components/homeContact";
 
 const heroStats = [
   { value: "200+", label: "Successful Implementations" },
@@ -160,6 +162,7 @@ export default function Home() {
       <SalesforceSection />
       <TestimonialsSection />
       <FinalCta />
+      <HomeContact />
     </main>
   );
 }
@@ -399,32 +402,13 @@ function CaseStudiesSection() {
             </p>
           </div>
         </div>
-        <Masonry
-          items={caseStudies.map((item) => ({
-            ...item,
-            img: item.image,
-            url: "/case-studies",
-          }))}
-          animateFrom="bottom"
-          duration={0.58}
-          stagger={0.055}
-          scaleOnHover
-          hoverScale={0.97}
-          blurToFocus
-          className={styles.caseMasonry}
-          renderItem={(item) => (
-            <Link href={item.url} className={styles.caseMasonryCard}>
-              <span className={styles.caseTag}>{item.tag}</span>
-              <span className={styles.caseArrowBtn}>
-                <ArrowUpRight size={16} />
-              </span>
-              <span className={styles.caseMasonryBody}>
-                <span>{item.title}</span>
-                <small>{item.description}</small>
-              </span>
-            </Link>
-          )}
-        />
+      </div>
+
+      <div className="w-full max-w-[1650px] mx-auto px-2 sm:px-4 md:px-6">
+        <HomeCarousel />
+      </div>
+
+      <div className={styles.container}>
         <div className={styles.caseFooter}>
           <Link href="/case-studies" className={styles.caseSectionLink}>
             <span>View All Case Studies</span>
