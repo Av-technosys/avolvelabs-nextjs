@@ -167,7 +167,7 @@ export default function HomeContact() {
 
           {/* Right Side: Request a Call Back Form */}
           <div className="lg:col-span-7">
-            <h2 className="text-2xl sm:text-3xl md:text-[34px] font-[750] text-[#09111f] text-center mb-6 sm:mb-8 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-[34px] font-[750] text-[#09111f] text-left mb-6 sm:mb-8 tracking-tight">
               Request a Call Back.
             </h2>
 
@@ -220,14 +220,6 @@ export default function HomeContact() {
                   icon={<IconBuilding size={18} />}
                 />
               </div>
-
-              <Field
-                id="enquiryFor"
-                label="SUBJECT"
-                placeholder="How can we help?"
-                required
-                icon={<IconMessage2 size={18} />}
-              />
 
               <div className="group relative pt-1">
                 <label
